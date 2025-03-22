@@ -10,6 +10,7 @@ const translations = {
         printQR: "Print QR Code",
         exploreButton: "Explore",
         copyright: "© Sant'Agostino BnB - Palermo Map",
+        interactiveMap: "Interactive Map of Palermo",
         
         // Quarters
         capo: "Capo",
@@ -91,6 +92,7 @@ const translations = {
         printQR: "Stampa Codice QR",
         exploreButton: "Esplora",
         copyright: "© Sant'Agostino BnB - Mappa di Palermo",
+        interactiveMap: "Mappa Interattiva di Palermo",
         
         // Quarters
         capo: "Capo",
@@ -172,6 +174,7 @@ const translations = {
         printQR: "Imprimer le Code QR",
         exploreButton: "Explorer",
         copyright: "© Sant'Agostino BnB - Carte de Palerme",
+        interactiveMap: "Carte Interactive de Palerme",
         
         // Quarters
         capo: "Capo",
@@ -253,6 +256,7 @@ const translations = {
         printQR: "Imprimir Código QR",
         exploreButton: "Explorar",
         copyright: "© Sant'Agostino BnB - Mapa de Palermo",
+        interactiveMap: "Mapa Interactivo de Palermo",
         
         // Quarters
         capo: "Capo",

@@ -241,6 +241,121 @@ footer {
     justify-content: flex-end;
 }
 
+/* Interactive Map Styles */
+.interactive-map-container {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.map-title {
+    margin-bottom: 20px;
+    color: #1a5276;
+    font-size: 1.8rem;
+}
+
+.map-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.palermo-map {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+
+.quarter-area {
+    cursor: pointer;
+    transition: fill-opacity 0.3s ease;
+}
+
+.quarter-label {
+    font-size: 16px;
+    font-weight: bold;
+    fill: #333;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.map-point {
+    fill: #e74c3c;
+    stroke: #fff;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.map-point:hover {
+    fill: #c0392b;
+    transform: scale(1.1);
+}
+
+.point-number {
+    fill: white;
+    text-anchor: middle;
+    font-weight: bold;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.point-info-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-left: 5px solid #3498db;
+    text-align: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.point-info-box.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+}
+
+.point-info-box h3 {
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    padding-right: 25px;
+}
+
+.point-info-box p {
+    color: #333;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #7f8c8d;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-button:hover {
+    color: #2c3e50;
+}
+
 .toggle-switch {
     position: relative;
     display: inline-flex;
