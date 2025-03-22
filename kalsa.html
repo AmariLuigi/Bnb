@@ -50,6 +50,13 @@
         <div class="quarter-content">
             <div class="attractions">
                 <h2 data-i18n="placesToVisit">Places to Visit</h2>
+                <div class="settings-panel">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="dynamic-images-toggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Use dynamic images</span>
+                    </label>
+                </div>
                 <div id="attractions-grid" class="attractions-grid">
                     <!-- Attractions will be loaded dynamically by JavaScript -->
                 </div>
@@ -66,6 +73,18 @@
     <script>
         // Ensure attractions are initialized on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize toggle based on localStorage
+            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
+            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
+            
+            // Add event listener for toggle
+            dynamicImagesToggle.addEventListener('change', function() {
+                localStorage.setItem('use_dynamic_images', this.checked);
+                // Reload attractions with new setting
+                const savedLang = localStorage.getItem('preferred_language') || 'en';
+                updatePageLanguage(savedLang);
+            });
+            
             // Force attractions to load
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             updatePageLanguage(savedLang);

@@ -332,6 +332,86 @@ function getTranslation(key, lang = 'en') {
     return langData[key] || translations.en[key] || key;
 }
 
+// Function to search for an image dynamically
+async function searchAttractionImage(attractionName) {
+    try {
+        // Add Palermo to make the search more specific
+        const searchQuery = `${attractionName} Palermo Sicily`;
+        const encodedQuery = encodeURIComponent(searchQuery);
+        
+        // Unsplash API credentials
+        const apiKey = 'AZSIli5_la1qpsVQvNOQuNcbflnnc73U_9L6BbNUX6Q';
+        
+        // Using Unsplash API
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${encodedQuery}&per_page=1&client_id=${apiKey}`);
+        
+        if (!response.ok) {
+            throw new Error('Failed to fetch image');
+        }
+        
+        const data = await response.json();
+        
+        if (data.results && data.results.length > 0) {
+            return data.results[0].urls.regular;
+        } else {
+            throw new Error('No images found');
+        }
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        return null;
+    }
+}
+
+// Function to create an attraction card
+function createAttractionCard(attraction, useDynamicImages = false) {
+    const card = document.createElement('div');
+    card.className = 'attraction-card';
+    
+    // Image with fallback
+    const img = document.createElement('img');
+    img.className = 'attraction-image';
+    img.alt = attraction.name;
+    
+    if (useDynamicImages) {
+        // Set a loading placeholder initially
+        img.src = 'images/attractions/loading.gif';
+        
+        // Try to find a dynamic image
+        searchAttractionImage(attraction.name)
+            .then(imageUrl => {
+                if (imageUrl) {
+                    img.src = imageUrl;
+                } else {
+                    // If dynamic image fails, use the predefined one or placeholder
+                    img.src = attraction.image || 'images/attractions/placeholder.jpg';
+                }
+            })
+            .catch(() => {
+                // If the API call fails, use the predefined image or placeholder
+                img.src = attraction.image || 'images/attractions/placeholder.jpg';
+            });
+    } else {
+        // Use the predefined image path with fallback
+        img.src = attraction.image;
+        img.onerror = function() {
+            this.src = 'images/attractions/placeholder.jpg';
+        };
+    }
+    
+    // Info section
+    const info = document.createElement('div');
+    info.className = 'attraction-info';
+    
+    const title = document.createElement('h3');
+    title.textContent = attraction.name;
+    
+    info.appendChild(title);
+    card.appendChild(img);
+    card.appendChild(info);
+    
+    return card;
+}
+
 // Function to update all elements with data-i18n attribute
 function updatePageLanguage(lang) {
     // Save language preference
@@ -375,30 +455,11 @@ function updatePageLanguage(lang) {
             // Add new items
             const attractions = getTranslation(quarter, lang);
             if (Array.isArray(attractions)) {
+                // Check if we should use dynamic images
+                const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
+                
                 attractions.forEach(attraction => {
-                    const card = document.createElement('div');
-                    card.className = 'attraction-card';
-                    
-                    // Image with fallback
-                    const img = document.createElement('img');
-                    img.className = 'attraction-image';
-                    img.src = attraction.image;
-                    img.alt = attraction.name;
-                    img.onerror = function() {
-                        this.src = 'images/attractions/placeholder.jpg';
-                    };
-                    
-                    // Info section
-                    const info = document.createElement('div');
-                    info.className = 'attraction-info';
-                    
-                    const title = document.createElement('h3');
-                    title.textContent = attraction.name;
-                    
-                    info.appendChild(title);
-                    card.appendChild(img);
-                    card.appendChild(info);
-                    
+                    const card = createAttractionCard(attraction, useDynamicImages);
                     attractionsGrid.appendChild(card);
                 });
             }
