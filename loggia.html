@@ -5,23 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Loggia Quarter - Sant'Agostino BnB Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .language-selector select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body class="quarter-page loggia-bg">
+    <div class="language-selector">
+        <label for="language-selector" data-i18n="language">Language</label>
+        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
-            <h1>La Loggia Quarter</h1>
-            <a href="index.html" class="back-btn">← Back to Map</a>
+            <h1 data-i18n="loggia">La Loggia Quarter</h1>
+            <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
         </header>
         
         <div class="quarter-info">
             <div class="qr-section">
-                <h2>Scan to visit this page</h2>
+                <h2 data-i18n="scanVisit">Scan to visit this page</h2>
                 <div id="page-qrcode" class="qrcode-large"></div>
-                <button id="printQR" class="btn">Print QR Code</button>
+                <button id="printQR" class="btn" data-i18n="printQR">Print QR Code</button>
             </div>
             
             <div class="attractions">
-                <h2>Places to Visit</h2>
+                <h2 data-i18n="placesToVisit">Places to Visit</h2>
                 <ul id="attractions-list">
                     <!-- Attractions will be loaded dynamically by JavaScript -->
                 </ul>
@@ -29,34 +63,13 @@
         </div>
         
         <footer>
-            <p>© Sant'Agostino BnB - Palermo Map</p>
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
         </footer>
     </div>
     
     <script src="js/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
     <script>
-        // Attractions data for La Loggia
-        const attractions = [
-            "San Domenico + Oratorio",
-            "Vucciria",
-            "Oratorio di Sicita",
-            "Palazzo Branciforte",
-            "Palazzo Salinas",
-            "Chiesa Santa Maria la Nova",
-            "Fontana Garraffello",
-            "Genio del Garraffo",
-            "Castello a Mare",
-            "La Cala"
-        ];
-        
-        // Dynamically populate attractions list
-        const attractionsList = document.getElementById('attractions-list');
-        attractions.forEach(attraction => {
-            const li = document.createElement('li');
-            li.textContent = attraction;
-            attractionsList.appendChild(li);
-        });
-        
         // Generate QR Code for this page
         const currentUrl = window.location.href;
         new QRCode(document.getElementById("page-qrcode"), {
@@ -69,11 +82,16 @@
         document.getElementById('printQR').addEventListener('click', function() {
             const printWindow = window.open('', '', 'width=600,height=600');
             const qrImage = document.getElementById('page-qrcode').querySelector('img').src;
+            const currentLang = localStorage.getItem('preferred_language') || 'en';
+            const quarterName = getTranslation('loggia', currentLang);
+            const scanText = getTranslation('scanToExplore', currentLang);
+            const scanSuffix = getTranslation('scanToExploreSuffix', currentLang);
+            const quarterSuffix = getTranslation('quarterSuffix', currentLang);
             
             printWindow.document.write(`
                 <html>
                 <head>
-                    <title>QR Code for La Loggia Quarter</title>
+                    <title>${quarterName} ${quarterSuffix}</title>
                     <style>
                         body { font-family: Arial, sans-serif; text-align: center; }
                         .qr-container { margin: 20px auto; }
@@ -81,10 +99,10 @@
                     </style>
                 </head>
                 <body>
-                    <h1>La Loggia Quarter - Sant'Agostino BnB</h1>
+                    <h1>${quarterName} - Sant'Agostino BnB</h1>
                     <div class="qr-container">
-                        <img src="${qrImage}" alt="QR Code for La Loggia Quarter">
-                        <p>Scan to explore the La Loggia Quarter of Palermo</p>
+                        <img src="${qrImage}" alt="QR Code for ${quarterName}">
+                        <p>${scanText} ${quarterName} ${scanSuffix}</p>
                     </div>
                 </body>
                 </html>

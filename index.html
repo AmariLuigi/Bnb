@@ -5,50 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sant'Agostino BnB - Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .language-selector select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
+    <div class="language-selector">
+        <label for="language-selector" data-i18n="language">Language</label>
+        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
-            <h1>Sant'Agostino BnB - Palermo Map</h1>
-            <p>Explore the four historic quarters of Palermo</p>
+            <h1 data-i18n="title">Sant'Agostino BnB - Palermo Map</h1>
+            <p data-i18n="explore">Explore the four historic quarters of Palermo</p>
         </header>
         
         <div class="quarters-grid">
             <div class="quarter-card">
-                <h2>Capo</h2>
+                <h2 data-i18n="capo">Capo</h2>
                 <div id="capo-qrcode" class="qrcode"></div>
-                <p>Discover the Teatro Massimo, Cattedrale, and more</p>
-                <a href="capo.html" class="btn">Explore Capo</a>
+                <p data-i18n="capoDesc">Discover the Teatro Massimo, Cattedrale, and more</p>
+                <a href="capo.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="capo">Capo</span></a>
             </div>
             
             <div class="quarter-card">
-                <h2>Albergheria</h2>
+                <h2 data-i18n="albergheria">Albergheria</h2>
                 <div id="albergheria-qrcode" class="qrcode"></div>
-                <p>Visit Ballarò market, Palazzo Reale, and more</p>
-                <a href="albergheria.html" class="btn">Explore Albergheria</a>
+                <p data-i18n="albergheriaDesc">Visit Ballarò market, Palazzo Reale, and more</p>
+                <a href="albergheria.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="albergheria">Albergheria</span></a>
             </div>
             
             <div class="quarter-card">
-                <h2>Kalsa</h2>
+                <h2 data-i18n="kalsa">Kalsa</h2>
                 <div id="kalsa-qrcode" class="qrcode"></div>
-                <p>Explore Piazza Pretoria, Orto Botanico, and more</p>
-                <a href="kalsa.html" class="btn">Explore Kalsa</a>
+                <p data-i18n="kalsaDesc">Explore Piazza Pretoria, Orto Botanico, and more</p>
+                <a href="kalsa.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="kalsa">Kalsa</span></a>
             </div>
             
             <div class="quarter-card">
-                <h2>La Loggia</h2>
+                <h2 data-i18n="loggia">La Loggia</h2>
                 <div id="loggia-qrcode" class="qrcode"></div>
-                <p>Visit San Domenico, Vucciria market, and more</p>
-                <a href="loggia.html" class="btn">Explore La Loggia</a>
+                <p data-i18n="loggiaDesc">Visit San Domenico, Vucciria market, and more</p>
+                <a href="loggia.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="loggia">La Loggia</span></a>
             </div>
         </div>
         
         <footer>
-            <p>© Sant'Agostino BnB - Palermo Map</p>
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
         </footer>
     </div>
     
     <script src="js/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
     <script>
         // Generate QR codes dynamically based on current URL
         const baseUrl = window.location.href.replace(/\/[^/]*$/, '/');
