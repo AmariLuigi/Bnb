@@ -50,28 +50,36 @@
         <div class="quarters-grid">
             <div class="quarter-card">
                 <h2 data-i18n="capo">Capo</h2>
-                <div id="capo-qrcode" class="qrcode"></div>
+                <div class="quarter-image">
+                    <img src="images/quarters/capo.jpg" alt="Capo Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                </div>
                 <p data-i18n="capoDesc">Discover the Teatro Massimo, Cattedrale, and more</p>
                 <a href="capo.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="capo">Capo</span></a>
             </div>
             
             <div class="quarter-card">
                 <h2 data-i18n="albergheria">Albergheria</h2>
-                <div id="albergheria-qrcode" class="qrcode"></div>
+                <div class="quarter-image">
+                    <img src="images/quarters/albergheria.jpg" alt="Albergheria Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                </div>
                 <p data-i18n="albergheriaDesc">Visit Ballarò market, Palazzo Reale, and more</p>
                 <a href="albergheria.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="albergheria">Albergheria</span></a>
             </div>
             
             <div class="quarter-card">
                 <h2 data-i18n="kalsa">Kalsa</h2>
-                <div id="kalsa-qrcode" class="qrcode"></div>
+                <div class="quarter-image">
+                    <img src="images/quarters/kalsa.jpg" alt="Kalsa Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                </div>
                 <p data-i18n="kalsaDesc">Explore Piazza Pretoria, Orto Botanico, and more</p>
                 <a href="kalsa.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="kalsa">Kalsa</span></a>
             </div>
             
             <div class="quarter-card">
                 <h2 data-i18n="loggia">La Loggia</h2>
-                <div id="loggia-qrcode" class="qrcode"></div>
+                <div class="quarter-image">
+                    <img src="images/quarters/loggia.jpg" alt="La Loggia Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                </div>
                 <p data-i18n="loggiaDesc">Visit San Domenico, Vucciria market, and more</p>
                 <a href="loggia.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="loggia">La Loggia</span></a>
             </div>
@@ -84,14 +92,6 @@
     
     <script src="js/qrcode.min.js"></script>
     <script src="js/translations.js"></script>
-    <script>
-        // Generate QR codes dynamically based on current URL
-        const baseUrl = window.location.href.replace(/\/[^/]*$/, '/');
-        
-        new QRCode(document.getElementById("capo-qrcode"), baseUrl + "capo.html");
-        new QRCode(document.getElementById("albergheria-qrcode"), baseUrl + "albergheria.html");
-        new QRCode(document.getElementById("kalsa-qrcode"), baseUrl + "kalsa.html");
-        new QRCode(document.getElementById("loggia-qrcode"), baseUrl + "loggia.html");
-    </script>
+    <!-- Removed QR code generation for main page cards -->
 </body>
 </html> 
