@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sant'Agostino BnB - Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+            crossorigin=""></script>
     <style>
         .language-selector {
             position: absolute;
@@ -58,77 +64,11 @@
         <div class="interactive-map-container">
             <h2 class="map-title" data-i18n="interactiveMap">Interactive Map of Palermo</h2>
             <div class="map-wrapper">
-                <svg viewBox="0 0 800 600" class="palermo-map">
-                    <!-- Map background -->
-                    <rect x="0" y="0" width="800" height="600" fill="#e6f7ff" stroke="#333" stroke-width="2" />
-                    
-                    <!-- Sea area -->
-                    <path d="M0,300 Q400,200 800,300 L800,0 L0,0 Z" fill="#a8d5ff" />
-                    
-                    <!-- Quarters - simplified shapes -->
-                    <!-- Capo Quarter -->
-                    <path id="capo-area" d="M300,200 L400,150 L500,200 L450,300 L350,350 L250,300 Z" 
-                          fill="#e8f4fd" stroke="#3498db" stroke-width="3" class="quarter-area"
-                          data-quarter="capo" />
-                    
-                    <!-- Albergheria Quarter -->
-                    <path id="albergheria-area" d="M500,200 L600,150 L650,250 L600,350 L450,300 Z" 
-                          fill="#e6f3e6" stroke="#2ecc71" stroke-width="3" class="quarter-area"
-                          data-quarter="albergheria" />
-                    
-                    <!-- Kalsa Quarter -->
-                    <path id="kalsa-area" d="M450,300 L600,350 L550,450 L400,500 L350,350 Z" 
-                          fill="#fff4e6" stroke="#f39c12" stroke-width="3" class="quarter-area"
-                          data-quarter="kalsa" />
-                    
-                    <!-- La Loggia Quarter -->
-                    <path id="loggia-area" d="M250,300 L350,350 L400,500 L250,450 L150,400 L200,300 Z" 
-                          fill="#f4e6fd" stroke="#9b59b6" stroke-width="3" class="quarter-area"
-                          data-quarter="loggia" />
-                    
-                    <!-- Labels for quarters -->
-                    <g class="map-labels">
-                        <text x="375" y="250" class="quarter-label" data-i18n="capo">Capo</text>
-                        <text x="550" y="250" class="quarter-label" data-i18n="albergheria">Albergheria</text>
-                        <text x="450" y="400" class="quarter-label" data-i18n="kalsa">Kalsa</text>
-                        <text x="250" y="375" class="quarter-label" data-i18n="loggia">La Loggia</text>
-                    </g>
-                    
-                    <!-- Numbered points of interest -->
-                    <g class="map-points">
-                        <!-- Capo points -->
-                        <circle cx="350" cy="220" r="15" class="map-point" data-point="1" data-quarter="capo" />
-                        <text x="350" y="225" class="point-number">1</text>
-                        
-                        <circle cx="410" cy="230" r="15" class="map-point" data-point="2" data-quarter="capo" />
-                        <text x="410" y="235" class="point-number">2</text>
-                        
-                        <!-- Albergheria points -->
-                        <circle cx="520" cy="230" r="15" class="map-point" data-point="3" data-quarter="albergheria" />
-                        <text x="520" y="235" class="point-number">3</text>
-                        
-                        <circle cx="560" cy="280" r="15" class="map-point" data-point="4" data-quarter="albergheria" />
-                        <text x="560" y="285" class="point-number">4</text>
-                        
-                        <!-- Kalsa points -->
-                        <circle cx="480" cy="380" r="15" class="map-point" data-point="5" data-quarter="kalsa" />
-                        <text x="480" y="385" class="point-number">5</text>
-                        
-                        <circle cx="420" cy="420" r="15" class="map-point" data-point="6" data-quarter="kalsa" />
-                        <text x="420" y="425" class="point-number">6</text>
-                        
-                        <!-- La Loggia points -->
-                        <circle cx="300" cy="380" r="15" class="map-point" data-point="7" data-quarter="loggia" />
-                        <text x="300" y="385" class="point-number">7</text>
-                        
-                        <circle cx="250" cy="420" r="15" class="map-point" data-point="8" data-quarter="loggia" />
-                        <text x="250" y="425" class="point-number">8</text>
-                    </g>
-                </svg>
+                <div id="palermo-map" style="height: 500px; width: 100%;"></div>
                 
                 <div id="point-info" class="point-info-box">
                     <h3 id="point-title">Point of Interest</h3>
-                    <p id="point-description">Click on a numbered point to see information about that location.</p>
+                    <p id="point-description">Click on a numbered marker to see information about that location.</p>
                     <button id="close-info" class="close-button">×</button>
                 </div>
             </div>
@@ -255,45 +195,89 @@
         // Points of interest data
         const pointsOfInterest = {
             en: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "One of the largest opera houses in Europe, known for its impressive architecture." },
-                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "A bustling historic market with fresh local produce, fish, and traditional foods." },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Former royal palace of the Norman-Swabian dynasty, housing the Palatine Chapel." },
-                { id: 4, quarter: "albergheria", name: "Ballarò Market", description: "The oldest market in Palermo, famous for its vibrant atmosphere and street food." },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Renaissance palace housing the Regional Gallery of Sicily with important artworks." },
-                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Historic botanical garden with a vast collection of exotic and native plants." },
-                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Baroque church that is the second most important in Palermo after the Cathedral." },
-                { id: 8, quarter: "loggia", name: "Vucciria Market", description: "Historic market that transforms from a food market by day to a nightlife hub in the evening." }
+                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "One of the largest opera houses in Europe, known for its impressive architecture.", lat: 38.1196, lng: 13.3593 },
+                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "A bustling historic market with fresh local produce, fish, and traditional foods.", lat: 38.1182, lng: 13.3562 },
+                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Former royal palace of the Norman-Swabian dynasty, housing the Palatine Chapel.", lat: 38.1106, lng: 13.3529 },
+                { id: 4, quarter: "albergheria", name: "Ballarò Market", description: "The oldest market in Palermo, famous for its vibrant atmosphere and street food.", lat: 38.1137, lng: 13.3625 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Renaissance palace housing the Regional Gallery of Sicily with important artworks.", lat: 38.1169, lng: 13.3692 },
+                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Historic botanical garden with a vast collection of exotic and native plants.", lat: 38.1131, lng: 13.3771 },
+                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Baroque church that is the second most important in Palermo after the Cathedral.", lat: 38.1191, lng: 13.3645 },
+                { id: 8, quarter: "loggia", name: "Vucciria Market", description: "Historic market that transforms from a food market by day to a nightlife hub in the evening.", lat: 38.1181, lng: 13.3614 }
             ],
             it: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Uno dei più grandi teatri d'opera in Europa, noto per la sua impressionante architettura." },
-                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "Un vivace mercato storico con prodotti locali freschi, pesce e cibi tradizionali." },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ex palazzo reale della dinastia normanno-sveva, che ospita la Cappella Palatina." },
-                { id: 4, quarter: "albergheria", name: "Mercato di Ballarò", description: "Il mercato più antico di Palermo, famoso per la sua atmosfera vivace e lo street food." },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palazzo rinascimentale che ospita la Galleria Regionale della Sicilia con importanti opere d'arte." },
-                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Storico giardino botanico con una vasta collezione di piante esotiche e native." },
-                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Chiesa barocca che è la seconda più importante di Palermo dopo la Cattedrale." },
-                { id: 8, quarter: "loggia", name: "Mercato della Vucciria", description: "Mercato storico che si trasforma da mercato alimentare di giorno a centro della vita notturna la sera." }
+                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Uno dei più grandi teatri d'opera in Europa, noto per la sua impressionante architettura.", lat: 38.1196, lng: 13.3593 },
+                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "Un vivace mercato storico con prodotti locali freschi, pesce e cibi tradizionali.", lat: 38.1182, lng: 13.3562 },
+                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ex palazzo reale della dinastia normanno-sveva, che ospita la Cappella Palatina.", lat: 38.1106, lng: 13.3529 },
+                { id: 4, quarter: "albergheria", name: "Mercato di Ballarò", description: "Il mercato più antico di Palermo, famoso per la sua atmosfera vivace e lo street food.", lat: 38.1137, lng: 13.3625 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palazzo rinascimentale che ospita la Galleria Regionale della Sicilia con importanti opere d'arte.", lat: 38.1169, lng: 13.3692 },
+                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Storico giardino botanico con una vasta collezione di piante esotiche e native.", lat: 38.1131, lng: 13.3771 },
+                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Chiesa barocca che è la seconda più importante di Palermo dopo la Cattedrale.", lat: 38.1191, lng: 13.3645 },
+                { id: 8, quarter: "loggia", name: "Mercato della Vucciria", description: "Mercato storico che si trasforma da mercato alimentare di giorno a centro della vita notturna la sera.", lat: 38.1181, lng: 13.3614 }
             ],
             fr: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "L'un des plus grands opéras d'Europe, connu pour son architecture impressionnante." },
-                { id: 2, quarter: "capo", name: "Marché du Capo", description: "Un marché historique animé avec des produits locaux frais, du poisson et des aliments traditionnels." },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ancien palais royal de la dynastie normando-souabe, abritant la Chapelle Palatine." },
-                { id: 4, quarter: "albergheria", name: "Marché de Ballarò", description: "Le plus ancien marché de Palerme, célèbre pour son atmosphère vibrante et sa street food." },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palais Renaissance abritant la Galerie Régionale de Sicile avec d'importantes œuvres d'art." },
-                { id: 6, quarter: "kalsa", name: "Jardin Botanique", description: "Jardin botanique historique avec une vaste collection de plantes exotiques et indigènes." },
-                { id: 7, quarter: "loggia", name: "Église de San Domenico", description: "Église baroque qui est la deuxième plus importante de Palerme après la Cathédrale." },
-                { id: 8, quarter: "loggia", name: "Marché de la Vucciria", description: "Marché historique qui se transforme d'un marché alimentaire le jour à un centre de vie nocturne le soir." }
+                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "L'un des plus grands opéras d'Europe, connu pour son architecture impressionnante.", lat: 38.1196, lng: 13.3593 },
+                { id: 2, quarter: "capo", name: "Marché du Capo", description: "Un marché historique animé avec des produits locaux frais, du poisson et des aliments traditionnels.", lat: 38.1182, lng: 13.3562 },
+                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ancien palais royal de la dynastie normando-souabe, abritant la Chapelle Palatine.", lat: 38.1106, lng: 13.3529 },
+                { id: 4, quarter: "albergheria", name: "Marché de Ballarò", description: "Le plus ancien marché de Palerme, célèbre pour son atmosphère vibrante et sa street food.", lat: 38.1137, lng: 13.3625 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palais Renaissance abritant la Galerie Régionale de Sicile avec d'importantes œuvres d'art.", lat: 38.1169, lng: 13.3692 },
+                { id: 6, quarter: "kalsa", name: "Jardin Botanique", description: "Jardin botanique historique avec une vaste collection de plantes exotiques et indigènes.", lat: 38.1131, lng: 13.3771 },
+                { id: 7, quarter: "loggia", name: "Église de San Domenico", description: "Église baroque qui est la deuxième plus importante de Palerme après la Cathédrale.", lat: 38.1191, lng: 13.3645 },
+                { id: 8, quarter: "loggia", name: "Marché de la Vucciria", description: "Marché historique qui se transforme d'un marché alimentaire le jour à un centre de vie nocturne le soir.", lat: 38.1181, lng: 13.3614 }
             ],
             es: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Una de las casas de ópera más grandes de Europa, conocida por su impresionante arquitectura." },
-                { id: 2, quarter: "capo", name: "Mercado del Capo", description: "Un bullicioso mercado histórico con productos locales frescos, pescado y comidas tradicionales." },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Antiguo palacio real de la dinastía normando-suaba, que alberga la Capilla Palatina." },
-                { id: 4, quarter: "albergheria", name: "Mercado de Ballarò", description: "El mercado más antiguo de Palermo, famoso por su ambiente vibrante y comida callejera." },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palacio renacentista que alberga la Galería Regional de Sicilia con importantes obras de arte." },
-                { id: 6, quarter: "kalsa", name: "Jardín Botánico", description: "Jardín botánico histórico con una vasta colección de plantas exóticas y nativas." },
-                { id: 7, quarter: "loggia", name: "Iglesia de San Domenico", description: "Iglesia barroca que es la segunda más importante de Palermo después de la Catedral." },
-                { id: 8, quarter: "loggia", name: "Mercado de la Vucciria", description: "Mercado histórico que se transforma de un mercado de alimentos durante el día a un centro de vida nocturna por la noche." }
+                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Una de las casas de ópera más grandes de Europa, conocida por su impresionante arquitectura.", lat: 38.1196, lng: 13.3593 },
+                { id: 2, quarter: "capo", name: "Mercado del Capo", description: "Un bullicioso mercado histórico con productos locales frescos, pescado y comidas tradicionales.", lat: 38.1182, lng: 13.3562 },
+                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Antiguo palacio real de la dinastía normando-suaba, que alberga la Capilla Palatina.", lat: 38.1106, lng: 13.3529 },
+                { id: 4, quarter: "albergheria", name: "Mercado de Ballarò", description: "El mercado más antiguo de Palermo, famoso por su ambiente vibrante y comida callejera.", lat: 38.1137, lng: 13.3625 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palacio renacentista que alberga la Galería Regional de Sicilia con importantes obras de arte.", lat: 38.1169, lng: 13.3692 },
+                { id: 6, quarter: "kalsa", name: "Jardín Botánico", description: "Jardín botánico histórico con una vasta colección de plantas exóticas y nativas.", lat: 38.1131, lng: 13.3771 },
+                { id: 7, quarter: "loggia", name: "Iglesia de San Domenico", description: "Iglesia barroca que es la segunda más importante de Palermo después de la Catedral.", lat: 38.1191, lng: 13.3645 },
+                { id: 8, quarter: "loggia", name: "Mercado de la Vucciria", description: "Mercado histórico que se transforma de un mercado de alimentos durante el día a un centro de vida nocturna por la noche.", lat: 38.1181, lng: 13.3614 }
             ]
+        };
+        
+        // Quarters boundaries (approximate polygon coordinates)
+        const quarterBoundaries = {
+            capo: [
+                [38.1210, 13.3550],
+                [38.1190, 13.3510],
+                [38.1155, 13.3530],
+                [38.1170, 13.3580],
+                [38.1200, 13.3580]
+            ],
+            albergheria: [
+                [38.1155, 13.3530],
+                [38.1115, 13.3515],
+                [38.1095, 13.3550],
+                [38.1110, 13.3630],
+                [38.1145, 13.3640],
+                [38.1170, 13.3580]
+            ],
+            kalsa: [
+                [38.1170, 13.3580],
+                [38.1145, 13.3640],
+                [38.1155, 13.3690],
+                [38.1125, 13.3730],
+                [38.1140, 13.3780],
+                [38.1180, 13.3730],
+                [38.1190, 13.3620]
+            ],
+            loggia: [
+                [38.1200, 13.3580],
+                [38.1170, 13.3580],
+                [38.1190, 13.3620],
+                [38.1180, 13.3730],
+                [38.1210, 13.3670],
+                [38.1220, 13.3610]
+            ]
+        };
+        
+        // Quarter colors
+        const quarterColors = {
+            capo: '#3498db',
+            albergheria: '#2ecc71',
+            kalsa: '#f39c12',
+            loggia: '#9b59b6'
         };
         
         // Setup interactive map
@@ -306,36 +290,85 @@
             // Hide the info box initially
             pointInfoBox.classList.add('hidden');
             
-            // Add event listeners to map points
-            document.querySelectorAll('.map-point').forEach(point => {
-                point.addEventListener('click', function() {
-                    const pointId = parseInt(this.getAttribute('data-point'));
-                    const quarter = this.getAttribute('data-quarter');
-                    showPointInfo(pointId, quarter);
-                });
-            });
+            // Initialize the map
+            const map = L.map('palermo-map').setView([38.1157, 13.3615], 15);
             
-            // Add event listeners to quarter areas
-            document.querySelectorAll('.quarter-area').forEach(area => {
-                area.addEventListener('click', function() {
-                    const quarter = this.getAttribute('data-quarter');
-                    // Navigate to the quarter page
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add quarter polygons
+            const polygons = {};
+            Object.keys(quarterBoundaries).forEach(quarter => {
+                const color = quarterColors[quarter];
+                const polygon = L.polygon(quarterBoundaries[quarter], {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.2,
+                    weight: 3
+                }).addTo(map);
+                
+                // Add quarter name as a label
+                const center = polygon.getBounds().getCenter();
+                const quarterName = getTranslation(quarter);
+                L.marker(center, {
+                    icon: L.divIcon({
+                        className: 'quarter-label-icon',
+                        html: `<div class="quarter-label">${quarterName}</div>`,
+                        iconSize: [100, 20],
+                        iconAnchor: [50, 10]
+                    })
+                }).addTo(map);
+                
+                // Add click event to navigate to quarter page
+                polygon.on('click', function() {
                     window.location.href = quarter + '.html';
                 });
                 
-                // Add hover effect
-                area.addEventListener('mouseenter', function() {
-                    this.setAttribute('fill-opacity', '0.7');
+                polygons[quarter] = polygon;
+            });
+            
+            // Add points of interest
+            const currentLang = localStorage.getItem('preferred_language') || 'en';
+            const pois = pointsOfInterest[currentLang];
+            
+            pois.forEach(poi => {
+                // Create a numbered marker icon
+                const numberIcon = L.divIcon({
+                    className: 'number-icon',
+                    html: `<div class="marker-number" data-quarter="${poi.quarter}">${poi.id}</div>`,
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
                 });
                 
-                area.addEventListener('mouseleave', function() {
-                    this.setAttribute('fill-opacity', '1');
+                // Add marker to map
+                const marker = L.marker([poi.lat, poi.lng], { icon: numberIcon }).addTo(map);
+                
+                // Add click event
+                marker.on('click', function() {
+                    showPointInfo(poi.id, poi.quarter);
+                    
+                    // Highlight the related quarter
+                    Object.keys(polygons).forEach(q => {
+                        if (q === poi.quarter) {
+                            polygons[q].setStyle({ weight: 5, fillOpacity: 0.4 });
+                        } else {
+                            polygons[q].setStyle({ weight: 3, fillOpacity: 0.2 });
+                        }
+                    });
                 });
             });
             
             // Close button for info box
             closeButton.addEventListener('click', function() {
                 pointInfoBox.classList.add('hidden');
+                
+                // Reset all polygon styles
+                Object.values(polygons).forEach(polygon => {
+                    polygon.setStyle({ weight: 3, fillOpacity: 0.2 });
+                });
             });
         }
         
@@ -355,15 +388,6 @@
                 pointTitle.textContent = pointData.name;
                 pointDescription.textContent = pointData.description;
                 pointInfoBox.classList.remove('hidden');
-                
-                // Highlight the related quarter
-                document.querySelectorAll('.quarter-area').forEach(area => {
-                    if (area.getAttribute('data-quarter') === quarter) {
-                        area.setAttribute('stroke-width', '5');
-                    } else {
-                        area.setAttribute('stroke-width', '3');
-                    }
-                });
             }
         }
     </script>
