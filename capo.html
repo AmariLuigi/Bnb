@@ -47,13 +47,7 @@
             <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
         </header>
         
-        <div class="quarter-info">
-            <div class="qr-section">
-                <h2 data-i18n="scanVisit">Scan to visit this page</h2>
-                <div id="page-qrcode" class="qrcode-large"></div>
-                <button id="printQR" class="btn" data-i18n="printQR">Print QR Code</button>
-            </div>
-            
+        <div class="quarter-content">
             <div class="attractions">
                 <h2 data-i18n="placesToVisit">Places to Visit</h2>
                 <div id="attractions-grid" class="attractions-grid">
@@ -69,51 +63,5 @@
     
     <script src="js/qrcode.min.js"></script>
     <script src="js/translations.js"></script>
-    <script>
-        // Generate QR Code for this page
-        const currentUrl = window.location.href;
-        new QRCode(document.getElementById("page-qrcode"), {
-            text: currentUrl,
-            width: 200,
-            height: 200
-        });
-        
-        // Print QR Code functionality
-        document.getElementById('printQR').addEventListener('click', function() {
-            const printWindow = window.open('', '', 'width=600,height=600');
-            const qrImage = document.getElementById('page-qrcode').querySelector('img').src;
-            const currentLang = localStorage.getItem('preferred_language') || 'en';
-            const quarterName = getTranslation('capo', currentLang);
-            const scanText = getTranslation('scanToExplore', currentLang);
-            const scanSuffix = getTranslation('scanToExploreSuffix', currentLang);
-            const quarterSuffix = getTranslation('quarterSuffix', currentLang);
-            
-            printWindow.document.write(`
-                <html>
-                <head>
-                    <title>${quarterName} ${quarterSuffix}</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; text-align: center; }
-                        .qr-container { margin: 20px auto; }
-                        h1 { margin-bottom: 30px; }
-                    </style>
-                </head>
-                <body>
-                    <h1>${quarterName} - Sant'Agostino BnB</h1>
-                    <div class="qr-container">
-                        <img src="${qrImage}" alt="QR Code for ${quarterName}">
-                        <p>${scanText} ${quarterName} ${scanSuffix}</p>
-                    </div>
-                </body>
-                </html>
-            `);
-            
-            printWindow.document.close();
-            setTimeout(() => {
-                printWindow.print();
-                printWindow.close();
-            }, 250);
-        });
-    </script>
 </body>
 </html> 
