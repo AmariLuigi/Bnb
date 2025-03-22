@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sant'Agostino BnB - Palermo Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sant'Agostino BnB - Palermo Map</h1>
+            <p>Explore the four historic quarters of Palermo</p>
+        </header>
+        
+        <div class="quarters-grid">
+            <div class="quarter-card">
+                <h2>Capo</h2>
+                <div id="capo-qrcode" class="qrcode"></div>
+                <p>Discover the Teatro Massimo, Cattedrale, and more</p>
+                <a href="capo.html" class="btn">Explore Capo</a>
+            </div>
+            
+            <div class="quarter-card">
+                <h2>Albergheria</h2>
+                <div id="albergheria-qrcode" class="qrcode"></div>
+                <p>Visit Ballarò market, Palazzo Reale, and more</p>
+                <a href="albergheria.html" class="btn">Explore Albergheria</a>
+            </div>
+            
+            <div class="quarter-card">
+                <h2>Kalsa</h2>
+                <div id="kalsa-qrcode" class="qrcode"></div>
+                <p>Explore Piazza Pretoria, Orto Botanico, and more</p>
+                <a href="kalsa.html" class="btn">Explore Kalsa</a>
+            </div>
+            
+            <div class="quarter-card">
+                <h2>La Loggia</h2>
+                <div id="loggia-qrcode" class="qrcode"></div>
+                <p>Visit San Domenico, Vucciria market, and more</p>
+                <a href="loggia.html" class="btn">Explore La Loggia</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© Sant'Agostino BnB - Palermo Map</p>
+        </footer>
+    </div>
+    
+    <script src="js/qrcode.min.js"></script>
+    <script>
+        // Generate QR codes dynamically based on current URL
+        const baseUrl = window.location.href.replace(/\/[^/]*$/, '/');
+        
+        new QRCode(document.getElementById("capo-qrcode"), baseUrl + "capo.html");
+        new QRCode(document.getElementById("albergheria-qrcode"), baseUrl + "albergheria.html");
+        new QRCode(document.getElementById("kalsa-qrcode"), baseUrl + "kalsa.html");
+        new QRCode(document.getElementById("loggia-qrcode"), baseUrl + "loggia.html");
+    </script>
+</body>
+</html> 

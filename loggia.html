@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Loggia Quarter - Sant'Agostino BnB Palermo Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="quarter-page loggia-bg">
+    <div class="container">
+        <header>
+            <h1>La Loggia Quarter</h1>
+            <a href="index.html" class="back-btn">← Back to Map</a>
+        </header>
+        
+        <div class="quarter-info">
+            <div class="qr-section">
+                <h2>Scan to visit this page</h2>
+                <div id="page-qrcode" class="qrcode-large"></div>
+                <button id="printQR" class="btn">Print QR Code</button>
+            </div>
+            
+            <div class="attractions">
+                <h2>Places to Visit</h2>
+                <ul id="attractions-list">
+                    <!-- Attractions will be loaded dynamically by JavaScript -->
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© Sant'Agostino BnB - Palermo Map</p>
+        </footer>
+    </div>
+    
+    <script src="js/qrcode.min.js"></script>
+    <script>
+        // Attractions data for La Loggia
+        const attractions = [
+            "San Domenico + Oratorio",
+            "Vucciria",
+            "Oratorio di Sicita",
+            "Palazzo Branciforte",
+            "Palazzo Salinas",
+            "Chiesa Santa Maria la Nova",
+            "Fontana Garraffello",
+            "Genio del Garraffo",
+            "Castello a Mare",
+            "La Cala"
+        ];
+        
+        // Dynamically populate attractions list
+        const attractionsList = document.getElementById('attractions-list');
+        attractions.forEach(attraction => {
+            const li = document.createElement('li');
+            li.textContent = attraction;
+            attractionsList.appendChild(li);
+        });
+        
+        // Generate QR Code for this page
+        const currentUrl = window.location.href;
+        new QRCode(document.getElementById("page-qrcode"), {
+            text: currentUrl,
+            width: 200,
+            height: 200
+        });
+        
+        // Print QR Code functionality
+        document.getElementById('printQR').addEventListener('click', function() {
+            const printWindow = window.open('', '', 'width=600,height=600');
+            const qrImage = document.getElementById('page-qrcode').querySelector('img').src;
+            
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>QR Code for La Loggia Quarter</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; text-align: center; }
+                        .qr-container { margin: 20px auto; }
+                        h1 { margin-bottom: 30px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>La Loggia Quarter - Sant'Agostino BnB</h1>
+                    <div class="qr-container">
+                        <img src="${qrImage}" alt="QR Code for La Loggia Quarter">
+                        <p>Scan to explore the La Loggia Quarter of Palermo</p>
+                    </div>
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 250);
+        });
+    </script>
+</body>
+</html> 

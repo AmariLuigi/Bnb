@@ -1,0 +1,162 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    color: #1a5276;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #2874a6;
+    margin-bottom: 15px;
+}
+
+/* Home Page Grid */
+.quarters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.quarter-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.quarter-card:hover {
+    transform: translateY(-5px);
+}
+
+.qrcode {
+    margin: 15px auto;
+    width: 128px;
+    height: 128px;
+}
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2874a6;
+}
+
+/* Quarter Page Styles */
+.quarter-page {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.capo-bg {
+    background-color: #e8f4fd;
+}
+
+.albergheria-bg {
+    background-color: #e6f3e6;
+}
+
+.kalsa-bg {
+    background-color: #fff4e6;
+}
+
+.loggia-bg {
+    background-color: #f4e6fd;
+}
+
+.back-btn {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.quarter-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.qr-section {
+    text-align: center;
+}
+
+.qrcode-large {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+}
+
+.attractions ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.attractions li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .quarter-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .qr-section {
+        margin-bottom: 30px;
+    }
+} 
