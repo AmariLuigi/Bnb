@@ -28,52 +28,52 @@ const translations = {
         
         // Quarter-specific attractions
         albergheriaAttractions: [
-            "Ballarò (market)",
-            "Chiesa del Carmine",
-            "Casa Professa",
-            "Palazzo Conte Federico",
-            "San Giovanni degli Eremiti",
-            "Palazzo Reale",
-            "Cattedrale",
-            "Palazzo Asmundo",
-            "Palazzo Riso",
-            "San Giuseppe dei Teatini"
+            { name: "Ballarò (market)", image: "images/attractions/ballaro.jpg" },
+            { name: "Chiesa del Carmine", image: "images/attractions/chiesa_carmine.jpg" },
+            { name: "Casa Professa", image: "images/attractions/casa_professa.jpg" },
+            { name: "Palazzo Conte Federico", image: "images/attractions/palazzo_federico.jpg" },
+            { name: "San Giovanni degli Eremiti", image: "images/attractions/san_giovanni_eremiti.jpg" },
+            { name: "Palazzo Reale", image: "images/attractions/palazzo_reale.jpg" },
+            { name: "Cattedrale", image: "images/attractions/cattedrale.jpg" },
+            { name: "Palazzo Asmundo", image: "images/attractions/palazzo_asmundo.jpg" },
+            { name: "Palazzo Riso", image: "images/attractions/palazzo_riso.jpg" },
+            { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            "Teatro Massimo",
-            "Chiesa dell'Immacolata Concezione",
-            "Mercato del Capo",
-            "Porta Carini",
-            "Chiesa del Gesù (Casa Professa)",
-            "Oratorio di San Lorenzo",
-            "Quattro Canti",
-            "Fontana Pretoria",
-            "Chiesa di San Cataldo",
-            "Palazzo dei Normanni"
+            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
+            { name: "Mercato del Capo", image: "images/attractions/mercato_capo.jpg" },
+            { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
+            { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
+            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Quattro Canti", image: "images/attractions/quattro_canti.jpg" },
+            { name: "Fontana Pretoria", image: "images/attractions/fontana_pretoria.jpg" },
+            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" },
+            { name: "Palazzo dei Normanni", image: "images/attractions/palazzo_normanni.jpg" }
         ],
         kalsaAttractions: [
-            "Piazza Marina",
-            "Palazzo Steri",
-            "Giardino Garibaldi",
-            "Orto Botanico",
-            "Porta Felice",
-            "Foro Italico",
-            "Castello a Mare",
-            "Chiesa della Catena",
-            "Palazzo Abatellis",
-            "Galleria Regionale della Sicilia"
+            { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
+            { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
+            { name: "Giardino Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Orto Botanico", image: "images/attractions/orto_botanico.jpg" },
+            { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
+            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
+            { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
+            { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
+            { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
+            { name: "Galleria Regionale della Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            "Mercato della Vucciria",
-            "Chiesa di San Domenico",
-            "Piazza San Domenico",
-            "Via Roma",
-            "Palazzo Mazzarino",
-            "La Cala",
-            "Chiesa di Santa Maria La Nova",
-            "Osteria dei Vespri",
-            "Museo Salinas",
-            "Porta Nuova"
+            { name: "Mercato della Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Piazza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
+            { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
+            { name: "La Cala", image: "images/attractions/la_cala.jpg" },
+            { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
+            { name: "Museo Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
         // Print QR code texts
@@ -109,52 +109,52 @@ const translations = {
         
         // Quarter-specific attractions
         albergheriaAttractions: [
-            "Ballarò (mercato)",
-            "Chiesa del Carmine",
-            "Casa Professa",
-            "Palazzo Conte Federico",
-            "San Giovanni degli Eremiti",
-            "Palazzo Reale",
-            "Cattedrale",
-            "Palazzo Asmundo",
-            "Palazzo Riso",
-            "San Giuseppe dei Teatini"
+            { name: "Ballarò (mercato)", image: "images/attractions/ballaro.jpg" },
+            { name: "Chiesa del Carmine", image: "images/attractions/chiesa_carmine.jpg" },
+            { name: "Casa Professa", image: "images/attractions/casa_professa.jpg" },
+            { name: "Palazzo Conte Federico", image: "images/attractions/palazzo_federico.jpg" },
+            { name: "San Giovanni degli Eremiti", image: "images/attractions/san_giovanni_eremiti.jpg" },
+            { name: "Palazzo Reale", image: "images/attractions/palazzo_reale.jpg" },
+            { name: "Cattedrale", image: "images/attractions/cattedrale.jpg" },
+            { name: "Palazzo Asmundo", image: "images/attractions/palazzo_asmundo.jpg" },
+            { name: "Palazzo Riso", image: "images/attractions/palazzo_riso.jpg" },
+            { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            "Teatro Massimo",
-            "Chiesa dell'Immacolata Concezione",
-            "Mercato del Capo",
-            "Porta Carini",
-            "Chiesa del Gesù (Casa Professa)",
-            "Oratorio di San Lorenzo",
-            "Quattro Canti",
-            "Fontana Pretoria",
-            "Chiesa di San Cataldo",
-            "Palazzo dei Normanni"
+            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
+            { name: "Mercato del Capo", image: "images/attractions/mercato_capo.jpg" },
+            { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
+            { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
+            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Quattro Canti", image: "images/attractions/quattro_canti.jpg" },
+            { name: "Fontana Pretoria", image: "images/attractions/fontana_pretoria.jpg" },
+            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" },
+            { name: "Palazzo dei Normanni", image: "images/attractions/palazzo_normanni.jpg" }
         ],
         kalsaAttractions: [
-            "Piazza Marina",
-            "Palazzo Steri",
-            "Giardino Garibaldi",
-            "Orto Botanico",
-            "Porta Felice",
-            "Foro Italico",
-            "Castello a Mare",
-            "Chiesa della Catena",
-            "Palazzo Abatellis",
-            "Galleria Regionale della Sicilia"
+            { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
+            { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
+            { name: "Giardino Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Orto Botanico", image: "images/attractions/orto_botanico.jpg" },
+            { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
+            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
+            { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
+            { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
+            { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
+            { name: "Galleria Regionale della Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            "Mercato della Vucciria",
-            "Chiesa di San Domenico",
-            "Piazza San Domenico",
-            "Via Roma",
-            "Palazzo Mazzarino",
-            "La Cala",
-            "Chiesa di Santa Maria La Nova",
-            "Osteria dei Vespri",
-            "Museo Salinas",
-            "Porta Nuova"
+            { name: "Mercato della Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Piazza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
+            { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
+            { name: "La Cala", image: "images/attractions/la_cala.jpg" },
+            { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
+            { name: "Museo Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
         // Print QR code texts
@@ -190,52 +190,52 @@ const translations = {
         
         // Quarter-specific attractions
         albergheriaAttractions: [
-            "Ballarò (marché)",
-            "Chiesa del Carmine",
-            "Casa Professa",
-            "Palazzo Conte Federico",
-            "San Giovanni degli Eremiti",
-            "Palazzo Reale",
-            "Cathédrale",
-            "Palazzo Asmundo",
-            "Palazzo Riso",
-            "San Giuseppe dei Teatini"
+            { name: "Ballarò (marché)", image: "images/attractions/ballaro.jpg" },
+            { name: "Chiesa del Carmine", image: "images/attractions/chiesa_carmine.jpg" },
+            { name: "Casa Professa", image: "images/attractions/casa_professa.jpg" },
+            { name: "Palazzo Conte Federico", image: "images/attractions/palazzo_federico.jpg" },
+            { name: "San Giovanni degli Eremiti", image: "images/attractions/san_giovanni_eremiti.jpg" },
+            { name: "Palazzo Reale", image: "images/attractions/palazzo_reale.jpg" },
+            { name: "Cathédrale", image: "images/attractions/cattedrale.jpg" },
+            { name: "Palazzo Asmundo", image: "images/attractions/palazzo_asmundo.jpg" },
+            { name: "Palazzo Riso", image: "images/attractions/palazzo_riso.jpg" },
+            { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            "Teatro Massimo",
-            "Chiesa dell'Immacolata Concezione",
-            "Marché du Capo",
-            "Porta Carini",
-            "Chiesa del Gesù (Casa Professa)",
-            "Oratorio di San Lorenzo",
-            "Quattro Canti",
-            "Fontana Pretoria",
-            "Chiesa di San Cataldo",
-            "Palazzo dei Normanni"
+            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
+            { name: "Marché du Capo", image: "images/attractions/mercato_capo.jpg" },
+            { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
+            { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
+            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Quattro Canti", image: "images/attractions/quattro_canti.jpg" },
+            { name: "Fontana Pretoria", image: "images/attractions/fontana_pretoria.jpg" },
+            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" },
+            { name: "Palazzo dei Normanni", image: "images/attractions/palazzo_normanni.jpg" }
         ],
         kalsaAttractions: [
-            "Piazza Marina",
-            "Palazzo Steri",
-            "Jardin Garibaldi",
-            "Jardin Botanique",
-            "Porta Felice",
-            "Foro Italico",
-            "Castello a Mare",
-            "Chiesa della Catena",
-            "Palazzo Abatellis",
-            "Galerie Régionale de Sicile"
+            { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
+            { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
+            { name: "Jardin Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Jardin Botanique", image: "images/attractions/orto_botanico.jpg" },
+            { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
+            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
+            { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
+            { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
+            { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
+            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            "Marché de la Vucciria",
-            "Église de San Domenico",
-            "Place San Domenico",
-            "Via Roma",
-            "Palazzo Mazzarino",
-            "La Cala",
-            "Église de Santa Maria La Nova",
-            "Osteria dei Vespri",
-            "Musée Salinas",
-            "Porta Nuova"
+            { name: "Marché de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Église de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Place San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
+            { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
+            { name: "La Cala", image: "images/attractions/la_cala.jpg" },
+            { name: "Église de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
+            { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
         // Print QR code texts
@@ -271,52 +271,52 @@ const translations = {
         
         // Quarter-specific attractions
         albergheriaAttractions: [
-            "Ballarò (mercado)",
-            "Chiesa del Carmine",
-            "Casa Professa",
-            "Palazzo Conte Federico",
-            "San Giovanni degli Eremiti",
-            "Palazzo Reale",
-            "Catedral",
-            "Palazzo Asmundo",
-            "Palazzo Riso",
-            "San Giuseppe dei Teatini"
+            { name: "Ballarò (mercado)", image: "images/attractions/ballaro.jpg" },
+            { name: "Chiesa del Carmine", image: "images/attractions/chiesa_carmine.jpg" },
+            { name: "Casa Professa", image: "images/attractions/casa_professa.jpg" },
+            { name: "Palazzo Conte Federico", image: "images/attractions/palazzo_federico.jpg" },
+            { name: "San Giovanni degli Eremiti", image: "images/attractions/san_giovanni_eremiti.jpg" },
+            { name: "Palazzo Reale", image: "images/attractions/palazzo_reale.jpg" },
+            { name: "Catedral", image: "images/attractions/cattedrale.jpg" },
+            { name: "Palazzo Asmundo", image: "images/attractions/palazzo_asmundo.jpg" },
+            { name: "Palazzo Riso", image: "images/attractions/palazzo_riso.jpg" },
+            { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            "Teatro Massimo",
-            "Chiesa dell'Immacolata Concezione",
-            "Mercado del Capo",
-            "Porta Carini",
-            "Chiesa del Gesù (Casa Professa)",
-            "Oratorio di San Lorenzo",
-            "Quattro Canti",
-            "Fontana Pretoria",
-            "Chiesa di San Cataldo",
-            "Palazzo dei Normanni"
+            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
+            { name: "Mercado del Capo", image: "images/attractions/mercato_capo.jpg" },
+            { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
+            { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
+            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Quattro Canti", image: "images/attractions/quattro_canti.jpg" },
+            { name: "Fontana Pretoria", image: "images/attractions/fontana_pretoria.jpg" },
+            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" },
+            { name: "Palazzo dei Normanni", image: "images/attractions/palazzo_normanni.jpg" }
         ],
         kalsaAttractions: [
-            "Piazza Marina",
-            "Palazzo Steri",
-            "Jardín Garibaldi",
-            "Jardín Botánico",
-            "Porta Felice",
-            "Foro Italico",
-            "Castello a Mare",
-            "Chiesa della Catena",
-            "Palazzo Abatellis",
-            "Galería Regional de Sicilia"
+            { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
+            { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
+            { name: "Jardín Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Jardín Botánico", image: "images/attractions/orto_botanico.jpg" },
+            { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
+            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
+            { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
+            { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
+            { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
+            { name: "Galería Regional de Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            "Mercado de la Vucciria",
-            "Iglesia de San Domenico",
-            "Plaza San Domenico",
-            "Via Roma",
-            "Palazzo Mazzarino",
-            "La Cala",
-            "Iglesia de Santa Maria La Nova",
-            "Osteria dei Vespri",
-            "Museo Salinas",
-            "Porta Nuova"
+            { name: "Mercado de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Iglesia de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Plaza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
+            { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
+            { name: "La Cala", image: "images/attractions/la_cala.jpg" },
+            { name: "Iglesia de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
+            { name: "Museo Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
         // Print QR code texts
@@ -351,9 +351,9 @@ function updatePageLanguage(lang) {
         }
     });
     
-    // If attractions list exists, update it
-    const attractionsList = document.getElementById('attractions-list');
-    if (attractionsList) {
+    // If attractions grid exists, update it
+    const attractionsGrid = document.getElementById('attractions-grid');
+    if (attractionsGrid) {
         // Get current page
         const path = window.location.pathname;
         let quarter = '';
@@ -369,16 +369,37 @@ function updatePageLanguage(lang) {
         }
         
         if (quarter) {
-            // Clear current list
-            attractionsList.innerHTML = '';
+            // Clear current grid
+            attractionsGrid.innerHTML = '';
             
             // Add new items
             const attractions = getTranslation(quarter, lang);
             if (Array.isArray(attractions)) {
                 attractions.forEach(attraction => {
-                    const li = document.createElement('li');
-                    li.textContent = attraction;
-                    attractionsList.appendChild(li);
+                    const card = document.createElement('div');
+                    card.className = 'attraction-card';
+                    
+                    // Image with fallback
+                    const img = document.createElement('img');
+                    img.className = 'attraction-image';
+                    img.src = attraction.image;
+                    img.alt = attraction.name;
+                    img.onerror = function() {
+                        this.src = 'images/attractions/placeholder.jpg';
+                    };
+                    
+                    // Info section
+                    const info = document.createElement('div');
+                    info.className = 'attraction-info';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = attraction.name;
+                    
+                    info.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(info);
+                    
+                    attractionsGrid.appendChild(card);
                 });
             }
         }
