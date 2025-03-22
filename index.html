@@ -192,83 +192,39 @@
             }
         }
         
-        // Points of interest data
-        const pointsOfInterest = {
-            en: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "One of the largest opera houses in Europe, known for its impressive architecture.", lat: 38.1196, lng: 13.3593 },
-                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "A bustling historic market with fresh local produce, fish, and traditional foods.", lat: 38.1182, lng: 13.3562 },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Former royal palace of the Norman-Swabian dynasty, housing the Palatine Chapel.", lat: 38.1106, lng: 13.3529 },
-                { id: 4, quarter: "albergheria", name: "Ballarò Market", description: "The oldest market in Palermo, famous for its vibrant atmosphere and street food.", lat: 38.1137, lng: 13.3625 },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Renaissance palace housing the Regional Gallery of Sicily with important artworks.", lat: 38.1169, lng: 13.3692 },
-                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Historic botanical garden with a vast collection of exotic and native plants.", lat: 38.1131, lng: 13.3771 },
-                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Baroque church that is the second most important in Palermo after the Cathedral.", lat: 38.1191, lng: 13.3645 },
-                { id: 8, quarter: "loggia", name: "Vucciria Market", description: "Historic market that transforms from a food market by day to a nightlife hub in the evening.", lat: 38.1181, lng: 13.3614 }
-            ],
-            it: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Uno dei più grandi teatri d'opera in Europa, noto per la sua impressionante architettura.", lat: 38.1196, lng: 13.3593 },
-                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "Un vivace mercato storico con prodotti locali freschi, pesce e cibi tradizionali.", lat: 38.1182, lng: 13.3562 },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ex palazzo reale della dinastia normanno-sveva, che ospita la Cappella Palatina.", lat: 38.1106, lng: 13.3529 },
-                { id: 4, quarter: "albergheria", name: "Mercato di Ballarò", description: "Il mercato più antico di Palermo, famoso per la sua atmosfera vivace e lo street food.", lat: 38.1137, lng: 13.3625 },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palazzo rinascimentale che ospita la Galleria Regionale della Sicilia con importanti opere d'arte.", lat: 38.1169, lng: 13.3692 },
-                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Storico giardino botanico con una vasta collezione di piante esotiche e native.", lat: 38.1131, lng: 13.3771 },
-                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Chiesa barocca che è la seconda più importante di Palermo dopo la Cattedrale.", lat: 38.1191, lng: 13.3645 },
-                { id: 8, quarter: "loggia", name: "Mercato della Vucciria", description: "Mercato storico che si trasforma da mercato alimentare di giorno a centro della vita notturna la sera.", lat: 38.1181, lng: 13.3614 }
-            ],
-            fr: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "L'un des plus grands opéras d'Europe, connu pour son architecture impressionnante.", lat: 38.1196, lng: 13.3593 },
-                { id: 2, quarter: "capo", name: "Marché du Capo", description: "Un marché historique animé avec des produits locaux frais, du poisson et des aliments traditionnels.", lat: 38.1182, lng: 13.3562 },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Ancien palais royal de la dynastie normando-souabe, abritant la Chapelle Palatine.", lat: 38.1106, lng: 13.3529 },
-                { id: 4, quarter: "albergheria", name: "Marché de Ballarò", description: "Le plus ancien marché de Palerme, célèbre pour son atmosphère vibrante et sa street food.", lat: 38.1137, lng: 13.3625 },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palais Renaissance abritant la Galerie Régionale de Sicile avec d'importantes œuvres d'art.", lat: 38.1169, lng: 13.3692 },
-                { id: 6, quarter: "kalsa", name: "Jardin Botanique", description: "Jardin botanique historique avec une vaste collection de plantes exotiques et indigènes.", lat: 38.1131, lng: 13.3771 },
-                { id: 7, quarter: "loggia", name: "Église de San Domenico", description: "Église baroque qui est la deuxième plus importante de Palerme après la Cathédrale.", lat: 38.1191, lng: 13.3645 },
-                { id: 8, quarter: "loggia", name: "Marché de la Vucciria", description: "Marché historique qui se transforme d'un marché alimentaire le jour à un centre de vie nocturne le soir.", lat: 38.1181, lng: 13.3614 }
-            ],
-            es: [
-                { id: 1, quarter: "capo", name: "Teatro Massimo", description: "Una de las casas de ópera más grandes de Europa, conocida por su impresionante arquitectura.", lat: 38.1196, lng: 13.3593 },
-                { id: 2, quarter: "capo", name: "Mercado del Capo", description: "Un bullicioso mercado histórico con productos locales frescos, pescado y comidas tradicionales.", lat: 38.1182, lng: 13.3562 },
-                { id: 3, quarter: "albergheria", name: "Palazzo Reale", description: "Antiguo palacio real de la dinastía normando-suaba, que alberga la Capilla Palatina.", lat: 38.1106, lng: 13.3529 },
-                { id: 4, quarter: "albergheria", name: "Mercado de Ballarò", description: "El mercado más antiguo de Palermo, famoso por su ambiente vibrante y comida callejera.", lat: 38.1137, lng: 13.3625 },
-                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palacio renacentista que alberga la Galería Regional de Sicilia con importantes obras de arte.", lat: 38.1169, lng: 13.3692 },
-                { id: 6, quarter: "kalsa", name: "Jardín Botánico", description: "Jardín botánico histórico con una vasta colección de plantas exóticas y nativas.", lat: 38.1131, lng: 13.3771 },
-                { id: 7, quarter: "loggia", name: "Iglesia de San Domenico", description: "Iglesia barroca que es la segunda más importante de Palermo después de la Catedral.", lat: 38.1191, lng: 13.3645 },
-                { id: 8, quarter: "loggia", name: "Mercado de la Vucciria", description: "Mercado histórico que se transforma de un mercado de alimentos durante el día a un centro de vida nocturna por la noche.", lat: 38.1181, lng: 13.3614 }
-            ]
-        };
-        
         // Quarters boundaries (approximate polygon coordinates)
         const quarterBoundaries = {
             capo: [
-                [38.1210, 13.3550],
-                [38.1190, 13.3510],
-                [38.1155, 13.3530],
-                [38.1170, 13.3580],
-                [38.1200, 13.3580]
+                [38.1196, 13.3541],
+                [38.1177, 13.3509],
+                [38.1142, 13.3528],
+                [38.1142, 13.3588],
+                [38.1178, 13.3596]
             ],
             albergheria: [
-                [38.1155, 13.3530],
-                [38.1115, 13.3515],
-                [38.1095, 13.3550],
-                [38.1110, 13.3630],
-                [38.1145, 13.3640],
-                [38.1170, 13.3580]
+                [38.1142, 13.3528],
+                [38.1098, 13.3524],
+                [38.1078, 13.3561],
+                [38.1101, 13.3632],
+                [38.1142, 13.3588]
             ],
             kalsa: [
-                [38.1170, 13.3580],
-                [38.1145, 13.3640],
-                [38.1155, 13.3690],
-                [38.1125, 13.3730],
-                [38.1140, 13.3780],
-                [38.1180, 13.3730],
-                [38.1190, 13.3620]
+                [38.1142, 13.3588],
+                [38.1101, 13.3632],
+                [38.1115, 13.3694],
+                [38.1154, 13.3733],
+                [38.1172, 13.3664],
+                [38.1171, 13.3596],
+                [38.1160, 13.3596]
             ],
             loggia: [
-                [38.1200, 13.3580],
-                [38.1170, 13.3580],
-                [38.1190, 13.3620],
-                [38.1180, 13.3730],
-                [38.1210, 13.3670],
-                [38.1220, 13.3610]
+                [38.1178, 13.3596],
+                [38.1160, 13.3596],
+                [38.1171, 13.3596],
+                [38.1172, 13.3664],
+                [38.1191, 13.3654],
+                [38.1207, 13.3619],
+                [38.1198, 13.3582]
             ]
         };
         
@@ -278,6 +234,50 @@
             albergheria: '#2ecc71',
             kalsa: '#f39c12',
             loggia: '#9b59b6'
+        };
+        
+        // Points of interest data
+        const pointsOfInterest = {
+            en: [
+                { id: 1, quarter: "loggia", name: "Teatro Massimo", description: "One of the largest opera houses in Europe, known for its impressive architecture.", lat: 38.1197, lng: 13.3594 },
+                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "A bustling historic market with fresh local produce, fish, and traditional foods.", lat: 38.1175, lng: 13.3553 },
+                { id: 3, quarter: "albergheria", name: "Ballarò Market", description: "The oldest market in Palermo, famous for its vibrant atmosphere and street food.", lat: 38.1112, lng: 13.3599 },
+                { id: 4, quarter: "albergheria", name: "Palazzo Reale", description: "Former royal palace of the Norman-Swabian dynasty, housing the Palatine Chapel.", lat: 38.1109, lng: 13.3529 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Renaissance palace housing the Regional Gallery of Sicily with important artworks.", lat: 38.1154, lng: 13.3672 },
+                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Historic botanical garden with a vast collection of exotic and native plants.", lat: 38.1131, lng: 13.3766 },
+                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Baroque church that is the second most important in Palermo after the Cathedral.", lat: 38.1195, lng: 13.3641 },
+                { id: 8, quarter: "loggia", name: "Vucciria Market", description: "Historic market that transforms from a food market by day to a nightlife hub in the evening.", lat: 38.1183, lng: 13.3616 }
+            ],
+            it: [
+                { id: 1, quarter: "loggia", name: "Teatro Massimo", description: "Uno dei più grandi teatri d'opera in Europa, noto per la sua impressionante architettura.", lat: 38.1197, lng: 13.3594 },
+                { id: 2, quarter: "capo", name: "Mercato del Capo", description: "Un vivace mercato storico con prodotti locali freschi, pesce e cibi tradizionali.", lat: 38.1175, lng: 13.3553 },
+                { id: 3, quarter: "albergheria", name: "Mercato di Ballarò", description: "Il mercato più antico di Palermo, famoso per la sua atmosfera vivace e lo street food.", lat: 38.1112, lng: 13.3599 },
+                { id: 4, quarter: "albergheria", name: "Palazzo Reale", description: "Ex palazzo reale della dinastia normanno-sveva, che ospita la Cappella Palatina.", lat: 38.1109, lng: 13.3529 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palazzo rinascimentale che ospita la Galleria Regionale della Sicilia con importanti opere d'arte.", lat: 38.1154, lng: 13.3672 },
+                { id: 6, quarter: "kalsa", name: "Orto Botanico", description: "Storico giardino botanico con una vasta collezione di piante esotiche e native.", lat: 38.1131, lng: 13.3766 },
+                { id: 7, quarter: "loggia", name: "Chiesa di San Domenico", description: "Chiesa barocca che è la seconda più importante di Palermo dopo la Cattedrale.", lat: 38.1195, lng: 13.3641 },
+                { id: 8, quarter: "loggia", name: "Mercato della Vucciria", description: "Mercato storico che si trasforma da mercato alimentare di giorno a centro della vita notturna la sera.", lat: 38.1183, lng: 13.3616 }
+            ],
+            fr: [
+                { id: 1, quarter: "loggia", name: "Teatro Massimo", description: "L'un des plus grands opéras d'Europe, connu pour son architecture impressionnante.", lat: 38.1197, lng: 13.3594 },
+                { id: 2, quarter: "capo", name: "Marché du Capo", description: "Un marché historique animé avec des produits locaux frais, du poisson et des aliments traditionnels.", lat: 38.1175, lng: 13.3553 },
+                { id: 3, quarter: "albergheria", name: "Marché de Ballarò", description: "Le plus ancien marché de Palerme, célèbre pour son atmosphère vibrante et sa street food.", lat: 38.1112, lng: 13.3599 },
+                { id: 4, quarter: "albergheria", name: "Palazzo Reale", description: "Ancien palais royal de la dynastie normando-souabe, abritant la Chapelle Palatine.", lat: 38.1109, lng: 13.3529 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palais Renaissance abritant la Galerie Régionale de Sicile avec d'importantes œuvres d'art.", lat: 38.1154, lng: 13.3672 },
+                { id: 6, quarter: "kalsa", name: "Jardin Botanique", description: "Jardin botanique historique avec une vaste collection de plantes exotiques et indigènes.", lat: 38.1131, lng: 13.3766 },
+                { id: 7, quarter: "loggia", name: "Église de San Domenico", description: "Église baroque qui est la deuxième plus importante de Palerme après la Cathédrale.", lat: 38.1195, lng: 13.3641 },
+                { id: 8, quarter: "loggia", name: "Marché de la Vucciria", description: "Marché historique qui se transforme d'un marché alimentaire le jour à un centre de vie nocturne le soir.", lat: 38.1183, lng: 13.3616 }
+            ],
+            es: [
+                { id: 1, quarter: "loggia", name: "Teatro Massimo", description: "Una de las casas de ópera más grandes de Europa, conocida por su impresionante arquitectura.", lat: 38.1197, lng: 13.3594 },
+                { id: 2, quarter: "capo", name: "Mercado del Capo", description: "Un bullicioso mercado histórico con productos locales frescos, pescado y comidas tradicionales.", lat: 38.1175, lng: 13.3553 },
+                { id: 3, quarter: "albergheria", name: "Mercado de Ballarò", description: "El mercado más antiguo de Palermo, famoso por su ambiente vibrante y comida callejera.", lat: 38.1112, lng: 13.3599 },
+                { id: 4, quarter: "albergheria", name: "Palazzo Reale", description: "Antiguo palacio real de la dinastía normando-suaba, que alberga la Capilla Palatina.", lat: 38.1109, lng: 13.3529 },
+                { id: 5, quarter: "kalsa", name: "Palazzo Abatellis", description: "Palacio renacentista que alberga la Galería Regional de Sicilia con importantes obras de arte.", lat: 38.1154, lng: 13.3672 },
+                { id: 6, quarter: "kalsa", name: "Jardín Botánico", description: "Jardín botánico histórico con una vasta colección de plantas exóticas y nativas.", lat: 38.1131, lng: 13.3766 },
+                { id: 7, quarter: "loggia", name: "Iglesia de San Domenico", description: "Iglesia barroca que es la segunda más importante de Palermo después de la Catedral.", lat: 38.1195, lng: 13.3641 },
+                { id: 8, quarter: "loggia", name: "Mercado de la Vucciria", description: "Mercado histórico que se transforma de un mercado de alimentos durante el día a un centro de vida nocturna por la noche.", lat: 38.1183, lng: 13.3616 }
+            ]
         };
         
         // Setup interactive map
