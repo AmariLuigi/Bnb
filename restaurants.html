@@ -38,6 +38,7 @@
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
+            height: 450px; /* Fixed height for consistent card sizing */
         }
         
         .restaurant-card:hover {
@@ -48,16 +49,21 @@
         .restaurant-image {
             height: 200px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f8f8;
         }
         
-        .restaurant-image img {
+        .restaurant-image img, .restaurant-image svg {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .restaurant-card:hover .restaurant-image img {
+        .restaurant-card:hover .restaurant-image img, 
+        .restaurant-card:hover .restaurant-image svg {
             transform: scale(1.05);
         }
         
@@ -66,6 +72,7 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         
         .restaurant-details h3 {
@@ -79,6 +86,22 @@
             color: #666;
             margin-bottom: 15px;
             line-height: 1.5;
+        }
+        
+        .truncated-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .see-more-btn {
+            color: #3498db;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 5px;
+            display: inline-block;
         }
         
         .restaurant-meta {
@@ -131,6 +154,10 @@
             .attractions-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .restaurant-card {
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -173,6 +200,20 @@
             // Force restaurants to load
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             updatePageLanguage(savedLang);
+            
+            // Add event listener for "See more" buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('see-more-btn')) {
+                    const textElement = e.target.previousElementSibling;
+                    if (textElement.classList.contains('truncated-text')) {
+                        textElement.classList.remove('truncated-text');
+                        e.target.textContent = 'See less';
+                    } else {
+                        textElement.classList.add('truncated-text');
+                        e.target.textContent = 'See more';
+                    }
+                }
+            });
         });
         
         function createRestaurantCard(restaurant) {
@@ -183,11 +224,30 @@
             const imageContainer = document.createElement('div');
             imageContainer.className = 'restaurant-image';
             
-            // Image element
-            const image = document.createElement('img');
-            // Always use placeholder SVG for now
-            image.src = 'images/attractions/placeholder.jpg';
-            image.alt = restaurant.name;
+            // Generate placeholder SVG if no image
+            const imageContent = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            imageContent.setAttribute('width', '100%');
+            imageContent.setAttribute('height', '100%');
+            imageContent.setAttribute('viewBox', '0 0 100 100');
+            imageContent.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+            
+            const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            bg.setAttribute('width', '100');
+            bg.setAttribute('height', '100');
+            bg.setAttribute('fill', '#f0743e');
+            
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', '50');
+            text.setAttribute('y', '50');
+            text.setAttribute('font-family', 'Arial');
+            text.setAttribute('font-size', '14');
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('dominant-baseline', 'middle');
+            text.setAttribute('fill', 'white');
+            text.textContent = restaurant.name.substring(0, 1).toUpperCase();
+            
+            imageContent.appendChild(bg);
+            imageContent.appendChild(text);
             
             // Restaurant details
             const detailsContainer = document.createElement('div');
@@ -197,21 +257,15 @@
             const name = document.createElement('h3');
             name.textContent = restaurant.name;
             
-            // Restaurant description
+            // Restaurant description with truncation
             const description = document.createElement('p');
+            description.className = 'truncated-text';
             description.textContent = restaurant.description;
             
-            // Restaurant meta information
-            const metaContainer = document.createElement('div');
-            metaContainer.className = 'restaurant-meta';
-            
-            // Add price range
-            const priceRange = document.createElement('span');
-            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange}`;
-            
-            // Add cuisine type
-            const cuisine = document.createElement('span');
-            cuisine.textContent = restaurant.cuisine;
+            // See more button
+            const seeMoreBtn = document.createElement('span');
+            seeMoreBtn.className = 'see-more-btn';
+            seeMoreBtn.textContent = 'See more';
             
             // Add address
             const address = document.createElement('p');
@@ -225,8 +279,20 @@
                 referent.innerHTML = `<i class="referent-icon">👤</i> ${getTranslation('referent', localStorage.getItem('preferred_language') || 'en')}: ${restaurant.referent}`;
             }
             
+            // Restaurant meta information
+            const metaContainer = document.createElement('div');
+            metaContainer.className = 'restaurant-meta';
+            
+            // Add price range
+            const priceRange = document.createElement('span');
+            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange}`;
+            
+            // Add cuisine type
+            const cuisine = document.createElement('span');
+            cuisine.textContent = restaurant.cuisine;
+            
             // Append all elements
-            imageContainer.appendChild(image);
+            imageContainer.appendChild(imageContent);
             restaurantCard.appendChild(imageContainer);
             
             metaContainer.appendChild(priceRange);
@@ -234,6 +300,7 @@
             
             detailsContainer.appendChild(name);
             detailsContainer.appendChild(description);
+            detailsContainer.appendChild(seeMoreBtn);
             detailsContainer.appendChild(address);
             detailsContainer.appendChild(referent);
             detailsContainer.appendChild(metaContainer);
