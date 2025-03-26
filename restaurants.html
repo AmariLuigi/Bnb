@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants - Sant'Agostino BnB Palermo Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .language-selector select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .restaurant-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .restaurant-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .restaurant-card:hover .restaurant-image img {
+            transform: scale(1.05);
+        }
+        
+        .restaurant-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .restaurant-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+        
+        .restaurant-details p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .restaurant-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .restaurant-meta span {
+            display: flex;
+            align-items: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .restaurant-meta i {
+            margin-right: 5px;
+            color: #f0743e;
+        }
+        
+        .restaurant-address, .restaurant-referent {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .restaurant-address i, .restaurant-referent i {
+            margin-right: 8px;
+            color: #f0743e;
+        }
+        
+        .restaurants-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #2874a6;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid #f0743e;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) {
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="page-bg">
+    <div class="language-selector">
+        <label for="language-selector" data-i18n="language">Language</label>
+        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 data-i18n="restaurants">Restaurants</h1>
+            <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
+        </header>
+        
+        <div class="quarter-content">
+            <div class="attractions">
+                <h2 data-i18n="recommendedRestaurants">Recommended Restaurants</h2>
+                <div class="settings-panel">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="dynamic-images-toggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Use dynamic images</span>
+                    </label>
+                </div>
+                <div id="restaurants-grid" class="attractions-grid">
+                    <!-- Restaurants will be loaded dynamically by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
+        </footer>
+    </div>
+    
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Ensure restaurants are initialized on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize toggle based on localStorage
+            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
+            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
+            
+            // Add event listener for toggle
+            dynamicImagesToggle.addEventListener('change', function() {
+                localStorage.setItem('use_dynamic_images', this.checked);
+                // Reload restaurants with new setting
+                const savedLang = localStorage.getItem('preferred_language') || 'en';
+                updatePageLanguage(savedLang);
+            });
+            
+            // Force restaurants to load
+            const savedLang = localStorage.getItem('preferred_language') || 'en';
+            updatePageLanguage(savedLang);
+        });
+        
+        function createRestaurantCard(restaurant, useDynamicImages = false) {
+            const restaurantCard = document.createElement('div');
+            restaurantCard.className = 'restaurant-card';
+            
+            // Image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'restaurant-image';
+            
+            // Image element
+            const image = document.createElement('img');
+            if (useDynamicImages) {
+                // Use dynamic image search function if toggle is enabled
+                searchAttractionImage(restaurant.name + " restaurant Palermo")
+                    .then(imageUrl => {
+                        if (imageUrl) {
+                            image.src = imageUrl;
+                        } else {
+                            image.src = restaurant.image || 'images/attractions/placeholder.jpg';
+                        }
+                    });
+            } else {
+                image.src = restaurant.image || 'images/attractions/placeholder.jpg';
+            }
+            image.alt = restaurant.name;
+            image.onerror = function() {
+                this.src = 'images/attractions/placeholder.jpg';
+            };
+            
+            // Restaurant details
+            const detailsContainer = document.createElement('div');
+            detailsContainer.className = 'restaurant-details';
+            
+            // Restaurant name
+            const name = document.createElement('h3');
+            name.textContent = restaurant.name;
+            
+            // Restaurant description
+            const description = document.createElement('p');
+            description.textContent = restaurant.description;
+            
+            // Restaurant meta information
+            const metaContainer = document.createElement('div');
+            metaContainer.className = 'restaurant-meta';
+            
+            // Add price range
+            const priceRange = document.createElement('span');
+            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange}`;
+            
+            // Add cuisine type
+            const cuisine = document.createElement('span');
+            cuisine.textContent = restaurant.cuisine;
+            
+            // Add address
+            const address = document.createElement('p');
+            address.className = 'restaurant-address';
+            address.innerHTML = `<i class="address-icon">📍</i> ${restaurant.address}`;
+            
+            // Add referent info if available
+            const referent = document.createElement('p');
+            referent.className = 'restaurant-referent';
+            if (restaurant.referent) {
+                referent.innerHTML = `<i class="referent-icon">👤</i> ${getTranslation('referent', localStorage.getItem('preferred_language') || 'en')}: ${restaurant.referent}`;
+            }
+            
+            // Append all elements
+            imageContainer.appendChild(image);
+            restaurantCard.appendChild(imageContainer);
+            
+            metaContainer.appendChild(priceRange);
+            metaContainer.appendChild(cuisine);
+            
+            detailsContainer.appendChild(name);
+            detailsContainer.appendChild(description);
+            detailsContainer.appendChild(address);
+            detailsContainer.appendChild(referent);
+            detailsContainer.appendChild(metaContainer);
+            
+            restaurantCard.appendChild(detailsContainer);
+            
+            return restaurantCard;
+        }
+        
+        // Override the updatePageLanguage function to handle restaurant content
+        function updatePageLanguage(lang) {
+            // Set the selected language
+            const langSelector = document.getElementById('language-selector');
+            if (langSelector) {
+                langSelector.value = lang;
+            }
+            
+            // Store preferred language
+            localStorage.setItem('preferred_language', lang);
+            
+            // Update all data-i18n elements
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = getTranslation(key, lang);
+            });
+            
+            // Get restaurant data for the selected language
+            const restaurantsData = getTranslation('restaurantsData', lang);
+            
+            // Clear previous content
+            const restaurantsContainer = document.querySelector('.attractions');
+            const existingGrids = restaurantsContainer.querySelectorAll('.restaurants-section');
+            existingGrids.forEach(grid => grid.remove());
+            
+            // Create lunch section
+            const lunchSection = document.createElement('div');
+            lunchSection.className = 'restaurants-section';
+            
+            const lunchTitle = document.createElement('h3');
+            lunchTitle.className = 'section-title';
+            lunchTitle.setAttribute('data-i18n', 'lunchRestaurants');
+            lunchTitle.textContent = getTranslation('lunchRestaurants', lang);
+            
+            const lunchGrid = document.createElement('div');
+            lunchGrid.id = 'lunch-restaurants-grid';
+            lunchGrid.className = 'attractions-grid';
+            
+            lunchSection.appendChild(lunchTitle);
+            lunchSection.appendChild(lunchGrid);
+            
+            // Create dinner section
+            const dinnerSection = document.createElement('div');
+            dinnerSection.className = 'restaurants-section';
+            
+            const dinnerTitle = document.createElement('h3');
+            dinnerTitle.className = 'section-title';
+            dinnerTitle.setAttribute('data-i18n', 'dinnerRestaurants');
+            dinnerTitle.textContent = getTranslation('dinnerRestaurants', lang);
+            
+            const dinnerGrid = document.createElement('div');
+            dinnerGrid.id = 'dinner-restaurants-grid';
+            dinnerGrid.className = 'attractions-grid';
+            
+            dinnerSection.appendChild(dinnerTitle);
+            dinnerSection.appendChild(dinnerGrid);
+            
+            // Add sections to the container
+            const toggleContainer = document.querySelector('.settings-panel');
+            restaurantsContainer.insertBefore(lunchSection, toggleContainer.nextSibling);
+            restaurantsContainer.insertBefore(dinnerSection, lunchSection.nextSibling);
+            
+            // Populate each section
+            const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
+            
+            // Filter and add lunch restaurants
+            const lunchRestaurants = restaurantsData.filter(restaurant => 
+                restaurant.type === 'Lunch' || restaurant.type === 'Pranzo'
+            );
+            
+            lunchRestaurants.forEach(restaurant => {
+                const card = createRestaurantCard(restaurant, useDynamicImages);
+                lunchGrid.appendChild(card);
+            });
+            
+            // Filter and add dinner restaurants
+            const dinnerRestaurants = restaurantsData.filter(restaurant => 
+                restaurant.type === 'Dinner' || restaurant.type === 'Cena'
+            );
+            
+            dinnerRestaurants.forEach(restaurant => {
+                const card = createRestaurantCard(restaurant, useDynamicImages);
+                dinnerGrid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html> 

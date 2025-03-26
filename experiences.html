@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&B Experiences - Sant'Agostino BnB Palermo Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .language-selector select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .experience-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .experience-card:hover .experience-image img {
+            transform: scale(1.05);
+        }
+        
+        .experience-details {
+            padding: 25px;
+        }
+        
+        .experience-details h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.6rem;
+        }
+        
+        .experience-details p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .experience-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .experience-meta span {
+            display: flex;
+            align-items: center;
+            color: #777;
+        }
+        
+        .experience-meta i {
+            margin-right: 8px;
+            color: #f0743e;
+        }
+        
+        .book-btn {
+            display: inline-block;
+            background-color: #f0743e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .book-btn:hover {
+            background-color: #e26633;
+        }
+        
+        .experience-note {
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #f0743e;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .experience-note i {
+            margin-right: 8px;
+            color: #f0743e;
+        }
+    </style>
+</head>
+<body class="page-bg">
+    <div class="language-selector">
+        <label for="language-selector" data-i18n="language">Language</label>
+        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 data-i18n="experiences">B&B Experiences</h1>
+            <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
+        </header>
+        
+        <div class="quarter-content">
+            <div class="attractions">
+                <h2 data-i18n="localExperiences">Local Experiences</h2>
+                <p data-i18n="experiencesIntro">Discover authentic Sicilian experiences with our local partners</p>
+                <div class="settings-panel">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="dynamic-images-toggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Use dynamic images</span>
+                    </label>
+                </div>
+                <div id="experiences-grid" class="attractions-grid">
+                    <!-- Experiences will be loaded dynamically by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
+        </footer>
+    </div>
+    
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Ensure experiences are initialized on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize toggle based on localStorage
+            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
+            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
+            
+            // Add event listener for toggle
+            dynamicImagesToggle.addEventListener('change', function() {
+                localStorage.setItem('use_dynamic_images', this.checked);
+                // Reload experiences with new setting
+                const savedLang = localStorage.getItem('preferred_language') || 'en';
+                updatePageLanguage(savedLang);
+            });
+            
+            // Force experiences to load
+            const savedLang = localStorage.getItem('preferred_language') || 'en';
+            updatePageLanguage(savedLang);
+        });
+        
+        function createExperienceCard(experience, useDynamicImages = false) {
+            const experienceCard = document.createElement('div');
+            experienceCard.className = 'experience-card';
+            
+            // Image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'experience-image';
+            
+            // Image element
+            const image = document.createElement('img');
+            if (useDynamicImages) {
+                // Use dynamic image search function if toggle is enabled
+                searchAttractionImage(experience.name + " experience Palermo Sicily")
+                    .then(imageUrl => {
+                        if (imageUrl) {
+                            image.src = imageUrl;
+                        } else {
+                            image.src = experience.image || 'images/attractions/placeholder.jpg';
+                        }
+                    });
+            } else {
+                image.src = experience.image || 'images/attractions/placeholder.jpg';
+            }
+            image.alt = experience.name;
+            image.onerror = function() {
+                this.src = 'images/attractions/placeholder.jpg';
+            };
+            
+            // Experience details
+            const detailsContainer = document.createElement('div');
+            detailsContainer.className = 'experience-details';
+            
+            // Experience name
+            const name = document.createElement('h3');
+            name.textContent = experience.name;
+            
+            // Experience description
+            const description = document.createElement('p');
+            description.textContent = experience.description;
+            
+            // Experience note if available
+            let note = null;
+            if (experience.note) {
+                note = document.createElement('p');
+                note.className = 'experience-note';
+                note.innerHTML = `<i class="note-icon">ℹ️</i> ${experience.note}`;
+            }
+            
+            // Experience meta information
+            const metaContainer = document.createElement('div');
+            metaContainer.className = 'experience-meta';
+            
+            // Add duration
+            const duration = document.createElement('span');
+            duration.innerHTML = `<i class="duration-icon">⏱</i> ${experience.duration}`;
+            
+            // Add price
+            const price = document.createElement('span');
+            price.innerHTML = `<i class="price-icon">€</i> ${experience.price}`;
+            
+            // Book button
+            const bookButton = document.createElement('a');
+            bookButton.href = '#';
+            bookButton.className = 'book-btn';
+            bookButton.textContent = getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en');
+            bookButton.onclick = function(e) {
+                e.preventDefault();
+                alert(getTranslation('contactBnB', localStorage.getItem('preferred_language') || 'en'));
+            };
+            
+            // Append all elements
+            imageContainer.appendChild(image);
+            experienceCard.appendChild(imageContainer);
+            
+            metaContainer.appendChild(duration);
+            metaContainer.appendChild(price);
+            
+            detailsContainer.appendChild(name);
+            detailsContainer.appendChild(description);
+            if (note) {
+                detailsContainer.appendChild(note);
+            }
+            detailsContainer.appendChild(metaContainer);
+            detailsContainer.appendChild(bookButton);
+            
+            experienceCard.appendChild(detailsContainer);
+            
+            return experienceCard;
+        }
+        
+        // Override the updatePageLanguage function to handle experience content
+        function updatePageLanguage(lang) {
+            // Set the selected language
+            const langSelector = document.getElementById('language-selector');
+            if (langSelector) {
+                langSelector.value = lang;
+            }
+            
+            // Store preferred language
+            localStorage.setItem('preferred_language', lang);
+            
+            // Update all data-i18n elements
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = getTranslation(key, lang);
+            });
+            
+            // Get experiences data for the selected language
+            const experiencesData = getTranslation('experiencesData', lang);
+            
+            // Clear and repopulate the experiences grid
+            const experiencesGrid = document.getElementById('experiences-grid');
+            if (experiencesGrid) {
+                experiencesGrid.innerHTML = '';
+                
+                const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
+                
+                experiencesData.forEach(experience => {
+                    const card = createExperienceCard(experience, useDynamicImages);
+                    experiencesGrid.appendChild(card);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 
