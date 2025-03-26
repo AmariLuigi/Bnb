@@ -3,6 +3,8 @@ const translations = {
     en: {
         // Common elements
         title: "Sant'Agostino BnB - Palermo Map",
+        title_location: "Palermo",
+        title_map: "Map",
         explore: "Explore the four historic quarters of Palermo",
         back: "← Back to Map",
         placesToVisit: "Places to Visit",
@@ -256,6 +258,8 @@ const translations = {
     it: {
         // Common elements
         title: "Sant'Agostino BnB - Mappa di Palermo",
+        title_location: "Palermo",
+        title_map: "Mappa",
         explore: "Esplora i quattro quartieri storici di Palermo",
         back: "← Torna alla Mappa",
         placesToVisit: "Luoghi da Visitare",
@@ -509,6 +513,8 @@ const translations = {
     fr: {
         // Common elements
         title: "Sant'Agostino BnB - Carte de Palerme",
+        title_location: "Palerme",
+        title_map: "Carte",
         explore: "Explorez les quatre quartiers historiques de Palerme",
         back: "← Retour à la Carte",
         placesToVisit: "Lieux à Visiter",
@@ -762,6 +768,8 @@ const translations = {
     es: {
         // Common elements
         title: "Sant'Agostino BnB - Mapa de Palermo",
+        title_location: "Palermo",
+        title_map: "Mapa",
         explore: "Explora los cuatro barrios históricos de Palermo",
         back: "← Volver al Mapa",
         placesToVisit: "Lugares para Visitar",

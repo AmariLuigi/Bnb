@@ -120,8 +120,8 @@
         }
         
         .restaurant-meta i {
-            margin-right: 5px;
-            color: #f0743e;
+            margin-right: 8px;
+            color: rgb(185, 43, 19);
         }
         
         .restaurant-address, .restaurant-referent {
@@ -143,11 +143,30 @@
         
         .section-title {
             font-size: 1.8rem;
-            color: #2874a6;
+            color: #333;
             margin: 30px 0 20px;
-            border-bottom: 2px solid #f0743e;
+            border-bottom: 2px solid rgb(185, 43, 19);
             padding-bottom: 8px;
             display: inline-block;
+        }
+        
+        .section-title span {
+            color: rgb(185, 43, 19);
+        }
+        
+        .view-menu-btn {
+            display: inline-block;
+            background-color: rgb(185, 43, 19);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .view-menu-btn:hover {
+            background-color: rgb(155, 33, 9);
         }
         
         @media (max-width: 768px) {
@@ -174,7 +193,7 @@
 
     <div class="container">
         <header>
-            <h1 data-i18n="restaurants">Restaurants</h1>
+            <h1><span style="color: rgb(185, 43, 19);" data-i18n="restaurants">Restaurants</span></h1>
             <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
         </header>
         

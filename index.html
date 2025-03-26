@@ -149,7 +149,7 @@
         .quarter-card h2 {
             margin-top: 0;
             margin-bottom: 10px;
-            color: var(--main-color);
+            color: #333;
             font-size: 1.6rem;
             font-weight: 600;
             position: relative;
@@ -200,7 +200,7 @@
             text-align: center;
             margin-bottom: 40px;
             font-size: 2.5rem;
-            color: var(--main-color);
+            color: #333;
             position: relative;
             padding-bottom: 15px;
             font-weight: 600;
@@ -215,6 +215,10 @@
             width: 80px;
             height: 3px;
             background: var(--main-color);
+        }
+        
+        .section-title span {
+            color: var(--main-color);
         }
         
         .additional-grid {
@@ -243,10 +247,14 @@
         }
         
         .additional-card h3 {
-            color: var(--main-color);
+            color: #333;
             font-size: 1.8rem;
             margin-top: 0;
             margin-bottom: 15px;
+        }
+        
+        .additional-card h3 span {
+            color: var(--main-color);
         }
         
         .additional-card p {
@@ -321,7 +329,7 @@
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1 data-i18n="title">Sant'Agostino BnB - Palermo<br>Map</h1>
+            <h1><span style="color: white;">Sant'Agostino</span> <span style="color: var(--main-color);">B&B</span><span style="color: white;"> - </span><span style="color: white;" data-i18n="title_location">Palermo</span><br><span style="color: white;" data-i18n="title_map">Map</span></h1>
             <p data-i18n="explore">Explore the four historic quarters of Palermo</p>
         </div>
     </section>
@@ -381,17 +389,17 @@
             </div>
         </div>
         
-        <h2 class="section-title" data-i18n="additionalServices">Additional Services</h2>
+        <h2 class="section-title" data-i18n="additionalServices">Additional <span>Services</span></h2>
         
         <div class="additional-grid">
             <div class="additional-card">
-                <h3 data-i18n="restaurants">Restaurants</h3>
+                <h3 data-i18n="restaurants"><span>Restaurants</span></h3>
                 <p data-i18n="restaurantsDesc">Discover the best local restaurants and authentic Sicilian cuisine</p>
                 <a href="restaurants.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="restaurants">Restaurants</span></a>
             </div>
             
             <div class="additional-card">
-                <h3 data-i18n="experiences">B&B Experiences</h3>
+                <h3 data-i18n="experiences"><span>B&B</span> Experiences</h3>
                 <p data-i18n="experiencesDesc">Authentic local experiences offered by our B&B and partners</p>
                 <a href="experiences.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="experiences">Experiences</span></a>
             </div>
