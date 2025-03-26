@@ -97,7 +97,7 @@
         }
         
         .see-more-btn {
-            color: #3498db;
+            color: rgb(185, 43, 19);
             cursor: pointer;
             font-weight: 500;
             margin-top: 5px;
@@ -134,7 +134,7 @@
         
         .restaurant-address i, .restaurant-referent i {
             margin-right: 8px;
-            color: #f0743e;
+            color: rgb(185, 43, 19);
         }
         
         .restaurants-section {
@@ -167,6 +167,19 @@
         
         .view-menu-btn:hover {
             background-color: rgb(155, 33, 9);
+        }
+        
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .attractions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
@@ -253,7 +266,7 @@
             const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
             bg.setAttribute('width', '100');
             bg.setAttribute('height', '100');
-            bg.setAttribute('fill', '#f0743e');
+            bg.setAttribute('fill', 'rgb(185, 43, 19)');
             
             const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttribute('x', '50');
@@ -362,7 +375,11 @@
             const lunchTitle = document.createElement('h3');
             lunchTitle.className = 'section-title';
             lunchTitle.setAttribute('data-i18n', 'lunchRestaurants');
-            lunchTitle.textContent = getTranslation('lunchRestaurants', lang);
+            
+            // Create span inside title for styling consistency
+            const lunchTitleText = document.createElement('span');
+            lunchTitleText.textContent = getTranslation('lunchRestaurants', lang);
+            lunchTitle.appendChild(lunchTitleText);
             
             const lunchGrid = document.createElement('div');
             lunchGrid.id = 'lunch-restaurants-grid';
@@ -378,7 +395,11 @@
             const dinnerTitle = document.createElement('h3');
             dinnerTitle.className = 'section-title';
             dinnerTitle.setAttribute('data-i18n', 'dinnerRestaurants');
-            dinnerTitle.textContent = getTranslation('dinnerRestaurants', lang);
+            
+            // Create span inside title for styling consistency
+            const dinnerTitleText = document.createElement('span');
+            dinnerTitleText.textContent = getTranslation('dinnerRestaurants', lang);
+            dinnerTitle.appendChild(dinnerTitleText);
             
             const dinnerGrid = document.createElement('div');
             dinnerGrid.id = 'dinner-restaurants-grid';
