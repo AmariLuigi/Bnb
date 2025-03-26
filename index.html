@@ -5,28 +5,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sant'Agostino BnB - Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Modern homepage styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/palermo-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
         .language-selector {
             position: absolute;
             top: 20px;
             right: 20px;
             display: flex;
             align-items: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 5px 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
         
         .language-selector label {
             margin-right: 10px;
-            font-weight: bold;
+            font-weight: 500;
+            color: #333;
         }
         
         .language-selector select {
-            padding: 5px;
+            padding: 5px 10px;
             border-radius: 4px;
             border: 1px solid #ddd;
+            background-color: white;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .quarters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+        
+        .quarter-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .quarter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .quarter-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .quarter-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .quarter-card:hover .quarter-image img {
+            transform: scale(1.05);
+        }
+        
+        .quarter-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .quarter-card h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.8rem;
+        }
+        
+        .quarter-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border: none;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+        }
+        
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 70px;
+        }
+        
+        .additional-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .additional-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .additional-card h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .additional-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .additional-card .btn {
+            background-color: #f0743e;
+        }
+        
+        .additional-card .btn:hover {
+            background-color: #e26633;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 4px 8px;
+            }
+            
+            .quarters-grid, .additional-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quarter-image {
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -41,83 +274,88 @@
         </select>
     </div>
 
-    <div class="container">
-        <header>
+    <section class="hero-section">
+        <div class="hero-content">
             <h1 data-i18n="title">Sant'Agostino BnB - Palermo Map</h1>
             <p data-i18n="explore">Explore the four historic quarters of Palermo</p>
-        </header>
-        
+        </div>
+    </section>
+
+    <div class="container">
         <div class="quarters-grid">
             <div class="quarter-card">
-                <h2 data-i18n="capo">Capo</h2>
                 <div class="quarter-image">
-                    <img src="images/quarters/capo.jpg" alt="Capo Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Capo Quarter">
                 </div>
-                <p data-i18n="capoDesc">Discover the Teatro Massimo, Cattedrale, and more</p>
-                <a href="capo.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="capo">Capo</span></a>
+                <div class="quarter-content">
+                    <h2 data-i18n="capo">Capo</h2>
+                    <p data-i18n="capoDesc">Discover the Teatro Massimo, Cattedrale, and more</p>
+                    <a href="capo.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="capo">Capo</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2 data-i18n="albergheria">Albergheria</h2>
                 <div class="quarter-image">
-                    <img src="images/quarters/albergheria.jpg" alt="Albergheria Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Albergheria Quarter">
                 </div>
-                <p data-i18n="albergheriaDesc">Visit Ballarò market, Palazzo Reale, and more</p>
-                <a href="albergheria.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="albergheria">Albergheria</span></a>
+                <div class="quarter-content">
+                    <h2 data-i18n="albergheria">Albergheria</h2>
+                    <p data-i18n="albergheriaDesc">Visit Ballarò market, Palazzo Reale, and more</p>
+                    <a href="albergheria.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="albergheria">Albergheria</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2 data-i18n="kalsa">Kalsa</h2>
                 <div class="quarter-image">
-                    <img src="images/quarters/kalsa.jpg" alt="Kalsa Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                    <img src="https://images.unsplash.com/photo-1499002238440-d264edd596ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kalsa Quarter">
                 </div>
-                <p data-i18n="kalsaDesc">Explore Piazza Pretoria, Orto Botanico, and more</p>
-                <a href="kalsa.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="kalsa">Kalsa</span></a>
+                <div class="quarter-content">
+                    <h2 data-i18n="kalsa">Kalsa</h2>
+                    <p data-i18n="kalsaDesc">Explore Piazza Pretoria, Orto Botanico, and more</p>
+                    <a href="kalsa.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="kalsa">Kalsa</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2 data-i18n="loggia">La Loggia</h2>
                 <div class="quarter-image">
-                    <img src="images/quarters/loggia.jpg" alt="La Loggia Quarter" onerror="this.src='images/attractions/placeholder.jpg'">
+                    <img src="https://images.unsplash.com/photo-1544971587-b842c27f8e14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="La Loggia Quarter">
                 </div>
-                <p data-i18n="loggiaDesc">Visit San Domenico, Vucciria market, and more</p>
-                <a href="loggia.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="loggia">La Loggia</span></a>
-            </div>
-        </div>
-        
-        <div class="additional-options">
-            <h2 data-i18n="additionalServices">Additional Services</h2>
-            <div class="additional-grid">
-                <div class="additional-card">
-                    <h3 data-i18n="restaurants">Restaurants</h3>
-                    <p data-i18n="restaurantsDesc">Discover the best local restaurants and authentic Sicilian cuisine</p>
-                    <a href="restaurants.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="restaurants">Restaurants</span></a>
-                </div>
-                
-                <div class="additional-card">
-                    <h3 data-i18n="experiences">B&B Experiences</h3>
-                    <p data-i18n="experiencesDesc">Authentic local experiences offered by our B&B and partners</p>
-                    <a href="experiences.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="experiences">Experiences</span></a>
+                <div class="quarter-content">
+                    <h2 data-i18n="loggia">La Loggia</h2>
+                    <p data-i18n="loggiaDesc">Visit San Domenico, Vucciria market, and more</p>
+                    <a href="loggia.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="loggia">La Loggia</span></a>
                 </div>
             </div>
         </div>
         
-        <footer>
-            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
-        </footer>
+        <h2 class="section-title" data-i18n="additionalServices">Additional Services</h2>
+        
+        <div class="additional-grid">
+            <div class="additional-card">
+                <h3 data-i18n="restaurants">Restaurants</h3>
+                <p data-i18n="restaurantsDesc">Discover the best local restaurants and authentic Sicilian cuisine</p>
+                <a href="restaurants.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="restaurants">Restaurants</span></a>
+            </div>
+            
+            <div class="additional-card">
+                <h3 data-i18n="experiences">B&B Experiences</h3>
+                <p data-i18n="experiencesDesc">Authentic local experiences offered by our B&B and partners</p>
+                <a href="experiences.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="experiences">Experiences</span></a>
+            </div>
+        </div>
     </div>
+    
+    <footer>
+        <div class="container">
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
+        </div>
+    </footer>
     
     <script src="js/qrcode.min.js"></script>
     <script src="js/translations.js"></script>
     <script>
         // Ensure quarters are initialized on page load
         document.addEventListener('DOMContentLoaded', function() {            
-            // Initial load of quarter images with static images
-            document.querySelector('.quarter-card:nth-child(1) img').src = 'images/quarters/capo.jpg';
-            document.querySelector('.quarter-card:nth-child(2) img').src = 'images/quarters/albergheria.jpg';
-            document.querySelector('.quarter-card:nth-child(3) img').src = 'images/quarters/kalsa.jpg';
-            document.querySelector('.quarter-card:nth-child(4) img').src = 'images/quarters/loggia.jpg';
-            
             // Set language selector value
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             const langSelector = document.getElementById('language-selector');
