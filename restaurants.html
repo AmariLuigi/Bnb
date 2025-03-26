@@ -154,13 +154,6 @@
         <div class="quarter-content">
             <div class="attractions">
                 <h2 data-i18n="recommendedRestaurants">Recommended Restaurants</h2>
-                <div class="settings-panel">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="dynamic-images-toggle">
-                        <span class="toggle-slider"></span>
-                        <span class="toggle-label">Use dynamic images</span>
-                    </label>
-                </div>
                 <div id="restaurants-grid" class="attractions-grid">
                     <!-- Restaurants will be loaded dynamically by JavaScript -->
                 </div>
@@ -177,24 +170,12 @@
     <script>
         // Ensure restaurants are initialized on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize toggle based on localStorage
-            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
-            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
-            
-            // Add event listener for toggle
-            dynamicImagesToggle.addEventListener('change', function() {
-                localStorage.setItem('use_dynamic_images', this.checked);
-                // Reload restaurants with new setting
-                const savedLang = localStorage.getItem('preferred_language') || 'en';
-                updatePageLanguage(savedLang);
-            });
-            
             // Force restaurants to load
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             updatePageLanguage(savedLang);
         });
         
-        function createRestaurantCard(restaurant, useDynamicImages = false) {
+        function createRestaurantCard(restaurant) {
             const restaurantCard = document.createElement('div');
             restaurantCard.className = 'restaurant-card';
             
@@ -204,23 +185,9 @@
             
             // Image element
             const image = document.createElement('img');
-            if (useDynamicImages) {
-                // Use dynamic image search function if toggle is enabled
-                searchAttractionImage(restaurant.name + " restaurant Palermo")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            image.src = imageUrl;
-                        } else {
-                            image.src = restaurant.image || 'images/attractions/placeholder.jpg';
-                        }
-                    });
-            } else {
-                image.src = restaurant.image || 'images/attractions/placeholder.jpg';
-            }
+            // Always use placeholder SVG for now
+            image.src = 'images/attractions/placeholder.jpg';
             image.alt = restaurant.name;
-            image.onerror = function() {
-                this.src = 'images/attractions/placeholder.jpg';
-            };
             
             // Restaurant details
             const detailsContainer = document.createElement('div');
@@ -335,12 +302,10 @@
             dinnerSection.appendChild(dinnerGrid);
             
             // Add sections to the container
-            const toggleContainer = document.querySelector('.settings-panel');
-            restaurantsContainer.insertBefore(lunchSection, toggleContainer.nextSibling);
-            restaurantsContainer.insertBefore(dinnerSection, lunchSection.nextSibling);
+            restaurantsContainer.appendChild(lunchSection);
+            restaurantsContainer.appendChild(dinnerSection);
             
             // Populate each section
-            const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
             
             // Filter and add lunch restaurants
             const lunchRestaurants = restaurantsData.filter(restaurant => 
@@ -348,7 +313,7 @@
             );
             
             lunchRestaurants.forEach(restaurant => {
-                const card = createRestaurantCard(restaurant, useDynamicImages);
+                const card = createRestaurantCard(restaurant);
                 lunchGrid.appendChild(card);
             });
             
@@ -358,7 +323,7 @@
             );
             
             dinnerRestaurants.forEach(restaurant => {
-                const card = createRestaurantCard(restaurant, useDynamicImages);
+                const card = createRestaurantCard(restaurant);
                 dinnerGrid.appendChild(card);
             });
         }

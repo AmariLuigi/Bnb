@@ -395,7 +395,7 @@ const translations = {
         experiencesData: [
             {
                 name: "Scoprire Palermo",
-                description: "Tour a piedi del centro storico per scoprire la millenaria storia di Palermo. Visiterai il Teatro Massimo, il Mercato del Capo, la Cattedrale, il Palazzo dei Normanni con la Cappella Palatina, i Quattro Canti e Piazza Bellini.",
+                description: "Tour a piedi del centro storico per scoprire la millenaria storia di Palermo. Visiteremo il Teatro Massimo, il Mercato del Capo, la Cattedrale, il Palazzo dei Normanni con la Cappella Palatina, i Quattro Canti e Piazza Bellini.",
                 duration: "3 ore",
                 price: "€45-€100 a persona",
                 image: "images/attractions/placeholder.jpg",
@@ -434,12 +434,12 @@ const translations = {
                 note: "Disponibile solo il sabato pomeriggio e la domenica mattina."
             },
             {
-                name: "Tour delle Cattedrali Arabo-Normanne",
+                name: "Arab-Norman Cathedrals Tour",
                 description: "Visita le quattro cattedrali normanne più interessanti di Palermo e provincia in treno e trasporto privato, incluse la Cappella Palatina, la Martorana, Cefalù e Monreale.",
                 duration: "4-5 ore",
                 price: "€100-€140 a persona",
                 image: "images/attractions/placeholder.jpg",
-                note: "Include il biglietto del treno e il trasferimento a Monreale."
+                note: "Includes train ticket and transfer to Monreale."
             },
             {
                 name: "Lezione di cucina con lo Chef",
@@ -447,7 +447,7 @@ const translations = {
                 duration: "3-4 ore",
                 price: "€130 a persona",
                 image: "images/attractions/placeholder.jpg",
-                note: "Include visita al mercato, lezione di cucina e pranzo con gli ingredienti selezionati."
+                note: "Includes market visit, cooking class, and lunch with selected ingredients."
             }
         ],
         
@@ -519,8 +519,8 @@ const translations = {
         interactiveMap: "Carte Interactive de Palerme",
         
         // Additional services section
-        additionalServices: "Services Supplémentaires",
-        restaurantsDesc: "Découvrez les meilleurs restaurants locaux et l'authentique cuisine sicilienne",
+        additionalServices: "Services Complémentaires",
+        restaurantsDesc: "Découvrez les meilleurs restaurants locaux et la cuisine sicilienne authentique",
         experiencesDesc: "Expériences locales authentiques proposées par notre B&B et nos partenaires",
         
         // Quarters
@@ -531,9 +531,9 @@ const translations = {
         
         // Descriptions
         capoDesc: "Découvrez le Teatro Massimo, la Cathédrale et plus encore",
-        albergheriaDesc: "Visitez le marché de Ballarò, le Palazzo Reale et plus encore",
-        kalsaDesc: "Explorez la Piazza Pretoria, le Jardin Botanique et plus encore",
-        loggiaDesc: "Visitez San Domenico, le marché de Vucciria et plus encore",
+        albergheriaDesc: "Visitez le marché Ballarò, le Palazzo Reale et plus encore",
+        kalsaDesc: "Explorez Piazza Pretoria, l'Orto Botanico et plus encore",
+        loggiaDesc: "Visitez San Domenico, le marché Vucciria et plus encore",
         
         // Language selector
         language: "Langue",
@@ -546,100 +546,161 @@ const translations = {
         referent: "Personne de Référence",
         experiences: "Expériences B&B",
         localExperiences: "Expériences Locales",
-        experiencesIntro: "Découvrez des expériences siciliennes authentiques avec nos partenaires locaux",
-        bookNow: "Réserver",
+        experiencesIntro: "Découvrez d'authentiques expériences siciliennes avec nos partenaires locaux",
+        bookNow: "Réserver Maintenant",
         contactBnB: "Veuillez contacter l'hôte du B&B pour réserver cette expérience.",
         
         // Restaurant data
         restaurantsData: [
             {
                 name: "Dainotti's",
-                name: "Osteria Ballarò",
-                description: "Restaurant sicilien traditionnel avec une touche moderne, situé au cœur du marché historique de Ballarò.",
-                priceRange: "€€-€€€",
-                cuisine: "Sicilienne, Méditerranéenne",
-                image: "images/attractions/placeholder.jpg"
+                description: "Situé dans le Mercato del Capo, offrant la street food traditionnelle de Palerme. Connu pour sa gentillesse et son expertise.",
+                priceRange: "€10-20 par personne",
+                cuisine: "Street Food, Sandwicherie",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Arianna",
+                address: "Via Porta Carini, 51, 90134 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "Gagini Restaurant",
-                description: "Cuisine raffinée dans un cadre élégant du XVIe siècle avec une cuisine sicilienne créative à base d'ingrédients locaux.",
-                priceRange: "€€€-€€€€",
-                cuisine: "Sicilienne Contemporánea",
-                image: "images/attractions/placeholder.jpg"
+                name: "Trattoria Bersagliere",
+                description: "Trattoria historique dans le quartier Albergheria, célèbre pour ses pâtes avec 'glassa' et son atmosphère chaleureuse et familiale.",
+                priceRange: "€10-20 par personne",
+                cuisine: "Sicilienne Traditionnelle",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Lollo",
+                address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "Buatta Cucina Popolana",
-                description: "Restaurant rustique spécialisé dans les plats traditionnels de Palerme et les recettes sicilianas tradicionales.",
-                priceRange: "€€",
-                cuisine: "Siciliana Tradicional",
-                image: "images/attractions/placeholder.jpg"
+                name: "Dadalia Osteria",
+                description: "Osteria sicilienne typique située dans le marché historique de Vucciria. Propose des plats végétariens et dispose d'une terrasse extérieure.",
+                priceRange: "€10-20 par personne",
+                cuisine: "Sicilienne, Options Végétariennes",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Pippo ou Giovanni",
+                address: "Via Maccherronai, 20, 90133 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "Bisso Bistrot",
-                description: "Charmant bistrot dans une ancienne librairie, servant des plats siciliens simples dans une atmosphère vintage.",
-                priceRange: "€-€€",
-                cuisine: "Bistrot, Sicilienne",
-                image: "images/attractions/placeholder.jpg"
+                name: "L'Acerba Osteria Dinamica",
+                description: "Une osteria dynamique qui combine des éléments de galería de arte, cóctel bar et restaurante, avec une cuisine créative utilisant des ingrédients locaux.",
+                priceRange: "€20-40 par personne",
+                cuisine: "Sicilienne Créative",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Gabriele",
+                address: "Vicolo Maestro Cristofaro, 10, 90134 Palermo PA",
+                type: "Dinner"
             },
             {
-                name: "L'Ottava Nota",
-                description: "Restaurant élégant proposant des spécialités de fruits de mer et une cuisine sicilienne raffinée avec un service attentif.",
-                priceRange: "€€-€€€",
-                cuisine: "Fruits de mer, Sicilienne",
-                image: "images/attractions/placeholder.jpg"
+                name: "Le Angeliche",
+                description: "Restaurant romantique avec un patio élégant, specialisé dans les fruits de mer, les pâtes et les aperitifs siciliens, avec des options véganes disponibles.",
+                priceRange: "€30-40 par personne",
+                cuisine: "Fruits de Mer, Options Véganes",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Floriana ou Chiara",
+                address: "Vicolo Abbadia, 10, 90134 Palermo PA",
+                type: "Dinner"
             },
             {
-                name: "Ferro di Cavallo",
-                description: "Trattoria historique populaire auprès des locaux, connue pour la street food traditionnelle de Palermo et une cuisine décontractée.",
-                priceRange: "€",
-                cuisine: "Street Food, Trattoria",
-                image: "images/attractions/placeholder.jpg"
+                name: "Trattoria Supra i Mura",
+                description: "Situé au cœur de Palermo, offrant une variété de plats de fruits de mer et de cuisine sicilienne traditionnelle dans une atmosphère accueillante.",
+                priceRange: "€20-30 par personne",
+                cuisine: "Fruits de Mer, Sicilienne Traditionnelle",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Pietro",
+                address: "Piazza Porta Carini, 5, 90134 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Enoteca Butticè",
+                description: "Restaurant et bar à vin avec plus de 700 étiquettes de vin, offreciendo cocina palermitana et excelentes cócteles.",
+                priceRange: "€20-40 par personne",
+                cuisine: "Sicilienne, Bar à Vin",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Giuseppe",
+                address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Ferramenta",
+                description: "Restaurant au cœur du centre historique de Palermo, avec des places en terrasse et des options véganes, idéal pour une atmosphère jeune et accueillante.",
+                priceRange: "€20-30 par personne",
+                cuisine: "Méditerranéenne, Opzions Véganes",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Luca ou Marcello",
+                address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Forno Santa Maria",
+                description: "Pizzería con un enfoque artesanal en la panadería y la mixología, ubicada en el corazón du centre historique.",
+                priceRange: "€20-30 par personne",
+                cuisine: "Pizza, Artesanal",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Luca ou Marcello",
+                address: "Via Giovanni Meli, 35, 90133 Palermo PA",
+                type: "Dinner"
             }
         ],
         
         // Experience data
         experiencesData: [
             {
-                name: "Cours de Cuisine Sicilienne",
-                description: "Apprenez à préparer des plats siciliens traditionnels avec notre chef local. Comprend la visite du marché, le cours de cuisine et le déjeuner avec dégustation de vins.",
-                duration: "4 heures",
-                price: "€85 par personne",
-                image: "images/attractions/placeholder.jpg"
-            },
-            {
-                name: "Tour de Street Food",
-                description: "Découvrez la célèbre street food de Palermo avec un guide local. Visitez les marchés historiques et goûtez aux spécialités locales authentiques.",
+                name: "Découvrir Palermo",
+                description: "Une visite à pied du centre historique pour découvrir l'histoire millénaire de Palermo, un crisol unique en le monde. Visitez le Teatro Massimo, le marché du Capo, la Cathédrale, le Palais des Normands avec la Chapelle Palatine, les Quattro Canti et la Piazza Bellini.",
                 duration: "3 heures",
-                price: "€60 par personne",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€100 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Les entrées aux bâtiments historiques ou monuments ne sont pas incluses dans le prix."
             },
             {
-                name: "Dégustation de Vins Siciliens",
-                description: "Dégustez les meilleurs vins siciliens avec les conseils d'un expert. Comprend la dégustation de 5 vins premium et des apéritifs locaux.",
+                name: "Tour Apéritif de Street Food",
+                description: "Un apéritif itinerant dans les rues du centre historique de Palermo. Experimente la comida callejera traditionnelle, incluyendo panelle, crocche, sfincione, pan con bazo y una copa de vino en la Vucciria.",
                 duration: "2 heures",
-                price: "€55 par personne",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€55 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Degustations de comida inclues dans le prix."
             },
             {
-                name: "Tour de Palermo by Night",
-                description: "Découvrez la magie de Palermo après la tombée de la nuit. Visitez des monuments illuminés et profitez de l'ambiance nocturne animée.",
+                name: "Le Royaume du Soleil - Itinerario Árabe-Normando",
+                description: "Descubra les sites du patrimonio Árabe-Normando de la UNESCO en Palermo, incluyendo el Palacio Real con la Chapelle Palatine, la Cathédrale, San Giovanni degli Eremiti, San Cataldo y Santa Maria dell'Ammiraglio.",
+                duration: "3,5 heures",
+                price: "€45-€100 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Les entrées aux bâtiments historiques ou monuments ne sont pas incluses dans le prix."
+            },
+            {
+                name: "La Dynastía de los Florio - Recorrido a Pie",
+                description: "Trace la historia de la famiglia Florio desde el distrito de la Loggia hasta el Teatro Massimo. Conozca sus negocios, éxitos e impacto en la Belle Époque palermitana.",
                 duration: "3 heures",
-                price: "€50 par personne",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€100 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Les entrées aux bâtiments historiques ou monuments ne sont pas incluses dans le prix."
             },
             {
-                name: "Spectacle de Marionnettes Siciliennes",
-                description: "Assistez à un spectacle traditionnel de marionnettes siciliennes (Opera dei Pupi) et découvrez ce patrimonio cultural reconnu par l'UNESCO.",
-                duration: "1.5 heures",
-                price: "€35 par personne",
-                image: "images/attractions/placeholder.jpg"
+                name: "La Dynastía de los Florio con Transporte Privé",
+                description: "Descubra el legado de la famiglia Florio con transporte privado. Visite el Villino Florio all'Olivuzza, la Villa Malfitano-Whitaker y la casa de Arenella con Quattro Pizzi.",
+                duration: "4 heures",
+                price: "€55-€150 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Solo disponible los sábados por la tarde y los domingos por la mañana."
             },
             {
-                name: "Randonnée au Mont Pellegrino",
-                description: "Randonnée guidée au Mont Pellegrino avec vue panoramique sur Palermo et la mer Méditerranée.",
-                duration: "5 heures",
-                price: "€45 par personne",
-                image: "images/attractions/placeholder.jpg"
+                name: "Tour de Catedrales Árabe-Normandas",
+                description: "Visite las cuatro catedrales normandas más interesantes de Palermo y su provincia en tren y transporte privado, incluyendo la Capilla Palatina, la Martorana, Cefalú y Monreale.",
+                duration: "4-5 horas",
+                price: "€100-€140 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye boleto de tren y traslado a Monreale."
+            },
+            {
+                name: "Cours de Cuisine avec Chef",
+                description: "Visite el mercado del Capo con nuestro chef para seleccionar ingredientes frescos, luego prepare recetas sicilianas tradicionales en la casa del chef, finalizando con un almuerzo juntos.",
+                duration: "3-4 horas",
+                price: "€130 par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
             }
         ],
         
@@ -695,7 +756,7 @@ const translations = {
         
         // Print QR code texts
         scanToExplore: "Scannez pour explorer le quartier",
-        scanToExploreSuffix: "de Palerme",
+        scanToExploreSuffix: "de Palermo",
         quarterSuffix: "Quartier - Sant'Agostino BnB"
     },
     es: {
@@ -713,7 +774,7 @@ const translations = {
         // Additional services section
         additionalServices: "Servicios Adicionales",
         restaurantsDesc: "Descubre los mejores restaurantes locales y la auténtica cocina siciliana",
-        experiencesDesc: "Experiencias locales auténticas ofrecidas por nuestro B&B y nuestros socios",
+        experiencesDesc: "Experiencias locales auténticas ofrecidas por nuestro B&B y socios",
         
         // Quarters
         capo: "Capo",
@@ -724,7 +785,7 @@ const translations = {
         // Descriptions
         capoDesc: "Descubre el Teatro Massimo, la Catedral y más",
         albergheriaDesc: "Visita el mercado de Ballarò, el Palazzo Reale y más",
-        kalsaDesc: "Explora la Piazza Pretoria, el Jardín Botánico y más",
+        kalsaDesc: "Explora Piazza Pretoria, el Orto Botanico y más",
         loggiaDesc: "Visita San Domenico, el mercado de Vucciria y más",
         
         // Language selector
@@ -738,99 +799,161 @@ const translations = {
         referent: "Persona de Referencia",
         experiences: "Experiencias B&B",
         localExperiences: "Experiencias Locales",
-        experiencesIntro: "Descubre experiencias sicilianas auténticas con nuestros socios locales",
+        experiencesIntro: "Descubre auténticas experiencias sicilianas con nuestros socios locales",
         bookNow: "Reservar Ahora",
-        contactBnB: "Por favor contacta al anfitrión del B&B para reservar esta experiencia.",
+        contactBnB: "Por favor, contacte con el anfitrión del B&B para reservar esta experiencia.",
         
         // Restaurant data
         restaurantsData: [
             {
-                name: "Osteria Ballarò",
-                description: "Restaurante siciliano tradicional con un toque moderno, ubicado en el corazón del histórico mercado de Ballarò.",
-                priceRange: "€€-€€€",
-                cuisine: "Siciliana, Mediterránea",
-                image: "images/attractions/placeholder.jpg"
+                name: "Dainotti's",
+                description: "Ubicado en el Mercato del Capo, ofrece comida callejera tradicional de Palermo. Conocido por su amabilidad y experiencia.",
+                priceRange: "€10-20 por persona",
+                cuisine: "Street Food, Sandwichería",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Arianna",
+                address: "Via Porta Carini, 51, 90134 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "Gagini Restaurant",
-                description: "Restaurante elegante en un entorno del siglo XVI con cocina siciliana creativa hecha con ingredientes locales.",
-                priceRange: "€€€-€€€€",
-                cuisine: "Siciliana Contemporánea",
-                image: "images/attractions/placeholder.jpg"
-            },
-            {
-                name: "Buatta Cucina Popolana",
-                description: "Restaurante rústico especializado en platos caseros de Palermo y recetas sicilianas tradicionales.",
-                priceRange: "€€",
+                name: "Trattoria Bersagliere",
+                description: "Trattoria histórica en el barrio de Albergheria, famosa por su pasta con 'glassa' y un ambiente acogedor y familiar.",
+                priceRange: "€10-20 por persona",
                 cuisine: "Siciliana Tradicional",
-                image: "images/attractions/placeholder.jpg"
+                image: "images/attractions/placeholder.jpg",
+                referent: "Lollo",
+                address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "Bisso Bistrot",
-                description: "Encantador bistró en una antigua librería, que sirve platos sicilianos sencillos en un ambiente vintage.",
-                priceRange: "€-€€",
-                cuisine: "Bistró, Siciliana",
-                image: "images/attractions/placeholder.jpg"
+                name: "Dadalia Osteria",
+                description: "Típica osteria siciliana situada en el histórico mercado de Vucciria. Ofrece platos vegetarianos y tiene asientos al aire libre.",
+                priceRange: "€10-20 por persona",
+                cuisine: "Siciliana, Opciones Vegetarianas",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Pippo o Giovanni",
+                address: "Via Maccherronai, 20, 90133 Palermo PA",
+                type: "Lunch"
             },
             {
-                name: "L'Ottava Nota",
-                description: "Elegante restaurante que ofrece especialidades de mariscos y cocina siciliana refinada con un servicio atento.",
-                priceRange: "€€-€€€",
-                cuisine: "Mariscos, Siciliana",
-                image: "images/attractions/placeholder.jpg"
+                name: "L'Acerba Osteria Dinamica",
+                description: "Una osteria dinámica que combina elementos de galería de arte, cóctel bar y restaurante, con cocina creativa usando ingredientes locales.",
+                priceRange: "€20-40 por persona",
+                cuisine: "Siciliana Creativa",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Gabriele",
+                address: "Vicolo Maestro Cristofaro, 10, 90134 Palermo PA",
+                type: "Dinner"
             },
             {
-                name: "Ferro di Cavallo",
-                description: "Trattoria histórica popular entre los locales, conocida por la comida callejera tradicional de Palermo y la cocina informal.",
-                priceRange: "€",
-                cuisine: "Comida Callejera, Trattoria",
-                image: "images/attractions/placeholder.jpg"
+                name: "Le Angeliche",
+                description: "Restaurante romántico con un elegante patio, especializado en mariscos, pasta y aperitivos sicilianos, con opciones veganas disponibles.",
+                priceRange: "€30-40 por persona",
+                cuisine: "Mariscos, Opciones Veganas",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Floriana o Chiara",
+                address: "Vicolo Abbadia, 10, 90134 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Trattoria Supra i Mura",
+                description: "Ubicado en el corazón de Palermo, offre una variedad de platos de mariscos y cocina tradicional siciliana en un ambiente acogedor.",
+                priceRange: "€20-30 por persona",
+                cuisine: "Mariscos, Siciliana Tradicional",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Pietro",
+                address: "Piazza Porta Carini, 5, 90134 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Enoteca Butticè",
+                description: "Restaurante y bar de vinos con más de 700 etiquetas de vino, ofreciendo cocina palermitana y excelentes cócteles.",
+                priceRange: "€20-40 por persona",
+                cuisine: "Siciliana, Bar de Vinos",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Giuseppe",
+                address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Ferramenta",
+                description: "Restaurante en el centro histórico de Palermo, con asientos al aire libre y opciones veganas, ideal para un ambiente joven y acogedor.",
+                priceRange: "€20-30 por persona",
+                cuisine: "Mediterránea, Opciones Veganas",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Luca o Marcello",
+                address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
+                type: "Dinner"
+            },
+            {
+                name: "Forno Santa Maria",
+                description: "Pizzería con un enfoque artesanal en la panadería y la mixología, ubicada en el corazón del centro histórico.",
+                priceRange: "€20-30 por persona",
+                cuisine: "Pizza, Artesanal",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Luca o Marcello",
+                address: "Via Giovanni Meli, 35, 90133 Palermo PA",
+                type: "Dinner"
             }
         ],
         
         // Experience data
         experiencesData: [
             {
-                name: "Clase de Cocina Siciliana",
-                description: "Aprende a preparar platos tradicionales sicilianos con nuestro chef local. Incluye visita al mercado, clase de cocina y almuerzo con maridaje de vinos.",
-                duration: "4 horas",
-                price: "€85 por persona",
-                image: "images/attractions/placeholder.jpg"
-            },
-            {
-                name: "Tour de Comida Callejera",
-                description: "Descubre la famosa comida callejera de Palermo con un guía local. Visita mercados históricos y prueba auténticas especialidades locales.",
+                name: "Descubriendo Palermo",
+                description: "Un recorrido a pie por el centro histórico para descubrir la historia millenaria de Palermo, un crisol único en el mundo. Visite el Teatro Massimo, el Mercado del Capo, la Cattedrale, el Palacio Normando con la Capilla Palatina, los Quattro Canti y la Piazza Bellini.",
                 duration: "3 horas",
-                price: "€60 por persona",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
             },
             {
-                name: "Cata de Vinos Sicilianos",
-                description: "Prueba los mejores vinos sicilianos con la orientación de un experto. Incluye degustación de 5 vinos premium y aperitivos locales.",
+                name: "Tour de Aperitivo y Comida Callejera",
+                description: "Un aperitivo itinerante por las calles del centro histórico de Palermo. Experimente la comida callejera tradicional, incluyendo panelle, crocche, sfincione, pan con bazo y una copa de vino en la Vucciria.",
                 duration: "2 horas",
-                price: "€55 por persona",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€55 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Degustaciones de comida inclues en el precio."
             },
             {
-                name: "Tour de Palermo de Noche",
-                description: "Experimenta la magia de Palermo después del anochecer. Visita monumentos iluminados y disfruta de la vibrante escena nocturna.",
+                name: "El Reino del Sol - Itinerario Árabe-Normando",
+                description: "Descubra los sitios del patrimonio Árabe-Normando de la UNESCO en Palermo, incluyendo el Palacio Real con la Capilla Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo y Santa Maria dell'Ammiraglio.",
+                duration: "3.5 horas",
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
+            },
+            {
+                name: "La Dinastía de los Florio - Recorrido a Pie",
+                description: "Trace la historia de la familia Florio desde el distrito de la Loggia hasta el Teatro Massimo. Conozca sus negocios, éxitos e impacto en la Belle Époque palermitana.",
                 duration: "3 horas",
-                price: "€50 por persona",
-                image: "images/attractions/placeholder.jpg"
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
             },
             {
-                name: "Espectáculo de Marionetas Sicilianas",
-                description: "Contempla un espectáculo tradicional de marionetas sicilianas (Opera dei Pupi) y aprende sobre este patrimonio cultural reconocido por la UNESCO.",
-                duration: "1.5 horas",
-                price: "€35 por persona",
-                image: "images/attractions/placeholder.jpg"
+                name: "La Dinastía de los Florio con Transporte Privado",
+                description: "Descubra el legado de la familia Florio con transporte privado. Visite el Villino Florio all'Olivuzza, la Villa Malfitano-Whitaker y la casa de Arenella con Quattro Pizzi.",
+                duration: "4 horas",
+                price: "€55-€150 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Solo disponible los sábados por la tarde y los domingos por la mañana."
             },
             {
-                name: "Excursión al Monte Pellegrino",
-                description: "Excursión guiada al Monte Pellegrino con vistas panorámicas de Palermo y el Mar Mediterráneo.",
-                duration: "5 horas",
-                price: "€45 por persona",
-                image: "images/attractions/placeholder.jpg"
+                name: "Tour de Catedrales Árabe-Normandas",
+                description: "Visite las cuatro catedrales normandas más interesantes de Palermo y su provincia en tren y transporte privado, incluyendo la Capilla Palatina, la Martorana, Cefalú y Monreale.",
+                duration: "4-5 horas",
+                price: "€100-€140 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye boleto de tren y traslado a Monreale."
+            },
+            {
+                name: "Clase de Cocina con Chef",
+                description: "Visite el mercado del Capo con nuestro chef para seleccionar ingredientes frescos, luego prepare recetas sicilianas tradicionales en la casa del chef, finalizando con un almuerzo juntos.",
+                duration: "3-4 horas",
+                price: "€130 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
             }
         ],
         
@@ -880,7 +1003,7 @@ const translations = {
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
             { name: "Iglesia de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
             { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
-            { name: "Museo Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
             { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         

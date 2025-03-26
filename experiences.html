@@ -147,13 +147,6 @@
             <div class="attractions">
                 <h2 data-i18n="localExperiences">Local Experiences</h2>
                 <p data-i18n="experiencesIntro">Discover authentic Sicilian experiences with our local partners</p>
-                <div class="settings-panel">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="dynamic-images-toggle">
-                        <span class="toggle-slider"></span>
-                        <span class="toggle-label">Use dynamic images</span>
-                    </label>
-                </div>
                 <div id="experiences-grid" class="attractions-grid">
                     <!-- Experiences will be loaded dynamically by JavaScript -->
                 </div>
@@ -170,24 +163,12 @@
     <script>
         // Ensure experiences are initialized on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize toggle based on localStorage
-            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
-            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
-            
-            // Add event listener for toggle
-            dynamicImagesToggle.addEventListener('change', function() {
-                localStorage.setItem('use_dynamic_images', this.checked);
-                // Reload experiences with new setting
-                const savedLang = localStorage.getItem('preferred_language') || 'en';
-                updatePageLanguage(savedLang);
-            });
-            
             // Force experiences to load
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             updatePageLanguage(savedLang);
         });
         
-        function createExperienceCard(experience, useDynamicImages = false) {
+        function createExperienceCard(experience) {
             const experienceCard = document.createElement('div');
             experienceCard.className = 'experience-card';
             
@@ -197,23 +178,9 @@
             
             // Image element
             const image = document.createElement('img');
-            if (useDynamicImages) {
-                // Use dynamic image search function if toggle is enabled
-                searchAttractionImage(experience.name + " experience Palermo Sicily")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            image.src = imageUrl;
-                        } else {
-                            image.src = experience.image || 'images/attractions/placeholder.jpg';
-                        }
-                    });
-            } else {
-                image.src = experience.image || 'images/attractions/placeholder.jpg';
-            }
+            // Always use placeholder SVG for now
+            image.src = 'images/attractions/placeholder.jpg';
             image.alt = experience.name;
-            image.onerror = function() {
-                this.src = 'images/attractions/placeholder.jpg';
-            };
             
             // Experience details
             const detailsContainer = document.createElement('div');
@@ -303,10 +270,8 @@
             if (experiencesGrid) {
                 experiencesGrid.innerHTML = '';
                 
-                const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
-                
                 experiencesData.forEach(experience => {
-                    const card = createExperienceCard(experience, useDynamicImages);
+                    const card = createExperienceCard(experience);
                     experiencesGrid.appendChild(card);
                 });
             }

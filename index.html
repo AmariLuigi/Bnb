@@ -53,14 +53,6 @@
             <p data-i18n="explore">Explore the four historic quarters of Palermo</p>
         </header>
         
-        <div class="settings-panel">
-            <label class="toggle-switch">
-                <input type="checkbox" id="dynamic-images-toggle">
-                <span class="toggle-slider"></span>
-                <span class="toggle-label">Use dynamic images</span>
-            </label>
-        </div>
-        
         <div class="interactive-map-container">
             <h2 class="map-title" data-i18n="interactiveMap">Interactive Map of Palermo</h2>
             <div class="map-wrapper">
@@ -138,20 +130,12 @@
     <script src="js/translations.js"></script>
     <script>
         // Ensure quarters are initialized on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize toggle based on localStorage
-            const dynamicImagesToggle = document.getElementById('dynamic-images-toggle');
-            dynamicImagesToggle.checked = localStorage.getItem('use_dynamic_images') === 'true';
-            
-            // Add event listener for toggle
-            dynamicImagesToggle.addEventListener('change', function() {
-                localStorage.setItem('use_dynamic_images', this.checked);
-                // Update quarter images
-                updateQuarterImages();
-            });
-            
-            // Initial load of quarter images
-            updateQuarterImages();
+        document.addEventListener('DOMContentLoaded', function() {            
+            // Initial load of quarter images with static images
+            document.querySelector('.quarter-card:nth-child(1) img').src = 'images/quarters/capo.jpg';
+            document.querySelector('.quarter-card:nth-child(2) img').src = 'images/quarters/albergheria.jpg';
+            document.querySelector('.quarter-card:nth-child(3) img').src = 'images/quarters/kalsa.jpg';
+            document.querySelector('.quarter-card:nth-child(4) img').src = 'images/quarters/loggia.jpg';
             
             // Set language selector value
             const savedLang = localStorage.getItem('preferred_language') || 'en';
@@ -163,51 +147,6 @@
             // Set up interactive map
             setupInteractiveMap();
         });
-        
-        // Function to update quarter images based on dynamic images toggle
-        function updateQuarterImages() {
-            const useDynamicImages = localStorage.getItem('use_dynamic_images') === 'true';
-            
-            if (useDynamicImages) {
-                // Update Capo quarter image
-                searchAttractionImage("Capo Quarter Palermo")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            document.querySelector('.quarter-card:nth-child(1) img').src = imageUrl;
-                        }
-                    });
-                
-                // Update Albergheria quarter image
-                searchAttractionImage("Albergheria Quarter Palermo")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            document.querySelector('.quarter-card:nth-child(2) img').src = imageUrl;
-                        }
-                    });
-                
-                // Update Kalsa quarter image
-                searchAttractionImage("Kalsa Quarter Palermo")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            document.querySelector('.quarter-card:nth-child(3) img').src = imageUrl;
-                        }
-                    });
-                
-                // Update La Loggia quarter image
-                searchAttractionImage("La Loggia Quarter Palermo")
-                    .then(imageUrl => {
-                        if (imageUrl) {
-                            document.querySelector('.quarter-card:nth-child(4) img').src = imageUrl;
-                        }
-                    });
-            } else {
-                // Reset to default images
-                document.querySelector('.quarter-card:nth-child(1) img').src = 'images/quarters/capo.jpg';
-                document.querySelector('.quarter-card:nth-child(2) img').src = 'images/quarters/albergheria.jpg';
-                document.querySelector('.quarter-card:nth-child(3) img').src = 'images/quarters/kalsa.jpg';
-                document.querySelector('.quarter-card:nth-child(4) img').src = 'images/quarters/loggia.jpg';
-            }
-        }
         
         // Points of interest data with verified coordinates from OpenStreetMap
         const pointsOfInterest = {
