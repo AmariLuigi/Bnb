@@ -40,7 +40,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
             overflow: hidden;
-            height: 450px;
+            height: 470px;
             position: relative;
             transition: transform 0.3s;
         }
@@ -99,6 +99,7 @@
             max-height: 4.5em;
             margin-bottom: 10px;
             transition: max-height 0.3s;
+            color: #666;
         }
         
         .expanded-text {
@@ -107,6 +108,7 @@
             line-height: 1.5;
             margin-bottom: 10px;
             padding-right: 5px;
+            color: #666;
         }
         
         .expanded-text::-webkit-scrollbar {
@@ -132,7 +134,7 @@
             font-weight: 600;
             font-size: 0.9em;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .see-more-btn:hover {
@@ -144,6 +146,9 @@
             border-top: 1px solid #eee;
             padding-top: 10px;
             font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
         
         .restaurant-meta-item {
@@ -160,16 +165,22 @@
         }
         
         .get-directions {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: rgb(185, 43, 19);
             color: white;
-            padding: 10px 20px;
+            padding: 6px 12px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
-            text-align: center;
-            margin-top: 15px;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+        
+        .get-directions i {
+            margin-right: 5px;
         }
         
         .get-directions:hover {
@@ -359,7 +370,7 @@
             // Restaurant description with truncation
             const description = document.createElement('p');
             description.className = 'truncated-text';
-            description.textContent = restaurant.description;
+            description.textContent = restaurant.description || 'No description available';
             
             // See more button
             const seeMoreBtn = document.createElement('span');
@@ -373,25 +384,32 @@
             // Meta items with icons
             const priceRange = document.createElement('div');
             priceRange.className = 'restaurant-meta-item';
-            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange}`;
+            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange || 'Price not available'}`;
             
             const cuisine = document.createElement('div');
             cuisine.className = 'restaurant-meta-item';
-            cuisine.innerHTML = `<i class="cuisine-icon">🍽️</i> ${restaurant.cuisine}`;
+            cuisine.innerHTML = `<i class="cuisine-icon">🍽️</i> ${restaurant.cuisine || 'Cuisine not specified'}`;
             
             const openHours = document.createElement('div');
             openHours.className = 'restaurant-meta-item';
-            openHours.innerHTML = `<i class="clock-icon">🕒</i> ${restaurant.openHours}`;
+            openHours.innerHTML = `<i class="clock-icon">🕒</i> ${restaurant.openHours || 'Hours not available'}`;
             
             const meals = document.createElement('div');
             meals.className = 'restaurant-meta-item';
-            meals.innerHTML = `<i class="meal-icon">🍴</i> ${restaurant.meals}`;
+            meals.innerHTML = `<i class="meal-icon">🍴</i> ${restaurant.meals || 'Not specified'}`;
             
-            // Get directions button
+            // Row for the direction button
+            const directionRow = document.createElement('div');
+            directionRow.style.display = 'flex';
+            directionRow.style.width = '100%';
+            directionRow.style.justifyContent = 'flex-end';
+            directionRow.style.marginTop = '10px';
+            
+            // Get directions button with icon
             const directionsButton = document.createElement('a');
-            directionsButton.href = `https://maps.google.com/?q=${encodeURIComponent(restaurant.name + ', ' + restaurant.address)}`;
+            directionsButton.href = `https://maps.google.com/?q=${encodeURIComponent(restaurant.name + ', ' + (restaurant.address || 'Palermo, Sicily'))}`;
             directionsButton.className = 'get-directions';
-            directionsButton.textContent = getTranslation('getDirections', localStorage.getItem('preferred_language') || 'en');
+            directionsButton.innerHTML = `<i class="map-icon">🗺️</i> ${getTranslation('getDirections', localStorage.getItem('preferred_language') || 'en')}`;
             directionsButton.target = '_blank';
             
             // Append all elements
@@ -406,10 +424,12 @@
             descriptionContainer.appendChild(description);
             descriptionContainer.appendChild(seeMoreBtn);
             
+            directionRow.appendChild(directionsButton);
+            
             detailsContainer.appendChild(name);
             detailsContainer.appendChild(descriptionContainer);
             detailsContainer.appendChild(metaContainer);
-            detailsContainer.appendChild(directionsButton);
+            detailsContainer.appendChild(directionRow);
             
             restaurantCard.appendChild(detailsContainer);
             

@@ -40,7 +40,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
             overflow: hidden;
-            height: 450px;
+            height: 470px;
             position: relative;
             transition: transform 0.3s;
         }
@@ -99,6 +99,7 @@
             max-height: 4.5em;
             margin-bottom: 10px;
             transition: max-height 0.3s;
+            color: #666;
         }
         
         .expanded-text {
@@ -107,6 +108,7 @@
             line-height: 1.5;
             margin-bottom: 10px;
             padding-right: 5px;
+            color: #666;
         }
         
         .expanded-text::-webkit-scrollbar {
@@ -132,7 +134,7 @@
             font-weight: 600;
             font-size: 0.9em;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .see-more-btn:hover {
@@ -144,6 +146,9 @@
             border-top: 1px solid #eee;
             padding-top: 10px;
             font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
         
         .experience-meta-item {
@@ -160,16 +165,24 @@
         }
         
         .book-now {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: rgb(185, 43, 19);
             color: white;
-            padding: 10px 20px;
+            padding: 6px 12px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
-            text-align: center;
-            margin-top: 15px;
+            font-size: 0.9rem;
+            margin-left: auto;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .book-now i {
+            margin-right: 5px;
         }
         
         .book-now:hover {
@@ -360,7 +373,7 @@
             // Experience description with truncation
             const description = document.createElement('p');
             description.className = 'truncated-text';
-            description.textContent = experience.description;
+            description.textContent = experience.description || 'No description available';
             
             // See more button
             const seeMoreBtn = document.createElement('span');
@@ -382,17 +395,24 @@
             // Add duration
             const duration = document.createElement('div');
             duration.className = 'experience-meta-item';
-            duration.innerHTML = `<i class="duration-icon">⏱️</i> ${experience.duration}`;
+            duration.innerHTML = `<i class="duration-icon">⏱️</i> ${experience.duration || 'Duration not specified'}`;
             
             // Add price
             const price = document.createElement('div');
             price.className = 'experience-meta-item';
-            price.innerHTML = `<i class="price-icon">€</i> ${experience.price}`;
+            price.innerHTML = `<i class="price-icon">€</i> ${experience.price || 'Price not available'}`;
             
-            // Book button
+            // Row for the book button
+            const bookRow = document.createElement('div');
+            bookRow.style.display = 'flex';
+            bookRow.style.width = '100%';
+            bookRow.style.justifyContent = 'flex-end';
+            bookRow.style.marginTop = '10px';
+            
+            // Book button with icon
             const bookButton = document.createElement('button');
             bookButton.className = 'book-now';
-            bookButton.textContent = getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en');
+            bookButton.innerHTML = `<i class="book-icon">📅</i> ${getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en')}`;
             
             // Add event listener to the book button
             bookButton.addEventListener('click', function() {
@@ -409,13 +429,15 @@
             descriptionContainer.appendChild(description);
             descriptionContainer.appendChild(seeMoreBtn);
             
+            bookRow.appendChild(bookButton);
+            
             detailsContainer.appendChild(name);
             detailsContainer.appendChild(descriptionContainer);
             if (note) {
                 detailsContainer.appendChild(note);
             }
             detailsContainer.appendChild(metaContainer);
-            detailsContainer.appendChild(bookButton);
+            detailsContainer.appendChild(bookRow);
             
             experienceCard.appendChild(detailsContainer);
             
