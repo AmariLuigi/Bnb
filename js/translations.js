@@ -311,7 +311,56 @@ const translations = {
         // Print QR code texts
         scanToExplore: "Scan to explore the",
         scanToExploreSuffix: "Quarter of Palermo",
-        quarterSuffix: "Quarter - Sant'Agostino BnB"
+        quarterSuffix: "Quarter - Sant'Agostino BnB",
+        // Common
+        contactMessage: {
+            en: "For booking, please contact us via WhatsApp at +39 123 456 7890 or email at info@santangostino.com",
+            it: "Per prenotare, contattateci tramite WhatsApp al +39 123 456 7890 o via email a info@santangostino.com",
+            fr: "Pour réserver, veuillez nous contacter via WhatsApp au +39 123 456 7890 ou par email à info@santangostino.com",
+            es: "Para reservar, contáctenos por WhatsApp al +39 123 456 7890 o por correo electrónico a info@santangostino.com"
+        },
+        backToHome: {
+            en: "Back to Home",
+            it: "Torna alla Home",
+            fr: "Retour à l'Accueil",
+            es: "Volver al Inicio"
+        },
+        seeMore: {
+            en: "See more",
+            it: "Vedi di più",
+            fr: "Voir plus",
+            es: "Ver más"
+        },
+        seeLess: {
+            en: "See less",
+            it: "Vedi meno",
+            fr: "Voir moins",
+            es: "Ver menos"
+        },
+        bookNow: {
+            en: "Book Now",
+            it: "Prenota Ora",
+            fr: "Réserver",
+            es: "Reservar"
+        },
+        getDirections: {
+            en: "Get Directions",
+            it: "Ottieni Indicazioni",
+            fr: "Itinéraire",
+            es: "Cómo Llegar"
+        },
+        seeHours: {
+            en: "See hours",
+            it: "Orari",
+            fr: "Horaires",
+            es: "Horarios"
+        },
+        seeDuration: {
+            en: "See duration",
+            it: "Durata",
+            fr: "Durée",
+            es: "Duración"
+        }
     },
     it: {
         // Common elements
@@ -671,7 +720,56 @@ const translations = {
         // Print QR code texts
         scanToExplore: "Scansiona per esplorare il quartiere",
         scanToExploreSuffix: "di Palermo",
-        quarterSuffix: "Quartiere - Sant'Agostino BnB"
+        quarterSuffix: "Quartiere - Sant'Agostino BnB",
+        // Common
+        contactMessage: {
+            en: "For booking, please contact us via WhatsApp at +39 123 456 7890 or email at info@santangostino.com",
+            it: "Per prenotare, contattateci tramite WhatsApp al +39 123 456 7890 o via email a info@santangostino.com",
+            fr: "Pour réserver, veuillez nous contacter via WhatsApp au +39 123 456 7890 ou par email à info@santangostino.com",
+            es: "Para reservar, contáctenos por WhatsApp al +39 123 456 7890 o por correo electrónico a info@santangostino.com"
+        },
+        backToHome: {
+            en: "Back to Home",
+            it: "Torna alla Home",
+            fr: "Retour à l'Accueil",
+            es: "Volver al Inicio"
+        },
+        seeMore: {
+            en: "See more",
+            it: "Vedi di più",
+            fr: "Voir plus",
+            es: "Ver más"
+        },
+        seeLess: {
+            en: "See less",
+            it: "Vedi meno",
+            fr: "Voir moins",
+            es: "Ver menos"
+        },
+        bookNow: {
+            en: "Book Now",
+            it: "Prenota Ora",
+            fr: "Réserver",
+            es: "Reservar"
+        },
+        getDirections: {
+            en: "Get Directions",
+            it: "Ottieni Indicazioni",
+            fr: "Itinéraire",
+            es: "Cómo Llegar"
+        },
+        seeHours: {
+            en: "See hours",
+            it: "Orari",
+            fr: "Horaires",
+            es: "Horarios"
+        },
+        seeDuration: {
+            en: "See duration",
+            it: "Durata",
+            fr: "Durée",
+            es: "Duración"
+        }
     },
     fr: {
         // Common elements
@@ -768,7 +866,7 @@ const translations = {
             },
             {
                 name: "Sardina PastaBar",
-                description: "Une osteria tipica siciliana qui se spécialise dans la cuisine italienne et méditerranéenne avec un focus sur les pâtes. Notés pour leurs excellents spaghetti carbonara, les pâtes de sardine et de crevettes. Les desserts incluent gelato, tiramisu et parfait. La barre offre de bons vins, cordial et sélections de vins blancs, ainsi que de grandes tasses de café. L'atmosphère accueillante rend les visiteurs plus tranquilles, et l'équipe est connue pour son service accueillant et divertissant. Avec une note Google de 4,6 étoiles, ce point économique est populaire parmi les locaux et les touristes. Ils offrent une grande terrasse en plein air et acceptent les cartes de crédit.",
+                description: "Une osteria tipica siciliana qui se spécialise dans la cuisine italienne et méditerranéenne avec un focus sur les pâtes. Notés pour leurs excellents spaghetti carbonara, les pâtes de sardine et de crevettes. Les desserts incluent gelato, tiramisu et parfait. La barre offre vins de haute qualité, cordial et sélections de vins blancs, ainsi que de grandes tasses de café. L'atmosphère accueillante rend les visiteurs plus tranquilles, et l'équipe est connue pour son service accueillant et divertissant. Avec une note Google de 4,6 étoiles, ce point économique est populaire parmi les locaux et les touristes. Ils offrent une grande terrasse en plein air et acceptent les cartes de crédit.",
                 priceRange: "€15-30 par personne",
                 cuisine: "Italienne, Méditerranéenne, Sans Gluten",
                 image: "images/attractions/placeholder.jpg",
@@ -1031,7 +1129,56 @@ const translations = {
         // Print QR code texts
         scanToExplore: "Scannez pour explorer le quartier",
         scanToExploreSuffix: "de Palermo",
-        quarterSuffix: "Quartier - Sant'Agostino BnB"
+        quarterSuffix: "Quartier - Sant'Agostino BnB",
+        // Common
+        contactMessage: {
+            en: "For booking, please contact us via WhatsApp at +39 123 456 7890 or email at info@santangostino.com",
+            it: "Per prenotare, contattateci tramite WhatsApp al +39 123 456 7890 o via email a info@santangostino.com",
+            fr: "Pour réserver, veuillez nous contacter via WhatsApp au +39 123 456 7890 ou par email à info@santangostino.com",
+            es: "Para reservar, contáctenos por WhatsApp al +39 123 456 7890 o por correo electrónico a info@santangostino.com"
+        },
+        backToHome: {
+            en: "Back to Home",
+            it: "Torna alla Home",
+            fr: "Retour à l'Accueil",
+            es: "Volver al Inicio"
+        },
+        seeMore: {
+            en: "See more",
+            it: "Vedi di più",
+            fr: "Voir plus",
+            es: "Ver más"
+        },
+        seeLess: {
+            en: "See less",
+            it: "Vedi meno",
+            fr: "Voir moins",
+            es: "Ver menos"
+        },
+        bookNow: {
+            en: "Book Now",
+            it: "Prenota Ora",
+            fr: "Réserver",
+            es: "Reservar"
+        },
+        getDirections: {
+            en: "Get Directions",
+            it: "Ottieni Indicazioni",
+            fr: "Itinéraire",
+            es: "Cómo Llegar"
+        },
+        seeHours: {
+            en: "See hours",
+            it: "Orari",
+            fr: "Horaires",
+            es: "Horarios"
+        },
+        seeDuration: {
+            en: "See duration",
+            it: "Durata",
+            fr: "Durée",
+            es: "Duración"
+        }
     },
     es: {
         // Common elements
@@ -1264,7 +1411,7 @@ const translations = {
             },
             {
                 name: "Le Cattive",
-                description: "Ubicado cerca de Porta Felice, este restaurante ofrece cocina italiana y mediterránea. Las especialidades incluyen rape, aglio y risotto, con deliciosas galletas, cannoli y tiramisú para el postre. El restaurante es conocido por su buen vino, negroni, cordial y excelente café. Con una puntuación de 4.5 en Google, los visitantes elogian la gran vista, el personal atento, el servicio profesional, los precios democraticos, el ambiente tranquilo y la decoración elegante.",
+                description: "Ubicado cerca de Porta Felice, este restaurante ofrece cocina italiana y mediterránea. Las especialidades incluyen rana pescatrice, aglio y risotto, con deliziosas galletas, cannoli y tiramisú para el postre. El restaurante es conocido por su buen vino, negroni, cordial y excelente café. Con una puntuación de 4.5 en Google, los visitantes elogian la gran vista, el personal atento, el servicio profesional, los precios democraticos, el ambiente tranquilo y la decoración elegante.",
                 priceRange: "€40-70 por persona",
                 cuisine: "Italiana, Mediterránea, Frutti di Mare",
                 image: "images/attractions/placeholder.jpg",
@@ -1302,7 +1449,7 @@ const translations = {
                 duration: "3.5 horas",
                 price: "€45-€100 por persona",
                 image: "images/attractions/placeholder.jpg",
-                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
+                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
             },
             {
                 name: "La Dinastía de los Florio - Recorrido a Pie",
@@ -1373,7 +1520,7 @@ const translations = {
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galería Regional de Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Galería Regional de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
             { name: "Mercado de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
@@ -1391,7 +1538,56 @@ const translations = {
         // Print QR code texts
         scanToExplore: "Escanea para explorar el barrio",
         scanToExploreSuffix: "de Palermo",
-        quarterSuffix: "Barrio - Sant'Agostino BnB"
+        quarterSuffix: "Barrio - Sant'Agostino BnB",
+        // Common
+        contactMessage: {
+            en: "For booking, please contact us via WhatsApp at +39 123 456 7890 or email at info@santangostino.com",
+            it: "Per prenotare, contattateci tramite WhatsApp al +39 123 456 7890 o via email a info@santangostino.com",
+            fr: "Pour réserver, veuillez nous contacter via WhatsApp au +39 123 456 7890 ou par email à info@santangostino.com",
+            es: "Para reservar, contáctenos por WhatsApp al +39 123 456 7890 o por correo electrónico a info@santangostino.com"
+        },
+        backToHome: {
+            en: "Back to Home",
+            it: "Torna alla Home",
+            fr: "Retour à l'Accueil",
+            es: "Volver al Inicio"
+        },
+        seeMore: {
+            en: "See more",
+            it: "Vedi di più",
+            fr: "Voir plus",
+            es: "Ver más"
+        },
+        seeLess: {
+            en: "See less",
+            it: "Vedi meno",
+            fr: "Voir moins",
+            es: "Ver menos"
+        },
+        bookNow: {
+            en: "Book Now",
+            it: "Prenota Ora",
+            fr: "Réserver",
+            es: "Reservar"
+        },
+        getDirections: {
+            en: "Get Directions",
+            it: "Ottieni Indicazioni",
+            fr: "Itinéraire",
+            es: "Cómo Llegar"
+        },
+        seeHours: {
+            en: "See hours",
+            it: "Orari",
+            fr: "Horaires",
+            es: "Horarios"
+        },
+        seeDuration: {
+            en: "See duration",
+            it: "Durata",
+            fr: "Durée",
+            es: "Duración"
+        }
     }
 };
 
