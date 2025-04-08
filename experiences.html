@@ -35,106 +35,131 @@
         }
         
         .experience-card {
-            background: white;
+            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            height: 520px; /* Fixed height for consistent card sizing */
+            height: 450px;
+            position: relative;
+            transition: transform 0.3s;
         }
         
         .experience-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .experience-image {
-            height: 250px;
+            height: 150px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f8f8;
+            position: relative;
         }
         
-        .experience-image img, .experience-image svg {
+        .experience-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s;
         }
         
-        .experience-card:hover .experience-image img,
-        .experience-card:hover .experience-image svg {
+        .experience-card:hover .experience-image img {
             transform: scale(1.05);
         }
         
         .experience-details {
-            padding: 25px;
-            flex-grow: 1;
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            position: relative;
+            height: calc(100% - 150px);
         }
         
         .experience-details h3 {
+            font-size: 1.2rem;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #333;
-            font-size: 1.6rem;
         }
         
-        .experience-details p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .description-container {
+            flex-grow: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
         }
         
         .truncated-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            overflow: hidden;
-            position: relative;
+            line-height: 1.5;
+            max-height: 4.5em;
+            margin-bottom: 10px;
+            transition: max-height 0.3s;
         }
         
         .expanded-text {
-            height: auto;
-            overflow: visible;
+            overflow-y: auto;
+            max-height: 120px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            padding-right: 5px;
+        }
+        
+        .expanded-text::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .expanded-text::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .expanded-text::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        .expanded-text::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
         
         .see-more-btn {
             color: rgb(185, 43, 19);
             cursor: pointer;
-            font-weight: 500;
-            margin-top: 5px;
+            font-weight: 600;
+            font-size: 0.9em;
             display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .see-more-btn:hover {
             text-decoration: underline;
         }
         
         .experience-meta {
-            display: flex;
-            justify-content: space-between;
             margin-top: auto;
-            padding-top: 20px;
             border-top: 1px solid #eee;
+            padding-top: 10px;
+            font-size: 0.9rem;
         }
         
-        .experience-meta span {
+        .experience-meta-item {
             display: flex;
             align-items: center;
-            color: #777;
+            color: #666;
+            margin-bottom: 10px;
+            flex-basis: 48%;
         }
         
-        .experience-meta i {
+        .experience-meta-item i {
             margin-right: 8px;
             color: rgb(185, 43, 19);
         }
         
-        .book-btn {
+        .book-now {
             display: inline-block;
             background-color: rgb(185, 43, 19);
             color: white;
@@ -147,7 +172,7 @@
             margin-top: 15px;
         }
         
-        .book-btn:hover {
+        .book-now:hover {
             background-color: rgb(155, 33, 9);
         }
         
@@ -271,53 +296,15 @@
                     
                     // Toggle expanded state with a class
                     if (textElement.classList.contains('truncated-text')) {
-                        // Save original height if needed later
-                        if (!card.dataset.originalHeight) {
-                            card.dataset.originalHeight = card.offsetHeight + 'px';
-                        }
-                        
-                        // Remove truncation
+                        // Remove truncation and make scrollable
                         textElement.classList.remove('truncated-text');
                         textElement.classList.add('expanded-text');
                         e.target.textContent = 'See less';
-                        
-                        // Allow card to expand to fit content
-                        card.style.height = 'auto';
-                        
-                        // All new approach - hash based navigation
-                        if (card.id) {
-                            // Update URL hash without adding to browser history
-                            window.location.replace('#' + card.id);
-                            
-                            // Direct DOM scroll as a fallback
-                            setTimeout(() => {
-                                // Force scroll to element position
-                                const yOffset = -50; // Apply an offset to show some content above
-                                const y = card.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                                
-                                window.scrollTo({
-                                    top: y,
-                                    behavior: 'smooth'
-                                });
-                            }, 50);
-                        }
                     } else {
                         // Add truncation back
                         textElement.classList.add('truncated-text');
                         textElement.classList.remove('expanded-text');
                         e.target.textContent = 'See more';
-                        
-                        // Restore original fixed height
-                        if (card.dataset.originalHeight) {
-                            card.style.height = card.dataset.originalHeight;
-                        } else {
-                            card.style.height = '520px'; // Default height
-                        }
-                        
-                        // Remove the hash when collapsing
-                        if (window.location.hash === '#' + card.id) {
-                            history.pushState("", document.title, window.location.pathname + window.location.search);
-                        }
                     }
                 }
             });
@@ -366,6 +353,10 @@
             const name = document.createElement('h3');
             name.textContent = experience.name;
             
+            // Create description container
+            const descriptionContainer = document.createElement('div');
+            descriptionContainer.className = 'description-container';
+            
             // Experience description with truncation
             const description = document.createElement('p');
             description.className = 'truncated-text';
@@ -389,22 +380,24 @@
             metaContainer.className = 'experience-meta';
             
             // Add duration
-            const duration = document.createElement('span');
-            duration.innerHTML = `<i class="duration-icon">⏱</i> ${experience.duration}`;
+            const duration = document.createElement('div');
+            duration.className = 'experience-meta-item';
+            duration.innerHTML = `<i class="duration-icon">⏱️</i> ${experience.duration}`;
             
             // Add price
-            const price = document.createElement('span');
+            const price = document.createElement('div');
+            price.className = 'experience-meta-item';
             price.innerHTML = `<i class="price-icon">€</i> ${experience.price}`;
             
             // Book button
-            const bookButton = document.createElement('a');
-            bookButton.href = '#';
-            bookButton.className = 'book-btn';
+            const bookButton = document.createElement('button');
+            bookButton.className = 'book-now';
             bookButton.textContent = getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en');
-            bookButton.onclick = function(e) {
-                e.preventDefault();
-                alert(getTranslation('contactBnB', localStorage.getItem('preferred_language') || 'en'));
-            };
+            
+            // Add event listener to the book button
+            bookButton.addEventListener('click', function() {
+                alert(getTranslation('contactMessage', localStorage.getItem('preferred_language') || 'en'));
+            });
             
             // Append all elements
             imageContainer.appendChild(imageContent);
@@ -413,9 +406,11 @@
             metaContainer.appendChild(duration);
             metaContainer.appendChild(price);
             
+            descriptionContainer.appendChild(description);
+            descriptionContainer.appendChild(seeMoreBtn);
+            
             detailsContainer.appendChild(name);
-            detailsContainer.appendChild(description);
-            detailsContainer.appendChild(seeMoreBtn);
+            detailsContainer.appendChild(descriptionContainer);
             if (note) {
                 detailsContainer.appendChild(note);
             }
