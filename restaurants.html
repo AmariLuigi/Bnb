@@ -6,6 +6,11 @@
     <title>Restaurants - Sant'Agostino BnB Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Enable smooth scrolling on the entire document */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         .language-selector {
             position: absolute;
             top: 20px;
@@ -243,14 +248,17 @@
                         textElement.classList.remove('truncated-text');
                         e.target.textContent = 'See less';
                         
-                        // Smooth scroll to show expanded content
+                        // Enhanced smooth scroll to ensure content is visible
                         setTimeout(() => {
+                            // Always scroll to the card when expanding content for better UX
                             const cardRect = card.getBoundingClientRect();
-                            // If card is partially out of view, scroll to it
-                            if (cardRect.top < 0 || cardRect.bottom > window.innerHeight) {
-                                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                            }
-                        }, 10); // Small delay to allow DOM to update
+                            const scrollPosition = window.pageYOffset + cardRect.top - 100; // Add some padding at the top
+                            
+                            window.scrollTo({
+                                top: scrollPosition,
+                                behavior: 'smooth'
+                            });
+                        }, 50); // Longer delay to ensure DOM has updated
                     } else {
                         textElement.classList.add('truncated-text');
                         e.target.textContent = 'See more';
