@@ -37,78 +37,78 @@
         .restaurant-card {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
             overflow: hidden;
-            height: 470px;
+            height: 420px;
             position: relative;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .restaurant-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
         
         .restaurant-image {
-            height: 150px;
+            height: 120px;
             overflow: hidden;
             position: relative;
+            background-color: rgb(185, 43, 19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .restaurant-image img {
+        .restaurant-image svg {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .restaurant-card:hover .restaurant-image img {
-            transform: scale(1.05);
         }
         
         .restaurant-details {
-            padding: 15px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 150px);
+            flex-grow: 1;
         }
         
         .restaurant-details h3 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin: 0 0 12px 0;
             color: #333;
+            font-weight: 600;
+            line-height: 1.2;
         }
         
         .description-container {
-            flex-grow: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
+            position: relative;
+            margin-bottom: 12px;
         }
         
         .truncated-text {
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            line-height: 1.5;
             max-height: 4.5em;
-            margin-bottom: 10px;
-            transition: max-height 0.3s;
-            color: #666;
+            transition: all 0.3s ease;
         }
         
         .expanded-text {
-            overflow-y: auto;
-            max-height: 120px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            padding-right: 5px;
             color: #666;
+            line-height: 1.5;
+            margin: 0;
+            overflow-y: auto;
+            max-height: 100px;
+            transition: all 0.3s ease;
+            padding-right: 8px;
         }
         
         .expanded-text::-webkit-scrollbar {
@@ -117,24 +117,26 @@
         
         .expanded-text::-webkit-scrollbar-track {
             background: #f1f1f1;
+            border-radius: 4px;
         }
         
         .expanded-text::-webkit-scrollbar-thumb {
-            background: #888;
+            background: #ccc;
             border-radius: 4px;
         }
         
         .expanded-text::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #aaa;
         }
         
         .see-more-btn {
             color: rgb(185, 43, 19);
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9em;
+            font-weight: 500;
+            font-size: 0.85rem;
             display: inline-block;
-            margin-bottom: 5px;
+            margin-top: 6px;
+            text-decoration: none;
         }
         
         .see-more-btn:hover {
@@ -143,25 +145,30 @@
         
         .restaurant-meta {
             margin-top: auto;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-            font-size: 0.9rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
         
         .restaurant-meta-item {
             display: flex;
             align-items: center;
             color: #666;
-            margin-bottom: 10px;
-            flex-basis: 48%;
+            font-size: 0.9rem;
         }
         
         .restaurant-meta-item i {
             margin-right: 8px;
             color: rgb(185, 43, 19);
+            font-style: normal;
+        }
+        
+        .action-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 12px;
         }
         
         .get-directions {
@@ -170,17 +177,18 @@
             justify-content: center;
             background-color: rgb(185, 43, 19);
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
+            padding: 8px 12px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 0.9rem;
-            margin-left: auto;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            border: none;
         }
         
         .get-directions i {
-            margin-right: 5px;
+            margin-right: 6px;
+            font-style: normal;
         }
         
         .get-directions:hover {
@@ -275,7 +283,7 @@
         
         <footer>
             <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
-            <p class="version-info">Version 1.2.2</p>
+            <p class="version-info">Version 1.2.3</p>
         </footer>
     </div>
     
@@ -302,16 +310,13 @@
             document.addEventListener('click', function(e) {
                 if (e.target.classList.contains('see-more-btn')) {
                     const textElement = e.target.previousElementSibling;
-                    const card = e.target.closest('.restaurant-card');
                     
                     // Toggle expanded state with a class
                     if (textElement.classList.contains('truncated-text')) {
-                        // Remove truncation and make scrollable
                         textElement.classList.remove('truncated-text');
                         textElement.classList.add('expanded-text');
                         e.target.textContent = 'See less';
                     } else {
-                        // Add truncation back
                         textElement.classList.add('truncated-text');
                         textElement.classList.remove('expanded-text');
                         e.target.textContent = 'See more';
@@ -323,7 +328,6 @@
         function createRestaurantCard(restaurant) {
             const restaurantCard = document.createElement('div');
             restaurantCard.className = 'restaurant-card';
-            // Add a unique ID to each card for direct targeting
             restaurantCard.id = 'restaurant-' + restaurant.name.replace(/[^a-z0-9]/gi, '-').toLowerCase();
             
             // Image container
@@ -346,7 +350,7 @@
             text.setAttribute('x', '50');
             text.setAttribute('y', '50');
             text.setAttribute('font-family', 'Arial');
-            text.setAttribute('font-size', '14');
+            text.setAttribute('font-size', '24');
             text.setAttribute('text-anchor', 'middle');
             text.setAttribute('dominant-baseline', 'middle');
             text.setAttribute('fill', 'white');
@@ -384,52 +388,49 @@
             // Meta items with icons
             const priceRange = document.createElement('div');
             priceRange.className = 'restaurant-meta-item';
-            priceRange.innerHTML = `<i class="price-icon">€</i> ${restaurant.priceRange || 'Price not available'}`;
+            priceRange.innerHTML = `<i>€</i> ${restaurant.priceRange || 'Price not available'}`;
             
             const cuisine = document.createElement('div');
             cuisine.className = 'restaurant-meta-item';
-            cuisine.innerHTML = `<i class="cuisine-icon">🍽️</i> ${restaurant.cuisine || 'Cuisine not specified'}`;
+            cuisine.innerHTML = `<i>🍽️</i> ${restaurant.cuisine || 'Cuisine not specified'}`;
             
             const openHours = document.createElement('div');
             openHours.className = 'restaurant-meta-item';
-            openHours.innerHTML = `<i class="clock-icon">🕒</i> ${restaurant.openHours || 'Hours not available'}`;
+            openHours.innerHTML = `<i>🕒</i> ${restaurant.openHours || 'Hours not available'}`;
             
             const meals = document.createElement('div');
             meals.className = 'restaurant-meta-item';
-            meals.innerHTML = `<i class="meal-icon">🍴</i> ${restaurant.meals || 'Not specified'}`;
+            meals.innerHTML = `<i>🍴</i> ${restaurant.meals || 'Not specified'}`;
             
-            // Row for the direction button
-            const directionRow = document.createElement('div');
-            directionRow.style.display = 'flex';
-            directionRow.style.width = '100%';
-            directionRow.style.justifyContent = 'flex-end';
-            directionRow.style.marginTop = '10px';
+            // Action row for the direction button
+            const actionRow = document.createElement('div');
+            actionRow.className = 'action-row';
             
             // Get directions button with icon
             const directionsButton = document.createElement('a');
             directionsButton.href = `https://maps.google.com/?q=${encodeURIComponent(restaurant.name + ', ' + (restaurant.address || 'Palermo, Sicily'))}`;
             directionsButton.className = 'get-directions';
-            directionsButton.innerHTML = `<i class="map-icon">🗺️</i> ${getTranslation('getDirections', localStorage.getItem('preferred_language') || 'en')}`;
+            directionsButton.innerHTML = `<i>🗺️</i> ${getTranslation('getDirections', localStorage.getItem('preferred_language') || 'en')}`;
             directionsButton.target = '_blank';
             
             // Append all elements
             imageContainer.appendChild(imageContent);
             restaurantCard.appendChild(imageContainer);
             
+            descriptionContainer.appendChild(description);
+            descriptionContainer.appendChild(seeMoreBtn);
+            
             metaContainer.appendChild(priceRange);
             metaContainer.appendChild(cuisine);
             metaContainer.appendChild(openHours);
             metaContainer.appendChild(meals);
             
-            descriptionContainer.appendChild(description);
-            descriptionContainer.appendChild(seeMoreBtn);
-            
-            directionRow.appendChild(directionsButton);
+            actionRow.appendChild(directionsButton);
             
             detailsContainer.appendChild(name);
             detailsContainer.appendChild(descriptionContainer);
             detailsContainer.appendChild(metaContainer);
-            detailsContainer.appendChild(directionRow);
+            detailsContainer.appendChild(actionRow);
             
             restaurantCard.appendChild(detailsContainer);
             

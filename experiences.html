@@ -37,78 +37,78 @@
         .experience-card {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
             overflow: hidden;
-            height: 470px;
+            height: 420px;
             position: relative;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .experience-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
         
         .experience-image {
-            height: 150px;
+            height: 120px;
             overflow: hidden;
             position: relative;
+            background-color: rgb(185, 43, 19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .experience-image img {
+        .experience-image svg {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .experience-card:hover .experience-image img {
-            transform: scale(1.05);
         }
         
         .experience-details {
-            padding: 15px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 150px);
+            flex-grow: 1;
         }
         
         .experience-details h3 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin: 0 0 12px 0;
             color: #333;
+            font-weight: 600;
+            line-height: 1.2;
         }
         
         .description-container {
-            flex-grow: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
+            position: relative;
+            margin-bottom: 12px;
         }
         
         .truncated-text {
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            line-height: 1.5;
             max-height: 4.5em;
-            margin-bottom: 10px;
-            transition: max-height 0.3s;
-            color: #666;
+            transition: all 0.3s ease;
         }
         
         .expanded-text {
-            overflow-y: auto;
-            max-height: 120px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            padding-right: 5px;
             color: #666;
+            line-height: 1.5;
+            margin: 0;
+            overflow-y: auto;
+            max-height: 100px;
+            transition: all 0.3s ease;
+            padding-right: 8px;
         }
         
         .expanded-text::-webkit-scrollbar {
@@ -117,24 +117,26 @@
         
         .expanded-text::-webkit-scrollbar-track {
             background: #f1f1f1;
+            border-radius: 4px;
         }
         
         .expanded-text::-webkit-scrollbar-thumb {
-            background: #888;
+            background: #ccc;
             border-radius: 4px;
         }
         
         .expanded-text::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #aaa;
         }
         
         .see-more-btn {
             color: rgb(185, 43, 19);
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9em;
+            font-weight: 500;
+            font-size: 0.85rem;
             display: inline-block;
-            margin-bottom: 5px;
+            margin-top: 6px;
+            text-decoration: none;
         }
         
         .see-more-btn:hover {
@@ -143,25 +145,30 @@
         
         .experience-meta {
             margin-top: auto;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-            font-size: 0.9rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
         
         .experience-meta-item {
             display: flex;
             align-items: center;
             color: #666;
-            margin-bottom: 10px;
-            flex-basis: 48%;
+            font-size: 0.9rem;
         }
         
         .experience-meta-item i {
             margin-right: 8px;
             color: rgb(185, 43, 19);
+            font-style: normal;
+        }
+        
+        .action-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 12px;
         }
         
         .book-now {
@@ -170,19 +177,19 @@
             justify-content: center;
             background-color: rgb(185, 43, 19);
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
+            padding: 8px 12px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 0.9rem;
-            margin-left: auto;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
             border: none;
             cursor: pointer;
         }
         
         .book-now i {
-            margin-right: 5px;
+            margin-right: 6px;
+            font-style: normal;
         }
         
         .book-now:hover {
@@ -191,10 +198,10 @@
         
         .experience-note {
             background-color: #f8f9fa;
-            padding: 12px;
+            padding: 10px 12px;
             border-radius: 6px;
             border-left: 3px solid rgb(185, 43, 19);
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             font-size: 0.9rem;
             color: #666;
         }
@@ -202,6 +209,7 @@
         .experience-note i {
             margin-right: 8px;
             color: rgb(185, 43, 19);
+            font-style: normal;
         }
         
         .section-title {
@@ -278,7 +286,7 @@
         
         <footer>
             <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
-            <p class="version-info">Version 1.2.2</p>
+            <p class="version-info">Version 1.2.3</p>
         </footer>
     </div>
     
@@ -305,16 +313,13 @@
             document.addEventListener('click', function(e) {
                 if (e.target.classList.contains('see-more-btn')) {
                     const textElement = e.target.previousElementSibling;
-                    const card = e.target.closest('.experience-card');
                     
                     // Toggle expanded state with a class
                     if (textElement.classList.contains('truncated-text')) {
-                        // Remove truncation and make scrollable
                         textElement.classList.remove('truncated-text');
                         textElement.classList.add('expanded-text');
                         e.target.textContent = 'See less';
                     } else {
-                        // Add truncation back
                         textElement.classList.add('truncated-text');
                         textElement.classList.remove('expanded-text');
                         e.target.textContent = 'See more';
@@ -326,7 +331,6 @@
         function createExperienceCard(experience) {
             const experienceCard = document.createElement('div');
             experienceCard.className = 'experience-card';
-            // Add a unique ID to each card for direct targeting
             experienceCard.id = 'experience-' + experience.name.replace(/[^a-z0-9]/gi, '-').toLowerCase();
             
             // Image container
@@ -349,7 +353,7 @@
             text.setAttribute('x', '50');
             text.setAttribute('y', '50');
             text.setAttribute('font-family', 'Arial');
-            text.setAttribute('font-size', '14');
+            text.setAttribute('font-size', '24');
             text.setAttribute('text-anchor', 'middle');
             text.setAttribute('dominant-baseline', 'middle');
             text.setAttribute('fill', 'white');
@@ -385,7 +389,7 @@
             if (experience.note) {
                 note = document.createElement('p');
                 note.className = 'experience-note';
-                note.innerHTML = `<i class="note-icon">ℹ️</i> ${experience.note}`;
+                note.innerHTML = `<i>ℹ️</i> ${experience.note}`;
             }
             
             // Experience meta information
@@ -395,24 +399,21 @@
             // Add duration
             const duration = document.createElement('div');
             duration.className = 'experience-meta-item';
-            duration.innerHTML = `<i class="duration-icon">⏱️</i> ${experience.duration || 'Duration not specified'}`;
+            duration.innerHTML = `<i>⏱️</i> ${experience.duration || 'Duration not specified'}`;
             
             // Add price
             const price = document.createElement('div');
             price.className = 'experience-meta-item';
-            price.innerHTML = `<i class="price-icon">€</i> ${experience.price || 'Price not available'}`;
+            price.innerHTML = `<i>€</i> ${experience.price || 'Price not available'}`;
             
-            // Row for the book button
-            const bookRow = document.createElement('div');
-            bookRow.style.display = 'flex';
-            bookRow.style.width = '100%';
-            bookRow.style.justifyContent = 'flex-end';
-            bookRow.style.marginTop = '10px';
+            // Action row for the book button
+            const actionRow = document.createElement('div');
+            actionRow.className = 'action-row';
             
             // Book button with icon
             const bookButton = document.createElement('button');
             bookButton.className = 'book-now';
-            bookButton.innerHTML = `<i class="book-icon">📅</i> ${getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en')}`;
+            bookButton.innerHTML = `<i>📅</i> ${getTranslation('bookNow', localStorage.getItem('preferred_language') || 'en')}`;
             
             // Add event listener to the book button
             bookButton.addEventListener('click', function() {
@@ -423,13 +424,13 @@
             imageContainer.appendChild(imageContent);
             experienceCard.appendChild(imageContainer);
             
-            metaContainer.appendChild(duration);
-            metaContainer.appendChild(price);
-            
             descriptionContainer.appendChild(description);
             descriptionContainer.appendChild(seeMoreBtn);
             
-            bookRow.appendChild(bookButton);
+            metaContainer.appendChild(duration);
+            metaContainer.appendChild(price);
+            
+            actionRow.appendChild(bookButton);
             
             detailsContainer.appendChild(name);
             detailsContainer.appendChild(descriptionContainer);
@@ -437,7 +438,7 @@
                 detailsContainer.appendChild(note);
             }
             detailsContainer.appendChild(metaContainer);
-            detailsContainer.appendChild(bookRow);
+            detailsContainer.appendChild(actionRow);
             
             experienceCard.appendChild(detailsContainer);
             
