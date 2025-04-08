@@ -71,6 +71,43 @@ const translations = {
                 type: "Lunch"
             },
             {
+                name: "Osteria Mercede",
+                description: "A seafood establishment that offers fine dining with a focus on fish and seafood dishes. The ambiance is cozy and intimate, with attentive service and friendly staff. The interior design is reminiscent of a traditional fishermen's boat, adding to the authenticity. The menu features local specialties such as linguine with seafood, grilled blue fish, shrimp cocktail, and mixed raw fish appetizers. Their daily changing specials board ensures fresh options, and they offer outdoor seating for al fresco dining. Located near Teatro Massimo, it's perfect for a pre-theater dinner or a memorable evening out.",
+                priceRange: "€25-40 per person",
+                cuisine: "Seafood, Sicilian",
+                image: "images/attractions/placeholder.jpg",
+                instagram: "@osteria_mercede_palermo",
+                address: "Via Sammartino, n 1, Palermo, Sicily",
+                type: "Dinner"
+            },
+            {
+                name: "Corona Trattoria",
+                description: "A family-run establishment serving some of the best Sicilian seafood cuisine in Palermo. The elegant yet informal ambiance and impeccable service make it a fine dining spot for locals and tourists alike. The owner takes pride in using fresh farm foods directly from producers to create traditional dishes with a modern twist. Recommended dishes include Caponata di Melanzane, Spaghetti ai Gamberetti, and Involtino di Spatola. They offer an extensive list of exclusively Sicilian wines, carefully selected to represent various terroirs. Located in a quiet street in the new part of the city, reservations are highly recommended.",
+                priceRange: "€9-23 per person (€40-50 for full course)",
+                cuisine: "Italian, Seafood, Vegetarian Options",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
+                phone: "+39 091 335139",
+                website: "coronatrattoria.com",
+                instagram: "@coronatrattoria",
+                openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
+                type: "Lunch"
+            },
+            {
+                name: "Sardina PastaBar",
+                description: "A charming restaurant specializing in Italian and Mediterranean cuisines with a focus on pasta dishes. Known for their excellent spaghetti carbonara, sardine and prawn dishes. Delicious desserts include gelato, tiramisu, and parfait. The bar offers fine wine, cordial, and white wine selections, along with great coffee. The cozy atmosphere makes visitors feel relaxed, and the staff is known for their accommodating and enjoyable service. With a Google rating of 4.6 stars, this affordable spot is popular among locals and tourists alike. Offers outdoor seating and accepts credit cards.",
+                priceRange: "€15-30 per person",
+                cuisine: "Italian, Mediterranean, Gluten-free",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Rita",
+                address: "Via dei Cassari, 41/43, Palermo, Sicily",
+                phone: "+39 389 189 3380",
+                website: "sardinapastabar.plateform.app",
+                instagram: "@sardinapastabar",
+                openHours: "Tue-Thu: 7PM-11PM, Fri-Sat: 12:30PM-2:30PM & 7PM-11PM, Sun: 1PM-4PM",
+                type: "Dinner"
+            },
+            {
                 name: "Trattoria Bersagliere",
                 description: "Historic trattoria in the Albergheria neighborhood, famous for pasta with \"glassa\" and a cozy, family-friendly atmosphere.",
                 priceRange: "€10-20 per person",
@@ -338,6 +375,43 @@ const translations = {
                 type: "Pranzo"
             },
             {
+                name: "Osteria Mercede",
+                description: "Un'istituzione di cucina tipica siciliana che offre un'esperienza culinaria autentica con i suoi piatti tipici, come la linguine con i frutti di mare, il pesce grigliato, il cocktail di gamberi e gli antipasti crudi misti. Il menu cambia quotidianamente per offrire opzioni fresche, e offrono un'ampia terrazza all'aperto per un pranzo al fresco. Situato vicino al Teatro Massimo, è ideale per un pranzo prima del teatro o per una serata memorabile.",
+                priceRange: "€25-40 a persona",
+                cuisine: "Siciliana, Pesce",
+                image: "images/attractions/placeholder.jpg",
+                instagram: "@osteria_mercede_palermo",
+                address: "Via Sammartino, n 1, Palermo, Sicily",
+                type: "Cena"
+            },
+            {
+                name: "Corona Trattoria",
+                description: "Un'istituzione familiare che offre alcuni dei migliori piatti di cucina siciliana in Palermo. L'atmosfera elegante ma informale e il servizio attento rendono questo ristorante un punto di incontro ideale per i locali e i turisti. Il proprietario è orgoglioso di utilizzare alimenti freschi direttamente dai produttori per creare piatti tradizionali con un tocco moderno. I piatti consigliati includono Caponata di Melanzane, Spaghetti ai Gamberetti e Involtino di Spatola. Offrono un'ampia lista di vini siciliani esclusivi, selezionati con cura per rappresentare vari terroirs. Situato in una piccola strada nella nuova parte della città, le prenotazioni sono fortemente consigliate.",
+                priceRange: "€9-23 a persona (€40-50 per piatto completo)",
+                cuisine: "Italiana, Pesce, Opzioni Vegetariane",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
+                phone: "+39 091 335139",
+                website: "coronatrattoria.com",
+                instagram: "@coronatrattoria",
+                openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
+                type: "Pranzo"
+            },
+            {
+                name: "Sardina PastaBar",
+                description: "Un'osteria tipica siciliana che si specializza nella cucina italiana e mediterranea con un focus sui piatti di pasta. Noti per i loro ottimi spaghetti carbonara, i piatti di sardina e gamberi. I dolci includono gelato, tiramisù e parfait. La barra offre vini di alta qualità, cordiali e selezioni di vini bianchi, insieme a grandi tazze di caffè. L'atmosfera accogliente rende i visitatori più tranquilli, e lo staff è noto per il loro servizio accogliente e divertente. Con una valutazione Google di 4,6 stelle, questo punto economico è popolare tra i locali e i turisti. Offrono un'ampia terrazza all'aperto e accettano carte di credito.",
+                priceRange: "€15-30 a persona",
+                cuisine: "Italiana, Mediterranea, Senza Glutine",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Rita",
+                address: "Via dei Cassari, 41/43, Palermo, Sicily",
+                phone: "+39 389 189 3380",
+                website: "sardinapastabar.plateform.app",
+                instagram: "@sardinapastabar",
+                openHours: "Tue-Thu: 7PM-11PM, Fri-Sat: 12:30PM-2:30PM & 7PM-11PM, Sun: 1PM-4PM",
+                type: "Cena"
+            },
+            {
                 name: "Trattoria Bersagliere",
                 description: "Storica trattoria nel quartiere Albergheria, famosa per la pasta con \"glassa\" e un'atmosfera accogliente, adatta per le famiglie.",
                 priceRange: "€10-20 a persona",
@@ -399,7 +473,7 @@ const translations = {
             },
             {
                 name: "Ferramenta",
-                description: "Ristorante nel cuore del centro storico di Palermo, con posti a sedere all'aperto e opzioni vegane, ideale per un'atmosfera giovane e accogliente.",
+                description: "Ristorante nel cuore del centro storico di Palermo, con posti a sedere all'aperto e opzioni vegane, ideale per un'atmosfera giovane e accueillante.",
                 priceRange: "€20-30 a persona",
                 cuisine: "Mediterranea, Opzioni Vegane",
                 image: "images/attractions/placeholder.jpg",
@@ -603,6 +677,43 @@ const translations = {
                 phone: "+39 346 154 0413",
                 openUntil: "23:00",
                 type: "Lunch"
+            },
+            {
+                name: "Osteria Mercede",
+                description: "Une établissement de cuisine typique sicilienne qui offre une expérience culinaire authentique avec ses plats typiques, tels que la linguine aux fruits de mer, le poisson grillé, le cocktail de crevettes et les antipasti crudos. Le menu change quotidiennement pour offrir des options fraîches, et ils offrent une grande terrasse pour un déjeuner en plein air. Situé près du Teatro Massimo, c'est parfait pour un déjeuner avant le théâtre ou pour une soirée mémorable.",
+                priceRange: "€25-40 par personne",
+                cuisine: "Sicilienne, Poisson",
+                image: "images/attractions/placeholder.jpg",
+                instagram: "@osteria_mercede_palermo",
+                address: "Via Sammartino, n 1, Palermo, Sicily",
+                type: "Dîner"
+            },
+            {
+                name: "Corona Trattoria",
+                description: "Une établissement familiale qui sert certains des meilleurs plats de cuisine sicilienne de Palermo. L'ambiance élégante mais informelle et le service attentif rendent ce restaurant un point d'incontre idéal pour les locaux et les touristes. Le propriétaire est fier d'utiliser des aliments frais directement des producteurs pour créer des plats traditionnels avec une touche moderne. Les plats recommandés incluent Caponata di Melanzane, Spaghetti ai Gamberetti et Involtino di Spatola. Ils proposent une grande liste de vins siciliens exclusifs, sélectionnés avec soin pour représenter divers terroirs. Situé dans une petite rue dans la nouvelle partie de la ville, les réservations sont fortement recommandées.",
+                priceRange: "€9-23 par personne (€40-50 pour un repas complet)",
+                cuisine: "Italienne, Poisson, Options Végétariennes",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
+                phone: "+39 091 335139",
+                website: "coronatrattoria.com",
+                instagram: "@coronatrattoria",
+                openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
+                type: "Pranzo"
+            },
+            {
+                name: "Sardina PastaBar",
+                description: "Une osteria tipica siciliana qui se spécialise dans la cuisine italienne et méditerranéenne avec un focus sur les pâtes. Notés pour leurs excellents spaghetti carbonara, les pâtes de sardine et de crevettes. Les desserts incluent gelato, tiramisu et parfait. La barre offre de bons vins, cordial et sélections de vins blancs, ainsi que de grandes tasses de café. L'atmosphère accueillante rend les visiteurs plus tranquilles, et l'équipe est connue pour son service accueillant et divertissant. Avec une note Google de 4,6 étoiles, ce point économique est populaire parmi les locaux et les touristes. Ils offrent une grande terrasse en plein air et acceptent les cartes de crédit.",
+                priceRange: "€15-30 par personne",
+                cuisine: "Italienne, Méditerranéenne, Sans Gluten",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Rita",
+                address: "Via dei Cassari, 41/43, Palermo, Sicily",
+                phone: "+39 389 189 3380",
+                website: "sardinapastabar.plateform.app",
+                instagram: "@sardinapastabar",
+                openHours: "Tue-Thu: 7PM-11PM, Fri-Sat: 12:30PM-2:30PM & 7PM-11PM, Sun: 1PM-4PM",
+                type: "Cena"
             },
             {
                 name: "Trattoria Bersagliere",
@@ -870,6 +981,43 @@ const translations = {
                 phone: "+39 346 154 0413",
                 openUntil: "23:00",
                 type: "Lunch"
+            },
+            {
+                name: "Osteria Mercede",
+                description: "Un establecimiento de comida tipica siciliana que ofrece una experiencia culinaria autentica con sus platos tipicos, como la linguine con los frutos de mar, el pescado a la plancha, el cóctel de gambas y los antipasti crudos. El menú cambia diariamente para ofrecer opciones frescas, y ofrecen una terraza al aire libre para un almuerzo al fresco. Situado cerca del Teatro Massimo, es perfecto para una cena antes del teatro o para una noche memorable. Incluye un menú de platos especiales que cambian cada día.",
+                priceRange: "€25-40 por persona",
+                cuisine: "Siciliana, Marisco",
+                image: "images/attractions/placeholder.jpg",
+                instagram: "@osteria_mercede_palermo",
+                address: "Via Sammartino, n 1, Palermo, Sicily",
+                type: "Cena"
+            },
+            {
+                name: "Corona Trattoria",
+                description: "Un establecimiento familiar que sirve algunos de los mejores platos de cocina siciliana en Palermo. El ambiente elegante pero informal y el servicio atento lo convierten en un punto de encuentro ideal tanto para los locales como para los turistas. El propietario se enorgullece de usar alimentos frescos directamente de productores para crear platos tradicionales con un toque moderno. Platos recomendados incluyen Caponata de Melanzane, Spaghetti ai Gamberetti y Involtino di Spatola. Ofrecen una lista extensa de vinos sicilianos exclusivos, seleccionados cuidadosamente para representar diversos terroirs. Están situados en una calle tranquila en la nueva parte de la ciudad, y las reservas son altamente recomendadas.",
+                priceRange: "€9-23 por persona (€40-50 para plato completo)",
+                cuisine: "Italiana, Marisco, Opciones Vegetarianas",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
+                phone: "+39 091 335139",
+                website: "coronatrattoria.com",
+                instagram: "@coronatrattoria",
+                openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
+                type: "Pranzo"
+            },
+            {
+                name: "Sardina PastaBar",
+                description: "Un restaurante tipico siciliano que se especializa en la cocina italiana y mediterranea con un enfoque en los platos de pasta. Notable por sus excelentes spaghetti carbonara, las pastas de sardina y gambas. Los postres deliciosos incluyen gelato, tiramisu y parfait. La barra ofrece vinos de alta calidad, cordial y selecciones de vinos blancos, junto con grandes tazas de café. La atmosfera acogedora hace que los visitantes se sientan relajados, y el personal es conocido por su servicio amable y divertido. Con una calificación de 4.6 estrellas en Google, este lugar económico es popular entre los locales y los turistas. Ofrece una terraza al aire libre y acepta tarjetas de crédito.",
+                priceRange: "€15-30 por persona",
+                cuisine: "Italiana, Mediterránea, Sin Gluten",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Rita",
+                address: "Via dei Cassari, 41/43, Palermo, Sicily",
+                phone: "+39 389 189 3380",
+                website: "sardinapastabar.plateform.app",
+                instagram: "@sardinapastabar",
+                openHours: "Tue-Thu: 7PM-11PM, Fri-Sat: 12:30PM-2:30PM & 7PM-11PM, Sun: 1PM-4PM",
+                type: "Cena"
             },
             {
                 name: "Trattoria Bersagliere",
