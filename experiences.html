@@ -236,9 +236,20 @@
             document.addEventListener('click', function(e) {
                 if (e.target.classList.contains('see-more-btn')) {
                     const textElement = e.target.previousElementSibling;
+                    const card = e.target.closest('.experience-card');
+                    
                     if (textElement.classList.contains('truncated-text')) {
                         textElement.classList.remove('truncated-text');
                         e.target.textContent = 'See less';
+                        
+                        // Smooth scroll to show expanded content
+                        setTimeout(() => {
+                            const cardRect = card.getBoundingClientRect();
+                            // If card is partially out of view, scroll to it
+                            if (cardRect.top < 0 || cardRect.bottom > window.innerHeight) {
+                                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 10); // Small delay to allow DOM to update
                     } else {
                         textElement.classList.add('truncated-text');
                         e.target.textContent = 'See more';
