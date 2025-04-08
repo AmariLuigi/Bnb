@@ -59,6 +59,16 @@ const translations = {
                 type: "Lunch"
             },
             {
+                name: "Maccio Osteria Alcolica",
+                description: "A charming restaurant perfectly situated near Piazza Olivella, Maccio Osteria Alcolica offers an authentic culinary experience with their exceptional ragù bolognese that locals rave about. The restaurant boasts an impressive selection of liqueurs and wines, carefully curated to complement their dishes. The knowledgeable staff provides impeccable service, creating a memorable dining experience in a peaceful atmosphere. With reasonable prices for such high-quality cuisine and a stellar 4.7 Google rating, this restaurant is a must-visit for those seeking authentic Sicilian flavors in an intimate setting.",
+                priceRange: "€20-30 per person",
+                cuisine: "Traditional Sicilian, Wine Bar",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Enrico",
+                address: "Near Piazza Olivella, Palermo",
+                type: "Dinner"
+            },
+            {
                 name: "Trattoria Bersagliere",
                 description: "Historic trattoria in the Albergheria neighborhood, famous for pasta with \"glassa\" and a cozy, family-friendly atmosphere.",
                 priceRange: "€10-20 per person",
@@ -312,6 +322,16 @@ const translations = {
                 referent: "Arianna",
                 address: "Via Porta Carini, 51, 90134 Palermo PA",
                 type: "Pranzo"
+            },
+            {
+                name: "Maccio Osteria Alcolica",
+                description: "Un incantevole ristorante perfettamente situato vicino a Piazza Olivella, Maccio Osteria Alcolica offre un'autentica esperienza culinaria con il loro eccezionale ragù bolognese, molto apprezzato dai clienti. Il ristorante vanta un'impressionante selezione di liquori e vini, attentamente selezionati per accompagnare i loro piatti. Il personale esperto fornisce un servizio impeccabile, creando un'esperienza gastronomica memorabile in un'atmosfera tranquilla. Con prezzi ragionevoli per una cucina di tale qualità e un eccellente punteggio di 4.7 su Google, questo ristorante è una tappa obbligata per chi cerca autentici sapori siciliani in un ambiente intimo.",
+                priceRange: "€20-30 a persona",
+                cuisine: "Siciliana Tradizionale, Enoteca",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Enrico",
+                address: "Vicino Piazza Olivella, Palermo",
+                type: "Cena"
             },
             {
                 name: "Trattoria Bersagliere",
@@ -569,6 +589,16 @@ const translations = {
                 type: "Lunch"
             },
             {
+                name: "Maccio Osteria Alcolica",
+                description: "Un charmant restaurant idéalement situé près de la Piazza Olivella, Maccio Osteria Alcolica offre une expérience culinaire authentique avec son exceptionnel ragù bolognese dont les habitants raffolent. Le restaurant propose une impressionnante sélection de liqueurs et de vins, soigneusement choisis pour accompagner leurs plats. Le personnel compétent assure un service impeccable, créant une expérience gastronomique mémorable dans une atmosphère paisible. Avec des prix raisonnables pour une cuisine de cette qualité et une note Google exceptionnelle de 4,7, ce restaurant est incontournable pour ceux qui recherchent des saveurs siciliennes authentiques dans un cadre intime.",
+                priceRange: "€20-30 par personne",
+                cuisine: "Sicilienne Traditionnelle, Bar à Vin",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Enrico",
+                address: "Près de Piazza Olivella, Palermo",
+                type: "Dinner"
+            },
+            {
                 name: "Trattoria Bersagliere",
                 description: "Trattoria historique dans le quartier Albergheria, célèbre pour ses pâtes avec 'glassa' et son atmosphère chaleureuse et familiale.",
                 priceRange: "€10-20 par personne",
@@ -822,6 +852,16 @@ const translations = {
                 referent: "Arianna",
                 address: "Via Porta Carini, 51, 90134 Palermo PA",
                 type: "Lunch"
+            },
+            {
+                name: "Maccio Osteria Alcolica",
+                description: "Un encantador restaurante perfectamente situado cerca de Piazza Olivella, Maccio Osteria Alcolica ofrece una auténtica experiencia culinaria con su excepcional ragù boloñesa del que los lugareños hablan maravillas. El restaurante cuenta con una impresionante selección de licores y vinos, cuidadosamente seleccionados para complementar sus platos. El personal conocedor proporciona un servicio impecable, creando una experiencia gastronómica memorable en un ambiente tranquilo. Con precios razonables para una cocina de tal calidad y una excelente calificación de 4.7 en Google, este restaurante es una visita obligada para aquellos que buscan auténticos sabores sicilianos en un entorno íntimo.",
+                priceRange: "€20-30 por persona",
+                cuisine: "Siciliana Tradicional, Bar de Vinos",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Enrico",
+                address: "Cerca de Piazza Olivella, Palermo",
+                type: "Dinner"
             },
             {
                 name: "Trattoria Bersagliere",
