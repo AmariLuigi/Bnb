@@ -186,66 +186,75 @@ const translations = {
                 referent: "Luca or Marcello",
                 address: "Via Giovanni Meli, 35, 90133 Palermo PA",
                 type: "Dinner"
-            }
-        ],
-        
-        // Experience data
-        experiencesData: [
-            {
-                name: "Discovering Palermo",
-                description: "A walking tour of the historic center to discover the millenary history of Palermo, a unique melting pot in the world. Visit Teatro Massimo, the Capo Market, Cathedral, Norman Palace with Palatine Chapel, Quattro Canti, and Piazza Bellini.",
-                duration: "3 hours",
-                price: "€45-€100 per person",
-                image: "images/attractions/placeholder.jpg",
-                note: "Any entrances to historic buildings or monuments are not included in the price."
             },
             {
-                name: "Street Food Aperitif Tour",
-                description: "An itinerant aperitif along the streets of the historic center of Palermo. Experience traditional street food including panelle, crocche, sfincione, bread with spleen, and a glass of wine at Vucciria.",
-                duration: "2 hours",
-                price: "€45-€55 per person",
+                name: "Quid gusto siciliano",
+                description: "A popular restaurant near Palazzo Steri offering authentic Italian cuisine. Known for perfectly cooked spaghetti vongole, Neapolitan pizza and swordfish. Desserts include semifreddo, tiramisu and gelato. The restaurant offers delicious margaritas, house wine, and cordial, along with great coffee and lemonade. With a 4.3 Google rating, the restaurant is praised for its competent staff, terrific service, affordable prices, and pretty ambiance.",
+                priceRange: "€13-41 per person",
+                cuisine: "Pizza, Italian, Vegetarian Options",
                 image: "images/attractions/placeholder.jpg",
-                note: "Food tastings included in the price."
+                referent: "Serena",
+                address: "Piazza Marina, 52, Palermo, Sicily",
+                phone: "+39 091 729 6996",
+                website: "facebook.com",
+                instagram: "@quidgustosiciliano",
+                openHours: "Daily 12PM-3PM, 7PM-11PM",
+                type: "Dinner"
             },
             {
-                name: "The Kingdom of the Sun - Arab-Norman Itinerary",
-                description: "Discover the Arab-Norman UNESCO heritage sites of Palermo, including the Royal Palace with Palatine Chapel, Cathedral, San Giovanni degli Eremiti, San Cataldo, and Santa Maria dell'Ammiraglio.",
-                duration: "3.5 hours",
-                price: "€45-€100 per person",
+                name: "Scjabaca",
+                description: "Located near Fontana del Genio, this restaurant offers Italian and Mediterranean cuisine with a 4.7 Google rating. Specialties include grilled octopus, ravioli, and grilled tuna, along with delightful desserts like parfait, panna cotta, and crumble. The restaurant is known for its diverse wine list, delicious coffee, nice staff, fast service, and reasonable prices. The calm atmosphere and beautiful decor make for an enjoyable dining experience.",
+                priceRange: "€20-61 per person",
+                cuisine: "Mediterranean, Italian, Vegetarian Options",
                 image: "images/attractions/placeholder.jpg",
-                note: "Any entrances to historic buildings or monuments are not included in the price."
+                referent: "Valeria",
+                address: "Vicolo S. Carlo, 42, Palermo, Sicily",
+                phone: "+39 091 507 6739",
+                website: "ristorantescjabaca.it",
+                instagram: "@scjabaca",
+                openHours: "Mon-Tue, Thu-Fri: 7PM-11PM; Sat-Sun: 12PM-3PM, 7PM-11PM; Wed: Closed",
+                type: "Dinner"
             },
             {
-                name: "The Florios Dynasty - Walking Tour",
-                description: "Trace the history of the Florio family from the Loggia district to the Teatro Massimo. Learn about their businesses, successes, and impact on Palermo's Belle Époque.",
-                duration: "3 hours",
-                price: "€45-€100 per person",
+                name: "Osteria dei Vespri",
+                description: "A Michelin-selected restaurant near Fontana del Genio, offering refined Italian cuisine with a focus on seafood. Notable dishes include antipasto, pork belly, and seared tuna, with delicious fruit cakes, cookies, and parfait for dessert. The restaurant serves good chardonnay, cordial, and fino sherry, along with exquisite ristretto and lemonade. Appreciated for its attractive staff, spectacular service, and democratic prices, this restaurant features cute decor and a charming atmosphere. It has received 2 black knife and fork symbols from Michelin, indicating optimal comfort.",
+                priceRange: "€35-150 per person",
+                cuisine: "Italian, Seafood, Wine Bars",
                 image: "images/attractions/placeholder.jpg",
-                note: "Any entrances to historic buildings or monuments are not included in the price."
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
+                type: "Dinner"
             },
             {
-                name: "The Florios Dynasty with Private Transport",
-                description: "Discover the Florio family's legacy with private transportation. Visit Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, and the Arenella house with Quattro Pizzi.",
-                duration: "4 hours",
-                price: "€55-€150 per person",
+                name: "Le Cattive",
+                description: "Located near Porta Felice, this restaurant offers Italian and Mediterranean cuisines. Specialties include monkfish, aglio, and risotto, with tasty biscuits, cannoli, and tiramisu for dessert. The restaurant is known for its good wine, negroni, cordial, and great coffee. With a Google rating of 4.5, visitors praise the great view, accommodating staff, professional service, democratic prices, peaceful atmosphere, and fine decor.",
+                priceRange: "€40-70 per person",
+                cuisine: "Italian, Mediterranean, Seafood",
                 image: "images/attractions/placeholder.jpg",
-                note: "Only available on Saturday afternoon and Sunday morning."
+                referent: "Andrea",
+                address: "Piazza Santo Spirito, 1, Palermo, Sicily",
+                phone: "+39 091 619 5635",
+                website: "lecattivepalazzobutera.it",
+                instagram: "@lecattivepalazzobutera",
+                openHours: "Tue-Sun: 10AM-7PM; Mon: Closed",
+                type: "Lunch"
             },
             {
-                name: "Arab-Norman Cathedrals Tour",
-                description: "Visit the four most interesting Norman cathedrals in Palermo and its province by train and private transportation, including the Palatine Chapel, Martorana, Cefalù and Monreale.",
-                duration: "4-5 hours",
-                price: "€100-€140 per person",
+                name: "U Babbio",
+                description: "Church of the Holy Cross can be on your route by default, the clients' recommendation is to visit this restaurant. U Babbio is famous for serving Italian and Mediterranean cuisines. Many people visit this place to taste perfectly cooked busiate, sardine and antipasto. Delicious prosecco gets positive reviews. This spot has good coffee among its drinks. The convenient location of this restaurant makes it easy to reach even in rush hours. The staff is said to be knowledgeable here. The professional service displays a high level of quality. With a Google rating of 4.5, this restaurant offers fair prices for quality meals in a lovely atmosphere.",
+                priceRange: "€16-36 per person",
+                cuisine: "Italian, Mediterranean, Healthy food",
                 image: "images/attractions/placeholder.jpg",
-                note: "Includes train ticket and transfer to Monreale."
-            },
-            {
-                name: "Cooking Class with Chef",
-                description: "Visit the Capo market with our chef to select fresh ingredients, then prepare traditional Sicilian recipes at the chef's home, concluding with lunch together.",
-                duration: "3-4 hours",
-                price: "€130 per person",
-                image: "images/attractions/placeholder.jpg",
-                note: "Includes market visit, cooking class, and lunch with selected ingredients."
+                referent: "Fiamma",
+                address: "Via Principe Scordia, 104, Palermo, Sicily, Italy",
+                phone: "+39 091 910 1627",
+                instagram: "@ubabbio",
+                openHours: "Sun: 9AM-5PM; Mon, Wed-Fri: 6:30PM-11PM; Sat: 12PM-11PM; Tue: Closed",
+                type: "Dinner"
             }
         ],
         
@@ -295,7 +304,7 @@ const translations = {
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
             { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
             { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
-            { name: "Museo Salinas", image: "images/attractions/museo_salinas.jpg" },
+            { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
             { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
@@ -376,7 +385,7 @@ const translations = {
             },
             {
                 name: "Osteria Mercede",
-                description: "Un'istituzione di cucina tipica siciliana che offre un'esperienza culinaria autentica con i suoi piatti tipici, come la linguine con i frutti di mare, il pesce grigliato, il cocktail di gamberi e gli antipasti crudi misti. Il menu cambia quotidianamente per offrire opzioni fresche, e offrono un'ampia terrazza all'aperto per un pranzo al fresco. Situato vicino al Teatro Massimo, è ideale per un pranzo prima del teatro o per una serata memorabile.",
+                description: "Un'istituzione di cucina tipica siciliana che offre una esperienza culinaria autentica con i suoi piatti tipici, come la linguine con i frutti di mare, il pesce grigliato, il cocktail di gamberi e gli antipasti crudi misti. Il menu cambia quotidianamente per offrire opzioni fresche, e offrono un'ampia terrazza all'aperto per un pranzo al fresco. Situato vicino al Teatro Massimo, è ideale per un pranzo prima del teatro o per una serata memorabile.",
                 priceRange: "€25-40 a persona",
                 cuisine: "Siciliana, Pesce",
                 image: "images/attractions/placeholder.jpg",
@@ -386,9 +395,9 @@ const translations = {
             },
             {
                 name: "Corona Trattoria",
-                description: "Un'istituzione familiare che offre alcuni dei migliori piatti di cucina siciliana in Palermo. L'atmosfera elegante ma informale e il servizio attento rendono questo ristorante un punto di incontro ideale per i locali e i turisti. Il proprietario è orgoglioso di utilizzare alimenti freschi direttamente dai produttori per creare piatti tradizionali con un tocco moderno. I piatti consigliati includono Caponata di Melanzane, Spaghetti ai Gamberetti e Involtino di Spatola. Offrono un'ampia lista di vini siciliani esclusivi, selezionati con cura per rappresentare vari terroirs. Situato in una piccola strada nella nuova parte della città, le prenotazioni sono fortemente consigliate.",
-                priceRange: "€9-23 a persona (€40-50 per piatto completo)",
-                cuisine: "Italiana, Pesce, Opzioni Vegetariane",
+                description: "Un'istituzione familiare che offre alcuni dei migliori piatti di cucina siciliana in Palermo. L'atmosfera elegante ma informale e il servizio attento rendono questo ristorante un punto di incontro ideale per i locali e i turisti. Il proprietario è orgoglioso di utilizzare alimenti freschi direttamente dai produttori per creare piatti tradizionali con un tocco moderno. Les plats recommandés incluent Caponata di Melanzane, Spaghetti ai Gamberetti et Involtino di Spatola. Ils proposent une grande liste de vins siciliens exclusifs, sélectionnés avec soin pour représenter divers terroirs. Situé dans une petite rue dans la nouvelle partie de la ville, les réservations sont fortement recommandées.",
+                priceRange: "€9-23 a persona (€40-50 pour un repas complet)",
+                cuisine: "Italienne, Poisson, Options Végétariennes",
                 image: "images/attractions/placeholder.jpg",
                 address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
                 phone: "+39 091 335139",
@@ -399,9 +408,9 @@ const translations = {
             },
             {
                 name: "Sardina PastaBar",
-                description: "Un'osteria tipica siciliana che si specializza nella cucina italiana e mediterranea con un focus sui piatti di pasta. Noti per i loro ottimi spaghetti carbonara, i piatti di sardina e gamberi. I dolci includono gelato, tiramisù e parfait. La barra offre vini di alta qualità, cordiali e selezioni di vini bianchi, insieme a grandi tazze di caffè. L'atmosfera accogliente rende i visitatori più tranquilli, e lo staff è noto per il loro servizio accogliente e divertente. Con una valutazione Google di 4,6 stelle, questo punto economico è popolare tra i locali e i turisti. Offrono un'ampia terrazza all'aperto e accettano carte di credito.",
+                description: "Un'osteria tipica siciliana qui se spécialise dans la cuisine italienne et méditerranéenne avec un focus sur les pâtes. Notés pour leurs excellents spaghetti carbonara, les pâtes de sardine et de crevettes. Les desserts incluent gelato, tiramisù e parfait. La barre offre vins de haute qualité, cordial et sélections de vins blancs, ainsi que de grandes tasses de café. L'atmosphère accueillante rend les visiteurs plus tranquilles, et l'équipe est connue pour son service accueillant et divertissant. Avec une note Google de 4,6 étoiles, ce point économique est populaire parmi les locaux et les touristes. Ils offrent une grande terrasse en plein air et acceptent les cartes de crédit.",
                 priceRange: "€15-30 a persona",
-                cuisine: "Italiana, Mediterranea, Senza Glutine",
+                cuisine: "Italienne, Méditerranéenne, Sans Gluten",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Rita",
                 address: "Via dei Cassari, 41/43, Palermo, Sicily",
@@ -413,9 +422,9 @@ const translations = {
             },
             {
                 name: "Trattoria Bersagliere",
-                description: "Storica trattoria nel quartiere Albergheria, famosa per la pasta con \"glassa\" e un'atmosfera accogliente, adatta per le famiglie.",
+                description: "Storica trattoria nel quartiere Albergheria, célèbre pour ses pâtes avec 'glassa' et son atmosphère chaleureuse et familiale.",
                 priceRange: "€10-20 a persona",
-                cuisine: "Siciliana Tradizionale",
+                cuisine: "Sicilienne Traditionnelle",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Lollo",
                 address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
@@ -423,9 +432,9 @@ const translations = {
             },
             {
                 name: "Dadalia Osteria",
-                description: "Tipica osteria siciliana situata nel storico mercato della Vucciria. Offre piatti vegetariani e dispone di posti a sedere all'aperto.",
+                description: "Tipica osteria siciliana située dans le marché historique de Vucciria. Offre des plats végétariens et dispose d'une terrasse extérieure.",
                 priceRange: "€10-20 a persona",
-                cuisine: "Siciliana, Opzioni Vegetariane",
+                cuisine: "Sicilienne, Options Végétariennes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Pippo o Giovanni",
                 address: "Via Maccherronai, 20, 90133 Palermo PA",
@@ -473,11 +482,11 @@ const translations = {
             },
             {
                 name: "Ferramenta",
-                description: "Ristorante nel cuore del centro storico di Palermo, con posti a sedere all'aperto e opzioni vegane, ideale per un'atmosfera giovane e accueillante.",
+                description: "Ristorante nel cuore del centro storico di Palermo, con posti a sedere all'aperto e opzioni vegane, ideale per un'atmosfera giovane e accogliente.",
                 priceRange: "€20-30 a persona",
-                cuisine: "Mediterranea, Opzioni Vegane",
+                cuisine: "Méditerranéenne, Opzions Véganes",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Luca o Marcello",
+                referent: "Luca ou Marcello",
                 address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
                 type: "Cena"
             },
@@ -490,6 +499,62 @@ const translations = {
                 referent: "Luca o Marcello",
                 address: "Via Giovanni Meli, 35, 90133 Palermo PA",
                 type: "Cena"
+            },
+            {
+                name: "Quid gusto siciliano",
+                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato per il suo personale competente, servizio eccellente, prezzi accessibili e un'atmosfera gradevole.",
+                priceRange: "€13-41 a persona",
+                cuisine: "Pizza, Italiana, Opzioni Vegetariane",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Serena",
+                address: "Piazza Marina, 52, Palermo, Sicilia",
+                phone: "+39 091 729 6996",
+                website: "facebook.com",
+                instagram: "@quidgustosiciliano",
+                openHours: "Tutti i giorni 12:00-15:00, 19:00-23:00",
+                type: "Cena"
+            },
+            {
+                name: "Scjabaca",
+                description: "Situato vicino alla Fontana del Genio, questo ristorante offre cucina italiana e mediterranea con un punteggio di 4.7 su Google. Le specialità includono polpo alla griglia, ravioli e tonno alla griglia, insieme a deliziosi dessert come parfait, panna cotta e crumble. Il ristorante è noto per la sua diversificata carta dei vini, ottimo caffè, personale gentile, servizio veloce e prezzi ragionevoli. L'atmosfera tranquilla e il bel arredamento rendono l'esperienza culinaria piacevole.",
+                priceRange: "€20-61 a persona",
+                cuisine: "Mediterranea, Italiana, Opzioni Vegetariane",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Valeria",
+                address: "Vicolo S. Carlo, 42, Palermo, Sicilia",
+                phone: "+39 091 507 6739",
+                website: "ristorantescjabaca.it",
+                instagram: "@scjabaca",
+                openHours: "Lun-Mar, Gio-Ven: 19:00-23:00; Sab-Dom: 12:00-15:00, 19:00-23:00; Mer: Chiuso",
+                type: "Cena"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                priceRange: "€35-150 a persona",
+                cuisine: "Italiana, Frutti di Mare, Bar di Vini",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sab: 12:30-14:45, 19:30-22:45; Dom: Chiuso",
+                type: "Cena"
+            },
+            {
+                name: "Le Cattive",
+                description: "Situato vicino a Porta Felice, questo ristorante offre cucine italiana e mediterranea. Le specialità includono rana pescatrice, aglio e risotto, con deliziosi biscotti, cannoli e tiramisù per dessert. Il ristorante è noto per il suo buon vino, negroni, cordiale e ottimo caffè. Con una valutazione di 4.5 su Google, i visitatori elogiano la splendida vista, il personale disponibile, il servizio professionale, i prezzi democratici, l'atmosfera tranquilla e l'arredamento raffinato.",
+                priceRange: "€40-70 a persona",
+                cuisine: "Italiana, Mediterranea, Frutti di Mare",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Santo Spirito, 1, Palermo, Sicilia",
+                phone: "+39 091 619 5635",
+                website: "lecattivepalazzobutera.it",
+                instagram: "@lecattivepalazzobutera",
+                openHours: "Mar-Dom: 10:00-19:00; Lun: Chiuso",
+                type: "Pranzo"
             }
         ],
         
@@ -513,27 +578,27 @@ const translations = {
             },
             {
                 name: "Il Regno del Sole - Itinerario arabo-normanno",
-                description: "Scopri i siti UNESCO del patrimonio arabo-normanno di Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo e Santa Maria dell'Ammiraglio.",
+                description: "Scopri i siti UNESCO del patrimonio arabo-normanno di Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo, e Santa Maria dell'Ammiraglio.",
                 duration: "3.5 ore",
                 price: "€45-€100 a persona",
                 image: "images/attractions/placeholder.jpg",
                 note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
             },
             {
-                name: "I Florio, una dinastia - tour a piedi",
-                description: "Ripercorri la storia della famiglia Florio dal quartiere della Loggia al Teatro Massimo. Scopri le loro attività commerciali, i successi e l'impatto sulla Belle Époque palermitana.",
-                duration: "3 ore",
-                price: "€45-€100 a persona",
+                name: "The Florios Dynasty - Walking Tour",
+                description: "Trace the history of the Florio family from the Loggia district to the Teatro Massimo. Learn about their businesses, successes, and impact on Palermo's Belle Époque.",
+                duration: "3 hours",
+                price: "€45-€100 per person",
                 image: "images/attractions/placeholder.jpg",
-                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
+                note: "Any entrances to historic buildings or monuments are not included in the price."
             },
             {
-                name: "I Florio, una dinastia con trasporto privato",
-                description: "Scopri l'eredità della famiglia Florio con trasporto privato. Visita il Villino Florio all'Olivuzza, Villa Malfitano-Whitaker e la casa dell'Arenella con i Quattro Pizzi.",
-                duration: "4 ore",
-                price: "€55-€150 a persona",
+                name: "The Florios Dynasty with Private Transport",
+                description: "Discover the Florio family's legacy with private transportation. Visit Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, and the Arenella house with Quattro Pizzi.",
+                duration: "4 hours",
+                price: "€55-€150 per person",
                 image: "images/attractions/placeholder.jpg",
-                note: "Disponibile solo il sabato pomeriggio e la domenica mattina."
+                note: "Only available on Saturday afternoon and Sunday morning."
             },
             {
                 name: "Arab-Norman Cathedrals Tour",
@@ -686,7 +751,7 @@ const translations = {
                 image: "images/attractions/placeholder.jpg",
                 instagram: "@osteria_mercede_palermo",
                 address: "Via Sammartino, n 1, Palermo, Sicily",
-                type: "Dîner"
+                type: "Cena"
             },
             {
                 name: "Corona Trattoria",
@@ -767,7 +832,7 @@ const translations = {
             },
             {
                 name: "Enoteca Butticè",
-                description: "Restaurant et bar à vin avec plus de 700 étiquettes de vin, offreciendo cocina palermitana et excelentes cócteles.",
+                description: "Ristorante et bar à vin avec plus de 700 étiquettes de vin, offreciendo cocina palermitana et excelentes cócteles.",
                 priceRange: "€20-40 par personne",
                 cuisine: "Sicilienne, Bar à Vin",
                 image: "images/attractions/placeholder.jpg",
@@ -794,6 +859,62 @@ const translations = {
                 referent: "Luca ou Marcello",
                 address: "Via Giovanni Meli, 35, 90133 Palermo PA",
                 type: "Dinner"
+            },
+            {
+                name: "Quid gusto siciliano",
+                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato per il suo personale competente, servizio eccellente, prezzi accessibili e un'atmosfera gradevole.",
+                priceRange: "€13-41 a persona",
+                cuisine: "Pizza, Italiana, Opzioni Vegetariane",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Serena",
+                address: "Piazza Marina, 52, Palermo, Sicilia",
+                phone: "+39 091 729 6996",
+                website: "facebook.com",
+                instagram: "@quidgustosiciliano",
+                openHours: "Tutti i giorni 12:00-15:00, 19:00-23:00",
+                type: "Cena"
+            },
+            {
+                name: "Scjabaca",
+                description: "Situato vicino alla Fontana del Genio, questo ristorante offre cucina italiana e mediterranea con un punteggio di 4.7 su Google. Le specialità includono polpo alla griglia, ravioli e tonno alla griglia, insieme a deliziosi dessert come parfait, panna cotta e crumble. Il ristorante è noto per la sua diversificata carta dei vini, ottimo caffè, personale gentile, servizio veloce e prezzi ragionevoli. L'atmosfera tranquilla e il bel arredamento rendono l'esperienza culinaria piacevole.",
+                priceRange: "€20-61 a persona",
+                cuisine: "Mediterranea, Italiana, Opzioni Vegetariane",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Valeria",
+                address: "Vicolo S. Carlo, 42, Palermo, Sicilia",
+                phone: "+39 091 507 6739",
+                website: "ristorantescjabaca.it",
+                instagram: "@scjabaca",
+                openHours: "Lun-Mar, Gio-Ven: 19:00-23:00; Sab-Dom: 12:00-15:00, 19:00-23:00; Mer: Chiuso",
+                type: "Cena"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                priceRange: "€35-150 a persona",
+                cuisine: "Italiana, Frutti di Mare, Bar di Vini",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sab: 12:30-14:45, 19:30-22:45; Dom: Chiuso",
+                type: "Cena"
+            },
+            {
+                name: "Le Cattive",
+                description: "Situato vicino a Porta Felice, questo ristorante offre cucine italiana e mediterranea. Le specialità includono rana pescatrice, aglio e risotto, con deliziosi biscotti, cannoli e tiramisù per dessert. Il ristorante è noto per il suo buon vino, negroni, cordiale e ottimo caffè. Con una valutazione di 4.5 su Google, i visitatori elogiano la splendida vista, il personale disponibile, il servizio professionale, i prezzi democratici, l'atmosfera tranquilla e l'arredamento raffinato.",
+                priceRange: "€40-70 a persona",
+                cuisine: "Italiana, Mediterranea, Frutti di Mare",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Santo Spirito, 1, Palermo, Sicilia",
+                phone: "+39 091 619 5635",
+                website: "lecattivepalazzobutera.it",
+                instagram: "@lecattivepalazzobutera",
+                openHours: "Mar-Dom: 10:00-19:00; Lun: Chiuso",
+                type: "Pranzo"
             }
         ],
         
@@ -817,11 +938,11 @@ const translations = {
             },
             {
                 name: "Le Royaume du Soleil - Itinerario Árabe-Normando",
-                description: "Descubra les sites du patrimonio Árabe-Normando de la UNESCO en Palermo, incluyendo el Palacio Real con la Chapelle Palatine, la Cathédrale, San Giovanni degli Eremiti, San Cataldo y Santa Maria dell'Ammiraglio.",
+                description: "Scopri i siti UNESCO du patrimonio Árabe-Normando de la UNESCO en Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo e Santa Maria dell'Ammiraglio.",
                 duration: "3,5 heures",
                 price: "€45-€100 par personne",
                 image: "images/attractions/placeholder.jpg",
-                note: "Les entrées aux bâtiments historiques ou monuments ne sont pas incluses dans le prix."
+                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
             },
             {
                 name: "La Dynastía de los Florio - Recorrido a Pie",
@@ -1098,6 +1219,62 @@ const translations = {
                 referent: "Luca o Marcello",
                 address: "Via Giovanni Meli, 35, 90133 Palermo PA",
                 type: "Dinner"
+            },
+            {
+                name: "Quid gusto siciliano",
+                description: "Un popular restaurante cerca del Palazzo Steri que ofrece auténtica cocina italiana. Conocido por sus espaguetis con almejas, pizza napolitana y pez espada perfectamente cocinados. Los postres incluyen semifreddo, tiramisú y gelato. El restaurante ofrece deliciosas margaritas, vino de la casa y cordial, junto con excelente café y limonada. Con una puntuación de 4.3 en Google, el restaurante es elogiado por su personal competente, servicio excelente, precios asequibles y ambiente agradable.",
+                priceRange: "€13-41 por persona",
+                cuisine: "Pizza, Italiana, Opziones Vegetarianes",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Serena",
+                address: "Piazza Marina, 52, Palermo, Sicilia",
+                phone: "+39 091 729 6996",
+                website: "facebook.com",
+                instagram: "@quidgustosiciliano",
+                openHours: "Daily 12PM-3PM, 7PM-11PM",
+                type: "Cena"
+            },
+            {
+                name: "Scjabaca",
+                description: "Ubicado cerca de la Fontana del Genio, este restaurante ofrece cocina italiana y mediterránea con una puntuación de 4.7 en Google. Las especialidades incluyen pulpo a la parrilla, raviolis y atún a la parrilla, junto con deliciosos postres como parfait, panna cotta y crumble. El restaurante es conocido por su diversa carta de vinos, delicioso café, personal amable, servicio rápido y precios razonables. El ambiente tranquilo y la bella decoración hacen que la experiencia culinaria sea agradable.",
+                priceRange: "€20-61 por persona",
+                cuisine: "Mediterránea, Italiana, Opciones Vegetarianas",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Valeria",
+                address: "Vicolo S. Carlo, 42, Palermo, Sicilia",
+                phone: "+39 091 507 6739",
+                website: "ristorantescjabaca.it",
+                instagram: "@scjabaca",
+                openHours: "Lun-Mar, Jue-Vie: 19:00-23:00; Sáb-Dom: 12:00-15:00, 19:00-23:00; Mié: Cerrado",
+                type: "Cena"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un restaurante seleccionado por la guía Michelin cerca de la Fontana del Genio, que ofrece refinada cocina italiana con énfasis en los mariscos. Los platos destacados incluyen antipasto, panceta de cerdo y atún sellado, con deliciosos pasteles de frutas, galletas y parfait para el postre. El restaurante sirve buen chardonnay, cordial y jerez fino, además de delicioso ristretto y limonada. Elogiado por su personal atractivo, servicio espectacular y precios democráticos, este restaurante presenta una decoración encantadora y un ambiente agradable. Ha recibido 2 símbolos de tenedor y cuchillo negros de Michelin, lo que indica un confort óptimo.",
+                priceRange: "€35-150 por persona",
+                cuisine: "Italiana, Mariscos, Bares de Vinos",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sáb: 12:30-14:45, 19:30-22:45; Dom: Cerrado",
+                type: "Cena"
+            },
+            {
+                name: "Le Cattive",
+                description: "Ubicado cerca de Porta Felice, este restaurante ofrece cocina italiana y mediterránea. Las especialidades incluyen rape, aglio y risotto, con deliciosas galletas, cannoli y tiramisú para el postre. El restaurante es conocido por su buen vino, negroni, cordial y excelente café. Con una puntuación de 4.5 en Google, los visitantes elogian la gran vista, el personal atento, el servicio profesional, los precios democraticos, el ambiente tranquilo y la decoración elegante.",
+                priceRange: "€40-70 por persona",
+                cuisine: "Italiana, Mediterránea, Frutti di Mare",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Santo Spirito, 1, Palermo, Sicilia",
+                phone: "+39 091 619 5635",
+                website: "lecattivepalazzobutera.it",
+                instagram: "@lecattivepalazzobutera",
+                openHours: "Mar-Dom: 10:00-19:00; Lun: Cerrado",
+                type: "Almuerzo"
             }
         ],
         
