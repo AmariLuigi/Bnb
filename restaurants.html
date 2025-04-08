@@ -3,226 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurants - Sant'Agostino BnB Palermo Map</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sant'Agostino B&B - Restaurants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Enable smooth scrolling on the entire document */
-        html {
-            scroll-behavior: smooth;
+        /* Global Styles */
+        :root {
+            --primary-color: rgb(185, 43, 19);
+            --accent-color: rgb(255, 193, 7);
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Montserrat', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        header h1 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--text-color);
         }
         
         .language-selector {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            background: white;
-            padding: 5px 10px;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .language-selector label {
-            margin-right: 10px;
-            font-weight: bold;
+            z-index: 10;
         }
         
         .language-selector select {
+            border: 1px solid #ddd;
             padding: 5px;
             border-radius: 4px;
-            border: 1px solid #ddd;
+            font-family: var(--body-font);
         }
         
-        .restaurant-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-            overflow: hidden;
-            height: 420px;
-            position: relative;
-            transition: all 0.3s ease;
+        .back-button {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        /* Restaurant Card Styles */
+        .restaurant-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
         }
         
         .restaurant-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
         
         .restaurant-image {
-            height: 120px;
-            overflow: hidden;
-            position: relative;
+            height: 160px;
             background-color: rgb(185, 43, 19);
+            color: white;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            font-size: 72px;
+            font-weight: 700;
         }
         
-        .restaurant-image svg {
+        .restaurant-letter {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
         }
         
         .restaurant-details {
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+            padding: 20px;
         }
         
-        .restaurant-details h3 {
-            font-size: 1.3rem;
-            margin: 0 0 12px 0;
-            color: #333;
-            font-weight: 600;
-            line-height: 1.2;
+        .restaurant-name {
+            font-family: var(--heading-font);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
         }
         
-        .description-container {
-            position: relative;
-            margin-bottom: 12px;
-        }
-        
-        .truncated-text {
-            color: #666;
-            line-height: 1.5;
-            margin: 0;
+        .restaurant-description {
+            margin-bottom: 15px;
             overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            max-height: 4.5em;
-            transition: all 0.3s ease;
+            max-height: 4.8em; /* 3 lines of text */
+            transition: max-height 0.3s ease;
         }
         
-        .expanded-text {
-            color: #666;
-            line-height: 1.5;
-            margin: 0;
-            overflow-y: auto;
-            max-height: 100px;
-            transition: all 0.3s ease;
-            padding-right: 8px;
-        }
-        
-        .expanded-text::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        .expanded-text::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-        
-        .expanded-text::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 4px;
-        }
-        
-        .expanded-text::-webkit-scrollbar-thumb:hover {
-            background: #aaa;
-        }
-        
-        .see-more-btn {
-            color: rgb(185, 43, 19);
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-top: 6px;
-            text-decoration: none;
-        }
-        
-        .see-more-btn:hover {
-            text-decoration: underline;
+        .expanded {
+            max-height: 1000px; /* Arbitrary large value */
         }
         
         .restaurant-meta {
-            margin-top: auto;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 12px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        
-        .restaurant-meta-item {
             display: flex;
-            align-items: center;
-            color: #666;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 15px;
             font-size: 0.9rem;
         }
         
-        .restaurant-meta-item i {
-            margin-right: 8px;
-            color: rgb(185, 43, 19);
-            font-style: normal;
-        }
-        
-        .action-row {
+        .meta-item {
             display: flex;
-            justify-content: flex-end;
-            margin-top: 12px;
-        }
-        
-        .get-directions {
-            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            background-color: rgb(185, 43, 19);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
+            color: #555;
+        }
+        
+        .meta-item i {
+            margin-right: 8px;
+            color: var(--primary-color);
+            width: 16px;
+            text-align: center;
+        }
+        
+        /* Action Buttons */
+        .restaurant-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .see-more-btn, .action-btn {
+            background-color: transparent;
             border: none;
+            color: var(--primary-color);
+            font-family: var(--body-font);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
         
-        .get-directions i {
-            margin-right: 6px;
-            font-style: normal;
+        .see-more-btn:hover, .action-btn:hover {
+            background-color: rgba(185, 43, 19, 0.1);
         }
         
-        .get-directions:hover {
-            background-color: rgb(155, 33, 9);
+        .action-btn i {
+            font-size: 1.2rem;
         }
         
         .section-title {
+            font-family: var(--heading-font);
             font-size: 1.8rem;
-            color: #333;
+            color: var(--text-color);
             margin: 30px 0 20px;
-            border-bottom: 2px solid rgb(185, 43, 19);
             padding-bottom: 8px;
+            border-bottom: 3px solid rgb(185, 43, 19);
             display: inline-block;
         }
         
-        .section-title span {
-            color: rgb(185, 43, 19);
-        }
-        
-        .view-menu-btn {
-            display: inline-block;
-            background-color: rgb(185, 43, 19);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .view-menu-btn:hover {
-            background-color: rgb(155, 33, 9);
-        }
-        
+        /* Restaurant Grid */
         .attractions-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -230,7 +212,8 @@
             margin-top: 20px;
         }
         
-        @media (max-width: 992px) {
+        /* Media Queries */
+        @media (max-width: 1024px) {
             .attractions-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -241,293 +224,321 @@
                 grid-template-columns: 1fr;
             }
             
-            .restaurant-card {
-                height: auto;
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            header h1 {
+                margin-top: 15px;
             }
         }
+
+        /* Tooltip styles */
+        .hours-tooltip {
+            position: relative;
+            display: inline-block;
+        }
         
-        /* Additional Styles */
-        .version-info {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 5px;
-            text-align: center;
+        .hours-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .hours-tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+        
+        .hours-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .hours-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .hours-btn:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="page-bg">
+<body>
     <div class="language-selector">
-        <label for="language-selector" data-i18n="language">Language</label>
-        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+        <select id="language-select">
             <option value="en">English</option>
             <option value="it">Italiano</option>
             <option value="fr">Français</option>
             <option value="es">Español</option>
         </select>
     </div>
-
+    
     <div class="container">
         <header>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n="backToHome">Back to Home</span>
+            </a>
             <h1><span style="color: rgb(185, 43, 19);" data-i18n="restaurants">Restaurants</span></h1>
-            <a href="index.html" class="back-btn" data-i18n="back">← Back to Map</a>
         </header>
         
-        <div class="quarter-content">
-            <div class="attractions">
-                <h2 data-i18n="recommendedRestaurants">Recommended Restaurants</h2>
-                <div id="restaurants-grid" class="attractions-grid">
-                    <!-- Restaurants will be loaded dynamically by JavaScript -->
-                </div>
+        <section id="recommended-lunch">
+            <h2 class="section-title"><span data-i18n="lunchPlaces">Lunch Places</span></h2>
+            <div id="lunch-grid" class="attractions-grid">
+                <!-- Lunch restaurants will be inserted here -->
             </div>
-        </div>
+        </section>
         
-        <footer>
-            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
-            <p class="version-info">Version 1.2.3</p>
-        </footer>
+        <section id="recommended-dinner">
+            <h2 class="section-title"><span data-i18n="dinnerPlaces">Dinner Places</span></h2>
+            <div id="dinner-grid" class="attractions-grid">
+                <!-- Dinner restaurants will be inserted here -->
+            </div>
+        </section>
     </div>
     
-    <script src="js/qrcode.min.js"></script>
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f1f1f1; font-size: 0.8rem;">
+        <p>© 2023 Sant'Agostino B&B. All rights reserved. | Version 1.2.4</p>
+    </footer>
+
     <script src="js/translations.js"></script>
     <script>
-        // Ensure restaurants are initialized on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Force restaurants to load
-            const savedLang = localStorage.getItem('preferred_language') || 'en';
-            updatePageLanguage(savedLang);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize
+            loadRestaurants();
             
-            // Check for hash in URL and scroll to it
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-                    }
-                }, 500);
+            // Set language from URL hash if present
+            const hash = window.location.hash.substring(1);
+            if (hash && ['en', 'it', 'fr', 'es'].includes(hash)) {
+                document.getElementById('language-select').value = hash;
+                updatePageLanguage(hash);
+            } else {
+                // Otherwise, try to load from localStorage
+                const savedLang = localStorage.getItem('preferredLanguage');
+                if (savedLang) {
+                    document.getElementById('language-select').value = savedLang;
+                    updatePageLanguage(savedLang);
+                }
             }
             
-            // Add event listener for "See more" buttons
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('see-more-btn')) {
-                    const textElement = e.target.previousElementSibling;
-                    
-                    // Toggle expanded state with a class
-                    if (textElement.classList.contains('truncated-text')) {
-                        textElement.classList.remove('truncated-text');
-                        textElement.classList.add('expanded-text');
-                        e.target.textContent = 'See less';
-                    } else {
-                        textElement.classList.add('truncated-text');
-                        textElement.classList.remove('expanded-text');
-                        e.target.textContent = 'See more';
-                    }
-                }
+            // Set up language selector
+            document.getElementById('language-select').addEventListener('change', (e) => {
+                const selectedLang = e.target.value;
+                updatePageLanguage(selectedLang);
             });
         });
         
-        function createRestaurantCard(restaurant) {
-            const restaurantCard = document.createElement('div');
-            restaurantCard.className = 'restaurant-card';
-            restaurantCard.id = 'restaurant-' + restaurant.name.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+        function toggleDescription(button, id) {
+            const description = document.getElementById(id);
+            description.classList.toggle('expanded');
             
-            // Image container
-            const imageContainer = document.createElement('div');
-            imageContainer.className = 'restaurant-image';
+            const lang = document.getElementById('language-select').value || 'en';
             
-            // Generate SVG placeholder
-            const imageContent = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            imageContent.setAttribute('width', '100%');
-            imageContent.setAttribute('height', '100%');
-            imageContent.setAttribute('viewBox', '0 0 100 100');
-            imageContent.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-            
-            const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            bg.setAttribute('width', '100');
-            bg.setAttribute('height', '100');
-            bg.setAttribute('fill', 'rgb(185, 43, 19)');
-            
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', '50');
-            text.setAttribute('y', '50');
-            text.setAttribute('font-family', 'Arial');
-            text.setAttribute('font-size', '24');
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('dominant-baseline', 'middle');
-            text.setAttribute('fill', 'white');
-            text.textContent = restaurant.name.substring(0, 1).toUpperCase();
-            
-            imageContent.appendChild(bg);
-            imageContent.appendChild(text);
-            
-            // Restaurant details
-            const detailsContainer = document.createElement('div');
-            detailsContainer.className = 'restaurant-details';
-            
-            // Restaurant name
-            const name = document.createElement('h3');
-            name.textContent = restaurant.name;
-            
-            // Create description container
-            const descriptionContainer = document.createElement('div');
-            descriptionContainer.className = 'description-container';
-            
-            // Restaurant description with truncation
-            const description = document.createElement('p');
-            description.className = 'truncated-text';
-            description.textContent = restaurant.description || 'No description available';
-            
-            // See more button
-            const seeMoreBtn = document.createElement('span');
-            seeMoreBtn.className = 'see-more-btn';
-            seeMoreBtn.textContent = 'See more';
-            
-            // Restaurant meta information
-            const metaContainer = document.createElement('div');
-            metaContainer.className = 'restaurant-meta';
-            
-            // Meta items with icons
-            const priceRange = document.createElement('div');
-            priceRange.className = 'restaurant-meta-item';
-            priceRange.innerHTML = `<i>€</i> ${restaurant.priceRange || 'Price not available'}`;
-            
-            const cuisine = document.createElement('div');
-            cuisine.className = 'restaurant-meta-item';
-            cuisine.innerHTML = `<i>🍽️</i> ${restaurant.cuisine || 'Cuisine not specified'}`;
-            
-            const openHours = document.createElement('div');
-            openHours.className = 'restaurant-meta-item';
-            openHours.innerHTML = `<i>🕒</i> ${restaurant.openHours || 'Hours not available'}`;
-            
-            const meals = document.createElement('div');
-            meals.className = 'restaurant-meta-item';
-            meals.innerHTML = `<i>🍴</i> ${restaurant.meals || 'Not specified'}`;
-            
-            // Action row for the direction button
-            const actionRow = document.createElement('div');
-            actionRow.className = 'action-row';
-            
-            // Get directions button with icon
-            const directionsButton = document.createElement('a');
-            directionsButton.href = `https://maps.google.com/?q=${encodeURIComponent(restaurant.name + ', ' + (restaurant.address || 'Palermo, Sicily'))}`;
-            directionsButton.className = 'get-directions';
-            directionsButton.innerHTML = `<i>🗺️</i> ${getTranslation('getDirections', localStorage.getItem('preferred_language') || 'en')}`;
-            directionsButton.target = '_blank';
-            
-            // Append all elements
-            imageContainer.appendChild(imageContent);
-            restaurantCard.appendChild(imageContainer);
-            
-            descriptionContainer.appendChild(description);
-            descriptionContainer.appendChild(seeMoreBtn);
-            
-            metaContainer.appendChild(priceRange);
-            metaContainer.appendChild(cuisine);
-            metaContainer.appendChild(openHours);
-            metaContainer.appendChild(meals);
-            
-            actionRow.appendChild(directionsButton);
-            
-            detailsContainer.appendChild(name);
-            detailsContainer.appendChild(descriptionContainer);
-            detailsContainer.appendChild(metaContainer);
-            detailsContainer.appendChild(actionRow);
-            
-            restaurantCard.appendChild(detailsContainer);
-            
-            return restaurantCard;
+            if (description.classList.contains('expanded')) {
+                button.innerHTML = `<i class="fas fa-chevron-up"></i> <span>${translations[lang].seeLess.en}</span>`;
+            } else {
+                button.innerHTML = `<i class="fas fa-chevron-down"></i> <span>${translations[lang].seeMore.en}</span>`;
+            }
         }
         
-        // Override the updatePageLanguage function to handle restaurant content
-        function updatePageLanguage(lang) {
-            // Set the selected language
-            const langSelector = document.getElementById('language-selector');
-            if (langSelector) {
-                langSelector.value = lang;
+        function createRestaurantCard(restaurant, index, type) {
+            const card = document.createElement('div');
+            card.className = 'restaurant-card';
+            
+            // Create image or letter placeholder
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'restaurant-image';
+            
+            const letterDiv = document.createElement('div');
+            letterDiv.className = 'restaurant-letter';
+            letterDiv.textContent = restaurant.name.charAt(0);
+            imageDiv.appendChild(letterDiv);
+            
+            card.appendChild(imageDiv);
+            
+            // Details container
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'restaurant-details';
+            
+            // Restaurant name
+            const nameElement = document.createElement('h3');
+            nameElement.className = 'restaurant-name';
+            nameElement.textContent = restaurant.name;
+            detailsDiv.appendChild(nameElement);
+            
+            // Description
+            const descriptionElement = document.createElement('div');
+            descriptionElement.className = 'restaurant-description';
+            descriptionElement.id = `description-${type}-${index}`;
+            descriptionElement.textContent = restaurant.description;
+            detailsDiv.appendChild(descriptionElement);
+            
+            // Meta information
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'restaurant-meta';
+            
+            // Price Range
+            if (restaurant.priceRange) {
+                const priceRangeElement = document.createElement('div');
+                priceRangeElement.className = 'meta-item';
+                priceRangeElement.innerHTML = `<i class="fas fa-money-bill-wave"></i> ${restaurant.priceRange}`;
+                metaDiv.appendChild(priceRangeElement);
             }
             
-            // Store preferred language
-            localStorage.setItem('preferred_language', lang);
+            // Cuisine
+            if (restaurant.cuisine) {
+                const cuisineElement = document.createElement('div');
+                cuisineElement.className = 'meta-item';
+                cuisineElement.innerHTML = `<i class="fas fa-utensils"></i> ${restaurant.cuisine}`;
+                metaDiv.appendChild(cuisineElement);
+            }
             
-            // Update all data-i18n elements
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                element.textContent = getTranslation(key, lang);
-            });
+            // Open Hours
+            if (restaurant.openHours) {
+                const hoursElement = document.createElement('div');
+                hoursElement.className = 'meta-item';
+                
+                const hoursTooltip = document.createElement('div');
+                hoursTooltip.className = 'hours-tooltip';
+                
+                const hoursBtn = document.createElement('button');
+                hoursBtn.className = 'hours-btn';
+                hoursBtn.setAttribute('data-i18n', 'seeHours');
+                hoursBtn.textContent = translations[document.getElementById('language-select').value || 'en'].seeHours.en;
+                
+                const tooltipText = document.createElement('span');
+                tooltipText.className = 'tooltip-text';
+                tooltipText.textContent = restaurant.openHours;
+                
+                hoursTooltip.appendChild(hoursBtn);
+                hoursTooltip.appendChild(tooltipText);
+                
+                hoursElement.innerHTML = `<i class="far fa-clock"></i>`;
+                hoursElement.appendChild(hoursTooltip);
+                
+                metaDiv.appendChild(hoursElement);
+            }
+            
+            // Meals
+            if (restaurant.meals && restaurant.meals !== "Not specified") {
+                const mealsElement = document.createElement('div');
+                mealsElement.className = 'meta-item';
+                mealsElement.innerHTML = `<i class="fas fa-hamburger"></i> ${restaurant.meals}`;
+                metaDiv.appendChild(mealsElement);
+            }
+            
+            detailsDiv.appendChild(metaDiv);
+            
+            // Action Buttons
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'restaurant-actions';
+            
+            // See More Button
+            const seeMoreBtn = document.createElement('button');
+            seeMoreBtn.className = 'see-more-btn';
+            seeMoreBtn.innerHTML = `<i class="fas fa-chevron-down"></i> <span data-i18n="seeMore">See more</span>`;
+            seeMoreBtn.onclick = () => toggleDescription(seeMoreBtn, `description-${type}-${index}`);
+            
+            // Directions Button (Google Maps Icon)
+            const directionsBtn = document.createElement('button');
+            directionsBtn.className = 'action-btn';
+            directionsBtn.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+            directionsBtn.onclick = () => {
+                // Open Google Maps with this restaurant
+                const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
+                window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+            };
+            
+            actionsDiv.appendChild(seeMoreBtn);
+            actionsDiv.appendChild(directionsBtn);
+            
+            detailsDiv.appendChild(actionsDiv);
+            
+            card.appendChild(detailsDiv);
+            
+            return card;
+        }
+        
+        function loadRestaurants() {
+            // Clear existing restaurant lists
+            document.getElementById('lunch-grid').innerHTML = '';
+            document.getElementById('dinner-grid').innerHTML = '';
+            
+            // Default to English if no language is set
+            const lang = document.getElementById('language-select').value || 'en';
             
             // Get restaurant data for the selected language
-            const restaurantsData = getTranslation('restaurantsData', lang);
+            const lunchRestaurants = translations[lang].lunchRestaurants;
+            const dinnerRestaurants = translations[lang].dinnerRestaurants;
             
-            // Clear previous content
-            const restaurantsContainer = document.querySelector('.attractions');
-            const existingGrids = restaurantsContainer.querySelectorAll('.restaurants-section');
-            existingGrids.forEach(grid => grid.remove());
-            
-            // Create lunch section
-            const lunchSection = document.createElement('div');
-            lunchSection.className = 'restaurants-section';
-            
-            const lunchTitle = document.createElement('h3');
-            lunchTitle.className = 'section-title';
-            lunchTitle.setAttribute('data-i18n', 'lunchRestaurants');
-            
-            // Create span inside title for styling consistency
-            const lunchTitleText = document.createElement('span');
-            lunchTitleText.textContent = getTranslation('lunchRestaurants', lang);
-            lunchTitle.appendChild(lunchTitleText);
-            
-            const lunchGrid = document.createElement('div');
-            lunchGrid.id = 'lunch-restaurants-grid';
-            lunchGrid.className = 'attractions-grid';
-            
-            lunchSection.appendChild(lunchTitle);
-            lunchSection.appendChild(lunchGrid);
-            
-            // Create dinner section
-            const dinnerSection = document.createElement('div');
-            dinnerSection.className = 'restaurants-section';
-            
-            const dinnerTitle = document.createElement('h3');
-            dinnerTitle.className = 'section-title';
-            dinnerTitle.setAttribute('data-i18n', 'dinnerRestaurants');
-            
-            // Create span inside title for styling consistency
-            const dinnerTitleText = document.createElement('span');
-            dinnerTitleText.textContent = getTranslation('dinnerRestaurants', lang);
-            dinnerTitle.appendChild(dinnerTitleText);
-            
-            const dinnerGrid = document.createElement('div');
-            dinnerGrid.id = 'dinner-restaurants-grid';
-            dinnerGrid.className = 'attractions-grid';
-            
-            dinnerSection.appendChild(dinnerTitle);
-            dinnerSection.appendChild(dinnerGrid);
-            
-            // Add sections to the container
-            restaurantsContainer.appendChild(lunchSection);
-            restaurantsContainer.appendChild(dinnerSection);
-            
-            // Populate each section
-            
-            // Filter and add lunch restaurants
-            const lunchRestaurants = restaurantsData.filter(restaurant => 
-                restaurant.type === 'Lunch' || restaurant.type === 'Pranzo'
-            );
-            
-            lunchRestaurants.forEach(restaurant => {
-                const card = createRestaurantCard(restaurant);
-                lunchGrid.appendChild(card);
+            // Add lunch restaurants
+            lunchRestaurants.forEach((restaurant, index) => {
+                const card = createRestaurantCard(restaurant, index, 'lunch');
+                document.getElementById('lunch-grid').appendChild(card);
             });
             
-            // Filter and add dinner restaurants
-            const dinnerRestaurants = restaurantsData.filter(restaurant => 
-                restaurant.type === 'Dinner' || restaurant.type === 'Cena'
-            );
-            
-            dinnerRestaurants.forEach(restaurant => {
-                const card = createRestaurantCard(restaurant);
-                dinnerGrid.appendChild(card);
+            // Add dinner restaurants
+            dinnerRestaurants.forEach((restaurant, index) => {
+                const card = createRestaurantCard(restaurant, index, 'dinner');
+                document.getElementById('dinner-grid').appendChild(card);
             });
+        }
+        
+        function updatePageLanguage(lang) {
+            // Update language selector
+            document.getElementById('language-select').value = lang;
+            
+            // Store in localStorage for future visits
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update URL hash
+            window.location.hash = lang;
+            
+            // Update translation elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (typeof translations[lang][key] === 'object') {
+                        element.textContent = translations[lang][key][lang];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Repopulate restaurants
+            loadRestaurants();
+            
+            // Update back button text
+            document.querySelector('.back-button span').textContent = translations[lang].backToHome[lang];
         }
     </script>
 </body>
