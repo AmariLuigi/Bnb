@@ -202,6 +202,14 @@
                 height: auto;
             }
         }
+        
+        /* Additional Styles */
+        .version-info {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="page-bg">
@@ -232,6 +240,7 @@
         
         <footer>
             <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map</p>
+            <p class="version-info">Version 1.2.1</p>
         </footer>
     </div>
     
@@ -243,6 +252,16 @@
             // Force restaurants to load
             const savedLang = localStorage.getItem('preferred_language') || 'en';
             updatePageLanguage(savedLang);
+            
+            // Check for hash in URL and scroll to it
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    }
+                }, 500);
+            }
             
             // Add event listener for "See more" buttons
             document.addEventListener('click', function(e) {
@@ -265,37 +284,23 @@
                         // Allow card to expand to fit content
                         card.style.height = 'auto';
                         
-                        // More robust scrolling implementation
-                        setTimeout(() => {
-                            try {
-                                // Method 1: scrollIntoView with options
-                                card.scrollIntoView({ 
-                                    behavior: 'smooth', 
-                                    block: 'start',
-                                    inline: 'nearest' 
-                                });
+                        // All new approach - hash based navigation
+                        if (card.id) {
+                            // Update URL hash without adding to browser history
+                            window.location.replace('#' + card.id);
+                            
+                            // Direct DOM scroll as a fallback
+                            setTimeout(() => {
+                                // Force scroll to element position
+                                const yOffset = -50; // Apply an offset to show some content above
+                                const y = card.getBoundingClientRect().top + window.pageYOffset + yOffset;
                                 
-                                // Method 2: As a fallback, use window.scrollTo
-                                const cardTop = card.getBoundingClientRect().top + window.pageYOffset - 80;
                                 window.scrollTo({
-                                    top: cardTop,
+                                    top: y,
                                     behavior: 'smooth'
                                 });
-                                
-                                // Method 3: For older browsers, direct assignment
-                                setTimeout(() => {
-                                    // Last resort fallback for very old browsers
-                                    if (Math.abs(window.pageYOffset - cardTop) > 100) {
-                                        window.scrollTo(0, cardTop);
-                                    }
-                                }, 100);
-                                
-                            } catch (e) {
-                                // Fallback if smooth scrolling fails
-                                window.scrollTo(0, card.offsetTop - 80);
-                                console.log("Using fallback scroll method", e);
-                            }
-                        }, 100); // Increased delay
+                            }, 50);
+                        }
                     } else {
                         // Add truncation back
                         textElement.classList.add('truncated-text');
@@ -307,6 +312,11 @@
                             card.style.height = card.dataset.originalHeight;
                         } else {
                             card.style.height = '450px'; // Default height
+                        }
+                        
+                        // Remove the hash when collapsing
+                        if (window.location.hash === '#' + card.id) {
+                            history.pushState("", document.title, window.location.pathname + window.location.search);
                         }
                     }
                 }
