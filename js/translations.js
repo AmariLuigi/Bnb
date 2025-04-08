@@ -541,7 +541,7 @@ const translations = {
             },
             {
                 name: "Forno Santa Maria",
-                description: "Pizzeria con un approccio artigianale alla panificazione e alla mixologia, situata nel cuore del centro storico.",
+                description: "Pizzeria con un approccio artigianale alla cottura e alla miscelazione, situata nel cuore del centro storico.",
                 priceRange: "€20-30 a persona",
                 cuisine: "Pizza, Artigianale",
                 image: "images/attractions/placeholder.jpg",
@@ -831,7 +831,7 @@ const translations = {
             },
             {
                 name: "Maccio Osteria Alcolica",
-                description: "Un charmant restaurant idéalement situé près de la Piazza Olivella, Maccio Osteria Alcolica offre une expérience culinaire authentique avec son exceptionnel ragù bolognese dont les habitants raffolent. Le restaurant propose une impressionnante sélection de liqueurs et de vins, soigneusement choisis pour accompagner leurs plats. Le personnel compétent assure un service impeccable, créant une expérience gastronomique mémorable dans une atmosphère paisible. Avec des prix raisonnables pour une cuisine de cette qualité et une note Google exceptionnelle de 4,7, ce restaurant est incontournable pour ceux qui recherchent des saveurs siciliennes authentiques dans un cadre intime.",
+                description: "Un charmant restaurant parfaitement situé près de la Piazza Olivella, Maccio Osteria Alcolica offre une expérience culinaire authentique avec son exceptionnel ragù bolognese dont les habitants raffolent. Le restaurant propose une impressionnante sélection de liqueurs et de vins, soigneusement choisis pour accompagner leurs plats. Le personnel compétent assure un service impeccable, créant une expérience gastronomique mémorable dans une atmosphère paisible. Avec des prix raisonnables pour une cuisine de cette qualité et une note Google exceptionnelle de 4,7, ce restaurant est incontournable pour ceux qui recherchent des saveurs siciliennes authentiques dans un cadre intime.",
                 priceRange: "€20-30 par personne",
                 cuisine: "Sicilienne Traditionnelle, Bar à Vin",
                 image: "images/attractions/placeholder.jpg",
@@ -843,7 +843,7 @@ const translations = {
             },
             {
                 name: "Osteria Mercede",
-                description: "Une établissement de cuisine typique sicilienne qui offre une expérience culinaire authentique avec ses plats typiques, tels que la linguine aux fruits de mer, le poisson grillé, le cocktail de crevettes et les antipasti crudos. Le menu change quotidiennement pour offrir des options fraîches, et ils offrent une grande terrasse pour un déjeuner en plein air. Situé près du Teatro Massimo, c'est parfait pour un déjeuner avant le théâtre ou pour une soirée mémorable.",
+                description: "Une établissement de cuisine typique sicilienne qui offre une expérience culinaria autentique avec ses plats typiques, tels que la linguine aux fruits de mer, le poisson grillé, le cocktail de crevettes et les antipasti crudos. Le menu change quotidiennement pour offrir des options fraîches, et ils offrent une grande terrasse pour un déjeuner en plein air. Situé près du Teatro Massimo, c'est parfait pour un déjeuner avant le théâtre ou pour une soirée mémorable.",
                 priceRange: "€25-40 par personne",
                 cuisine: "Sicilienne, Poisson",
                 image: "images/attractions/placeholder.jpg",
@@ -853,7 +853,7 @@ const translations = {
             },
             {
                 name: "Corona Trattoria",
-                description: "Une établissement familiale qui sert certains des meilleurs plats de cuisine sicilienne de Palermo. L'ambiance élégante mais informelle et le service attentif rendent ce restaurant un point d'incontre idéal pour les locaux et les touristes. Le propriétaire est fier d'utiliser des aliments frais directement des producteurs pour créer des plats traditionnels avec une touche moderne. Les plats recommandés incluent Caponata di Melanzane, Spaghetti ai Gamberetti et Involtino di Spatola. Ils proposent une grande liste de vins siciliens exclusifs, sélectionnés avec soin pour représenter divers terroirs. Situé dans une petite rue dans la nouvelle partie de la ville, les réservations sont fortement recommandées.",
+                description: "Une établissement familiale qui sert certains des meilleurs plats de cuisine siciliana de Palermo. L'ambiance élégante mais informelle et le service attentif rendent ce restaurant un point d'incontre idéal pour les locaux et les touristes. Le propriétaire est fier d'utiliser des aliments frais directement des producteurs pour créer des plats traditionnels avec une touche moderne. Les plats recommandés incluent Caponata di Melanzane, Spaghetti ai Gamberetti et Involtino di Spatola. Ils proposent une grande liste de vins siciliens exclusifs, sélectionnés avec soin pour représenter divers terroirs. Situé dans une petite rue dans la nouvelle partie de la ville, les réservations sont fortement recommandées.",
                 priceRange: "€9-23 par personne (€40-50 pour un repas complet)",
                 cuisine: "Italienne, Poisson, Options Végétariennes",
                 image: "images/attractions/placeholder.jpg",
@@ -867,7 +867,7 @@ const translations = {
             {
                 name: "Sardina PastaBar",
                 description: "Une osteria tipica siciliana qui se spécialise dans la cuisine italienne et méditerranéenne avec un focus sur les pâtes. Notés pour leurs excellents spaghetti carbonara, les pâtes de sardine et de crevettes. Les desserts incluent gelato, tiramisu et parfait. La barre offre vins de haute qualité, cordial et sélections de vins blancs, ainsi que de grandes tasses de café. L'atmosphère accueillante rend les visiteurs plus tranquilles, et l'équipe est connue pour son service accueillant et divertissant. Avec une note Google de 4,6 étoiles, ce point économique est populaire parmi les locaux et les touristes. Ils offrent une grande terrasse en plein air et acceptent les cartes de crédit.",
-                priceRange: "€15-30 par personne",
+                priceRange: "€15-30 a persona",
                 cuisine: "Italienne, Méditerranéenne, Sans Gluten",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Rita",
@@ -900,6 +900,7 @@ const translations = {
             },
             {
                 name: "L'Acerba Osteria Dinamica",
+                description: "Une osteria dynamique qui combine des éléments de galería de arte, cocktail bar et restaurante, avec une cuisine créative utilisant des ingrédients locaux.",
                 description: "Une osteria dynamique qui combine des éléments de galería de arte, cóctel bar et restaurante, avec une cuisine créative utilisant des ingrédients locaux.",
                 priceRange: "€20-40 par personne",
                 cuisine: "Sicilienne Créative",
@@ -930,7 +931,7 @@ const translations = {
             },
             {
                 name: "Enoteca Butticè",
-                description: "Ristorante et bar à vin avec plus de 700 étiquettes de vin, offreciendo cocina palermitana et excelentes cócteles.",
+                description: "Ristorante et bar à vin avec plus de 700 étiquettes de vin, che offre cucina palermitana et excelentes cócteles.",
                 priceRange: "€20-40 par personne",
                 cuisine: "Sicilienne, Bar à Vin",
                 image: "images/attractions/placeholder.jpg",
@@ -950,13 +951,13 @@ const translations = {
             },
             {
                 name: "Forno Santa Maria",
-                description: "Pizzería con un enfoque artesanal en la panadería y la mixología, ubicada en el corazón du centre historique.",
+                description: "Pizzería con un enfoque artesanal en la panadería y la mixología, située nel cuore del centro storico.",
                 priceRange: "€20-30 par personne",
-                cuisine: "Pizza, Artesanal",
+                cuisine: "Pizza, Artisanal",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Luca ou Marcello",
+                referent: "Luca o Marcello",
                 address: "Via Giovanni Meli, 35, 90133 Palermo PA",
-                type: "Dinner"
+                type: "Cena"
             },
             {
                 name: "Quid gusto siciliano",
