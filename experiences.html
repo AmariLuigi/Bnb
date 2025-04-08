@@ -98,6 +98,12 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .expanded-text {
+            height: auto;
+            overflow: visible;
         }
         
         .see-more-btn {
@@ -106,6 +112,7 @@
             font-weight: 500;
             margin-top: 5px;
             display: inline-block;
+            text-decoration: underline;
         }
         
         .experience-meta {
@@ -243,24 +250,64 @@
                     const textElement = e.target.previousElementSibling;
                     const card = e.target.closest('.experience-card');
                     
+                    // Toggle expanded state with a class
                     if (textElement.classList.contains('truncated-text')) {
+                        // Save original height if needed later
+                        if (!card.dataset.originalHeight) {
+                            card.dataset.originalHeight = card.offsetHeight + 'px';
+                        }
+                        
+                        // Remove truncation
                         textElement.classList.remove('truncated-text');
+                        textElement.classList.add('expanded-text');
                         e.target.textContent = 'See less';
                         
-                        // Enhanced smooth scroll to ensure content is visible
+                        // Allow card to expand to fit content
+                        card.style.height = 'auto';
+                        
+                        // More robust scrolling implementation
                         setTimeout(() => {
-                            // Always scroll to the card when expanding content for better UX
-                            const cardRect = card.getBoundingClientRect();
-                            const scrollPosition = window.pageYOffset + cardRect.top - 100; // Add some padding at the top
-                            
-                            window.scrollTo({
-                                top: scrollPosition,
-                                behavior: 'smooth'
-                            });
-                        }, 50); // Longer delay to ensure DOM has updated
+                            try {
+                                // Method 1: scrollIntoView with options
+                                card.scrollIntoView({ 
+                                    behavior: 'smooth', 
+                                    block: 'start',
+                                    inline: 'nearest' 
+                                });
+                                
+                                // Method 2: As a fallback, use window.scrollTo
+                                const cardTop = card.getBoundingClientRect().top + window.pageYOffset - 80;
+                                window.scrollTo({
+                                    top: cardTop,
+                                    behavior: 'smooth'
+                                });
+                                
+                                // Method 3: For older browsers, direct assignment
+                                setTimeout(() => {
+                                    // Last resort fallback for very old browsers
+                                    if (Math.abs(window.pageYOffset - cardTop) > 100) {
+                                        window.scrollTo(0, cardTop);
+                                    }
+                                }, 100);
+                                
+                            } catch (e) {
+                                // Fallback if smooth scrolling fails
+                                window.scrollTo(0, card.offsetTop - 80);
+                                console.log("Using fallback scroll method", e);
+                            }
+                        }, 100); // Increased delay
                     } else {
+                        // Add truncation back
                         textElement.classList.add('truncated-text');
+                        textElement.classList.remove('expanded-text');
                         e.target.textContent = 'See more';
+                        
+                        // Restore original fixed height
+                        if (card.dataset.originalHeight) {
+                            card.style.height = card.dataset.originalHeight;
+                        } else {
+                            card.style.height = '520px'; // Default height
+                        }
                     }
                 }
             });
@@ -269,6 +316,8 @@
         function createExperienceCard(experience) {
             const experienceCard = document.createElement('div');
             experienceCard.className = 'experience-card';
+            // Add a unique ID to each card for direct targeting
+            experienceCard.id = 'experience-' + experience.name.replace(/[^a-z0-9]/gi, '-').toLowerCase();
             
             // Image container
             const imageContainer = document.createElement('div');
