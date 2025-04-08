@@ -65,8 +65,10 @@ const translations = {
                 cuisine: "Traditional Sicilian, Wine Bar",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Enrico",
-                address: "Near Piazza Olivella, Palermo",
-                type: "Dinner"
+                address: "Via Orologio 22, 90133, Palermo",
+                phone: "+39 346 154 0413",
+                openUntil: "23:00",
+                type: "Lunch"
             },
             {
                 name: "Trattoria Bersagliere",
@@ -330,8 +332,10 @@ const translations = {
                 cuisine: "Siciliana Tradizionale, Enoteca",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Enrico",
-                address: "Vicino Piazza Olivella, Palermo",
-                type: "Cena"
+                address: "Via Orologio 22, 90133, Palermo",
+                phone: "+39 346 154 0413",
+                openUntil: "23:00",
+                type: "Pranzo"
             },
             {
                 name: "Trattoria Bersagliere",
@@ -595,8 +599,10 @@ const translations = {
                 cuisine: "Sicilienne Traditionnelle, Bar à Vin",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Enrico",
-                address: "Près de Piazza Olivella, Palermo",
-                type: "Dinner"
+                address: "Via Orologio 22, 90133, Palermo",
+                phone: "+39 346 154 0413",
+                openUntil: "23:00",
+                type: "Lunch"
             },
             {
                 name: "Trattoria Bersagliere",
@@ -860,8 +866,10 @@ const translations = {
                 cuisine: "Siciliana Tradicional, Bar de Vinos",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Enrico",
-                address: "Cerca de Piazza Olivella, Palermo",
-                type: "Dinner"
+                address: "Via Orologio 22, 90133, Palermo",
+                phone: "+39 346 154 0413",
+                openUntil: "23:00",
+                type: "Lunch"
             },
             {
                 name: "Trattoria Bersagliere",
