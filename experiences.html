@@ -613,14 +613,62 @@
                     }
                 }
                 
-                console.log("Experiences data found:", translations[lang].experiencesData.length);
+                // Additional type checking - ensure experiencesData is an array
+                let experiencesArray;
                 
-                // Get experience data for the selected language
-                const experiencesData = translations[lang].experiencesData;
+                if (Array.isArray(translations[lang].experiencesData)) {
+                    experiencesArray = translations[lang].experiencesData;
+                    console.log("Experiences data found:", experiencesArray.length);
+                } else {
+                    console.error("experiencesData is not an array, attempting to fix");
+                    
+                    // Try to handle different possible data formats
+                    if (typeof translations[lang].experiencesData === 'object' && translations[lang].experiencesData !== null) {
+                        // If it's an object but not an array, try to convert it to an array
+                        experiencesArray = Object.values(translations[lang].experiencesData);
+                        console.log("Converted experiencesData object to array:", experiencesArray.length);
+                    } else if (translations[lang].experiences && Array.isArray(translations[lang].experiences)) {
+                        // Fallback to experiences if it exists and is an array
+                        experiencesArray = translations[lang].experiences;
+                        console.log("Using 'experiences' array instead:", experiencesArray.length);
+                    } else {
+                        // Use fallback data
+                        experiencesArray = [
+                            {
+                                name: "Historic Palermo Walking Tour",
+                                description: "Explore the historic center of Palermo with a knowledgeable local guide. Visit the Teatro Massimo, Capo Market, Cathedral, Norman Palace with Palatine Chapel, Quattro Canti and Piazza Bellini.",
+                                duration: "3 hours",
+                                price: "€45-€100 per person",
+                                image: "images/attractions/placeholder.jpg",
+                                note: "Entrance fees to historical buildings or monuments are not included in the price."
+                            },
+                            {
+                                name: "Street Food Experience",
+                                description: "A walking food tour through the streets of historic Palermo. Sample traditional street food including panelle, crocche, sfincione, pani ca meusa and enjoy a glass of wine at the Vucciria market.",
+                                duration: "2 hours",
+                                price: "€45-€55 per person",
+                                image: "images/attractions/placeholder.jpg",
+                                note: "Food tastings included in price."
+                            },
+                            {
+                                name: "Cooking Class with a Chef",
+                                description: "Visit the Capo market with our chef to select fresh ingredients, then prepare traditional Sicilian recipes at the chef's home, finishing with lunch together.",
+                                duration: "3-4 hours",
+                                price: "€130 per person",
+                                image: "images/attractions/placeholder.jpg",
+                                note: "Includes market visit, cooking class and lunch with selected ingredients."
+                            }
+                        ];
+                        console.log("Using hardcoded fallback experiences:", experiencesArray.length);
+                    }
+                    
+                    // Save the fixed array back to translations for future use
+                    translations[lang].experiencesData = experiencesArray;
+                }
                 
                 // Add experiences
-                if (experiencesData && experiencesData.length > 0) {
-                    experiencesData.forEach((experience, index) => {
+                if (experiencesArray && experiencesArray.length > 0) {
+                    experiencesArray.forEach((experience, index) => {
                         const card = createExperienceCard(experience, index);
                         document.getElementById('experiences-grid').appendChild(card);
                     });
