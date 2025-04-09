@@ -361,6 +361,62 @@
         if (typeof translations === 'undefined') {
             console.error("Error: translations object not found! The translations.js file might not be loading correctly.");
             document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load translations. Please check your internet connection and try refreshing the page.</div>';
+        } else {
+            // Fix translations object if needed
+            console.log("Fixing translations object if needed...");
+            
+            // Add fallback data for experiences
+            const fallbackExperiences = [
+                {
+                    name: "Historic Palermo Walking Tour",
+                    description: "Explore the historic center of Palermo with a knowledgeable local guide. Visit the Teatro Massimo, Capo Market, Cathedral, Norman Palace with Palatine Chapel, Quattro Canti and Piazza Bellini.",
+                    duration: "3 hours",
+                    price: "€45-€100 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Entrance fees to historical buildings or monuments are not included in the price."
+                },
+                {
+                    name: "Street Food Experience",
+                    description: "A walking food tour through the streets of historic Palermo. Sample traditional street food including panelle, crocche, sfincione, pani ca meusa and enjoy a glass of wine at the Vucciria market.",
+                    duration: "2 hours",
+                    price: "€45-€55 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Food tastings included in price."
+                },
+                {
+                    name: "Cooking Class with a Chef",
+                    description: "Visit the Capo market with our chef to select fresh ingredients, then prepare traditional Sicilian recipes at the chef's home, finishing with lunch together.",
+                    duration: "3-4 hours",
+                    price: "€130 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Includes market visit, cooking class and lunch with selected ingredients."
+                }
+            ];
+            
+            // Ensure all language objects have the experiencesData property
+            for (const langCode in translations) {
+                if (!translations[langCode].experiencesData && translations[langCode].experiences) {
+                    console.log(`Copying 'experiences' to 'experiencesData' for language ${langCode}`);
+                    translations[langCode].experiencesData = translations[langCode].experiences;
+                } else if (!translations[langCode].experiencesData) {
+                    console.log(`Adding fallback experiences data for language ${langCode}`);
+                    translations[langCode].experiencesData = fallbackExperiences;
+                }
+                
+                // Also ensure the contactMessage property exists
+                if (!translations[langCode].contactMessage) {
+                    translations[langCode].contactMessage = {
+                        [langCode]: "Please contact the B&B host to book this experience."
+                    };
+                }
+                
+                // Ensure seeDuration property exists
+                if (!translations[langCode].seeDuration) {
+                    translations[langCode].seeDuration = {
+                        [langCode]: "See duration"
+                    };
+                }
+            }
         }
     
         document.addEventListener('DOMContentLoaded', () => {
@@ -486,7 +542,24 @@
             bookBtn.innerHTML = `<i class="fas fa-ticket-alt"></i>`;
             bookBtn.onclick = () => {
                 const lang = document.getElementById('language-select').value || 'en';
-                alert(translations[lang].contactMessage[lang]);
+                let message = "Please contact the B&B host to book this experience.";
+                
+                // Try to get the message from translations
+                try {
+                    if (translations[lang].contactMessage) {
+                        if (typeof translations[lang].contactMessage === 'object') {
+                            message = translations[lang].contactMessage[lang] || 
+                                    translations[lang].contactMessage.en || 
+                                    message;
+                        } else if (typeof translations[lang].contactMessage === 'string') {
+                            message = translations[lang].contactMessage;
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Error getting contact message:", e);
+                }
+                
+                alert(message);
             };
             
             actionsDiv.appendChild(bookBtn);
@@ -511,6 +584,14 @@
                 console.log("Current language:", lang);
                 console.log("Translations object:", typeof translations, translations ? "loaded" : "not loaded");
                 
+                // Add more detailed debugging
+                console.log("Available keys in translations[en]:", Object.keys(translations.en));
+                console.log("experiencesData exists?", Boolean(translations.en.experiencesData));
+                
+                if (translations.en.experiencesData) {
+                    console.log("experiencesData sample:", translations.en.experiencesData[0]);
+                }
+                
                 // Check if translations object exists
                 if (!translations || !translations[lang]) {
                     console.error("Translations not found for language:", lang);
@@ -520,9 +601,16 @@
                 
                 // Check if experiences data exists
                 if (!translations[lang].experiencesData) {
-                    console.error("Experiences data not found for language:", lang);
-                    document.getElementById('experiences-grid').innerHTML = '<p>Error: Could not load experiences data. Please try refreshing the page.</p>';
-                    return;
+                    console.error("experiencesData property not found for language:", lang);
+                    
+                    // Check if there's an alternate property named 'experiences'
+                    if (translations[lang].experiences) {
+                        console.log("Found alternate 'experiences' property, using that instead");
+                        translations[lang].experiencesData = translations[lang].experiences;
+                    } else {
+                        document.getElementById('experiences-grid').innerHTML = '<p>Error: Could not load experiences data. Please try refreshing the page.</p>';
+                        return;
+                    }
                 }
                 
                 console.log("Experiences data found:", translations[lang].experiencesData.length);
