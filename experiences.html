@@ -322,6 +322,133 @@
         .duration-btn:hover {
             text-decoration: underline;
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-family: var(--heading-font);
+            font-size: 1.4rem;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            background-color: rgba(185, 43, 19, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contact-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            text-align: right;
+            border-top: 1px solid #eee;
+        }
+        
+        .modal-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--body-font);
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .modal-btn:hover {
+            background-color: rgb(155, 33, 9);
+        }
+        
+        @media (max-width: 768px) {
+            .modal {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -332,6 +459,39 @@
             <option value="fr">Français</option>
             <option value="es">Español</option>
         </select>
+    </div>
+    
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 data-i18n="bookNow">Book This Experience</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="modalBookingText">To book this experience, please contact our B&B host using the information below:</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@santagostinobb.it">info@santagostinobb.it</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+393349988358">+39 334 9988358</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/393349988358" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+                
+                <p data-i18n="modalBookingNote">Please mention the specific experience you are interested in booking.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" data-i18n="close">Close</button>
+            </div>
+        </div>
     </div>
     
     <div class="container">
@@ -541,25 +701,17 @@
             bookBtn.className = 'action-btn';
             bookBtn.innerHTML = `<i class="fas fa-ticket-alt"></i>`;
             bookBtn.onclick = () => {
-                const lang = document.getElementById('language-select').value || 'en';
-                let message = "Please contact the B&B host to book this experience.";
+                // Show booking modal instead of alert
+                const modal = document.getElementById('booking-modal');
+                modal.classList.add('active');
                 
-                // Try to get the message from translations
+                // If available, set the modal title to include the experience name
                 try {
-                    if (translations[lang].contactMessage) {
-                        if (typeof translations[lang].contactMessage === 'object') {
-                            message = translations[lang].contactMessage[lang] || 
-                                    translations[lang].contactMessage.en || 
-                                    message;
-                        } else if (typeof translations[lang].contactMessage === 'string') {
-                            message = translations[lang].contactMessage;
-                        }
-                    }
+                    const modalTitle = modal.querySelector('.modal-header h3');
+                    modalTitle.textContent = `Book "${experience.name}"`;
                 } catch (e) {
-                    console.warn("Error getting contact message:", e);
+                    console.warn("Could not set custom modal title:", e);
                 }
-                
-                alert(message);
             };
             
             actionsDiv.appendChild(bookBtn);
@@ -729,6 +881,70 @@
                 console.error("Error updating page language:", e);
             }
         }
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('booking-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const closeModalBtn = modal.querySelector('.modal-footer .modal-btn');
+            
+            // Close modal when clicking on close button, footer button or clicking outside
+            closeBtn.addEventListener('click', closeModal);
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Escape key closes modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            function closeModal() {
+                modal.classList.remove('active');
+            }
+            
+            // Add modal translations to each language
+            if (translations) {
+                const modalTranslations = {
+                    en: {
+                        modalBookingText: "To book this experience, please contact our B&B host using the information below:",
+                        modalBookingNote: "Please mention the specific experience you are interested in booking.",
+                        close: "Close"
+                    },
+                    it: {
+                        modalBookingText: "Per prenotare questa esperienza, contatta il nostro host B&B utilizzando le informazioni qui sotto:",
+                        modalBookingNote: "Si prega di menzionare l'esperienza specifica che si desidera prenotare.",
+                        close: "Chiudi"
+                    },
+                    fr: {
+                        modalBookingText: "Pour réserver cette expérience, veuillez contacter notre hôte B&B en utilisant les informations ci-dessous:",
+                        modalBookingNote: "Veuillez mentionner l'expérience spécifique qui vous intéresse.",
+                        close: "Fermer"
+                    },
+                    es: {
+                        modalBookingText: "Para reservar esta experiencia, por favor contacte a nuestro anfitrión B&B usando la información a continuación:",
+                        modalBookingNote: "Por favor mencione la experiencia específica que le interesa reservar.",
+                        close: "Cerrar"
+                    }
+                };
+                
+                // Add translations to each language
+                for (const lang in translations) {
+                    if (modalTranslations[lang]) {
+                        for (const key in modalTranslations[lang]) {
+                            if (!translations[lang][key]) {
+                                translations[lang][key] = modalTranslations[lang][key];
+                            }
+                        }
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
