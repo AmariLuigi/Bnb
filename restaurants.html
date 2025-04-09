@@ -133,13 +133,44 @@
         
         .restaurant-description {
             margin-bottom: 15px;
-            overflow: hidden;
-            max-height: 4.8em; /* 3 lines of text */
-            transition: max-height 0.3s ease;
+            overflow-y: auto;
+            max-height: 120px; /* Fixed height for description */
+            padding-right: 5px;
+            position: relative;
+            line-height: 1.5;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) #eee;
         }
         
-        .expanded {
-            max-height: 1000px; /* Arbitrary large value */
+        .restaurant-description::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .restaurant-description::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .restaurant-description::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        .restaurant-description:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .restaurant-description:not(:hover):after {
+            opacity: 1;
         }
         
         .restaurant-meta {
@@ -166,13 +197,13 @@
         /* Action Buttons */
         .restaurant-actions {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             margin-top: 15px;
             padding-top: 10px;
             border-top: 1px solid #eee;
         }
         
-        .see-more-btn, .action-btn {
+        .action-btn {
             background-color: transparent;
             border: none;
             color: var(--primary-color);
@@ -186,12 +217,8 @@
             transition: background-color 0.3s ease;
         }
         
-        .see-more-btn:hover, .action-btn:hover {
+        .action-btn:hover {
             background-color: rgba(185, 43, 19, 0.1);
-        }
-        
-        .action-btn i {
-            font-size: 1.2rem;
         }
         
         .section-title {
@@ -326,7 +353,7 @@
     </div>
     
     <footer style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f1f1f1; font-size: 0.8rem;">
-        <p>© 2023 Sant'Agostino B&B. All rights reserved. | Version 1.2.4</p>
+        <p>© 2023 Sant'Agostino B&B. All rights reserved. | Version 1.2.5</p>
     </footer>
 
     <script src="js/translations.js"></script>
@@ -360,19 +387,6 @@
             });
         });
         
-        function toggleDescription(button, id) {
-            const description = document.getElementById(id);
-            description.classList.toggle('expanded');
-            
-            const lang = document.getElementById('language-select').value || 'en';
-            
-            if (description.classList.contains('expanded')) {
-                button.innerHTML = `<i class="fas fa-chevron-up"></i> <span>${translations[lang].seeLess[lang]}</span>`;
-            } else {
-                button.innerHTML = `<i class="fas fa-chevron-down"></i> <span>${translations[lang].seeMore[lang]}</span>`;
-            }
-        }
-        
         function createRestaurantCard(restaurant, index, type) {
             const card = document.createElement('div');
             card.className = 'restaurant-card';
@@ -401,7 +415,6 @@
             // Description
             const descriptionElement = document.createElement('div');
             descriptionElement.className = 'restaurant-description';
-            descriptionElement.id = `description-${type}-${index}`;
             descriptionElement.textContent = restaurant.description;
             detailsDiv.appendChild(descriptionElement);
             
@@ -481,12 +494,6 @@
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'restaurant-actions';
             
-            // See More Button
-            const seeMoreBtn = document.createElement('button');
-            seeMoreBtn.className = 'see-more-btn';
-            seeMoreBtn.innerHTML = `<i class="fas fa-chevron-down"></i> <span data-i18n="seeMore">See more</span>`;
-            seeMoreBtn.onclick = () => toggleDescription(seeMoreBtn, `description-${type}-${index}`);
-            
             // Directions Button (Google Maps Icon)
             const directionsBtn = document.createElement('button');
             directionsBtn.className = 'action-btn';
@@ -497,7 +504,6 @@
                 window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
             };
             
-            actionsDiv.appendChild(seeMoreBtn);
             actionsDiv.appendChild(directionsBtn);
             
             detailsDiv.appendChild(actionsDiv);
