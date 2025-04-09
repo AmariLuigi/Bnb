@@ -88,7 +88,7 @@
             background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: var(--card-shadow);
-            overflow: hidden;
+            overflow: visible;
             margin-bottom: 30px;
             transition: transform 0.3s ease;
         }
@@ -122,6 +122,7 @@
         
         .experience-details {
             padding: 20px;
+            overflow: visible;
         }
         
         .experience-name {
@@ -179,12 +180,15 @@
             gap: 5px;
             margin-top: 15px;
             font-size: 0.9rem;
+            overflow: visible;
         }
         
         .meta-item {
             display: flex;
             align-items: center;
             color: #555;
+            position: static;
+            overflow: visible;
         }
         
         .meta-item i {
@@ -276,7 +280,7 @@
             border-radius: 6px;
             padding: 8px;
             position: absolute;
-            z-index: 1;
+            z-index: 100;
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
@@ -284,6 +288,8 @@
             transition: opacity 0.3s;
             font-size: 0.85rem;
             line-height: 1.4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
         }
         
         .duration-tooltip .tooltip-text::after {
