@@ -550,8 +550,108 @@
                     price: "€130 per person",
                     image: "images/attractions/placeholder.jpg",
                     note: "Includes market visit, cooking class and lunch with selected ingredients."
+                },
+                {
+                    name: "The Florios Dynasty - Walking Tour",
+                    description: "Trace the history of the Florio family from the Loggia district to the Teatro Massimo. Learn about their businesses, successes, and impact on Palermo's Belle Époque.",
+                    duration: "3 hours",
+                    price: "€45-€100 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Any entrances to historic buildings or monuments are not included in the price."
+                },
+                {
+                    name: "The Florios Dynasty with Private Transport",
+                    description: "Discover the Florio family's legacy with private transportation. Visit Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, and the Arenella house with Quattro Pizzi.",
+                    duration: "4 hours",
+                    price: "€55-€150 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Only available on Saturday afternoon and Sunday morning."
+                },
+                {
+                    name: "Arab-Norman Cathedrals Tour",
+                    description: "Visit the four most interesting Norman cathedrals in Palermo and province by train and private transport, including the Palatine Chapel, La Martorana, Cefalù and Monreale.",
+                    duration: "4-5 hours",
+                    price: "€100-€140 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Includes train ticket and transfer to Monreale."
+                },
+                {
+                    name: "Kingdom of the Sun - Arab-Norman Itinerary",
+                    description: "Discover the UNESCO Arab-Norman heritage sites of Palermo, including the Royal Palace with the Palatine Chapel, the Cathedral, San Giovanni degli Eremiti, San Cataldo, and Santa Maria dell'Ammiraglio.",
+                    duration: "3.5 hours",
+                    price: "€45-€100 per person",
+                    image: "images/attractions/placeholder.jpg",
+                    note: "Entrance fees to historical buildings or monuments are not included in the price."
                 }
             ];
+            
+            // Specifically fix English experiencesData
+            if (translations.en) {
+                console.log("Fixing English experiences data...");
+                
+                // Create proper English experiences
+                const englishExperiences = [
+                    {
+                        name: "Historic Palermo Walking Tour",
+                        description: "Explore the historic center of Palermo with a knowledgeable local guide. Visit the Teatro Massimo, Capo Market, Cathedral, Norman Palace with Palatine Chapel, Quattro Canti and Piazza Bellini.",
+                        duration: "3 hours",
+                        price: "€45-€100 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Entrance fees to historical buildings or monuments are not included in the price."
+                    },
+                    {
+                        name: "Street Food Experience",
+                        description: "A walking food tour through the streets of historic Palermo. Sample traditional street food including panelle, crocche, sfincione, pani ca meusa and enjoy a glass of wine at the Vucciria market.",
+                        duration: "2 hours",
+                        price: "€45-€55 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Food tastings included in price."
+                    },
+                    {
+                        name: "Kingdom of the Sun - Arab-Norman Itinerary",
+                        description: "Discover the UNESCO Arab-Norman heritage sites of Palermo, including the Royal Palace with the Palatine Chapel, the Cathedral, San Giovanni degli Eremiti, San Cataldo, and Santa Maria dell'Ammiraglio.",
+                        duration: "3.5 hours",
+                        price: "€45-€100 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Entrance fees to historical buildings or monuments are not included in the price."
+                    },
+                    {
+                        name: "The Florios Dynasty - Walking Tour",
+                        description: "Trace the history of the Florio family from the Loggia district to the Teatro Massimo. Learn about their businesses, successes, and impact on Palermo's Belle Époque.",
+                        duration: "3 hours",
+                        price: "€45-€100 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Any entrances to historic buildings or monuments are not included in the price."
+                    },
+                    {
+                        name: "The Florios Dynasty with Private Transport",
+                        description: "Discover the Florio family's legacy with private transportation. Visit Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, and the Arenella house with Quattro Pizzi.",
+                        duration: "4 hours",
+                        price: "€55-€150 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Only available on Saturday afternoon and Sunday morning."
+                    },
+                    {
+                        name: "Arab-Norman Cathedrals Tour",
+                        description: "Visit the four most interesting Norman cathedrals in Palermo and province by train and private transport, including the Palatine Chapel, La Martorana, Cefalù and Monreale.",
+                        duration: "4-5 hours",
+                        price: "€100-€140 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Includes train ticket and transfer to Monreale."
+                    },
+                    {
+                        name: "Cooking Class with a Chef",
+                        description: "Visit the Capo market with our chef to select fresh ingredients, then prepare traditional Sicilian recipes at the chef's home, finishing with lunch together.",
+                        duration: "3-4 hours",
+                        price: "€130 per person",
+                        image: "images/attractions/placeholder.jpg",
+                        note: "Includes market visit, cooking class and lunch with selected ingredients."
+                    }
+                ];
+                
+                // Always assign the proper English experiences
+                translations.en.experiencesData = englishExperiences;
+            }
             
             // Ensure all language objects have the experiencesData property
             for (const langCode in translations) {
