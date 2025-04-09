@@ -357,9 +357,15 @@
 
     <script src="js/translations.js"></script>
     <script>
+        // Check if translations.js loaded correctly
+        if (typeof translations === 'undefined') {
+            console.error("Error: translations object not found! The translations.js file might not be loading correctly.");
+            document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load translations. Please check your internet connection and try refreshing the page.</div>';
+        }
+    
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize
-            loadExperiences();
+            // Initialize with debugging
+            console.log("Initializing experiences page...");
             
             // Set language from URL hash if present
             const hash = window.location.hash.substring(1);
@@ -368,11 +374,9 @@
                 updatePageLanguage(hash);
             } else {
                 // Otherwise, try to load from localStorage
-                const savedLang = localStorage.getItem('preferredLanguage');
-                if (savedLang) {
-                    document.getElementById('language-select').value = savedLang;
-                    updatePageLanguage(savedLang);
-                }
+                const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+                document.getElementById('language-select').value = savedLang;
+                updatePageLanguage(savedLang);
             }
             
             // Set up language selector
@@ -380,6 +384,9 @@
                 const selectedLang = e.target.value;
                 updatePageLanguage(selectedLang);
             });
+
+            // Load experiences explicitly
+            loadExperiences();
         });
         
         function createExperienceCard(experience, index) {
@@ -428,7 +435,23 @@
                 const durationBtn = document.createElement('button');
                 durationBtn.className = 'duration-btn';
                 durationBtn.setAttribute('data-i18n', 'seeDuration');
-                durationBtn.textContent = translations[document.getElementById('language-select').value || 'en'].seeDuration[document.getElementById('language-select').value || 'en'];
+                
+                // Try to get the text from translations, with fallbacks
+                let durationText = "See duration";
+                try {
+                    const currentLang = document.getElementById('language-select').value || 'en';
+                    if (translations[currentLang].seeDuration) {
+                        if (typeof translations[currentLang].seeDuration === 'object') {
+                            durationText = translations[currentLang].seeDuration[currentLang] || "See duration";
+                        } else {
+                            durationText = translations[currentLang].seeDuration;
+                        }
+                    }
+                } catch (e) {
+                    console.error("Error setting duration text:", e);
+                }
+                
+                durationBtn.textContent = durationText;
                 
                 const tooltipText = document.createElement('span');
                 tooltipText.className = 'tooltip-text';
@@ -476,49 +499,99 @@
         }
         
         function loadExperiences() {
-            // Clear existing experience list
-            document.getElementById('experiences-grid').innerHTML = '';
-            
-            // Default to English if no language is set
-            const lang = document.getElementById('language-select').value || 'en';
-            
-            // Get experience data for the selected language
-            const experiences = translations[lang].experiences;
-            
-            // Add experiences
-            experiences.forEach((experience, index) => {
-                const card = createExperienceCard(experience, index);
-                document.getElementById('experiences-grid').appendChild(card);
-            });
+            try {
+                // Add debugging
+                console.log("Loading experiences...");
+                
+                // Clear existing experience list
+                document.getElementById('experiences-grid').innerHTML = '';
+                
+                // Default to English if no language is set
+                const lang = document.getElementById('language-select').value || 'en';
+                console.log("Current language:", lang);
+                console.log("Translations object:", typeof translations, translations ? "loaded" : "not loaded");
+                
+                // Check if translations object exists
+                if (!translations || !translations[lang]) {
+                    console.error("Translations not found for language:", lang);
+                    document.getElementById('experiences-grid').innerHTML = '<p>Error: Could not load experiences data. Please try refreshing the page.</p>';
+                    return;
+                }
+                
+                // Check if experiences data exists
+                if (!translations[lang].experiencesData) {
+                    console.error("Experiences data not found for language:", lang);
+                    document.getElementById('experiences-grid').innerHTML = '<p>Error: Could not load experiences data. Please try refreshing the page.</p>';
+                    return;
+                }
+                
+                console.log("Experiences data found:", translations[lang].experiencesData.length);
+                
+                // Get experience data for the selected language
+                const experiences = translations[lang].experiencesData;
+                
+                // Add experiences
+                if (experiences && experiences.length > 0) {
+                    experiences.forEach((experience, index) => {
+                        const card = createExperienceCard(experience, index);
+                        document.getElementById('experiences-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('experiences-grid').innerHTML = '<p>No experiences found for this language.</p>';
+                    console.warn("No experiences found for language:", lang);
+                }
+            } catch (e) {
+                console.error("Error loading experiences:", e);
+                document.getElementById('experiences-grid').innerHTML = '<p>Error: Could not load experiences data. Please try refreshing the page.</p>';
+            }
         }
         
         function updatePageLanguage(lang) {
-            // Update language selector
-            document.getElementById('language-select').value = lang;
-            
-            // Store in localStorage for future visits
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Update URL hash
-            window.location.hash = lang;
-            
-            // Update translation elements
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    if (typeof translations[lang][key] === 'object') {
-                        element.textContent = translations[lang][key][lang];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
+            try {
+                console.log("Updating page language to:", lang);
+                
+                // Update language selector
+                document.getElementById('language-select').value = lang;
+                
+                // Store in localStorage for future visits
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // Update URL hash
+                window.location.hash = lang;
+                
+                // Check if translations exist
+                if (!translations || !translations[lang]) {
+                    console.error("Translations not found for language:", lang);
+                    return;
                 }
-            });
-            
-            // Repopulate experiences
-            loadExperiences();
-            
-            // Update back button text
-            document.querySelector('.back-button span').textContent = translations[lang].backToHome[lang];
+                
+                // Update translation elements
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        if (typeof translations[lang][key] === 'object') {
+                            element.textContent = translations[lang][key][lang] || translations[lang][key].en || key;
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                
+                // Repopulate experiences
+                loadExperiences();
+                
+                // Update back button text with error handling
+                try {
+                    const backText = translations[lang].backToHome && translations[lang].backToHome[lang] ? 
+                        translations[lang].backToHome[lang] : "Back to Home";
+                    document.querySelector('.back-button span').textContent = backText;
+                } catch (e) {
+                    console.warn("Error updating back button:", e);
+                    document.querySelector('.back-button span').textContent = "Back to Home";
+                }
+            } catch (e) {
+                console.error("Error updating page language:", e);
+            }
         }
     </script>
 </body>
