@@ -616,11 +616,11 @@
                 console.log("Experiences data found:", translations[lang].experiencesData.length);
                 
                 // Get experience data for the selected language
-                const experiences = translations[lang].experiencesData;
+                const experiencesData = translations[lang].experiencesData;
                 
                 // Add experiences
-                if (experiences && experiences.length > 0) {
-                    experiences.forEach((experience, index) => {
+                if (experiencesData && experiencesData.length > 0) {
+                    experiencesData.forEach((experience, index) => {
                         const card = createExperienceCard(experience, index);
                         document.getElementById('experiences-grid').appendChild(card);
                     });
