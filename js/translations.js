@@ -59,16 +59,15 @@ const translations = {
                 type: "Lunch"
             },
             {
-                name: "Maccio Osteria Alcolica",
-                description: "A charming restaurant perfectly situated near Piazza Olivella, Maccio Osteria Alcolica offers an authentic culinary experience with their exceptional ragù bolognese that locals rave about. The restaurant boasts an impressive selection of liqueurs and wines, carefully curated to complement their dishes. The knowledgeable staff provides impeccable service, creating a memorable dining experience in a peaceful atmosphere. With reasonable prices for such high-quality cuisine and a stellar 4.7 Google rating, this restaurant is a must-visit for those seeking authentic Sicilian flavors in an intimate setting.",
-                priceRange: "€20-30 per person",
-                cuisine: "Traditional Sicilian, Wine Bar",
+                name: "Osteria Mangia e Bevi",
+                description: "A traditional Sicilian osteria that embodies authentic local cuisine. 'La cucina che parla siciliano' (The cuisine that speaks Sicilian) - their motto reflects their commitment to serving traditional Sicilian dishes prepared with local ingredients and time-honored recipes. The restaurant offers an intimate dining experience where guests can enjoy the true flavors of Sicily in a warm and welcoming atmosphere.",
+                priceRange: "€20-35 per person",
+                cuisine: "Traditional Sicilian, Local Specialties",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Enrico",
-                address: "Via Orologio 22, 90133, Palermo",
-                phone: "+39 346 154 0413",
-                openUntil: "23:00",
-                type: "Lunch"
+                referent: "Contact B&B",
+                address: "Palermo, Sicily",
+                website: "osteriamangiaebevi.it",
+                type: "Dinner"
             },
             {
                 name: "Osteria Mercede",
@@ -421,16 +420,15 @@ const translations = {
                 type: "Pranzo"
             },
             {
-                name: "Maccio Osteria Alcolica",
-                description: "Un incantevole ristorante perfettamente situato vicino a Piazza Olivella, Maccio Osteria Alcolica offre un'autentica esperienza culinaria con il loro eccezionale ragù bolognese, molto apprezzato dai clienti. Il ristorante vanta un'impressionante selezione di liquori e vini, attentamente selezionati per accompagnare i loro piatti. Il personale esperto fornisce un servizio impeccabile, creando un'esperienza gastronomica memorabile in un'atmosfera tranquilla. Con prezzi ragionevoli per una cucina di tale qualità e un eccellente punteggio di 4.7 su Google, questo ristorante è una tappa obbligata per chi cerca autentici sapori siciliani in un ambiente intimo.",
-                priceRange: "€20-30 a persona",
-                cuisine: "Siciliana Tradizionale, Enoteca",
+                name: "Osteria Mangia e Bevi",
+                description: "Un'osteria siciliana tradizionale che incarna la cucina locale autentica. 'La cucina che parla siciliano' - il loro motto riflette l'impegno a servire piatti siciliani tradizionali preparati con ingredienti locali e ricette tramandate nel tempo. Il ristorante offre un'esperienza culinaria intima dove gli ospiti possono gustare i veri sapori della Sicilia in un'atmosfera calda e accogliente.",
+                priceRange: "€20-35 a persona",
+                cuisine: "Siciliana Tradizionale, Specialità Locali",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Enrico",
-                address: "Via Orologio 22, 90133, Palermo",
-                phone: "+39 346 154 0413",
-                openUntil: "23:00",
-                type: "Pranzo"
+                referent: "Contatta B&B",
+                address: "Palermo, Sicilia",
+                website: "osteriamangiaebevi.it",
+                type: "Cena"
             },
             {
                 name: "Osteria Mercede",
@@ -831,16 +829,15 @@ const translations = {
                 type: "Lunch"
             },
             {
-                name: "Maccio Osteria Alcolica",
-                description: "Un charmant restaurant parfaitement situé près de la Piazza Olivella, Maccio Osteria Alcolica offre une expérience culinaire authentique avec son exceptionnel ragù bolognese dont les habitants raffolent. Le restaurant propose une impressionnante sélection de liqueurs et de vins, soigneusement choisis pour accompagner leurs plats. Le personnel compétent assure un service impeccable, créant une expérience gastronomique mémorable dans une atmosphère paisible. Avec des prix raisonnables pour une cuisine de cette qualité et une note Google exceptionnelle de 4,7, ce restaurant est incontournable pour ceux qui recherchent des saveurs siciliennes authentiques dans un cadre intime.",
-                priceRange: "€20-30 par personne",
-                cuisine: "Sicilienne Traditionnelle, Bar à Vin",
+                name: "Osteria Mangia e Bevi",
+                description: "Une osteria sicilienne traditionnelle qui incarne la cuisine locale authentique. 'La cucina che parla siciliano' (La cuisine qui parle sicilien) - leur devise reflète leur engagement à servir des plats siciliens traditionnels préparés avec des ingrédients locaux et des recettes transmises au fil du temps. Le restaurant offre une expérience culinaire intime où les invités peuvent savourer les vraies saveurs de la Sicile dans une atmosphère chaleureuse et accueillante.",
+                priceRange: "€20-35 par personne",
+                cuisine: "Sicilienne Traditionnelle, Spécialités Locales",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Enrico",
-                address: "Via Orologio 22, 90133, Palermo",
-                phone: "+39 346 154 0413",
-                openUntil: "23:00",
-                type: "Lunch"
+                referent: "Contactez B&B",
+                address: "Palerme, Sicile",
+                website: "osteriamangiaebevi.it",
+                type: "Dîner"
             },
             {
                 name: "Osteria Mercede",
@@ -1241,16 +1238,15 @@ const translations = {
                 type: "Lunch"
             },
             {
-                name: "Maccio Osteria Alcolica",
-                description: "Un encantador restaurante perfectamente situado cerca de Piazza Olivella, Maccio Osteria Alcolica ofrece una auténtica experiencia culinaria con su excepcional ragù boloñesa del que los lugareños hablan maravillas. El restaurante cuenta con una impresionante selección de licores y vinos, cuidadosamente seleccionados para complementar sus platos. El personal conocedor proporciona un servicio impecable, creando una experiencia gastronómica memorable en un ambiente tranquilo. Con precios razonables para una cocina de tal calidad y una excelente calificación de 4.7 en Google, este restaurante es una visita obligada para aquellos que buscan auténticos sabores sicilianos en un entorno íntimo.",
-                priceRange: "€20-30 por persona",
-                cuisine: "Siciliana Tradicional, Bar de Vinos",
+                name: "Osteria Mangia e Bevi",
+                description: "Una osteria siciliana tradicional que encarna la auténtica cocina local. 'La cucina che parla siciliano' (La cocina que habla siciliano) - su lema refleja su compromiso de servir platos sicilianos tradicionales preparados con ingredientes locales y recetas transmitidas a través del tiempo. El restaurante ofrece una experiencia culinaria íntima donde los huéspedes pueden disfrutar de los verdaderos sabores de Sicilia en una atmósfera cálida y acogedora.",
+                priceRange: "€20-35 por persona",
+                cuisine: "Siciliana Tradicional, Especialidades Locales",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Enrico",
-                address: "Via Orologio 22, 90133, Palermo",
-                phone: "+39 346 154 0413",
-                openUntil: "23:00",
-                type: "Lunch"
+                referent: "Contacta B&B",
+                address: "Palermo, Sicilia",
+                website: "osteriamangiaebevi.it",
+                type: "Cena"
             },
             {
                 name: "Osteria Mercede",
