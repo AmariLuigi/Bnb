@@ -1101,7 +1101,7 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato pour le personale attraente, servizio spettacolare et ses prix démocratiques, ce restaurant présente un décor charmant et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
                 priceRange: "€35-150 a persona",
                 cuisine: "Italiana, Frutti di Mare, Bar di Vini",
                 image: "images/attractions/placeholder.jpg",
