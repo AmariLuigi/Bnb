@@ -90,7 +90,7 @@ const translations = {
                 website: "coronatrattoria.com",
                 instagram: "@coronatrattoria",
                 openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-                type: "Lunch"
+                type: "Dinner"
             },
             {
                 name: "Sardina PastaBar",
@@ -451,7 +451,7 @@ const translations = {
                 website: "coronatrattoria.com",
                 instagram: "@coronatrattoria",
                 openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-                type: "Pranzo"
+                type: "Cena"
             },
             {
                 name: "Sardina PastaBar",
@@ -860,7 +860,7 @@ const translations = {
                 website: "coronatrattoria.com",
                 instagram: "@coronatrattoria",
                 openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-                type: "Pranzo"
+                type: "Dîner"
             },
             {
                 name: "Sardina PastaBar",
@@ -1269,7 +1269,7 @@ const translations = {
                 website: "coronatrattoria.com",
                 instagram: "@coronatrattoria",
                 openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-                type: "Pranzo"
+                type: "Cena"
             },
             {
                 name: "Sardina PastaBar",
