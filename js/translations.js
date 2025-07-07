@@ -1669,64 +1669,32 @@ const translations = {
                 note: "Para grupos, el barco sale con un mínimo de 4 participantes. Aperitivo incluido; cena bajo petición."
             }
         ],
-        
-        // Experience data
-        experiencesData: [
+        michelinRestaurantsData: [
             {
-                name: "Descubriendo Palermo",
-                description: "Un recorrido a pie por el centro histórico para descubrir la historia millenaria de Palermo, un crisol único en el mundo. Visite el Teatro Massimo, el Mercado del Capo, la Cattedrale, el Palacio Normando con la Capilla Palatina, los Quattro Canti y la Piazza Bellini.",
-                duration: "3 horas",
-                price: "€45-€100 por persona",
+                name: "MEC Restaurant",
+                description: "Una experiencia culinaria excepcional que presenta cocina italiana innovadora con reconocimiento Michelin. Ubicado en el corazón de Palermo, MEC Restaurant combina los sabores sicilianos tradicionales con técnicas modernas, creando platos memorables que muestran lo mejor de los ingredientes locales. El compromiso del restaurante con la excelencia y la atención al detalle le ha valido el reconocimiento entre los mejores establecimientos de la ciudad.",
+                priceRange: "€€€",
+                cuisine: "Italiana Moderna, Creativa",
                 image: "images/attractions/placeholder.jpg",
-                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
+                address: "Via Vittorio Emanuele 452 - 90134",
+                phone: "347 753 2005",
+                michelinStars: "★",
+                type: "Michelin"
             },
             {
-                name: "Tour de Aperitivo y Comida Callejera",
-                description: "Un aperitivo itinerante por las calles del centro histórico de Palermo. Experimente la comida callejera tradicional, incluyendo panelle, crocche, sfincione, pan con bazo y una copa de vino en la Vucciria.",
-                duration: "2 horas",
-                price: "€45-€55 por persona",
+                name: "Osteria dei Vespri",
+                description: "Un restaurante seleccionado por la Guía Michelin cerca de la Fontana del Genio, que ofrece refinada cocina italiana con énfasis en los mariscos. Platos destacados: antipasti, panceta de cerdo, atún sellado, deliciosos pasteles de frutas, galletas y parfait para el postre. El restaurante sirve buen chardonnay, cordial y jerez fino, además de exquisito ristretto y limonada. Elogiado por su personal atractivo, servicio espectacular y precios democráticos, este restaurante presenta una decoración encantadora y un ambiente agradable. Ha recibido 2 símbolos de tenedor y cuchillo negros de Michelin, lo que indica un confort óptimo.",
+                priceRange: "€35-150 por persona",
+                cuisine: "Italiana, Mariscos, Bar de vinos",
                 image: "images/attractions/placeholder.jpg",
-                note: "Degustaciones de comida inclues en el precio."
-            },
-            {
-                name: "El Reino del Sol - Itinerario Árabe-Normando",
-                description: "Descubra los sitios del patrimonio Árabe-Normando de la UNESCO en Palermo, incluyendo el Palacio Real con la Capilla Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo y Santa Maria dell'Ammiraglio.",
-                duration: "3.5 horas",
-                price: "€45-€100 por persona",
-                image: "images/attractions/placeholder.jpg",
-                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
-            },
-            {
-                name: "La Dinastía de los Florio - Recorrido a Pie",
-                description: "Trace la historia de la familia Florio desde el distrito de la Loggia hasta el Teatro Massimo. Conozca sus negocios, éxitos e impacto en la Belle Époque palermitana.",
-                duration: "3 horas",
-                price: "€45-€100 por persona",
-                image: "images/attractions/placeholder.jpg",
-                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
-            },
-            {
-                name: "La Dinastía de los Florio con Transporte Privado",
-                description: "Descubra el legado de la familia Florio con transporte privado. Visite el Villino Florio all'Olivuzza, la Villa Malfitano-Whitaker y la casa de Arenella con Quattro Pizzi.",
-                duration: "4 horas",
-                price: "€55-€150 por persona",
-                image: "images/attractions/placeholder.jpg",
-                note: "Solo disponible los sábados por la tarde y los domingos por la mañana."
-            },
-            {
-                name: "Tour de Catedrales Árabe-Normandas",
-                description: "Visite las cuatro catedrales normandas más interesantes de Palermo y su provincia en tren y transporte privado, incluyendo la Capilla Palatina, la Martorana, Cefalú y Monreale.",
-                duration: "4-5 horas",
-                price: "€100-€140 por persona",
-                image: "images/attractions/placeholder.jpg",
-                note: "Incluye boleto de tren y traslado a Monreale."
-            },
-            {
-                name: "Clase de Cocina con Chef",
-                description: "Visite el mercado del Capo con nuestro chef para seleccionar ingredientes frescos, luego prepare recetas sicilianas tradicionales en la casa del chef, finalizando con un almuerzo juntos.",
-                duration: "3-4 horas",
-                price: "€130 por persona",
-                image: "images/attractions/placeholder.jpg",
-                note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sáb: 12:30-14:45, 19:30-22:45; Dom: Cerrado",
+                michelinStars: "Selección Michelin",
+                type: "Michelin"
             }
         ],
         
