@@ -666,17 +666,17 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
-                priceRange: "€35-150 a persona",
-                cuisine: "Italiana, Frutti di Mare, Bar di Vini",
+                description: "A Michelin-selected restaurant near Fontana del Genio, offering refined Italian cuisine with a focus on seafood. Notable dishes include antipasto, pork belly, and seared tuna, with delicious fruit cakes, cookies, and parfait for dessert. The restaurant serves good chardonnay, cordial, and fino sherry, along with exquisite ristretto and lemonade. Appreciated for its attractive staff, spectacular service, and democratic prices, this restaurant features cute decor and a charming atmosphere. It has received 2 black knife and fork symbols from Michelin, indicating optimal comfort.",
+                priceRange: "€35-150 per person",
+                cuisine: "Italian, Seafood, Wine Bars",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Andrea",
-                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
                 phone: "+39 091 617 1631",
                 website: "osteriadeivespri.it",
                 instagram: "@osteria_dei_vespri",
-                openHours: "Lun-Sab: 12:30-14:45, 19:30-22:45; Dom: Chiuso",
-                michelinStars: "Selezionato Michelin",
+                openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
+                michelinStars: "Michelin Selected",
                 type: "Michelin"
             }
         ],
@@ -1127,7 +1127,7 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato pour le personale attraente, servizio spettacolare et ses prix démocratiques, ce restaurant présente un décor charmant et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato pour le personale attraente, servizio spettacolare et ses prix démocratiques, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
                 priceRange: "€35-150 a persona",
                 cuisine: "Italiana, Frutti di Mare, Bar di Vini",
                 image: "images/attractions/placeholder.jpg",
