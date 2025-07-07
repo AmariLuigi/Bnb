@@ -1086,6 +1086,36 @@ const translations = {
             }
         ],
         
+        // Ristoranti Stellati Michelin data
+        michelinRestaurantsData: [
+            {
+                name: "MEC Restaurant",
+                description: "Une expérience culinaire exceptionnelle mettant en avant une cuisine italienne innovante reconnue par Michelin. Situé au cœur de Palerme, le MEC Restaurant combine les saveurs siciliennes traditionnelles avec des techniques modernes, créant des plats mémorables mettant en valeur les meilleurs ingrédients locaux. L'engagement du restaurant envers l'excellence et l'attention aux détails lui a valu une reconnaissance parmi les meilleurs établissements de la ville.",
+                priceRange: "€€€",
+                cuisine: "Italienne Moderne, Créative",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Vittorio Emanuele 452 - 90134",
+                phone: "347 753 2005",
+                michelinStars: "★",
+                type: "Michelin"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                priceRange: "€35-150 a persona",
+                cuisine: "Italiana, Frutti di Mare, Bar di Vini",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sab: 12:30-14:45, 19:30-22:45; Dom: Chiuso",
+                michelinStars: "Selezionato Michelin",
+                type: "Michelin"
+            }
+        ],
+        
         // Experience data
         experiencesData: [
             {
