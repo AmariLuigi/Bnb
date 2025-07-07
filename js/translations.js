@@ -38,7 +38,8 @@ const translations = {
         restaurants: "Restaurants",
         recommendedRestaurants: "Recommended Restaurants",
         lunchRestaurants: "Lunch Restaurants",
-        dinnerRestaurants: "Dinner Restaurants",
+        dinnerRestaurants: "Dinner Restaurants", 
+        michelinRestaurants: "Michelin Starred Restaurants",
         referent: "Referent",
         experiences: "B&B Experiences",
         localExperiences: "Local Experiences",
@@ -257,6 +258,36 @@ const translations = {
             }
         ],
         
+        // Michelin Starred Restaurants data
+        michelinRestaurantsData: [
+            {
+                name: "MEC Restaurant",
+                description: "An exceptional culinary experience featuring innovative Italian cuisine with Michelin recognition. Located in the heart of Palermo, MEC Restaurant combines traditional Sicilian flavors with modern techniques, creating memorable dishes that showcase the best of local ingredients. The restaurant's commitment to excellence and attention to detail has earned it recognition among the finest dining establishments in the city.",
+                priceRange: "€€€",
+                cuisine: "Modern Italian, Creative",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Vittorio Emanuele 452 - 90134",
+                phone: "347 753 2005",
+                michelinStars: "★",
+                type: "Michelin"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "A Michelin-selected restaurant near Fontana del Genio, offering refined Italian cuisine with a focus on seafood. Notable dishes include antipasto, pork belly, and seared tuna, with delicious fruit cakes, cookies, and parfait for dessert. The restaurant serves good chardonnay, cordial, and fino sherry, along with exquisite ristretto and lemonade. Appreciated for its attractive staff, spectacular service, and democratic prices, this restaurant features cute decor and a charming atmosphere. It has received 2 black knife and fork symbols from Michelin, indicating optimal comfort.",
+                priceRange: "€35-150 per person",
+                cuisine: "Italian, Seafood, Wine Bars",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
+                michelinStars: "Michelin Selected",
+                type: "Michelin"
+            }
+        ],
+        
         // Quarter-specific attractions
         albergheriaAttractions: [
             { name: "Ballarò (market)", image: "images/attractions/ballaro.jpg" },
@@ -400,6 +431,7 @@ const translations = {
         recommendedRestaurants: "Ristoranti Consigliati",
         lunchRestaurants: "Ristoranti per Pranzo",
         dinnerRestaurants: "Ristoranti per Cena",
+        michelinRestaurants: "Ristoranti Stellati Michelin",
         referent: "Referente",
         experiences: "Esperienze B&B",
         localExperiences: "Esperienze Locali",
@@ -606,6 +638,36 @@ const translations = {
             }
         ],
         
+        // Ristoranti Stellati Michelin data
+        michelinRestaurantsData: [
+            {
+                name: "MEC Restaurant",
+                description: "Un'esperienza culinaria eccezionale che presenta cucina italiana innovativa con riconoscimento Michelin. Situato nel cuore di Palermo, MEC Restaurant combina i sapori siciliani tradizionali con tecniche moderne, creando piatti memorabili che mettono in mostra il meglio degli ingredienti locali. L'impegno del ristorante per l'eccellenza e l'attenzione ai dettagli gli ha valso il riconoscimento tra i migliori locali della città.",
+                priceRange: "€€€",
+                cuisine: "Italiana Moderna, Creativa",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Vittorio Emanuele 452 - 90134",
+                phone: "347 753 2005",
+                michelinStars: "★",
+                type: "Michelin"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                priceRange: "€35-150 a persona",
+                cuisine: "Italiana, Frutti di Mare, Bar di Vini",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palermo, Sicilia",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sab: 12:30-14:45, 19:30-22:45; Dom: Chiuso",
+                michelinStars: "Selezionato Michelin",
+                type: "Michelin"
+            }
+        ],
+        
         // Experience data
         experiencesData: [
             {
@@ -809,6 +871,7 @@ const translations = {
         recommendedRestaurants: "Restaurants Recommandés",
         lunchRestaurants: "Restaurants pour le Déjeuner",
         dinnerRestaurants: "Restaurants pour le Dîner",
+        michelinRestaurants: "Restaurants Étoilés Michelin",
         referent: "Personne de Référence",
         experiences: "Expériences B&B",
         localExperiences: "Expériences Locales",
@@ -1218,6 +1281,7 @@ const translations = {
         recommendedRestaurants: "Restaurantes Recomendados",
         lunchRestaurants: "Restaurantes para Almuerzo",
         dinnerRestaurants: "Restaurantes para Cena",
+        michelinRestaurants: "Restaurantes con Estrella Michelin",
         referent: "Persona de Referencia",
         experiences: "Experiencias B&B",
         localExperiences: "Experiencias Locales",

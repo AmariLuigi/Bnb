@@ -350,6 +350,13 @@
             </div>
         </section>
         
+        <section id="michelin-restaurants">
+            <h2 class="section-title"><span data-i18n="michelinRestaurants">Michelin Starred Restaurants</span></h2>
+            <div id="michelin-grid" class="attractions-grid">
+                <!-- Michelin restaurants will be inserted here -->
+            </div>
+        </section>
+        
         <section id="recommended-dinner">
             <h2 class="section-title"><span data-i18n="dinnerPlaces">Dinner Places</span></h2>
             <div id="dinner-grid" class="attractions-grid">
@@ -526,6 +533,7 @@
                 
                 // Clear existing restaurant lists
                 document.getElementById('lunch-grid').innerHTML = '';
+                document.getElementById('michelin-grid').innerHTML = '';
                 document.getElementById('dinner-grid').innerHTML = '';
                 
                 // Default to English if no language is set
@@ -581,6 +589,17 @@
                 } else {
                     document.getElementById('lunch-grid').innerHTML = '<p>No lunch restaurants found for this language.</p>';
                     console.warn("No lunch restaurants found for language:", lang);
+                }
+                
+                // Add Michelin restaurants
+                if (translations[lang].michelinRestaurantsData && translations[lang].michelinRestaurantsData.length > 0) {
+                    translations[lang].michelinRestaurantsData.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'michelin');
+                        document.getElementById('michelin-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('michelin-grid').innerHTML = '<p>No Michelin restaurants found for this language.</p>';
+                    console.warn("No Michelin restaurants found for language:", lang);
                 }
                 
                 // Add dinner restaurants
