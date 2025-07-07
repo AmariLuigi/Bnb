@@ -582,9 +582,9 @@ const translations = {
             },
             {
                 name: "Quid gusto siciliano",
-                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato per il suo personale competente, servizio eccellente, prezzi accessibili e un'atmosfera gradevole.",
+                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato pour le suo personale competente, servizio eccellente, prezzi accessibiles et un'atmosfera gradevole.",
                 priceRange: "€13-41 a persona",
-                cuisine: "Pizza, Italiana, Opzioni Vegetariane",
+                cuisine: "Pizza, Italiana, Opziones Vegetarianes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Serena",
                 address: "Piazza Marina, 52, Palermo, Sicilia",
@@ -598,7 +598,7 @@ const translations = {
                 name: "Scjabaca",
                 description: "Situato vicino alla Fontana del Genio, questo ristorante offre cucina italiana e mediterranea con un punteggio di 4.7 su Google. Le specialità includono polpo alla griglia, ravioli e tonno alla griglia, insieme a deliziosi dessert come parfait, panna cotta e crumble. Il ristorante è noto per la sua diversificata carta dei vini, ottimo caffè, personale gentile, servizio veloce e prezzi ragionevoli. L'atmosfera tranquilla e il bel arredamento rendono l'esperienza culinaria piacevole.",
                 priceRange: "€20-61 a persona",
-                cuisine: "Mediterranea, Italiana, Opzioni Vegetariane",
+                cuisine: "Mediterranea, Italiana, Opziones Vegetarianes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Valeria",
                 address: "Vicolo S. Carlo, 42, Palermo, Sicilia",
@@ -610,7 +610,7 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto et limonata. Apprécié pour son personnel attractif, son service spectaculaire et ses prix démocratiques, ce restaurant présente un décor charmant et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
                 priceRange: "€35-150 a persona",
                 cuisine: "Italiana, Frutti di Mare, Bar di Vini",
                 image: "images/attractions/placeholder.jpg",
@@ -775,12 +775,12 @@ const translations = {
         ],
         loggiaAttractions: [
             { name: "Marché de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
-            { name: "Église de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
             { name: "Place San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
             { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
-            { name: "Église de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
             { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
             { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
             { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
@@ -931,7 +931,7 @@ const translations = {
                 website: "coronatrattoria.com",
                 instagram: "@coronatrattoria",
                 openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-                type: "Dîner"
+                type: "Cena"
             },
             {
                 name: "Sardina PastaBar",
@@ -991,37 +991,37 @@ const translations = {
             {
                 name: "Trattoria Supra i Mura",
                 description: "Situé au cœur de Palermo, offrant une variété de plats de fruits de mer et de cuisine sicilienne traditionnelle dans une atmosphère accueillante.",
-                priceRange: "€20-30 par personne",
-                cuisine: "Fruits de Mer, Sicilienne Traditionnelle",
+                priceRange: "€20-30 a persona",
+                cuisine: "Pesce, Siciliana Tradizionale",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Pietro",
                 address: "Piazza Porta Carini, 5, 90134 Palermo PA",
-                type: "Dinner"
+                type: "Cena"
             },
             {
                 name: "Enoteca Butticè",
                 description: "Ristorante et bar à vin avec plus de 700 étiquettes de vin, che offre cucina palermitana et excelentes cócteles.",
-                priceRange: "€20-40 par personne",
+                priceRange: "€20-40 a persona",
                 cuisine: "Sicilienne, Bar à Vin",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Giuseppe",
                 address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
-                type: "Dinner"
+                type: "Cena"
             },
             {
                 name: "Ferramenta",
-                description: "Restaurant au cœur du centre historique de Palermo, avec des places en terrasse et des options véganes, idéal pour une atmosphère jeune et accueillante.",
-                priceRange: "€20-30 par personne",
+                description: "Ristorante au cœur du centre historique de Palermo, avec des places en terrasse et des options véganes, idéal pour une atmosphère jeune et accueillante.",
+                priceRange: "€20-30 a persona",
                 cuisine: "Méditerranéenne, Opzions Véganes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Luca ou Marcello",
                 address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
-                type: "Dinner"
+                type: "Cena"
             },
             {
                 name: "Forno Santa Maria",
                 description: "Pizzería con un enfoque artesanal en la panadería y la mixología, située nel cuore del centro storico.",
-                priceRange: "€20-30 par personne",
+                priceRange: "€20-30 a persona",
                 cuisine: "Pizza, Artisanal",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Luca o Marcello",
@@ -1058,7 +1058,7 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato pour le personel attractif, servizio spectaculaire et prix démocratiques, ce restaurant présente des interieurs charmants et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto et limonata. Apprécié pour son personnel attractif, son service spectaculaire et ses prix démocratiques, ce restaurant présente un décor charmant et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
                 priceRange: "€35-150 a persona",
                 cuisine: "Italiana, Frutti di Mare, Bar di Vini",
                 image: "images/attractions/placeholder.jpg",
@@ -1143,6 +1143,44 @@ const translations = {
                 price: "€130 par personne",
                 image: "images/attractions/placeholder.jpg",
                 note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
+            },
+            {
+                name: "Voile parmi les parfums de la Sicile - Excursion en voilier sur la côte de Palerme",
+                description: "Embarquez pour une expérience inoubliable en voilier le long de la côte de Palerme. Découvrez des criques cachées, des eaux cristallines et des panoramas à couper le souffle. Apéritif inclus ; dîner à bord disponible sur demande. Minimum 4 participants pour les groupes.",
+                duration: "Demi-journée (plusieurs options)",
+                price: "Exclusif (2 pers.): 250€ par personne ; 2 pers. (non exclusif): 200€ par personne ; 4 pers.: 150€ par personne ; 5-6 pers.: 130€ par personne ; 7-8 pers.: 100€ par personne",
+                image: "images/attractions/placeholder.jpg",
+                note: "Pour les groupes, le bateau part avec un minimum de 4 participants. Apéritif inclus ; dîner sur demande."
+            }
+        ],
+        
+        // Ristoranti Stellati Michelin data
+        michelinRestaurantsData: [
+            {
+                name: "MEC Restaurant",
+                description: "Une expérience culinaire exceptionnelle mettant en avant une cuisine italienne innovante reconnue par Michelin. Situé au cœur de Palerme, le MEC Restaurant combine les saveurs siciliennes traditionnelles avec des techniques modernes, créant des plats mémorables mettant en valeur les meilleurs ingrédients locaux. L'engagement du restaurant envers l'excellence et l'attention aux détails lui a valu une reconnaissance parmi les meilleurs établissements de la ville.",
+                priceRange: "€€€",
+                cuisine: "Italienne Moderne, Créative",
+                image: "images/attractions/placeholder.jpg",
+                address: "Via Vittorio Emanuele 452 - 90134",
+                phone: "347 753 2005",
+                michelinStars: "★",
+                type: "Michelin"
+            },
+            {
+                name: "Osteria dei Vespri",
+                description: "Un restaurant sélectionné par le Guide Michelin près de la Fontana del Genio, offrant une cuisine italienne raffinée axée sur les fruits de mer. Plats notables : antipasti, poitrine de porc, thon poêlé, délicieux gâteaux aux fruits, biscuits et parfaits en dessert. Le restaurant propose un bon chardonnay, du cordial, du fino, ainsi qu'un ristretto exquis et de la limonade. Apprécié pour son personnel attractif, son service spectaculaire et ses prix démocratiques, ce restaurant présente un décor charmant et une ambiance accueillante. Il a reçu 2 symboles de couteau et fourchette noirs de Michelin, indiquant un confort optimal.",
+                priceRange: "€35-150 par personne",
+                cuisine: "Italienne, Fruits de mer, Bar à vins",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Andrea",
+                address: "Piazza Croce dei Vespri, 6, Palerme, Sicile",
+                phone: "+39 091 617 1631",
+                website: "osteriadeivespri.it",
+                instagram: "@osteria_dei_vespri",
+                openHours: "Lun-Sam : 12h30-14h45, 19h30-22h45 ; Dim : Fermé",
+                michelinStars: "Sélection Michelin",
+                type: "Michelin"
             }
         ],
         
@@ -1552,6 +1590,74 @@ const translations = {
                 price: "€130 por persona",
                 image: "images/attractions/placeholder.jpg",
                 note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
+            },
+            {
+                name: "Navegando entre los aromas de Sicilia - Tour en velero por la costa de Palermo",
+                description: "Zarpa con nosotros para una experiencia inolvidable en velero por la hermosa costa de Palermo. Descubre calas escondidas, aguas cristalinas y vistas impresionantes. Incluye aperitivo; cena a bordo disponible bajo petición. Mínimo 4 participantes para tours en grupo.",
+                duration: "Medio día (varias opciones)",
+                price: "Exclusivo (2 pers.): 250€ por persona; 2 pers. (no exclusivo): 200€ por persona; 4 pers.: 150€ por persona; 5-6 pers.: 130€ por persona; 7-8 pers.: 100€ por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Para grupos, el barco sale con un mínimo de 4 participantes. Aperitivo incluido; cena bajo petición."
+            }
+        ],
+        
+        // Experience data
+        experiencesData: [
+            {
+                name: "Descubriendo Palermo",
+                description: "Un recorrido a pie por el centro histórico para descubrir la historia millenaria de Palermo, un crisol único en el mundo. Visite el Teatro Massimo, el Mercado del Capo, la Cattedrale, el Palacio Normando con la Capilla Palatina, los Quattro Canti y la Piazza Bellini.",
+                duration: "3 horas",
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
+            },
+            {
+                name: "Tour de Aperitivo y Comida Callejera",
+                description: "Un aperitivo itinerante por las calles del centro histórico de Palermo. Experimente la comida callejera tradicional, incluyendo panelle, crocche, sfincione, pan con bazo y una copa de vino en la Vucciria.",
+                duration: "2 horas",
+                price: "€45-€55 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Degustaciones de comida inclues en el precio."
+            },
+            {
+                name: "El Reino del Sol - Itinerario Árabe-Normando",
+                description: "Descubra los sitios del patrimonio Árabe-Normando de la UNESCO en Palermo, incluyendo el Palacio Real con la Capilla Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo y Santa Maria dell'Ammiraglio.",
+                duration: "3.5 horas",
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
+            },
+            {
+                name: "La Dinastía de los Florio - Recorrido a Pie",
+                description: "Trace la historia de la familia Florio desde el distrito de la Loggia hasta el Teatro Massimo. Conozca sus negocios, éxitos e impacto en la Belle Époque palermitana.",
+                duration: "3 horas",
+                price: "€45-€100 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Las entradas a edificios históricos o monumentos no están incluidas en el precio."
+            },
+            {
+                name: "La Dinastía de los Florio con Transporte Privado",
+                description: "Descubra el legado de la familia Florio con transporte privado. Visite el Villino Florio all'Olivuzza, la Villa Malfitano-Whitaker y la casa de Arenella con Quattro Pizzi.",
+                duration: "4 horas",
+                price: "€55-€150 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Solo disponible los sábados por la tarde y los domingos por la mañana."
+            },
+            {
+                name: "Tour de Catedrales Árabe-Normandas",
+                description: "Visite las cuatro catedrales normandas más interesantes de Palermo y su provincia en tren y transporte privado, incluyendo la Capilla Palatina, la Martorana, Cefalú y Monreale.",
+                duration: "4-5 horas",
+                price: "€100-€140 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye boleto de tren y traslado a Monreale."
+            },
+            {
+                name: "Clase de Cocina con Chef",
+                description: "Visite el mercado del Capo con nuestro chef para seleccionar ingredientes frescos, luego prepare recetas sicilianas tradicionales en la casa del chef, finalizando con un almuerzo juntos.",
+                duration: "3-4 horas",
+                price: "€130 por persona",
+                image: "images/attractions/placeholder.jpg",
+                note: "Incluye visita al mercado, clase de cocina y almuerzo con los ingredientes seleccionados."
             }
         ],
         
@@ -1590,7 +1696,7 @@ const translations = {
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galería Regional de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
             { name: "Mercado de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
