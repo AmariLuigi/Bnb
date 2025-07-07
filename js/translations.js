@@ -901,7 +901,7 @@ const translations = {
             },
             {
                 name: "Osteria Mangia e Bevi",
-                description: "Une osteria sicilienne traditionnelle qui incarne la cuisine locale authentique. 'La cucina che parla siciliano' (La cuisine qui parle sicilien) - leur devise reflète leur engagement à servir des plats siciliens traditionnels préparés avec des ingrédients locaux et des recettes transmises au fil du temps. Le restaurant offre une expérience culinaire intime où les invités peuvent savourer les vraies saveurs de la Sicile dans une atmosphère chaleureuse et accueillante.",
+                description: "Une osteria sicilienne traditionnelle qui incarne la cuisine locale authentique. 'La cucina che parla siciliano' (La cuisine qui parle sicilien) - leur devise reflète l'engagement à servir des plats siciliens traditionnels préparés avec des ingrédients locaux et des recettes transmises au fil du temps. Le restaurant offre une expérience culinaire intime où les invités peuvent savourer les vraies saveurs de la Sicile dans une atmosphère chaleureuse et accueillante.",
                 priceRange: "€20-35 par personne",
                 cuisine: "Sicilienne Traditionnelle, Spécialités Locales",
                 image: "images/attractions/placeholder.jpg",
