@@ -635,6 +635,19 @@ const translations = {
                 instagram: "@lecattivepalazzobutera",
                 openHours: "Mar-Dom: 10:00-19:00; Lun: Chiuso",
                 type: "Pranzo"
+            },
+            {
+                name: "U Babbio",
+                description: "La Iglesia de la Santa Cruz puede estar en tu ruta por defecto, la recomendación de los clientes es visitar este restaurante. U Babbio es famoso por servir cocina italiana y mediterránea. Muchas personas visitan este lugar para probar busiate perfectamente cocinados, sardinas y antipasto. El delicioso prosecco recibe críticas positivas. Este lugar tiene buen café entre sus bebidas. La ubicación conveniente de este restaurante facilita llegar incluso en horas punta. Se dice que el personal es conocedor aquí. El servicio profesional muestra un alto nivel de calidad. Con una calificación de Google de 4.5, este restaurante ofrece precios justos para comidas de calidad en un ambiente encantador.",
+                priceRange: "€16-36 por persona",
+                cuisine: "Italiana, Mediterránea, Comida Saludable",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Fiamma",
+                address: "Via Principe Scordia, 104, Palermo, Sicilia, Italia",
+                phone: "+39 091 910 1627",
+                instagram: "@ubabbio",
+                openHours: "Dom: 9AM-5PM; Lun, Mié-Vie: 6:30PM-11PM; Sáb: 12PM-11PM; Mar: Cerrado",
+                type: "Cena"
             }
         ],
         
@@ -764,19 +777,19 @@ const translations = {
         kalsaAttractions: [
             { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
             { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
-            { name: "Jardin Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Giardino Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
             { name: "Orto Botanico", image: "images/attractions/orto_botanico.jpg" },
             { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
             { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Galleria Regionale della Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            { name: "Marché de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Mercato della Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
             { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
-            { name: "Place San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Piazza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
             { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
@@ -1083,6 +1096,19 @@ const translations = {
                 instagram: "@lecattivepalazzobutera",
                 openHours: "Mar-Dom: 10:00-19:00; Lun: Chiuso",
                 type: "Pranzo"
+            },
+            {
+                name: "U Babbio",
+                description: "La Iglesia de la Santa Cruz puede estar en tu ruta por defecto, la recomendación de los clientes es visitar este restaurante. U Babbio es famoso por servir cocina italiana y mediterránea. Muchas personas visitan este lugar para probar busiate perfectamente cocinados, sardinas y antipasto. El delicioso prosecco recibe críticas positivas. Este lugar tiene buen café entre sus bebidas. La ubicación conveniente de este restaurante facilita llegar incluso en horas punta. Se dice que el personal es conocedor aquí. El servicio profesional muestra un alto nivel de calidad. Con una calificación de Google de 4.5, este restaurante ofrece precios justos para comidas de calidad en un ambiente encantador.",
+                priceRange: "€16-36 por persona",
+                cuisine: "Italiana, Mediterránea, Comida Saludable",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Fiamma",
+                address: "Via Principe Scordia, 104, Palermo, Sicilia, Italia",
+                phone: "+39 091 910 1627",
+                instagram: "@ubabbio",
+                openHours: "Dom: 9AM-5PM; Lun, Mié-Vie: 6:30PM-11PM; Sáb: 12PM-11PM; Mar: Cerrado",
+                type: "Cena"
             }
         ],
         
@@ -1560,6 +1586,19 @@ const translations = {
                 instagram: "@lecattivepalazzobutera",
                 openHours: "Mar-Dom: 10:00-19:00; Lun: Cerrado",
                 type: "Almuerzo"
+            },
+            {
+                name: "U Babbio",
+                description: "La Iglesia de la Santa Cruz puede estar en tu ruta por defecto, la recomendación de los clientes es visitar este restaurante. U Babbio es famoso por servir cocina italiana y mediterránea. Muchas personas visitan este lugar para probar busiate perfectamente cocinados, sardinas y antipasto. El delicioso prosecco recibe críticas positivas. Este lugar tiene buen café entre sus bebidas. La ubicación conveniente de este restaurante facilita llegar incluso en horas punta. Se dice que el personal es conocedor aquí. El servicio profesional muestra un alto nivel de calidad. Con una calificación de Google de 4.5, este restaurante ofrece precios justos para comidas de calidad en un ambiente encantador.",
+                priceRange: "€16-36 por persona",
+                cuisine: "Italiana, Mediterránea, Comida Saludable",
+                image: "images/attractions/placeholder.jpg",
+                referent: "Fiamma",
+                address: "Via Principe Scordia, 104, Palermo, Sicilia, Italia",
+                phone: "+39 091 910 1627",
+                instagram: "@ubabbio",
+                openHours: "Dom: 9AM-5PM; Lun, Mié-Vie: 6:30PM-11PM; Sáb: 12PM-11PM; Mar: Cerrado",
+                type: "Cena"
             }
         ],
         
