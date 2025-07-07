@@ -515,7 +515,7 @@ const translations = {
                 priceRange: "€10-20 a persona",
                 cuisine: "Sicilienne, Options Végétariennes",
                 image: "images/attractions/placeholder.jpg",
-                referent: "Pippo o Giovanni",
+                referent: "Pippo ou Giovanni",
                 address: "Via Maccherronai, 20, 90133 Palermo PA",
                 type: "Pranzo"
             },
@@ -671,72 +671,80 @@ const translations = {
         // Experience data
         experiencesData: [
             {
-                name: "Scoprire Palermo",
-                description: "Tour a piedi del centro storico per scoprire la millenaria storia di Palermo. Visiteremo il Teatro Massimo, il Mercato del Capo, la Cattedrale, il Palazzo dei Normanni con la Cappella Palatina, i Quattro Canti e Piazza Bellini.",
-                duration: "3 ore",
-                price: "€45-€100 a persona",
+                name: "Historic Palermo Walking Tour",
+                description: "A walking tour of Palermo's historic center to discover its millenary history, unique melting pot, and cultural layers. From Teatro Massimo, Capo Market, Cathedral, Norman Palace with Palatine Chapel, Quattro Canti, Piazza della Vergogna, to Piazza Bellini with Martorana and San Cataldo.",
+                duration: "3 hours - Starts at 9:00 or 15:00",
+                price: "2/3 pax: €100 per person; 4/5 pax: €50 per person; 6+ pax: €45 per person (includes headsets)",
                 image: "images/attractions/placeholder.jpg",
-                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
+                note: "Entrance fees to historical buildings or monuments are not included."
             },
             {
-                name: "Tour Aperitivo Street Food",
-                description: "Un aperitivo itinerante lungo le strade del centro storico di Palermo. Degustazione del tradizionale street food tra cui panelle, crocche, sfincione, pane con la milza e un bicchiere di vino alla Vucciria.",
-                duration: "2 ore",
-                price: "€45-€55 a persona",
+                name: "Street Food Aperitif Tour",
+                description: "An itinerant aperitif through Palermo's historic center, tasting traditional street food (panelle, crocche, sfincione, pani ca meusa) and a glass of wine at Vucciria. Includes cultural and historical storytelling.",
+                duration: "2 hours - Starts at 17:30",
+                price: "4 pax: €60 per person; 5+ pax: €50 per person. Tastings included.",
                 image: "images/attractions/placeholder.jpg",
-                note: "Le degustazioni sono incluse nel prezzo."
+                note: "Tastings included in price. Minimum 4 participants."
             },
             {
-                name: "Il Regno del Sole - Itinerario arabo-normanno",
-                description: "Scopri i siti UNESCO del patrimonio arabo-normanno di Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo, e Santa Maria dell'Ammiraglio.",
-                duration: "3.5 ore",
-                price: "€45-€100 a persona",
+                name: "Kingdom of the Sun - Arab-Norman Itinerary",
+                description: "Discover Palermo's UNESCO Arab-Norman heritage: Royal Palace with Palatine Chapel, Cathedral, San Giovanni degli Eremiti, San Cataldo, and Santa Maria dell'Ammiraglio. A journey through the syncretism of Arab, Norman, and Byzantine cultures.",
+                duration: "3.5 hours - Morning only, depending on opening times",
+                price: "2/3 pax: €100 per person; 4/5 pax: €50 per person; 6+ pax: €45 per person (includes headsets)",
                 image: "images/attractions/placeholder.jpg",
-                note: "Gli ingressi a edifici storici o monumenti non sono inclusi nel prezzo."
+                note: "Entrance fees to historical buildings or monuments are not included."
             },
             {
                 name: "The Florios Dynasty - Walking Tour",
-                description: "Trace the history of the Florio family from the Loggia district to the Teatro Massimo. Learn about their businesses, successes, and impact on Palermo's Belle Époque.",
-                duration: "3 hours",
-                price: "€45-€100 per person",
+                description: "A historical journey through the life, business, and loves of the Florio family, from their origins in La Loggia to Teatro Massimo. Discover their impact on Palermo's Belle Époque, with stories of splendor, betrayals, and decline.",
+                duration: "3 hours - Starts at 9/10 or 14/15",
+                price: "2/3 pax: €100 per person; 4/5 pax: €50 per person; 6+ pax: €45 per person (includes headsets)",
                 image: "images/attractions/placeholder.jpg",
-                note: "Any entrances to historic buildings or monuments are not included in the price."
+                note: "Entrance fees to historical buildings or monuments are not included."
             },
             {
-                name: "The Florios Dynasty with Private Transport",
-                description: "Discover the Florio family's legacy with private transportation. Visit Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, and the Arenella house with Quattro Pizzi.",
-                duration: "4 hours",
-                price: "€55-€150 per person",
+                name: "The Florios Dynasty - Belle Époque Tour (with Private Transport)",
+                description: "Discover the Florio family's sites and history: Villino Florio all'Olivuzza, Villa Malfitano-Whitaker, Arenella house with Quattro Pizzi. The story of Palermo's Belle Époque and Donna Franca Florio, queen of Sicilian society.",
+                duration: "4 hours - Sat afternoon & Sun morning only",
+                price: "2/3 pax: €150 per person; 4/5 pax: €125 per person; 5-7 pax: €55 per person",
                 image: "images/attractions/placeholder.jpg",
-                note: "Only available on Saturday afternoon and Sunday morning."
+                note: "Entrance fees to historical buildings or monuments are not included."
             },
             {
-                name: "Arab-Norman Cathedrals Tour",
-                description: "Visita le quattro cattedrali normanne più interessanti di Palermo e provincia in treno e trasporto privato, incluse la Cappella Palatina, la Martorana, Cefalù e Monreale.",
-                duration: "4-5 ore",
-                price: "€100-€140 a persona",
+                name: "Arab-Norman Cathedrals Tour (Train & Private Transport)",
+                description: "Visit the four most interesting Norman cathedrals in Palermo and province: Palatine Chapel, La Martorana, Cefalù, and Monreale. Includes train ticket and transfer to Monreale.",
+                duration: "4-5 hours",
+                price: "2/3 pax: €140 per person; 4/5 pax: €120 per person; 6+ pax: €100 per person",
                 image: "images/attractions/placeholder.jpg",
-                note: "Includes train ticket and transfer to Monreale."
+                note: "Entrance fees to historical buildings or monuments are not included."
             },
             {
-                name: "Lezione di cucina con lo Chef",
-                description: "Visita il mercato del Capo con il nostro chef per selezionare ingredienti freschi, poi prepara ricette siciliane tradizionali a casa dello chef, concludendo con il pranzo insieme.",
-                duration: "3-4 ore",
-                price: "€130 a persona",
+                name: "Cooking Class with Our Chef",
+                description: "Immerse yourself in Palermo's markets with our chef, select fresh ingredients, then learn to cook traditional Sicilian recipes at the chef's home, ending with a convivial lunch.",
+                duration: "3-4 hours",
+                price: "€130 per person",
                 image: "images/attractions/placeholder.jpg",
-                note: "Includes market visit, cooking class, and lunch with selected ingredients."
+                note: "Includes market visit, cooking class, and lunch."
+            },
+            {
+                name: "Sailing Along the Scents of Sicily - Palermo Coast Boat Tour",
+                description: "Set sail for an unforgettable sailing experience along Palermo's coast. Discover hidden coves, crystal-clear waters, and breathtaking views. Includes an aperitif; dinner on board available on request. Minimum 4 participants for group tours.",
+                duration: "Half day (various options)",
+                price: "Exclusive (2 pax): €250 per person; 2 pax (non-exclusive): €200 per person; 4 pax: €150 per person; 5-6 pax: €130 per person; 7-8 pax: €100 per person",
+                image: "images/attractions/placeholder.jpg",
+                note: "For groups, the boat departs with a minimum of 4 participants. Aperitif included; dinner on request."
             }
         ],
         
         // Quarter-specific attractions
         albergheriaAttractions: [
-            { name: "Ballarò (mercato)", image: "images/attractions/ballaro.jpg" },
+            { name: "Ballarò (marché)", image: "images/attractions/ballaro.jpg" },
             { name: "Chiesa del Carmine", image: "images/attractions/chiesa_carmine.jpg" },
             { name: "Casa Professa", image: "images/attractions/casa_professa.jpg" },
             { name: "Palazzo Conte Federico", image: "images/attractions/palazzo_federico.jpg" },
             { name: "San Giovanni degli Eremiti", image: "images/attractions/san_giovanni_eremiti.jpg" },
             { name: "Palazzo Reale", image: "images/attractions/palazzo_reale.jpg" },
-            { name: "Cattedrale", image: "images/attractions/cattedrale.jpg" },
+            { name: "Cathédrale", image: "images/attractions/cattedrale.jpg" },
             { name: "Palazzo Asmundo", image: "images/attractions/palazzo_asmundo.jpg" },
             { name: "Palazzo Riso", image: "images/attractions/palazzo_riso.jpg" },
             { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
@@ -744,7 +752,7 @@ const translations = {
         capoAttractions: [
             { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
             { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
-            { name: "Mercato del Capo", image: "images/attractions/mercato_capo.jpg" },
+            { name: "Marché du Capo", image: "images/attractions/mercato_capo.jpg" },
             { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
             { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
             { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
@@ -756,32 +764,32 @@ const translations = {
         kalsaAttractions: [
             { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
             { name: "Palazzo Steri", image: "images/attractions/palazzo_steri.jpg" },
-            { name: "Giardino Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
+            { name: "Jardin Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
             { name: "Orto Botanico", image: "images/attractions/orto_botanico.jpg" },
             { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
             { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galleria Regionale della Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
         ],
         loggiaAttractions: [
-            { name: "Mercato della Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
-            { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
-            { name: "Piazza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
+            { name: "Marché de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
+            { name: "Église de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
+            { name: "Place San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
             { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
-            { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
+            { name: "Église de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
             { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
             { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
             { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
         ],
         
         // Print QR code texts
-        scanToExplore: "Scansiona per esplorare il quartiere",
-        scanToExploreSuffix: "di Palermo",
-        quarterSuffix: "Quartiere - Sant'Agostino BnB",
+        scanToExplore: "Scannez pour explorer le quartier",
+        scanToExploreSuffix: "de Palermo",
+        quarterSuffix: "Quartier - Sant'Agostino BnB",
         // Common
         contactMessage: {
             en: "For booking, please contact us via WhatsApp at +39 123 456 7890 or email at info@santangostino.com",
@@ -898,9 +906,9 @@ const translations = {
                 cuisine: "Sicilienne Traditionnelle, Spécialités Locales",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Contactez B&B",
-                address: "Palerme, Sicile",
+                address: "Palermo, Sicilia",
                 website: "osteriamangiaebevi.it",
-                type: "Dîner"
+                type: "Cena"
             },
             {
                 name: "Osteria Mercede",
@@ -1022,9 +1030,9 @@ const translations = {
             },
             {
                 name: "Quid gusto siciliano",
-                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato per il suo personale competente, servizio eccellente, prezzi accessibili e un'atmosfera gradevole.",
+                description: "Un popolare ristorante vicino a Palazzo Steri che offre autentica cucina italiana. Noto per i suoi spaghetti alle vongole, pizza napoletana e pesce spada perfettamente cucinati. I dessert includono semifreddo, tiramisù e gelato. Il ristorante offre deliziosi margarita, vino della casa e cordiale, insieme a ottimo caffè e limonata. Con un punteggio di 4.3 su Google, il ristorante è elogiato pour le suo personale competente, servizio eccellente, prezzi accessibiles et un'atmosfera gradevole.",
                 priceRange: "€13-41 a persona",
-                cuisine: "Pizza, Italiana, Opzioni Vegetariane",
+                cuisine: "Pizza, Italiana, Opziones Vegetarianes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Serena",
                 address: "Piazza Marina, 52, Palermo, Sicilia",
@@ -1038,7 +1046,7 @@ const translations = {
                 name: "Scjabaca",
                 description: "Situato vicino alla Fontana del Genio, questo ristorante offre cucina italiana e mediterranea con un punteggio di 4.7 su Google. Le specialità includono polpo alla griglia, ravioli e tonno alla griglia, insieme a deliziosi dessert come parfait, panna cotta e crumble. Il ristorante è noto per la sua diversificata carta dei vini, ottimo caffè, personale gentile, servizio veloce e prezzi ragionevoli. L'atmosfera tranquilla e il bel arredamento rendono l'esperienza culinaria piacevole.",
                 priceRange: "€20-61 a persona",
-                cuisine: "Mediterranea, Italiana, Opzioni Vegetariane",
+                cuisine: "Mediterranea, Italiana, Opziones Vegetarianes",
                 image: "images/attractions/placeholder.jpg",
                 referent: "Valeria",
                 address: "Vicolo S. Carlo, 42, Palermo, Sicilia",
@@ -1050,7 +1058,7 @@ const translations = {
             },
             {
                 name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato per il personale attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta interni graziosi e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando un comfort ottimale.",
+                description: "Un ristorante selezionato dalla Guida Michelin vicino alla Fontana del Genio, che offre raffinata cucina italiana con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancia di maiale e tonno scottato, con deliziose torte alla frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordiale e fino, insieme a squisito ristretto e limonata. Apprezzato pour le personel attractif, servizio spectaculaire et prix démocratiques, ce restaurant présente des interieurs charmants et une ambiance accueillante. Il a reçu 2 symboles de couteau et de fourchette noirs de Michelin, ce qui indique un confort optimal.",
                 priceRange: "€35-150 a persona",
                 cuisine: "Italiana, Frutti di Mare, Bar di Vini",
                 image: "images/attractions/placeholder.jpg",
@@ -1094,11 +1102,11 @@ const translations = {
                 duration: "2 heures",
                 price: "€45-€55 par personne",
                 image: "images/attractions/placeholder.jpg",
-                note: "Degustations de comida inclues dans le prix."
+                note: "Le degustazioni sono incluse nel prezzo."
             },
             {
-                name: "Le Royaume du Soleil - Itinerario Árabe-Normando",
-                description: "Scopri i siti UNESCO du patrimonio Árabe-Normando de la UNESCO en Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo e Santa Maria dell'Ammiraglio.",
+                name: "Le Royaume du Soleil - Itinerario Árabe-Normanno",
+                description: "Scopri i siti UNESCO du patrimonio Árabe-Normando de la UNESCO en Palermo, tra cui il Palazzo Reale con la Cappella Palatina, la Cattedrale, San Giovanni degli Eremiti, San Cataldo, e Santa Maria dell'Ammiraglio.",
                 duration: "3,5 heures",
                 price: "€45-€100 par personne",
                 image: "images/attractions/placeholder.jpg",
