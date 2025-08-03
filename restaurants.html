@@ -107,6 +107,30 @@
             align-items: center;
             font-size: 72px;
             font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurant-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1rem;
+            z-index: 2;
         }
         
         .restaurant-letter {
@@ -401,6 +425,109 @@
             });
         });
         
+        // Image loading functions (moved outside all event listeners for global access)
+        function loadRestaurantImage(imageDiv, restaurantName, cuisine) {
+            const fileName = restaurantName.toLowerCase()
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '-')
+                .trim();
+            
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'image-loading';
+            loadingDiv.textContent = 'Loading...';
+            imageDiv.appendChild(loadingDiv);
+            
+            // Try local image first
+            const localImagePath = `images/restaurants/${fileName}.jpg`;
+            const img = document.createElement('img');
+            
+            img.onload = function() {
+                // Image loaded successfully
+                imageDiv.innerHTML = '';
+                imageDiv.appendChild(img);
+            };
+            
+            img.onerror = function() {
+                // Local image failed, try external image
+                loadingDiv.textContent = 'Loading external...';
+                
+                getExternalImage(cuisine, restaurantName)
+                    .then(externalUrl => {
+                        if (externalUrl) {
+                            const externalImg = document.createElement('img');
+                            externalImg.onload = function() {
+                                imageDiv.innerHTML = '';
+                                imageDiv.appendChild(externalImg);
+                            };
+                            externalImg.onerror = function() {
+                                // External image also failed, remove loading and keep letter placeholder
+                                if (imageDiv.contains(loadingDiv)) {
+                                    imageDiv.removeChild(loadingDiv);
+                                }
+                                console.log(`Both local and external images failed for ${restaurantName}`);
+                            };
+                            externalImg.src = externalUrl;
+                        } else {
+                            // No external URL, remove loading indicator
+                            if (imageDiv.contains(loadingDiv)) {
+                                imageDiv.removeChild(loadingDiv);
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        // External service failed, remove loading indicator
+                        if (imageDiv.contains(loadingDiv)) {
+                            imageDiv.removeChild(loadingDiv);
+                        }
+                        console.log(`External image service failed for ${restaurantName}:`, error);
+                    });
+            };
+            
+            img.src = localImagePath;
+        }
+        
+        function getExternalImage(cuisine, restaurantName) {
+            return new Promise((resolve) => {
+                // Use Lorem Picsum with a seed based on restaurant name for consistency
+                const seed = restaurantName.toLowerCase().replace(/[^a-z]/g, '');
+                const imageUrl = `https://picsum.photos/seed/${seed}/400/300`;
+                
+                // Test if the image loads
+                const testImg = new Image();
+                testImg.onload = () => resolve(imageUrl);
+                testImg.onerror = () => {
+                    // Fallback to a different service
+                    const fallbackUrl = `https://via.placeholder.com/400x300/b92b13/ffffff?text=${encodeURIComponent(restaurantName.charAt(0))}`;
+                    resolve(fallbackUrl);
+                };
+                testImg.src = imageUrl;
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add debugging to check if translations are loaded properly
+            console.log("Translations loaded:", typeof translations);
+            
+            // Set language from URL hash if present
+            const hash = window.location.hash.substring(1);
+            if (hash && ['en', 'it', 'fr', 'es'].includes(hash)) {
+                document.getElementById('language-select').value = hash;
+                updatePageLanguage(hash);
+            } else {
+                // Otherwise, try to load from localStorage
+                const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+                document.getElementById('language-select').value = savedLang;
+                updatePageLanguage(savedLang);
+            }
+            
+            // Set up language selector
+            document.getElementById('language-select').addEventListener('change', (e) => {
+                const selectedLang = e.target.value;
+                updatePageLanguage(selectedLang);
+            });
+        });
+        
         function createRestaurantCard(restaurant, index, type) {
             const card = document.createElement('div');
             card.className = 'restaurant-card';
@@ -413,6 +540,9 @@
             letterDiv.className = 'restaurant-letter';
             letterDiv.textContent = restaurant.name.charAt(0);
             imageDiv.appendChild(letterDiv);
+            
+            // Try to load restaurant image
+            loadRestaurantImage(imageDiv, restaurant.name, restaurant.cuisine || 'restaurant');
             
             card.appendChild(imageDiv);
             
@@ -669,4 +799,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
