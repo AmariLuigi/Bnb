@@ -302,16 +302,11 @@ const translations = {
             { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Teatro Massimo", image: "images/attractions/teatromassimo.webp" },
             { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
             { name: "Mercato del Capo", image: "images/attractions/mercato_capo.jpg" },
             { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
-            { name: "Chiesa del Gesù (Casa Professa)", image: "images/attractions/chiesa_gesu.jpg" },
-            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
-            { name: "Quattro Canti", image: "images/attractions/quattro_canti.jpg" },
-            { name: "Fontana Pretoria", image: "images/attractions/fontana_pretoria.jpg" },
-            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" },
-            { name: "Palazzo dei Normanni", image: "images/attractions/palazzo_normanni.jpg" }
+            { name: "Chiesa di San Cataldo", image: "images/attractions/chiesa_san_cataldo.jpg" }
         ],
         kalsaAttractions: [
             { name: "Piazza Marina", image: "images/attractions/piazza_marina.jpg" },
@@ -319,23 +314,26 @@ const translations = {
             { name: "Giardino Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
             { name: "Orto Botanico", image: "images/attractions/orto_botanico.jpg" },
             { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
-            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galleria Regionale della Sicilia", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Palazzo Butera", image: "images/attractions/palazzo_butera.jpg" },
+            { name: "Spasimo", image: "images/attractions/spasimo.jpg" },
+            { name: "Chiesa di San Francesco D'Assisi", image: "images/attractions/chiesa_san_francesco.jpg" },
+            { name: "Oratorio di San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Piazza Magione", image: "images/attractions/piazza_magione.jpg" },
+            { name: "GAM - Galleria D'Arte Moderna", image: "images/attractions/gam_galleria.jpg" }
         ],
         loggiaAttractions: [
             { name: "Mercato della Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
             { name: "Chiesa di San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
             { name: "Piazza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
-            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
             { name: "Chiesa di Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
-            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
             { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
-            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
+            { name: "Palazzo Branciforte", image: "images/attractions/palazzo_branciforte.jpg" },
+            { name: "Piazza Tredici Vittime", image: "images/attractions/piazza_tredici_vittime.jpg" }
         ],
         
         // Print QR code texts
@@ -763,7 +761,7 @@ const translations = {
             { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Teatro Massimo", image: "images/attractions/teatromassimo.webp" },
             { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
             { name: "Marché du Capo", image: "images/attractions/mercato_capo.jpg" },
             { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
@@ -1254,7 +1252,7 @@ const translations = {
             { name: "San Giuseppe dei Teatini", image: "images/attractions/san_giuseppe_teatini.jpg" }
         ],
         capoAttractions: [
-            { name: "Teatro Massimo", image: "images/attractions/teatro_massimo.jpg" },
+            { name: "Teatro Massimo", image: "images/attractions/teatromassimo.webp" },
             { name: "Chiesa dell'Immacolata Concezione", image: "images/attractions/chiesa_immacolata.jpg" },
             { name: "Marché du Capo", image: "images/attractions/mercato_capo.jpg" },
             { name: "Porta Carini", image: "images/attractions/porta_carini.jpg" },
@@ -1271,23 +1269,26 @@ const translations = {
             { name: "Jardin Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
             { name: "Jardin Botanique", image: "images/attractions/orto_botanico.jpg" },
             { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
-            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Palazzo Butera", image: "images/attractions/palazzo_butera.jpg" },
+            { name: "Spasimo", image: "images/attractions/spasimo.jpg" },
+            { name: "Église de San Francesco D'Assisi", image: "images/attractions/chiesa_san_francesco.jpg" },
+            { name: "Oratoire de San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Place Magione", image: "images/attractions/piazza_magione.jpg" },
+            { name: "GAM - Galerie d'Art Moderne", image: "images/attractions/gam_galleria.jpg" }
         ],
         loggiaAttractions: [
             { name: "Marché de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
             { name: "Église de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
             { name: "Place San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
-            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
             { name: "Église de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
-            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
             { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
-            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
+            { name: "Palazzo Branciforte", image: "images/attractions/palazzo_branciforte.jpg" },
+            { name: "Place Tredici Vittime", image: "images/attractions/piazza_tredici_vittime.jpg" }
         ],
         
         // Print QR code texts
@@ -1729,23 +1730,26 @@ const translations = {
             { name: "Jardín Garibaldi", image: "images/attractions/giardino_garibaldi.jpg" },
             { name: "Jardín Botánico", image: "images/attractions/orto_botanico.jpg" },
             { name: "Porta Felice", image: "images/attractions/porta_felice.jpg" },
-            { name: "Foro Italico", image: "images/attractions/foro_italico.jpg" },
             { name: "Castello a Mare", image: "images/attractions/castello_mare.jpg" },
             { name: "Chiesa della Catena", image: "images/attractions/chiesa_catena.jpg" },
             { name: "Palazzo Abatellis", image: "images/attractions/palazzo_abatellis.jpg" },
-            { name: "Galerie Régionale de Sicile", image: "images/attractions/galleria_sicilia.jpg" }
+            { name: "Palazzo Butera", image: "images/attractions/palazzo_butera.jpg" },
+            { name: "Spasimo", image: "images/attractions/spasimo.jpg" },
+            { name: "Iglesia de San Francesco D'Assisi", image: "images/attractions/chiesa_san_francesco.jpg" },
+            { name: "Oratorio de San Lorenzo", image: "images/attractions/oratorio_san_lorenzo.jpg" },
+            { name: "Plaza Magione", image: "images/attractions/piazza_magione.jpg" },
+            { name: "GAM - Galería de Arte Moderno", image: "images/attractions/gam_galleria.jpg" }
         ],
         loggiaAttractions: [
             { name: "Mercado de la Vucciria", image: "images/attractions/mercato_vucciria.jpg" },
             { name: "Iglesia de San Domenico", image: "images/attractions/chiesa_san_domenico.jpg" },
             { name: "Plaza San Domenico", image: "images/attractions/piazza_san_domenico.jpg" },
-            { name: "Via Roma", image: "images/attractions/via_roma.jpg" },
             { name: "Palazzo Mazzarino", image: "images/attractions/palazzo_mazzarino.jpg" },
             { name: "La Cala", image: "images/attractions/la_cala.jpg" },
             { name: "Iglesia de Santa Maria La Nova", image: "images/attractions/chiesa_santa_maria.jpg" },
-            { name: "Osteria dei Vespri", image: "images/attractions/osteria_vespri.jpg" },
             { name: "Musée Salinas", image: "images/attractions/museo_salinas.jpg" },
-            { name: "Porta Nuova", image: "images/attractions/porta_nuova.jpg" }
+            { name: "Palazzo Branciforte", image: "images/attractions/palazzo_branciforte.jpg" },
+            { name: "Plaza Tredici Vittime", image: "images/attractions/piazza_tredici_vittime.jpg" }
         ],
         
         // Print QR code texts
@@ -1987,4 +1991,4 @@ function initializeLanguage() {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initializeLanguage); 
+document.addEventListener('DOMContentLoaded', initializeLanguage);
