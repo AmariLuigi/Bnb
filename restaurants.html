@@ -396,13 +396,13 @@
 
     <!-- Load restaurant database FIRST, before translations.js -->
     <script src="js/restaurants-data.js"></script>
-    <script src="js/translations.js"></script>
     <script>
         // Check if required files loaded correctly
         if (typeof restaurantsDatabase === 'undefined') {
             console.error("Error: restaurantsDatabase not found! The restaurants-data.js file might not be loading correctly.");
             document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load restaurant database. Please check your internet connection and try refreshing the page.</div>';
         }
+    </script>
     <script src="js/translations.js"></script>
     <script>
         // Check if translations.js loaded correctly
@@ -686,32 +686,6 @@
                 
                 console.log("Restaurant data loaded:", restaurants.length, "regular,", michelinRestaurants.length, "Michelin");
                 
-                // Filter restaurants based on type
-                const lunchRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('lunch'));
-                const dinnerRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('dinner'));
-                console.log("Translations object:", typeof translations, translations ? "loaded" : "not loaded");
-                
-                // Check if translations object exists
-                if (!translations || !translations[lang]) {
-                    console.error("Translations not found for language:", lang);
-                    document.getElementById('lunch-grid').innerHTML = '<p>Error: Could not load restaurant data. Please try refreshing the page.</p>';
-                    document.getElementById('dinner-grid').innerHTML = '';
-                    return;
-                }
-                
-                // Check if restaurantsData exists
-                if (!translations[lang].restaurantsData) {
-                    console.error("Restaurant data not found for language:", lang);
-                    document.getElementById('lunch-grid').innerHTML = '<p>Error: Could not load restaurant data. Please try refreshing the page.</p>';
-                    document.getElementById('dinner-grid').innerHTML = '';
-                    return;
-                }
-                
-                console.log("Restaurant data found:", translations[lang].restaurantsData.length);
-                
-                // Filter restaurants based on type
-                const restaurants = translations[lang].restaurantsData;
-                
                 // Create arrays for lunch and dinner restaurants
                 const lunchTypes = ["Lunch", "Pranzo", "Déjeuner", "Almuerzo"];
                 const dinnerTypes = ["Dinner", "Cena", "Dîner", "Cena"];
@@ -744,9 +718,6 @@
                 // Add Michelin restaurants (already loaded with getRestaurantData)
                 if (michelinRestaurants && michelinRestaurants.length > 0) {
                     michelinRestaurants.forEach((restaurant, index) => {
-                // Add Michelin restaurants
-                if (translations[lang].michelinRestaurantsData && translations[lang].michelinRestaurantsData.length > 0) {
-                    translations[lang].michelinRestaurantsData.forEach((restaurant, index) => {
                         const card = createRestaurantCard(restaurant, index, 'michelin');
                         document.getElementById('michelin-grid').appendChild(card);
                     });
