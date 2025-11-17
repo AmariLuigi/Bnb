@@ -122,6 +122,18 @@ function generateQRCode() {
 }
 
 /**
+ * Escapes HTML special characters to prevent XSS attacks
+ * 
+ * @param {string} str - The string to escape
+ * @returns {string} The escaped string safe for HTML insertion
+ */
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+/**
  * Sets up the print QR code functionality
  * 
  * @param {string} quarterTitle - The title of the quarter for the print page
@@ -137,11 +149,15 @@ function setupPrintQRCode(quarterTitle) {
             return;
         }
         
+        // Escape user-controlled content to prevent XSS
+        const safeTitle = escapeHtml(quarterTitle);
+        const safeImageSrc = escapeHtml(qrImage.src);
+        
         const printWindow = window.open('', '', 'width=600,height=600');
         printWindow.document.write(`
             <html>
             <head>
-                <title>QR Code for ${quarterTitle}</title>
+                <title>QR Code for ${safeTitle}</title>
                 <style>
                     body { font-family: Arial, sans-serif; text-align: center; }
                     .qr-container { margin: 20px auto; }
@@ -149,10 +165,10 @@ function setupPrintQRCode(quarterTitle) {
                 </style>
             </head>
             <body>
-                <h1>${quarterTitle} - Sant'Agostino BnB</h1>
+                <h1>${safeTitle} - Sant'Agostino BnB</h1>
                 <div class="qr-container">
-                    <img src="${qrImage.src}" alt="QR Code for ${quarterTitle}">
-                    <p>Scan to explore the ${quarterTitle} of Palermo</p>
+                    <img src="${safeImageSrc}" alt="QR Code for ${safeTitle}">
+                    <p>Scan to explore the ${safeTitle} of Palermo</p>
                 </div>
             </body>
             </html>
