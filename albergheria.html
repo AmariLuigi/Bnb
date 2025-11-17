@@ -33,69 +33,9 @@
         </footer>
     </div>
     
+    <!-- QR Code library -->
     <script src="js/qrcode.min.js"></script>
-    <script>
-        // Attractions data for Albergheria
-        const attractions = [
-            "Ballarò (mercato)",
-            "Chiesa del Carmine",
-            "Casa Professa",
-            "Palazzo Conte Federico",
-            "San Giovanni degli Eremiti",
-            "Palazzo Reale",
-            "Cattedrale",
-            "Palazzo Asmundo",
-            "Palazzo Riso",
-            "San Giuseppe dei Teatini"
-        ];
-        
-        // Dynamically populate attractions list
-        const attractionsList = document.getElementById('attractions-list');
-        attractions.forEach(attraction => {
-            const li = document.createElement('li');
-            li.textContent = attraction;
-            attractionsList.appendChild(li);
-        });
-        
-        // Generate QR Code for this page
-        const currentUrl = window.location.href;
-        new QRCode(document.getElementById("page-qrcode"), {
-            text: currentUrl,
-            width: 200,
-            height: 200
-        });
-        
-        // Print QR Code functionality
-        document.getElementById('printQR').addEventListener('click', function() {
-            const printWindow = window.open('', '', 'width=600,height=600');
-            const qrImage = document.getElementById('page-qrcode').querySelector('img').src;
-            
-            printWindow.document.write(`
-                <html>
-                <head>
-                    <title>QR Code for Albergheria Quarter</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; text-align: center; }
-                        .qr-container { margin: 20px auto; }
-                        h1 { margin-bottom: 30px; }
-                    </style>
-                </head>
-                <body>
-                    <h1>Albergheria Quarter - Sant'Agostino BnB</h1>
-                    <div class="qr-container">
-                        <img src="${qrImage}" alt="QR Code for Albergheria Quarter">
-                        <p>Scan to explore the Albergheria Quarter of Palermo</p>
-                    </div>
-                </body>
-                </html>
-            `);
-            
-            printWindow.document.close();
-            setTimeout(() => {
-                printWindow.print();
-                printWindow.close();
-            }, 250);
-        });
-    </script>
+    <!-- Centralized quarters data loader - manages dynamic content from data/quarters.json -->
+    <script src="js/quarters.js"></script>
 </body>
 </html> 
