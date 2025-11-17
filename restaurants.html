@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.santagostinobb.it/wp-content/uploads/2023/01/bebsantagostino.png">
+    <title>Sant'Agostino B&B - Restaurants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: rgb(185, 43, 19);
+            --accent-color: rgb(255, 193, 7);
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Montserrat', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        header h1 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--text-color);
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+        
+        .language-selector select {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+            font-family: var(--body-font);
+        }
+        
+        .back-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        /* Restaurant Card Styles */
+        .restaurant-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: visible;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .restaurant-image {
+            height: 160px;
+            background-color: rgb(185, 43, 19);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 72px;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurant-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1rem;
+            z-index: 2;
+        }
+        
+        .restaurant-letter {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .restaurant-details {
+            padding: 20px;
+            overflow: visible;
+        }
+        
+        .restaurant-name {
+            font-family: var(--heading-font);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .restaurant-description {
+            margin-bottom: 15px;
+            overflow-y: auto;
+            max-height: 120px; /* Fixed height for description */
+            padding-right: 5px;
+            position: relative;
+            line-height: 1.5;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) #eee;
+        }
+        
+        .restaurant-description::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .restaurant-description::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .restaurant-description::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        .restaurant-description:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .restaurant-description:not(:hover):after {
+            opacity: 1;
+        }
+        
+        .restaurant-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            overflow: visible;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            color: #555;
+            position: static;
+            overflow: visible;
+        }
+        
+        .meta-item i {
+            margin-right: 8px;
+            color: var(--primary-color);
+            width: 16px;
+            text-align: center;
+        }
+        
+        /* Action Buttons */
+        .restaurant-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .action-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--primary-color);
+            font-family: var(--body-font);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            background-color: rgba(185, 43, 19, 0.1);
+        }
+        
+        .section-title {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin: 30px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid rgb(185, 43, 19);
+            display: inline-block;
+        }
+        
+        /* Restaurant Grid */
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .attractions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            header h1 {
+                margin-top: 15px;
+            }
+        }
+
+        /* Tooltip styles */
+        .hours-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hours-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+        
+        .hours-tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+        
+        .hours-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .hours-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .hours-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+    
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n="backToHome">Back to Home</span>
+            </a>
+            <h1><span style="color: rgb(185, 43, 19);" data-i18n="restaurants">Restaurants</span></h1>
+        </header>
+        
+        <section id="recommended-lunch">
+            <h2 class="section-title"><span data-i18n="lunchPlaces">Lunch Places</span></h2>
+            <div id="lunch-grid" class="attractions-grid">
+                <!-- Lunch restaurants will be inserted here -->
+            </div>
+        </section>
+        
+        <section id="michelin-restaurants">
+            <h2 class="section-title"><span data-i18n="michelinRestaurants">Michelin Starred Restaurants</span></h2>
+            <div id="michelin-grid" class="attractions-grid">
+                <!-- Michelin restaurants will be inserted here -->
+            </div>
+        </section>
+        
+        <section id="recommended-dinner">
+            <h2 class="section-title"><span data-i18n="dinnerPlaces">Dinner Places</span></h2>
+            <div id="dinner-grid" class="attractions-grid">
+                <!-- Dinner restaurants will be inserted here -->
+            </div>
+        </section>
+    </div>
+    
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f1f1f1; font-size: 0.8rem;">
+        <p>© 2023 Sant'Agostino B&B. All rights reserved. | Version 1.2.5</p>
+    </footer>
+
+    <!-- Load restaurant database FIRST, before translations.js -->
+    <script src="js/restaurants-data.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Check if required files loaded correctly
+        if (typeof restaurantsDatabase === 'undefined') {
+            console.error("Error: restaurantsDatabase not found! The restaurants-data.js file might not be loading correctly.");
+            document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load restaurant database. Please check your internet connection and try refreshing the page.</div>';
+        }
+        if (typeof translations === 'undefined') {
+            console.error("Error: translations object not found! The translations.js file might not be loading correctly.");
+            document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load translations. Please check your internet connection and try refreshing the page.</div>';
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add debugging to check if translations are loaded properly
+            console.log("Translations loaded:", typeof translations);
+            
+            // Set language from URL hash if present
+            const hash = window.location.hash.substring(1);
+            if (hash && ['en', 'it', 'fr', 'es'].includes(hash)) {
+                document.getElementById('language-select').value = hash;
+                updatePageLanguage(hash);
+            } else {
+                // Otherwise, try to load from localStorage
+                const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+                document.getElementById('language-select').value = savedLang;
+                updatePageLanguage(savedLang);
+            }
+            
+            // Set up language selector
+            document.getElementById('language-select').addEventListener('change', (e) => {
+                const selectedLang = e.target.value;
+                updatePageLanguage(selectedLang);
+            });
+        });
+        
+        // Image loading functions (moved outside all event listeners for global access)
+        function loadRestaurantImage(imageDiv, restaurantName, cuisine) {
+            const fileName = restaurantName.toLowerCase()
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '-')
+                .trim();
+            
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'image-loading';
+            loadingDiv.textContent = 'Loading...';
+            imageDiv.appendChild(loadingDiv);
+            
+            // Try local image first
+            const localImagePath = `images/restaurants/${fileName}.jpg`;
+            const img = document.createElement('img');
+            
+            img.onload = function() {
+                // Image loaded successfully
+                imageDiv.innerHTML = '';
+                imageDiv.appendChild(img);
+            };
+            
+            img.onerror = function() {
+                // Local image failed, try external image
+                loadingDiv.textContent = 'Loading external...';
+                
+                getExternalImage(cuisine, restaurantName)
+                    .then(externalUrl => {
+                        if (externalUrl) {
+                            const externalImg = document.createElement('img');
+                            externalImg.onload = function() {
+                                imageDiv.innerHTML = '';
+                                imageDiv.appendChild(externalImg);
+                            };
+                            externalImg.onerror = function() {
+                                // External image also failed, remove loading and keep letter placeholder
+                                if (imageDiv.contains(loadingDiv)) {
+                                    imageDiv.removeChild(loadingDiv);
+                                }
+                                console.log(`Both local and external images failed for ${restaurantName}`);
+                            };
+                            externalImg.src = externalUrl;
+                        } else {
+                            // No external URL, remove loading indicator
+                            if (imageDiv.contains(loadingDiv)) {
+                                imageDiv.removeChild(loadingDiv);
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        // External service failed, remove loading indicator
+                        if (imageDiv.contains(loadingDiv)) {
+                            imageDiv.removeChild(loadingDiv);
+                        }
+                        console.log(`External image service failed for ${restaurantName}:`, error);
+                    });
+            };
+            
+            img.src = localImagePath;
+        }
+        
+        function getExternalImage(cuisine, restaurantName) {
+            return new Promise((resolve) => {
+                // Use Lorem Picsum with a seed based on restaurant name for consistency
+                const seed = restaurantName.toLowerCase().replace(/[^a-z]/g, '');
+                const imageUrl = `https://picsum.photos/seed/${seed}/400/300`;
+                
+                // Test if the image loads
+                const testImg = new Image();
+                testImg.onload = () => resolve(imageUrl);
+                testImg.onerror = () => {
+                    // Fallback to a different service
+                    const fallbackUrl = `https://via.placeholder.com/400x300/b92b13/ffffff?text=${encodeURIComponent(restaurantName.charAt(0))}`;
+                    resolve(fallbackUrl);
+                };
+                testImg.src = imageUrl;
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add debugging to check if translations are loaded properly
+            console.log("Translations loaded:", typeof translations);
+            
+            // Set language from URL hash if present
+            const hash = window.location.hash.substring(1);
+            if (hash && ['en', 'it', 'fr', 'es'].includes(hash)) {
+                document.getElementById('language-select').value = hash;
+                updatePageLanguage(hash);
+            } else {
+                // Otherwise, try to load from localStorage
+                const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+                document.getElementById('language-select').value = savedLang;
+                updatePageLanguage(savedLang);
+            }
+            
+            // Set up language selector
+            document.getElementById('language-select').addEventListener('change', (e) => {
+                const selectedLang = e.target.value;
+                updatePageLanguage(selectedLang);
+            });
+        });
+        
+        function createRestaurantCard(restaurant, index, type) {
+            const card = document.createElement('div');
+            card.className = 'restaurant-card';
+            
+            // Create image or letter placeholder
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'restaurant-image';
+            
+            const letterDiv = document.createElement('div');
+            letterDiv.className = 'restaurant-letter';
+            letterDiv.textContent = restaurant.name.charAt(0);
+            imageDiv.appendChild(letterDiv);
+            
+            // Try to load restaurant image
+            loadRestaurantImage(imageDiv, restaurant.name, restaurant.cuisine || 'restaurant');
+            
+            card.appendChild(imageDiv);
+            
+            // Details container
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'restaurant-details';
+            
+            // Restaurant name
+            const nameElement = document.createElement('h3');
+            nameElement.className = 'restaurant-name';
+            nameElement.textContent = restaurant.name;
+            detailsDiv.appendChild(nameElement);
+            
+            // Description
+            const descriptionElement = document.createElement('div');
+            descriptionElement.className = 'restaurant-description';
+            descriptionElement.textContent = restaurant.description;
+            detailsDiv.appendChild(descriptionElement);
+            
+            // Meta information
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'restaurant-meta';
+            
+            // Price Range
+            if (restaurant.priceRange) {
+                const priceRangeElement = document.createElement('div');
+                priceRangeElement.className = 'meta-item';
+                priceRangeElement.innerHTML = `<i class="fas fa-money-bill-wave"></i> ${restaurant.priceRange}`;
+                metaDiv.appendChild(priceRangeElement);
+            }
+            
+            // Cuisine
+            if (restaurant.cuisine) {
+                const cuisineElement = document.createElement('div');
+                cuisineElement.className = 'meta-item';
+                cuisineElement.innerHTML = `<i class="fas fa-utensils"></i> ${restaurant.cuisine}`;
+                metaDiv.appendChild(cuisineElement);
+            }
+            
+            // Open Hours
+            if (restaurant.openHours) {
+                const hoursElement = document.createElement('div');
+                hoursElement.className = 'meta-item';
+                
+                const hoursTooltip = document.createElement('div');
+                hoursTooltip.className = 'hours-tooltip';
+                
+                const hoursBtn = document.createElement('button');
+                hoursBtn.className = 'hours-btn';
+                hoursBtn.setAttribute('data-i18n', 'seeHours');
+                
+                // Try to get the text from translations, with fallbacks
+                let hoursText = "See hours";
+                try {
+                    const currentLang = document.getElementById('language-select').value || 'en';
+                    if (translations[currentLang].seeHours) {
+                        if (typeof translations[currentLang].seeHours === 'object') {
+                            hoursText = translations[currentLang].seeHours[currentLang] || "See hours";
+                        } else {
+                            hoursText = translations[currentLang].seeHours;
+                        }
+                    }
+                } catch (e) {
+                    console.error("Error setting hours text:", e);
+                }
+                
+                hoursBtn.textContent = hoursText;
+                
+                const tooltipText = document.createElement('span');
+                tooltipText.className = 'tooltip-text';
+                tooltipText.textContent = restaurant.openHours;
+                
+                hoursTooltip.appendChild(hoursBtn);
+                hoursTooltip.appendChild(tooltipText);
+                
+                hoursElement.innerHTML = `<i class="far fa-clock"></i>`;
+                hoursElement.appendChild(hoursTooltip);
+                
+                metaDiv.appendChild(hoursElement);
+            }
+            
+            // Meals
+            if (restaurant.meals && restaurant.meals !== "Not specified") {
+                const mealsElement = document.createElement('div');
+                mealsElement.className = 'meta-item';
+                mealsElement.innerHTML = `<i class="fas fa-hamburger"></i> ${restaurant.meals}`;
+                metaDiv.appendChild(mealsElement);
+            }
+            
+            detailsDiv.appendChild(metaDiv);
+            
+            // Action Buttons
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'restaurant-actions';
+            
+            // Directions Button (Google Maps Icon)
+            const directionsBtn = document.createElement('button');
+            directionsBtn.className = 'action-btn';
+            directionsBtn.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+            directionsBtn.onclick = () => {
+                // Open Google Maps with this restaurant
+                const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
+                window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+            };
+            
+            actionsDiv.appendChild(directionsBtn);
+            
+            detailsDiv.appendChild(actionsDiv);
+            
+            card.appendChild(detailsDiv);
+            
+            return card;
+        }
+        
+        function loadRestaurants() {
+            try {
+                // Add debugging
+                console.log("Loading restaurants...");
+                
+                // Clear existing restaurant lists
+                document.getElementById('lunch-grid').innerHTML = '';
+                document.getElementById('michelin-grid').innerHTML = '';
+                document.getElementById('dinner-grid').innerHTML = '';
+                
+                // Default to English if no language is set
+                const lang = document.getElementById('language-select').value || 'en';
+                console.log("Current language:", lang);
+                
+                // Get restaurants from centralized database using getRestaurantData()
+                const restaurants = getRestaurantData(lang, 'regular');
+                const michelinRestaurants = getRestaurantData(lang, 'michelin');
+                
+                console.log("Restaurant data loaded:", restaurants.length, "regular,", michelinRestaurants.length, "Michelin");
+                
+                // Filter restaurants based on type
+                const lunchRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('lunch'));
+                const dinnerRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('dinner'));
+                
+                console.log("Lunch restaurants:", lunchRestaurants.length, "Dinner restaurants:", dinnerRestaurants.length);
+                
+                // Add lunch restaurants
+                if (lunchRestaurants && lunchRestaurants.length > 0) {
+                    lunchRestaurants.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'lunch');
+                        document.getElementById('lunch-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('lunch-grid').innerHTML = '<p>No lunch restaurants found for this language.</p>';
+                    console.warn("No lunch restaurants found for language:", lang);
+                }
+                
+                // Add Michelin restaurants (already loaded with getRestaurantData)
+                if (michelinRestaurants && michelinRestaurants.length > 0) {
+                    michelinRestaurants.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'michelin');
+                        document.getElementById('michelin-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('michelin-grid').innerHTML = '<p>No Michelin restaurants found for this language.</p>';
+                    console.warn("No Michelin restaurants found for language:", lang);
+                }
+                
+                // Add dinner restaurants
+                if (dinnerRestaurants && dinnerRestaurants.length > 0) {
+                    dinnerRestaurants.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'dinner');
+                        document.getElementById('dinner-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('dinner-grid').innerHTML = '<p>No dinner restaurants found for this language.</p>';
+                    console.warn("No dinner restaurants found for language:", lang);
+                }
+            } catch (e) {
+                console.error("Error loading restaurants:", e);
+                document.getElementById('lunch-grid').innerHTML = '<p>Error: Could not load restaurant data. Please try refreshing the page.</p>';
+                document.getElementById('dinner-grid').innerHTML = '';
+            }
+        }
+        
+        function updatePageLanguage(lang) {
+            try {
+                console.log("Updating page language to:", lang);
+                
+                // Update language selector
+                document.getElementById('language-select').value = lang;
+                
+                // Store in localStorage for future visits
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // Update URL hash
+                window.location.hash = lang;
+                
+                // Check if translations exist
+                if (!translations || !translations[lang]) {
+                    console.error("Translations not found for language:", lang);
+                    return;
+                }
+                
+                // Update translation elements
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        if (typeof translations[lang][key] === 'object') {
+                            element.textContent = translations[lang][key][lang] || translations[lang][key].en || key;
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                
+                // Repopulate restaurants
+                loadRestaurants();
+                
+                // Update back button text with error handling
+                try {
+                    const backText = translations[lang].backToHome && translations[lang].backToHome[lang] ? 
+                        translations[lang].backToHome[lang] : "Back to Home";
+                    document.querySelector('.back-button span').textContent = backText;
+                } catch (e) {
+                    console.warn("Error updating back button:", e);
+                    document.querySelector('.back-button span').textContent = "Back to Home";
+                }
+            } catch (e) {
+                console.error("Error updating page language:", e);
+            }
+        }
+    </script>
+</body>
+</html>
