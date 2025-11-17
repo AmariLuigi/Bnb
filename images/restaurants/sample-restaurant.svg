@@ -1,0 +1,58 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="plate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f2f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  
+  <!-- Table -->
+  <ellipse cx="200" cy="250" rx="150" ry="30" fill="#8b4513" opacity="0.3"/>
+  
+  <!-- Plate -->
+  <circle cx="200" cy="150" r="80" fill="url(#plate)" stroke="#ddd" stroke-width="2"/>
+  
+  <!-- Food items -->
+  <!-- Pasta -->
+  <path d="M 160 130 Q 180 120 200 130 Q 220 140 240 130" stroke="#f39c12" stroke-width="3" fill="none"/>
+  <path d="M 165 140 Q 185 130 205 140 Q 225 150 245 140" stroke="#f39c12" stroke-width="3" fill="none"/>
+  <path d="M 155 150 Q 175 140 195 150 Q 215 160 235 150" stroke="#f39c12" stroke-width="3" fill="none"/>
+  
+  <!-- Tomato -->
+  <circle cx="180" cy="160" r="8" fill="#e74c3c"/>
+  <circle cx="220" cy="145" r="6" fill="#e74c3c"/>
+  
+  <!-- Basil leaves -->
+  <ellipse cx="190" cy="135" rx="4" ry="8" fill="#27ae60" transform="rotate(30 190 135)"/>
+  <ellipse cx="210" cy="155" rx="3" ry="6" fill="#27ae60" transform="rotate(-20 210 155)"/>
+  
+  <!-- Fork -->
+  <rect x="120" y="180" width="2" height="40" fill="#95a5a6"/>
+  <rect x="115" y="180" width="12" height="3" fill="#95a5a6"/>
+  <rect x="117" y="175" width="2" height="8" fill="#95a5a6"/>
+  <rect x="121" y="175" width="2" height="8" fill="#95a5a6"/>
+  <rect x="125" y="175" width="2" height="8" fill="#95a5a6"/>
+  
+  <!-- Wine glass -->
+  <path d="M 280 180 L 285 200 L 275 200 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <rect x="277" y="200" width="6" height="15" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <ellipse cx="280" cy="215" rx="8" ry="3" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <path d="M 280 185 L 285 195 L 275 195 Z" fill="#8e44ad" opacity="0.7"/>
+  
+  <!-- Restaurant name placeholder -->
+  <rect x="50" y="50" width="300" height="40" fill="rgba(255,255,255,0.9)" rx="5"/>
+  <text x="200" y="75" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Sample Restaurant</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="3" fill="#f39c12" opacity="0.7"/>
+  <circle cx="350" cy="50" r="3" fill="#f39c12" opacity="0.7"/>
+  <circle cx="50" cy="250" r="3" fill="#f39c12" opacity="0.7"/>
+  <circle cx="350" cy="250" r="3" fill="#f39c12" opacity="0.7"/>
+</svg>

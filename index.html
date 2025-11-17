@@ -5,58 +5,428 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sant'Agostino BnB - Palermo Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://www.santagostinobb.it/wp-content/uploads/2023/01/bebsantagostino.png">
+    <style>
+        /* Updated color palette and typography */
+        :root {
+            --main-color: rgb(185, 43, 19);
+            --main-color-hover: rgb(155, 33, 9);
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #fff;
+            --footer-bg: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://www.italia.it/content/dam/tdh/it/interests/sicilia/palermo/palermo-in-48-ore/media/20220221171805-cattedrale-di-palermo-shutterstock-1995993974-rit.jpg.transform/w_2480/h_1000/image.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            text-shadow: none;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .language-selector select {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: white;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .quarters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+        
+        .quarter-card {
+            background: var(--card-bg);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            border: 1px solid #e9e9e9;
+        }
+        
+        .quarter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .quarter-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .quarter-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .quarter-card:hover .quarter-image img {
+            transform: scale(1.05);
+        }
+        
+        .quarter-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+        }
+        
+        .quarter-card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .quarter-text {
+            margin-bottom: 20px;
+        }
+        
+        .quarter-card p {
+            color: #666;
+            line-height: 1.5;
+            font-weight: 400;
+            margin: 0 0 5px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--main-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border: none;
+            min-width: 180px; /* Standardize button width */
+            text-align: center;
+            margin-top: auto; /* Push to bottom of container */
+            align-self: center; /* Center the button */
+        }
+        
+        .btn:hover {
+            background: var(--main-color-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--main-color);
+        }
+        
+        .section-title span {
+            color: var(--main-color);
+        }
+        
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 70px;
+        }
+        
+        .additional-card {
+            background-color: var(--card-bg);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 30px 25px;
+            position: relative;
+            border: 1px solid #e9e9e9;
+        }
+        
+        .additional-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .additional-card h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .additional-card h3 span {
+            color: var(--main-color);
+        }
+        
+        .additional-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .additional-card .btn {
+            background-color: var(--main-color);
+        }
+        
+        .additional-card .btn:hover {
+            background-color: var(--main-color-hover);
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 1024px) {
+            .quarters-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 4px 8px;
+            }
+            
+            .quarters-grid, .additional-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quarter-image {
+                height: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="language-selector">
+        <label for="language-selector" data-i18n="language">Language</label>
+        <select id="language-selector" onchange="updatePageLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1><span style="color: #333;">Sant'Agostino</span> <span style="color: var(--main-color);">B&B</span><span style="color: #333;"> - </span><span style="color: #333;" data-i18n="title_location">Palermo</span><br><span style="color: #333;" data-i18n="title_map">Map</span></h1>
+            <p data-i18n="explore">Explore the four historic quarters of Palermo</p>
+        </div>
+    </section>
+
     <div class="container">
-        <header>
-            <h1>Sant'Agostino BnB - Palermo Map</h1>
-            <p>Explore the four historic quarters of Palermo</p>
-        </header>
-        
         <div class="quarters-grid">
             <div class="quarter-card">
-                <h2>Capo</h2>
-                <div id="capo-qrcode" class="qrcode"></div>
-                <p>Discover the Teatro Massimo, Cattedrale, and more</p>
-                <a href="capo.html" class="btn">Explore Capo</a>
+                <div class="quarter-image">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5c32d3a189c172393734742d/1578821633535-141F9LAUO57M9P69CKO7/IMG_7263.jpeg?format=1000w" alt="Capo Quarter">
+                </div>
+                <div class="quarter-content">
+                    <div class="quarter-text">
+                        <h2 data-i18n="capo">Capo</h2>
+                <p data-i18n="capoDesc">Discover the Teatro Massimo, Cattedrale, and more</p>
+                    </div>
+                <a href="capo.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="capo">Capo</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2>Albergheria</h2>
-                <div id="albergheria-qrcode" class="qrcode"></div>
-                <p>Visit Ballarò market, Palazzo Reale, and more</p>
-                <a href="albergheria.html" class="btn">Explore Albergheria</a>
+                <div class="quarter-image">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5c32d3a189c172393734742d/1578819801222-XAHT9TL5DWG3B874PT7T/IMG_7271.jpeg?format=2500w" alt="Albergheria Quarter">
+                </div>
+                <div class="quarter-content">
+                    <div class="quarter-text">
+                        <h2 data-i18n="albergheria">Albergheria</h2>
+                <p data-i18n="albergheriaDesc">Visit Ballarò market, Palazzo Reale, and more</p>
+                    </div>
+                <a href="albergheria.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="albergheria">Albergheria</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2>Kalsa</h2>
-                <div id="kalsa-qrcode" class="qrcode"></div>
-                <p>Explore Piazza Pretoria, Orto Botanico, and more</p>
-                <a href="kalsa.html" class="btn">Explore Kalsa</a>
+                <div class="quarter-image">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic2-viaggi.corriereobjects.it%2Fwp-content%2Fuploads%2F2022%2F10%2FFA_PALERMO_1136-2-1.jpg%3Fv%3D479675&f=1&nofb=1&ipt=4d8fa305b93c517bfc4e4415c00d917b76ca6c242aed3bedda7d7dcfc1ab2a28&ipo=images" alt="Kalsa Quarter">
+                </div>
+                <div class="quarter-content">
+                    <div class="quarter-text">
+                        <h2 data-i18n="kalsa">Kalsa</h2>
+                <p data-i18n="kalsaDesc">Explore Piazza Pretoria, Orto Botanico, and more</p>
+                    </div>
+                <a href="kalsa.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="kalsa">Kalsa</span></a>
+                </div>
             </div>
             
             <div class="quarter-card">
-                <h2>La Loggia</h2>
-                <div id="loggia-qrcode" class="qrcode"></div>
-                <p>Visit San Domenico, Vucciria market, and more</p>
-                <a href="loggia.html" class="btn">Explore La Loggia</a>
+                <div class="quarter-image">
+                    <img src="https://descobrindoasicilia.com/wp-content/uploads/2020/02/Quattro-Canti-em-Palermo-3-1536x921.jpg" alt="La Loggia Quarter">
+                </div>
+                <div class="quarter-content">
+                    <div class="quarter-text">
+                        <h2 data-i18n="loggia">La Loggia</h2>
+                <p data-i18n="loggiaDesc">Visit San Domenico, Vucciria market, and more</p>
+                    </div>
+                <a href="loggia.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="loggia">La Loggia</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title" data-i18n="additionalServices">Additional <span>Services</span></h2>
+        
+        <div class="additional-grid">
+            <div class="additional-card">
+                <h3 data-i18n="restaurants"><span>Restaurants</span></h3>
+                <p data-i18n="restaurantsDesc">Discover the best local restaurants and authentic Sicilian cuisine</p>
+                <a href="restaurants.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="restaurants">Restaurants</span></a>
+            </div>
+            
+            <div class="additional-card">
+                <h3 data-i18n="experiences"><span>B&B</span> Experiences</h3>
+                <p data-i18n="experiencesDesc">Authentic local experiences offered by our B&B and partners</p>
+                <a href="experiences.html" class="btn"><span data-i18n="exploreButton">Explore</span> <span data-i18n="experiences">Experiences</span></a>
+            </div>
             </div>
         </div>
         
         <footer>
-            <p>© Sant'Agostino BnB - Palermo Map</p>
+        <div class="container">
+            <p data-i18n="copyright">© Sant'Agostino BnB - Palermo Map | Version 1.2.5</p>
+        </div>
         </footer>
-    </div>
     
     <script src="js/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
     <script>
-        // Generate QR codes dynamically based on current URL
-        const baseUrl = window.location.href.replace(/\/[^/]*$/, '/');
-        
-        new QRCode(document.getElementById("capo-qrcode"), baseUrl + "capo.html");
-        new QRCode(document.getElementById("albergheria-qrcode"), baseUrl + "albergheria.html");
-        new QRCode(document.getElementById("kalsa-qrcode"), baseUrl + "kalsa.html");
-        new QRCode(document.getElementById("loggia-qrcode"), baseUrl + "loggia.html");
+        // Ensure quarters are initialized on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set language selector value
+            const savedLang = localStorage.getItem('preferred_language') || 'en';
+            const langSelector = document.getElementById('language-selector');
+            if (langSelector) {
+                langSelector.value = savedLang;
+                // Initialize page with correct language
+                updatePageLanguage(savedLang);
+            }
+        });
     </script>
 </body>
 </html> 

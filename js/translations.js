@@ -2069,3 +2069,4 @@ function getRestaurantData(lang = 'en', type = 'regular') {
         };
     }).filter(r => r !== null);
 }
+document.addEventListener('DOMContentLoaded', initializeLanguage);
