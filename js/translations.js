@@ -2012,3 +2012,61 @@ function initializeLanguage() {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeLanguage);
+
+/**
+ * ============================================================================
+ * RESTAURANT DATA FUNCTIONS
+ * ============================================================================
+ * 
+ * These functions work with the centralized restaurant database in
+ * js/restaurants-data.js. There is NO fallback to legacy data.
+ */
+
+/**
+ * Get restaurant data for a specific language from the centralized database
+ * 
+ * @param {string} lang - Language code ('en', 'it', 'fr', 'es')
+ * @param {string} type - Type of restaurants ('regular' or 'michelin')
+ * @returns {Array} Array of restaurant objects for the specified language
+ * 
+ * IMPORTANT: This function requires js/restaurants-data.js to be loaded.
+ * It does NOT fall back to any legacy data structure.
+ * 
+ * HOW IT WORKS:
+ * 1. Accesses the centralized restaurantsDatabase or michelinRestaurantsDatabase
+ * 2. For each restaurant, merges the translation for the requested language
+ *    with the language-agnostic fields
+ * 3. Returns an array ready for rendering
+ * 
+ * USAGE:
+ *   const italianRestaurants = getRestaurantData('it', 'regular');
+ *   const michelinRestaurants = getRestaurantData('en', 'michelin');
+ */
+function getRestaurantData(lang = 'en', type = 'regular') {
+    const database = type === 'michelin' ? michelinRestaurantsDatabase : restaurantsDatabase;
+    
+    if (typeof database === 'undefined') {
+        console.error('Restaurant database not loaded! Make sure js/restaurants-data.js is included before translations.js');
+        return [];
+    }
+    
+    return database.map(restaurant => {
+        // Get translation for this language, fall back to English if missing
+        const translation = restaurant.translations[lang] || restaurant.translations.en;
+        
+        if (!translation) {
+            console.warn(`Missing translation for restaurant ${restaurant.id} in language ${lang}`);
+            return null;
+        }
+        
+        // Merge translation with language-agnostic fields
+        // Exclude the 'translations' and 'id' fields from the result
+        const { translations, id, ...commonFields } = restaurant;
+        
+        return {
+            ...translation,      // name, description
+            ...commonFields      // priceRange, type, address, etc.
+        };
+    }).filter(r => r !== null);
+}
+document.addEventListener('DOMContentLoaded', initializeLanguage);

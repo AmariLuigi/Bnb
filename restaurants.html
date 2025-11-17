@@ -394,6 +394,15 @@
         <p>© 2023 Sant'Agostino B&B. All rights reserved. | Version 1.2.5</p>
     </footer>
 
+    <!-- Load restaurant database FIRST, before translations.js -->
+    <script src="js/restaurants-data.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Check if required files loaded correctly
+        if (typeof restaurantsDatabase === 'undefined') {
+            console.error("Error: restaurantsDatabase not found! The restaurants-data.js file might not be loading correctly.");
+            document.body.innerHTML += '<div style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border-radius: 5px; text-align: center;">Error: Could not load restaurant database. Please check your internet connection and try refreshing the page.</div>';
+        }
     <script src="js/translations.js"></script>
     <script>
         // Check if translations.js loaded correctly
@@ -670,6 +679,16 @@
                 // Default to English if no language is set
                 const lang = document.getElementById('language-select').value || 'en';
                 console.log("Current language:", lang);
+                
+                // Get restaurants from centralized database using getRestaurantData()
+                const restaurants = getRestaurantData(lang, 'regular');
+                const michelinRestaurants = getRestaurantData(lang, 'michelin');
+                
+                console.log("Restaurant data loaded:", restaurants.length, "regular,", michelinRestaurants.length, "Michelin");
+                
+                // Filter restaurants based on type
+                const lunchRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('lunch'));
+                const dinnerRestaurants = restaurants.filter(r => r.type && r.type.toLowerCase().includes('dinner'));
                 console.log("Translations object:", typeof translations, translations ? "loaded" : "not loaded");
                 
                 // Check if translations object exists
@@ -722,6 +741,9 @@
                     console.warn("No lunch restaurants found for language:", lang);
                 }
                 
+                // Add Michelin restaurants (already loaded with getRestaurantData)
+                if (michelinRestaurants && michelinRestaurants.length > 0) {
+                    michelinRestaurants.forEach((restaurant, index) => {
                 // Add Michelin restaurants
                 if (translations[lang].michelinRestaurantsData && translations[lang].michelinRestaurantsData.length > 0) {
                     translations[lang].michelinRestaurantsData.forEach((restaurant, index) => {
