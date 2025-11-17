@@ -82,7 +82,7 @@ const restaurantsDatabase = [
         },
         priceRange: "€10-20 per person",
         cuisine: "Street Food, Sandwich Shop",
-        image: "images/attractions/placeholder.jpg",
+        image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/db/fb/08/caption.jpg",
         referent: "Arianna",
         address: "Via Porta Carini, 51, 90134 Palermo PA",
         type: "Lunch"
@@ -137,7 +137,7 @@ const michelinRestaurantsDatabase = [
         },
         priceRange: "€€€",
         cuisine: "Modern Italian, Creative",
-        image: "images/attractions/placeholder.jpg",
+        image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/22/16/00/26/un-esperienza-unica-in.jpg",
         address: "Via Vittorio Emanuele 452 - 90134",
         phone: "347 753 2005",
         michelinStars: "★",
