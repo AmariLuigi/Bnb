@@ -435,7 +435,23 @@
         });
         
         // Image loading functions (moved outside all event listeners for global access)
-        function loadRestaurantImage(imageDiv, restaurantName, cuisine) {
+        function loadRestaurantImage(imageDiv, restaurantName, cuisine, imageUrl) {
+            // If restaurant has an image URL from the database, use it directly
+            if (imageUrl && imageUrl.startsWith('http')) {
+                const img = document.createElement('img');
+                img.onload = function() {
+                    // Image loaded successfully, replace letter with image
+                    imageDiv.innerHTML = '';
+                    imageDiv.appendChild(img);
+                };
+                img.onerror = function() {
+                    // If TripAdvisor image fails, keep the letter placeholder
+                    console.log(`TripAdvisor image failed to load for ${restaurantName}: ${imageUrl}`);
+                };
+                img.src = imageUrl;
+                return;
+            }
+            
             const fileName = restaurantName.toLowerCase()
                 .replace(/[^a-z0-9\s]/g, '')
                 .replace(/\s+/g, '-')
@@ -551,7 +567,7 @@
             imageDiv.appendChild(letterDiv);
             
             // Try to load restaurant image
-            loadRestaurantImage(imageDiv, restaurant.name, restaurant.cuisine || 'restaurant');
+            loadRestaurantImage(imageDiv, restaurant.name, restaurant.cuisine || 'restaurant', restaurant.image);
             
             card.appendChild(imageDiv);
             
