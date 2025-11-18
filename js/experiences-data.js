@@ -63,7 +63,7 @@ const experiencesDatabase = [
             }
         },
         duration: "3 hours - Departure at 9am or 3pm",
-        price: "2/3 pax - €100 per person | 4/5 pax - €50 per person | 6+ pax - €45 per person + headset included",
+        price: "2/3 pax - €120 per person | 4/5 pax - €60 per person | over 5 pax - €50 per person + headset included",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -71,27 +71,27 @@ const experiencesDatabase = [
         translations: {
             en: {
                 name: "An itinerant aperitif between Art Culture History and Street Food",
-                description: "An itinerant aperitif along the streets of the historic center of Palermo, one of the most renowned cities for its STREET FOOD, on par if not above rivals such as Bangkok, Mumbai, Istanbul, Seville. A sensory experience for the taste buds of the most daring but also a cultural and historical experience to discover what the nobles ate, through the story of ancient recipes with stops to taste typical foods. Concluding the tour with a good glass of wine, 'a gritta' on the now dry \"balates\" of a Vucciria that has given up market clothes to put on those of the eat-and-drink matron.",
-                note: "Tastings are included in the price (panelle, crocche, sfincione, bread with spleen, glass of wine). Minimum 4 participants."
+                description: "An itinerant aperitif along the streets of the historic center of Palermo, one of the most renowned cities for its STREET FOOD, on par if not above rivals such as Bangkok, Mumbai, Istanbul, Seville. A sensory experience for the taste buds of the most daring but also a cultural and historical experience to discover what the nobles ate, through the story of ancient recipes with stops to taste typical foods. Concluding the tour with a good glass of wine, 'a gritta' on the now dry \"balates\" of a Vucciria that has given up market clothes to put on those of the eat-and-beona matron.",
+                note: "Tastings are included in the price (panelle, crocche, sfincione). Minimum 4 participants."
             },
             it: {
                 name: "Un aperitivo itinerante tra Arte, Cultura, Storia e Street Food",
                 description: "Un aperitivo itinerante lungo le strade del centro storico di Palermo, una delle città più rinomate per il suo STREET FOOD, paragonabile, se non superiore, a rivali come Bangkok, Mumbai, Istanbul, Siviglia. Un'esperienza sensoriale per le papille gustative dei più audaci, ma anche un'esperienza culturale e storica per scoprire cosa mangiavano i nobili, attraverso la narrazione delle antiche ricette con soste per assaporare cibi tipici. Concluderemo il tour con un buon bicchiere di vino, 'a gritta' sui \"balates\" ormai asciutti di una Vucciria che ha abbandonato i vestiti del mercato per indossare quelli della matrona da mangiare e bere.",
-                note: "Le degustazioni sono incluse nel prezzo (panelle, crocchè, sfincione, pane con la milza, bicchiere di vino). Minimo 4 partecipanti."
+                note: "Le degustazioni sono incluse nel prezzo (panelle, crocche, sfincione,). Minimo 4 partecipanti."
             },
             fr: {
                 name: "Un apéritif itinérant entre Art Culture Histoire et Street Food",
                 description: "Un apéritif itinérant dans les rues du centre historique de Palerme, l'une des villes les plus renommées pour sa STREET FOOD, au même niveau sinon supérieure à des rivales comme Bangkok, Mumbai, Istanbul, Séville. Une expérience sensorielle pour les papilles gustatives des plus audacieux mais aussi une expérience culturelle et historique pour découvrir ce que mangeaient les nobles, à travers le récit de recettes anciennes avec des arrêts pour goûter des plats typiques. Concluant la visite avec un bon verre de vin, 'a gritta' sur les \"balates\" maintenant sèches d'une Vucciria qui a abandonné les vêtements du marché pour mettre ceux de la matrone mangeuse et buveuse.",
-                note: "Les dégustations sont incluses dans le prix (panelle, crocchè, sfincione, pain avec rate, verre de vin). Minimum 4 participants."
+                note: "Les dégustations sont incluses dans le prix (panelle, crocchè, sfincione). Minimum 4 participants."
             },
             es: {
                 name: "Un aperitivo itinerante entre Arte Cultura Historia y Street Food",
                 description: "Un aperitivo itinerante por las calles del centro histórico de Palermo, una de las ciudades más reconocidas por su STREET FOOD, al nivel si no superior a rivales como Bangkok, Mumbai, Estambul, Sevilla. Una experiencia sensorial para las papilas gustativas de los más atrevidos pero también una experiencia cultural e histórica para descubrir qué comían los nobles, a través de la historia de recetas antiguas con paradas para degustar comidas típicas. Concluyendo el recorrido con una buena copa de vino, 'a gritta' en las \"balates\" ahora secas de una Vucciria que ha abandonado la ropa del mercado para ponerse la de la matrona comedora y bebedora.",
-                note: "Las degustaciones están incluidas en el precio (panelle, crocchè, sfincione, pan con bazo, copa de vino). Mínimo 4 participantes."
+                note: "Las degustaciones están incluidas en el precio (panelle, crocchè, sfincione). Mínimo 4 participantes."
             }
         },
         duration: "2 hours - Departure at 5:30pm",
-        price: "4 pax - €60 per person | 5+ pax - €50 per person",
+        price: "Minimum 4 pax - €80 per person | over 4 pax - €60 per person",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -119,7 +119,7 @@ const experiencesDatabase = [
             }
         },
         duration: "3.5 hours - Morning only subject to site opening availability",
-        price: "2/3 pax - €100 per person | 4/5 pax - €50 per person | 6+ pax - €45 per person + headset included",
+        price: "2/3 pax - €120 per person | 4/5 pax - €60 per person | over 5 pax - €50 per person + headset included",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -147,7 +147,7 @@ const experiencesDatabase = [
             }
         },
         duration: "3 hours - 9/10am or 2/3pm",
-        price: "2/3 pax - €100 per person | 4/5 pax - €50 per person | 6+ pax - €45 per person + headset included",
+        price: "2/3 pax - €120 per person | 4/5 pax - €60 per person | over 5 pax - €50 per person + headset included",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -175,7 +175,7 @@ const experiencesDatabase = [
             }
         },
         duration: "4 hours - Saturday afternoon and Sunday morning only",
-        price: "2/3 pax - €150 per person | 4/5 pax - €125 per person | 5-7 pax - €55 per person",
+        price: "2/3 pax - €170 per person | 4/5 pax - €140 per person | over 5 max 7 pax - €65 per person",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -203,7 +203,7 @@ const experiencesDatabase = [
             }
         },
         duration: "4-5 hours - Includes train ticket and transfer to Monreale",
-        price: "2/3 pax - €140 per person | 4/5 pax - €120 per person | 6+ pax - €100 per person",
+        price: "2/3 pax - €170 per person | 4/5 pax - €140 per person | over 5 pax - €120 per person",
         image: "images/attractions/placeholder.jpg"
     },
     {
@@ -238,28 +238,28 @@ const experiencesDatabase = [
         id: "sailing-palermo-coast",
         translations: {
             en: {
-                name: "Sailing Along the Scents of Sicily - Palermo Coast Boat Tour",
-                description: "Set sail for an unforgettable sailing experience along Palermo's coast. Discover hidden coves, crystal-clear waters, and breathtaking views. Enjoy the Mediterranean breeze as you explore the coastline, with an aperitif included. Dinner on board available on request for a truly magical evening at sea.",
-                note: "For groups, the boat departs with a minimum of 4 participants. Aperitif included; dinner on request."
+                name: "Sailing Through the Scents of Sicily – A Sailing Tour Along the Palermo Coast",
+                description: "Set sail with us for an unforgettable sailing experience along the stunning Palermo coastline. Guided by our expert skipper, you'll explore hidden coves, crystal-clear waters, and breathtaking views that only the sea can reveal. During the cruise, enjoy a complimentary aperitif, or — upon request and at an additional cost — a traditional dinner prepared on board by the skipper himself, featuring authentic local specialties. An authentic experience where wind, sea, and the flavors of Sicily come together.",
+                note: "For group tours, a minimum of 4 participants is required for departure."
             },
             it: {
-                name: "Navigare tra i Profumi della Sicilia - Tour in barca lungo la Costa di Palermo",
-                description: "Salpa per un'esperienza di navigazione indimenticabile lungo la costa di Palermo. Scopri calette nascoste, acque cristalline e panorami mozzafiato. Goditi la brezza mediterranea mentre esplori la costa, con aperitivo incluso. Cena a bordo disponibile su richiesta per una serata davvero magica in mare.",
-                note: "Per i gruppi, la barca parte con un minimo di 4 partecipanti. Aperitivo incluso; cena su richiesta."
+                name: "Veleggiando tra i profumi di Sicilia – Tour in barca a vela sulla costa palermitana",
+                description: "Salpa con noi per un'indimenticabile esperienza in barca a vela lungo la splendida costa di Palermo. In compagnia del nostro esperto comandante, scoprirai calette nascoste, acque cristalline e panorami mozzafiato che solo il mare può regalare. Durante la navigazione, lasciati coccolare da un aperitivo incluso nel prezzo o una cena a bordo solo su richiesta a pagamento, preparata dal comandante stesso, con prodotti tipici della tradizione. Un'esperienza autentica, tra vento, mare e sapori di Sicilia.",
+                note: "Si precisa che per i gruppi la barca parte con minimo 4 pax"
             },
             fr: {
-                name: "Navigation le long des Parfums de la Sicile - Tour en bateau sur la Côte de Palerme",
-                description: "Embarquez pour une expérience de navigation inoubliable le long de la côte de Palerme. Découvrez des criques cachées, des eaux cristallines et des vues à couper le souffle. Profitez de la brise méditerranéenne en explorant la côte, avec un apéritif inclus. Dîner à bord disponible sur demande pour une soirée vraiment magique en mer.",
-                note: "Pour les groupes, le bateau part avec un minimum de 4 participants. Apéritif inclus; dîner sur demande."
+                name: "Naviguant parmi les parfums de Sicile – Tour en voilier sur la côte de Palerme",
+                description: "Embarquez avec nous pour une expérience inoubliable en voilier le long de la magnifique côte de Palerme. En compagnie de notre skipper expert, vous découvrirez des criques cachées, des eaux cristallines et des panoramas à couper le souffle que seule la mer peut offrir. Pendant la croisière, profitez d'un apéritif inclus dans le prix, ou — sur demande et moyennant un coût supplémentaire — d'un dîner traditionnel préparé à bord par le skipper lui-même, avec des spécialités locales authentiques. Une expérience authentique où le vent, la mer et les saveurs de la Sicile se rencontrent.",
+                note: "Pour les groupes, le bateau part avec un minimum de 4 participants."
             },
             es: {
-                name: "Navegando entre los Aromas de Sicilia - Tour en barco por la Costa de Palermo",
-                description: "Zarpa para una experiencia de navegación inolvidable a lo largo de la costa de Palermo. Descubre calas escondidas, aguas cristalinas y vistas impresionantes. Disfruta de la brisa mediterránea mientras exploras la costa, con aperitivo incluido. Cena a bordo disponible bajo petición para una velada verdaderamente mágica en el mar.",
-                note: "Para grupos, el barco zarpa con un mínimo de 4 participantes. Aperitivo incluido; cena bajo petición."
+                name: "Navegando entre los aromas de Sicilia – Tour en velero por la costa de Palermo",
+                description: "Zarpa con nosotros para una experiencia inolvidable en velero a lo largo de la impresionante costa de Palermo. Guiado por nuestro skipper experto, explorarás calas escondidas, aguas cristalinas y vistas impresionantes que solo el mar puede revelar. Durante el crucero, disfruta de un aperitivo de cortesía, o — bajo petición y con un coste adicional — una cena tradicional preparada a bordo por el propio skipper, con auténticas especialidades locales. Una experiencia auténtica donde el viento, el mar y los sabores de Sicilia se unen.",
+                note: "Para tours en grupo, se requiere un mínimo de 4 participantes para zarpar."
             }
         },
         duration: "Half day (various options available)",
-        price: "Exclusive (2 pax) - €250 per person | 2 pax (non-exclusive) - €200 per person | 4 pax - €150 per person | 5-6 pax - €130 per person | 7-8 pax - €100 per person",
+        price: "Half-day tour (2 people, exclusive use): €250 per person | Half-day tour (2 people, shared boat): €200 per person | Half-day tour (minimum 4 people): €150 per person | Half-day tour (5 to 6 people): €130 per person | Half-day tour (7 to 8 people): €100 per person",
         image: "images/attractions/placeholder.jpg"
     }
 ];
