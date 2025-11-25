@@ -92,6 +92,7 @@
             overflow: visible;
             margin-bottom: 30px;
             transition: transform 0.3s ease;
+            position: relative;
         }
         
         .restaurant-card:hover {
@@ -147,6 +148,7 @@
         
         .restaurant-details {
             padding: 20px;
+            padding-bottom: 60px;
             overflow: visible;
         }
         
@@ -225,11 +227,9 @@
         
         /* Action Buttons */
         .restaurant-actions {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
         }
         
         .action-btn {
@@ -250,6 +250,30 @@
             background-color: rgba(185, 43, 19, 0.1);
         }
         
+        .directions-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .directions-btn:hover {
+            background-color: #8b1e0f;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .directions-btn i {
+            font-size: 1.1rem;
+            color: white !important;
+        }
+        
         .section-title {
             font-family: var(--heading-font);
             font-size: 1.8rem;
@@ -258,6 +282,15 @@
             padding-bottom: 8px;
             border-bottom: 3px solid rgb(185, 43, 19);
             display: inline-block;
+        }
+        
+        .subsection-title {
+            font-family: var(--heading-font);
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 20px 0 10px;
+            padding-left: 10px;
+            border-left: 3px solid rgb(185, 43, 19);
         }
         
         /* Restaurant Grid */
@@ -368,24 +401,41 @@
             <h1><span style="color: rgb(185, 43, 19);" data-i18n="restaurants">Restaurants</span></h1>
         </header>
         
-        <section id="recommended-lunch">
-            <h2 class="section-title"><span data-i18n="lunchPlaces">Lunch Places</span></h2>
-            <div id="lunch-grid" class="attractions-grid">
-                <!-- Lunch restaurants will be inserted here -->
+        <!-- Historic Center Section -->
+        <section id="historic-center">
+            <h2 class="section-title"><span data-i18n="historicCenter">Historic Center</span></h2>
+            
+            <h3 class="subsection-title"><span data-i18n="lunchPlaces">Lunch</span></h3>
+            <div id="historic-lunch-grid" class="attractions-grid">
+                <!-- Historic Center lunch restaurants will be inserted here -->
+            </div>
+            
+            <h3 class="subsection-title"><span data-i18n="dinnerPlaces">Dinner</span></h3>
+            <div id="historic-dinner-grid" class="attractions-grid">
+                <!-- Historic Center dinner restaurants will be inserted here -->
             </div>
         </section>
         
+        <!-- Center Section -->
+        <section id="center">
+            <h2 class="section-title"><span data-i18n="center">Center</span></h2>
+            
+            <h3 class="subsection-title"><span data-i18n="dinnerPlaces">Dinner</span></h3>
+            <div id="center-dinner-grid" class="attractions-grid">
+                <!-- Center dinner restaurants will be inserted here -->
+            </div>
+            
+            <h3 class="subsection-title"><span data-i18n="lunchPlaces">Lunch</span></h3>
+            <div id="center-lunch-grid" class="attractions-grid">
+                <!-- Center lunch restaurants will be inserted here -->
+            </div>
+        </section>
+        
+        <!-- Michelin Starred Restaurants Section -->
         <section id="michelin-restaurants">
             <h2 class="section-title"><span data-i18n="michelinRestaurants">Michelin Starred Restaurants</span></h2>
             <div id="michelin-grid" class="attractions-grid">
                 <!-- Michelin restaurants will be inserted here -->
-            </div>
-        </section>
-        
-        <section id="recommended-dinner">
-            <h2 class="section-title"><span data-i18n="dinnerPlaces">Dinner Places</span></h2>
-            <div id="dinner-grid" class="attractions-grid">
-                <!-- Dinner restaurants will be inserted here -->
             </div>
         </section>
     </div>
@@ -452,6 +502,27 @@
                 return;
             }
             
+            // If restaurant has a local image path from the database, use it directly
+            if (imageUrl && imageUrl.startsWith('images/')) {
+                const img = document.createElement('img');
+                img.onload = function() {
+                    // Image loaded successfully, replace letter with image
+                    imageDiv.innerHTML = '';
+                    imageDiv.appendChild(img);
+                };
+                img.onerror = function() {
+                    // Local image from database failed, fallback to constructed path
+                    console.log(`Local image from database failed for ${restaurantName}: ${imageUrl}`);
+                    loadImageFromConstructedPath(imageDiv, restaurantName, cuisine);
+                };
+                img.src = imageUrl;
+                return;
+            }
+            
+            loadImageFromConstructedPath(imageDiv, restaurantName, cuisine);
+        }
+        
+        function loadImageFromConstructedPath(imageDiv, restaurantName, cuisine) {
             const fileName = restaurantName.toLowerCase()
                 .replace(/[^a-z0-9\s]/g, '')
                 .replace(/\s+/g, '-')
@@ -663,14 +734,19 @@
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'restaurant-actions';
             
-            // Directions Button (Google Maps Icon)
+            // Directions Button (GPS Icon) - uses specific Google Maps link if available
             const directionsBtn = document.createElement('button');
-            directionsBtn.className = 'action-btn';
-            directionsBtn.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+            directionsBtn.className = 'action-btn directions-btn';
+            directionsBtn.innerHTML = `<i class="fas fa-location-arrow"></i>`;
+            directionsBtn.title = 'Get directions on Google Maps';
             directionsBtn.onclick = () => {
-                // Open Google Maps with this restaurant
-                const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
-                window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+                // Use direct mapsUrl if available, otherwise fall back to search
+                if (restaurant.mapsUrl) {
+                    window.open(restaurant.mapsUrl, '_blank');
+                } else {
+                    const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+                }
             };
             
             actionsDiv.appendChild(directionsBtn);
@@ -688,9 +764,11 @@
                 console.log("Loading restaurants...");
                 
                 // Clear existing restaurant lists
-                document.getElementById('lunch-grid').innerHTML = '';
+                document.getElementById('historic-lunch-grid').innerHTML = '';
+                document.getElementById('historic-dinner-grid').innerHTML = '';
+                document.getElementById('center-lunch-grid').innerHTML = '';
+                document.getElementById('center-dinner-grid').innerHTML = '';
                 document.getElementById('michelin-grid').innerHTML = '';
-                document.getElementById('dinner-grid').innerHTML = '';
                 
                 // Default to English if no language is set
                 const lang = document.getElementById('language-select').value || 'en';
@@ -702,60 +780,69 @@
                 
                 console.log("Restaurant data loaded:", restaurants.length, "regular,", michelinRestaurants.length, "Michelin");
                 
-                // Create arrays for lunch and dinner restaurants
-                const lunchTypes = ["Lunch", "Pranzo", "Déjeuner", "Almuerzo"];
-                const dinnerTypes = ["Dinner", "Cena", "Dîner", "Cena"];
+                // Filter by location and type
+                const historicLunch = restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Lunch');
+                const historicDinner = restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Dinner');
+                const centerLunch = restaurants.filter(r => r.location === 'Center' && r.type === 'Lunch');
+                const centerDinner = restaurants.filter(r => r.location === 'Center' && r.type === 'Dinner');
                 
-                const lunchRestaurants = restaurants.filter(r => {
-                    if (!r.type) return false;
-                    // Check if type contains any of the lunch types
-                    return lunchTypes.some(type => r.type.includes(type));
-                });
+                console.log("Historic Lunch:", historicLunch.length, "Historic Dinner:", historicDinner.length);
+                console.log("Center Lunch:", centerLunch.length, "Center Dinner:", centerDinner.length);
                 
-                const dinnerRestaurants = restaurants.filter(r => {
-                    if (!r.type) return false;
-                    // Check if type contains any of the dinner types
-                    return dinnerTypes.some(type => r.type.includes(type));
-                });
-                
-                console.log("Lunch restaurants:", lunchRestaurants.length, "Dinner restaurants:", dinnerRestaurants.length);
-                
-                // Add lunch restaurants
-                if (lunchRestaurants && lunchRestaurants.length > 0) {
-                    lunchRestaurants.forEach((restaurant, index) => {
+                // Add Historic Center lunch restaurants
+                if (historicLunch && historicLunch.length > 0) {
+                    historicLunch.forEach((restaurant, index) => {
                         const card = createRestaurantCard(restaurant, index, 'lunch');
-                        document.getElementById('lunch-grid').appendChild(card);
+                        document.getElementById('historic-lunch-grid').appendChild(card);
                     });
                 } else {
-                    document.getElementById('lunch-grid').innerHTML = '<p>No lunch restaurants found for this language.</p>';
-                    console.warn("No lunch restaurants found for language:", lang);
+                    document.getElementById('historic-lunch-grid').innerHTML = '<p data-i18n="noRestaurantsFound">No restaurants found for this section.</p>';
                 }
                 
-                // Add Michelin restaurants (already loaded with getRestaurantData)
+                // Add Historic Center dinner restaurants
+                if (historicDinner && historicDinner.length > 0) {
+                    historicDinner.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'dinner');
+                        document.getElementById('historic-dinner-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('historic-dinner-grid').innerHTML = '<p data-i18n="noRestaurantsFound">No restaurants found for this section.</p>';
+                }
+                
+                // Add Center dinner restaurants
+                if (centerDinner && centerDinner.length > 0) {
+                    centerDinner.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'dinner');
+                        document.getElementById('center-dinner-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('center-dinner-grid').innerHTML = '<p data-i18n="noRestaurantsFound">No restaurants found for this section.</p>';
+                }
+                
+                // Add Center lunch restaurants
+                // Note: Center Lunch shows "Coming soon..." intentionally as per requirements
+                // (the section is planned but not yet populated with restaurants)
+                if (centerLunch && centerLunch.length > 0) {
+                    centerLunch.forEach((restaurant, index) => {
+                        const card = createRestaurantCard(restaurant, index, 'lunch');
+                        document.getElementById('center-lunch-grid').appendChild(card);
+                    });
+                } else {
+                    document.getElementById('center-lunch-grid').innerHTML = '<p data-i18n="comingSoon">Coming soon...</p>';
+                }
+                
+                // Add Michelin restaurants
                 if (michelinRestaurants && michelinRestaurants.length > 0) {
                     michelinRestaurants.forEach((restaurant, index) => {
                         const card = createRestaurantCard(restaurant, index, 'michelin');
                         document.getElementById('michelin-grid').appendChild(card);
                     });
                 } else {
-                    document.getElementById('michelin-grid').innerHTML = '<p>No Michelin restaurants found for this language.</p>';
-                    console.warn("No Michelin restaurants found for language:", lang);
-                }
-                
-                // Add dinner restaurants
-                if (dinnerRestaurants && dinnerRestaurants.length > 0) {
-                    dinnerRestaurants.forEach((restaurant, index) => {
-                        const card = createRestaurantCard(restaurant, index, 'dinner');
-                        document.getElementById('dinner-grid').appendChild(card);
-                    });
-                } else {
-                    document.getElementById('dinner-grid').innerHTML = '<p>No dinner restaurants found for this language.</p>';
-                    console.warn("No dinner restaurants found for language:", lang);
+                    document.getElementById('michelin-grid').innerHTML = '<p data-i18n="noRestaurantsFound">No Michelin restaurants found.</p>';
                 }
             } catch (e) {
                 console.error("Error loading restaurants:", e);
-                document.getElementById('lunch-grid').innerHTML = '<p>Error: Could not load restaurant data. Please try refreshing the page.</p>';
-                document.getElementById('dinner-grid').innerHTML = '';
+                document.getElementById('historic-lunch-grid').innerHTML = '<p>Error: Could not load restaurant data. Please try refreshing the page.</p>';
             }
         }
         
