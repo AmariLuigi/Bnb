@@ -795,6 +795,49 @@
             return card;
         }
         
+        /**
+         * Parse distance string to numeric value in meters
+         * Handles formats like "200m", "200 m", "1.0 km", "1.5km"
+         * @param {string} distanceStr - Distance string (e.g., "200m", "1.0 km")
+         * @returns {number} Distance in meters, or Infinity if parsing fails
+         */
+        function parseDistance(distanceStr) {
+            if (!distanceStr || typeof distanceStr !== 'string') {
+                return Infinity;
+            }
+            
+            // Normalize the string: trim, lowercase
+            const normalized = distanceStr.trim().toLowerCase();
+            
+            // Extract numeric value and unit (using strict decimal pattern)
+            const match = normalized.match(/^(\d+(?:\.\d+)?)\s*(m|km)?$/);
+            if (!match) {
+                return Infinity;
+            }
+            
+            const value = parseFloat(match[1]);
+            // Default to meters if no unit specified (consistent with database format)
+            const unit = match[2] || 'm';
+            
+            if (isNaN(value)) {
+                return Infinity;
+            }
+            
+            // Convert to meters
+            return unit === 'km' ? value * 1000 : value;
+        }
+        
+        /**
+         * Sort restaurants array by distance (ascending)
+         * @param {Array} restaurants - Array of restaurant objects
+         * @returns {Array} Sorted array of restaurants
+         */
+        function sortByDistance(restaurants) {
+            return [...restaurants].sort((a, b) => {
+                return parseDistance(a.distance) - parseDistance(b.distance);
+            });
+        }
+        
         function loadRestaurants() {
             try {
                 // Add debugging
@@ -817,11 +860,11 @@
                 
                 console.log("Restaurant data loaded:", restaurants.length, "regular,", michelinRestaurants.length, "Michelin");
                 
-                // Filter by location and type
-                const historicLunch = restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Lunch');
-                const historicDinner = restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Dinner');
-                const centerLunch = restaurants.filter(r => r.location === 'Center' && r.type === 'Lunch');
-                const centerDinner = restaurants.filter(r => r.location === 'Center' && r.type === 'Dinner');
+                // Filter by location and type, then sort by distance
+                const historicLunch = sortByDistance(restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Lunch'));
+                const historicDinner = sortByDistance(restaurants.filter(r => r.location === 'Historic Center' && r.type === 'Dinner'));
+                const centerLunch = sortByDistance(restaurants.filter(r => r.location === 'Center' && r.type === 'Lunch'));
+                const centerDinner = sortByDistance(restaurants.filter(r => r.location === 'Center' && r.type === 'Dinner'));
                 
                 console.log("Historic Lunch:", historicLunch.length, "Historic Dinner:", historicDinner.length);
                 console.log("Center Lunch:", centerLunch.length, "Center Dinner:", centerDinner.length);
@@ -868,9 +911,10 @@
                     document.getElementById('center-lunch-grid').innerHTML = '<p data-i18n="comingSoon">Coming soon...</p>';
                 }
                 
-                // Add Michelin restaurants
-                if (michelinRestaurants && michelinRestaurants.length > 0) {
-                    michelinRestaurants.forEach((restaurant, index) => {
+                // Add Michelin restaurants (sorted by distance)
+                const sortedMichelinRestaurants = sortByDistance(michelinRestaurants);
+                if (sortedMichelinRestaurants && sortedMichelinRestaurants.length > 0) {
+                    sortedMichelinRestaurants.forEach((restaurant, index) => {
                         const card = createRestaurantCard(restaurant, index, 'michelin');
                         document.getElementById('michelin-grid').appendChild(card);
                     });
