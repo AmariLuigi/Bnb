@@ -225,6 +225,27 @@
             text-align: center;
         }
         
+        /* Distance and Walk Time styles */
+        .distance-item i {
+            color: #2196F3;
+        }
+        
+        .walk-time-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .walk-time-item i.fa-walking {
+            color: #4CAF50;
+            margin-right: 4px;
+        }
+        
+        .walk-time-item i.walk-clock {
+            color: #FF9800;
+            margin-right: 8px;
+            font-size: 0.85em;
+        }
+        
         /* Action Buttons */
         .restaurant-actions {
             position: absolute;
@@ -676,6 +697,22 @@
                 cuisineElement.className = 'meta-item';
                 cuisineElement.innerHTML = `<i class="fas fa-utensils"></i> ${restaurant.cuisine}`;
                 metaDiv.appendChild(cuisineElement);
+            }
+            
+            // Distance from B&B
+            if (restaurant.distance) {
+                const distanceElement = document.createElement('div');
+                distanceElement.className = 'meta-item distance-item';
+                distanceElement.innerHTML = `<i class="fas fa-route"></i> ${restaurant.distance}`;
+                metaDiv.appendChild(distanceElement);
+            }
+            
+            // Walk Time
+            if (restaurant.walkTime) {
+                const walkTimeElement = document.createElement('div');
+                walkTimeElement.className = 'meta-item walk-time-item';
+                walkTimeElement.innerHTML = `<i class="fas fa-walking"></i><i class="far fa-clock walk-clock"></i> ${restaurant.walkTime}`;
+                metaDiv.appendChild(walkTimeElement);
             }
             
             // Open Hours

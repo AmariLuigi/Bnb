@@ -70,7 +70,9 @@ const restaurantsDatabase = [
         address: "Via Porta Carini, 51, 90134 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/zU9U4x5BBHvMGYLv9",
         type: "Lunch",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "160m",
+        walkTime: "2 min"
     },
     {
         id: "osteria-mangia-e-bevi",
@@ -100,7 +102,9 @@ const restaurantsDatabase = [
         mapsUrl: "https://maps.app.goo.gl/yKr1e3YRX9R94axu7",
         website: "osteriamangiaebevi.it",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "1.0 km",
+        walkTime: "14 min"
     },
     {
         id: "osteria-mercede",
@@ -129,7 +133,9 @@ const restaurantsDatabase = [
         address: "Via Sammartino, n 1, Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/VbKB6qz5Wz9EKV1T8",
         type: "Dinner",
-        location: "Center"
+        location: "Center",
+        distance: "800m",
+        walkTime: "10 min"
     },
     {
         id: "corona-trattoria",
@@ -161,7 +167,9 @@ const restaurantsDatabase = [
         instagram: "@coronatrattoria",
         openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
         type: "Dinner",
-        location: "Center"
+        location: "Center",
+        distance: "1.1 km",
+        walkTime: "16 min"
     },
     {
         id: "trattoria-bersagliere",
@@ -190,7 +198,9 @@ const restaurantsDatabase = [
         address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/wZkp56wBNvALiPXe7",
         type: "Lunch",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "950m",
+        walkTime: "12 min"
     },
     {
         id: "dadalia-osteria",
@@ -219,7 +229,9 @@ const restaurantsDatabase = [
         address: "Via Maccherronai, 20, 90133 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/Wu325ATTm1AZzS3N7",
         type: "Lunch",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "850m",
+        walkTime: "11 min"
     },
     {
         id: "lacerba-osteria-dinamica",
@@ -248,7 +260,9 @@ const restaurantsDatabase = [
         address: "Vicolo Maestro Cristofaro, 10, 90134 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/nEZrjH57gjbHPVio7",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "61m",
+        walkTime: "1 min"
     },
     {
         id: "le-angeliche",
@@ -277,7 +291,9 @@ const restaurantsDatabase = [
         address: "Vicolo Abbadia, 10, 90134 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/SnBVtKwEJRGxffdu8",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "120m",
+        walkTime: "2 min"
     },
     {
         id: "trattoria-supra-i-mura",
@@ -306,7 +322,9 @@ const restaurantsDatabase = [
         address: "Piazza Porta Carini, 5, 90134 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/efBWwk87XDMwL7wAA",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "220m",
+        walkTime: "3 min"
     },
     {
         id: "enoteca-buttice",
@@ -335,7 +353,9 @@ const restaurantsDatabase = [
         address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/SzgtUTf8hid2EkGq5",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "500m",
+        walkTime: "6 min"
     },
     {
         id: "ferramenta",
@@ -364,7 +384,9 @@ const restaurantsDatabase = [
         address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/QvXgJmJ6QaVbgd9Q9",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "900m",
+        walkTime: "13 min"
     },
     {
         id: "forno-santa-maria",
@@ -393,7 +415,9 @@ const restaurantsDatabase = [
         address: "Via Giovanni Meli, 35, 90133 Palermo PA",
         mapsUrl: "https://maps.app.goo.gl/VzB9meU29aQgqNd3A",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "1.0 km",
+        walkTime: "14 min"
     },
     {
         id: "quid-gusto-siciliano",
@@ -426,7 +450,9 @@ const restaurantsDatabase = [
         instagram: "@quidgustosiciliano",
         openHours: "Daily 12PM-3PM, 7PM-11PM",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "1.6 km",
+        walkTime: "22 min"
     },
     {
         id: "scjabaca",
@@ -459,7 +485,9 @@ const restaurantsDatabase = [
         instagram: "@scjabaca",
         openHours: "Mon-Tue, Thu-Fri: 7PM-11PM; Sat-Sun: 12PM-3PM, 7PM-11PM; Wed: Closed",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "1.3 km",
+        walkTime: "18 min"
     },
     {
         id: "u-babbio",
@@ -491,7 +519,9 @@ const restaurantsDatabase = [
         instagram: "@ubabbio",
         openHours: "Sun: 9AM-5PM; Mon, Wed-Fri: 6:30PM-11PM; Sat: 12PM-11PM; Tue: Closed",
         type: "Dinner",
-        location: "Center"
+        location: "Center",
+        distance: "1.3 km",
+        walkTime: "19 min"
     },
     // ============================================
     // NEW RESTAURANTS - HISTORIC CENTER DINNER
@@ -522,7 +552,9 @@ const restaurantsDatabase = [
         address: "Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/U94t5i8Z44iNcmac7",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "550m",
+        walkTime: "7 min"
     },
     {
         id: "nova",
@@ -550,7 +582,9 @@ const restaurantsDatabase = [
         address: "Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/eUTQGSCTALjbjmyZ6",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "1.0 km",
+        walkTime: "14 min"
     },
     {
         id: "la-galleria",
@@ -578,7 +612,9 @@ const restaurantsDatabase = [
         address: "Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/mP6XheSh7Mahgny79",
         type: "Dinner",
-        location: "Historic Center"
+        location: "Historic Center",
+        distance: "400m",
+        walkTime: "6 min"
     },
     // ============================================
     // NEW RESTAURANTS - CENTER DINNER
@@ -609,7 +645,9 @@ const restaurantsDatabase = [
         address: "Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/Q5QDLGYkEbuSkMSr7",
         type: "Dinner",
-        location: "Center"
+        location: "Center",
+        distance: "1.4 km",
+        walkTime: "19 min"
     },
     {
         id: "di-martino",
@@ -637,7 +675,9 @@ const restaurantsDatabase = [
         address: "Palermo, Sicily",
         mapsUrl: "https://maps.app.goo.gl/XbGcFUwtdUt1aoAz5",
         type: "Dinner",
-        location: "Center"
+        location: "Center",
+        distance: "1.3 km",
+        walkTime: "18 min"
     }
 ];
 
@@ -673,7 +713,9 @@ const michelinRestaurantsDatabase = [
         mapsUrl: "https://maps.app.goo.gl/ipJLPsyNyQymMZVQ9",
         phone: "347 753 2005",
         michelinStars: "★",
-        type: "Michelin"
+        type: "Michelin",
+        distance: "550m",
+        walkTime: "8 min"
     },
     {
         id: "osteria-dei-vespri-michelin",
@@ -706,7 +748,9 @@ const michelinRestaurantsDatabase = [
         instagram: "@osteria_dei_vespri",
         openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
         michelinStars: "Michelin Selected",
-        type: "Michelin"
+        type: "Michelin",
+        distance: "1.2 km",
+        walkTime: "17 min"
     },
     {
         id: "gagini",
@@ -736,7 +780,9 @@ const michelinRestaurantsDatabase = [
         phone: "+39 091 589918",
         website: "gaginirestaurant.com",
         michelinStars: "Michelin Selected",
-        type: "Michelin"
+        type: "Michelin",
+        distance: "1.1 km",
+        walkTime: "16 min"
     },
     {
         id: "palazzo-branciforte",
@@ -766,7 +812,9 @@ const michelinRestaurantsDatabase = [
         phone: "+39 091 8887767",
         website: "palazzobranciforte.it",
         michelinStars: "Michelin Recommended",
-        type: "Michelin"
+        type: "Michelin",
+        distance: "900m",
+        walkTime: "13 min"
     },
     {
         id: "ottava-nota",
@@ -796,7 +844,9 @@ const michelinRestaurantsDatabase = [
         phone: "+39 091 616 8601",
         website: "ottavanota.it",
         michelinStars: "Michelin Selected",
-        type: "Michelin"
+        type: "Michelin",
+        distance: "1.7 km",
+        walkTime: "24 min"
     }
 ];
 
