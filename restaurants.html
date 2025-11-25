@@ -250,6 +250,24 @@
             background-color: rgba(185, 43, 19, 0.1);
         }
         
+        .directions-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            gap: 6px;
+        }
+        
+        .directions-btn:hover {
+            background-color: #8b1e0f;
+            color: white;
+        }
+        
+        .directions-btn i {
+            font-size: 1rem;
+        }
+        
         .section-title {
             font-family: var(--heading-font);
             font-size: 1.8rem;
@@ -712,9 +730,9 @@
             
             // Directions Button (GPS Icon) - uses specific Google Maps link if available
             const directionsBtn = document.createElement('button');
-            directionsBtn.className = 'action-btn';
-            directionsBtn.innerHTML = `<i class="fas fa-location-arrow"></i>`;
-            directionsBtn.title = 'Get directions';
+            directionsBtn.className = 'action-btn directions-btn';
+            directionsBtn.innerHTML = `<i class="fas fa-map-marker-alt"></i> <span>Maps</span>`;
+            directionsBtn.title = 'Get directions on Google Maps';
             directionsBtn.onclick = () => {
                 // Use direct mapsUrl if available, otherwise fall back to search
                 if (restaurant.mapsUrl) {
