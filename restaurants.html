@@ -809,13 +809,14 @@
             // Normalize the string: trim, lowercase
             const normalized = distanceStr.trim().toLowerCase();
             
-            // Extract numeric value and unit
-            const match = normalized.match(/^([\d.]+)\s*(m|km)?$/);
+            // Extract numeric value and unit (using strict decimal pattern)
+            const match = normalized.match(/^(\d+(?:\.\d+)?)\s*(m|km)?$/);
             if (!match) {
                 return Infinity;
             }
             
             const value = parseFloat(match[1]);
+            // Default to meters if no unit specified (consistent with database format)
             const unit = match[2] || 'm';
             
             if (isNaN(value)) {
