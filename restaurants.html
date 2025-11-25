@@ -478,6 +478,27 @@
                 return;
             }
             
+            // If restaurant has a local image path from the database, use it directly
+            if (imageUrl && imageUrl.startsWith('images/')) {
+                const img = document.createElement('img');
+                img.onload = function() {
+                    // Image loaded successfully, replace letter with image
+                    imageDiv.innerHTML = '';
+                    imageDiv.appendChild(img);
+                };
+                img.onerror = function() {
+                    // Local image from database failed, fallback to constructed path
+                    console.log(`Local image from database failed for ${restaurantName}: ${imageUrl}`);
+                    loadImageFromConstructedPath(imageDiv, restaurantName, cuisine);
+                };
+                img.src = imageUrl;
+                return;
+            }
+            
+            loadImageFromConstructedPath(imageDiv, restaurantName, cuisine);
+        }
+        
+        function loadImageFromConstructedPath(imageDiv, restaurantName, cuisine) {
             const fileName = restaurantName.toLowerCase()
                 .replace(/[^a-z0-9\s]/g, '')
                 .replace(/\s+/g, '-')
