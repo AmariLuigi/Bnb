@@ -649,7 +649,7 @@ const michelinRestaurantsDatabase = [
         },
         priceRange: "€35-150 per person",
         cuisine: "Italian, Seafood, Wine Bars",
-        image: "images/restaurants/enoteca-buttic.jpg",
+        image: "images/restaurants/osteria-dei-vespri.jpg",
         referent: "Andrea",
         address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
         phone: "+39 091 617 1631",

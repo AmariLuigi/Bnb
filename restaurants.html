@@ -770,6 +770,8 @@
                 }
                 
                 // Add Center lunch restaurants
+                // Note: Center Lunch shows "Coming soon..." intentionally as per requirements
+                // (the section is planned but not yet populated with restaurants)
                 if (centerLunch && centerLunch.length > 0) {
                     centerLunch.forEach((restaurant, index) => {
                         const card = createRestaurantCard(restaurant, index, 'lunch');
