@@ -18,6 +18,9 @@
             --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Montserrat', sans-serif;
+            --distance-color: #2196F3;
+            --walk-color: #4CAF50;
+            --time-color: #FF9800;
         }
         
         * {
@@ -227,7 +230,7 @@
         
         /* Distance and Walk Time styles */
         .distance-item i {
-            color: #2196F3;
+            color: var(--distance-color);
         }
         
         .walk-time-item {
@@ -235,13 +238,13 @@
             align-items: center;
         }
         
-        .walk-time-item i.fa-walking {
-            color: #4CAF50;
+        .walk-time-item .fa-walking {
+            color: var(--walk-color);
             margin-right: 4px;
         }
         
-        .walk-time-item i.walk-clock {
-            color: #FF9800;
+        .walk-time-item .walk-clock {
+            color: var(--time-color);
             margin-right: 8px;
             font-size: 0.85em;
         }
@@ -711,7 +714,16 @@
             if (restaurant.walkTime) {
                 const walkTimeElement = document.createElement('div');
                 walkTimeElement.className = 'meta-item walk-time-item';
-                walkTimeElement.innerHTML = `<i class="fas fa-walking"></i><i class="far fa-clock walk-clock"></i> ${restaurant.walkTime}`;
+                
+                const walkIcon = document.createElement('i');
+                walkIcon.className = 'fas fa-walking';
+                
+                const clockIcon = document.createElement('i');
+                clockIcon.className = 'far fa-clock walk-clock';
+                
+                walkTimeElement.appendChild(walkIcon);
+                walkTimeElement.appendChild(clockIcon);
+                walkTimeElement.appendChild(document.createTextNode(` ${restaurant.walkTime}`));
                 metaDiv.appendChild(walkTimeElement);
             }
             
