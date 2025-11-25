@@ -40,6 +40,9 @@
  * All regular restaurants (lunch and dinner)
  */
 const restaurantsDatabase = [
+    // ============================================
+    // HISTORIC CENTER - LUNCH
+    // ============================================
     {
         id: "dainottis",
         translations: {
@@ -65,7 +68,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/dainottis.jpg",
         referent: "Arianna",
         address: "Via Porta Carini, 51, 90134 Palermo PA",
-        type: "Lunch"
+        type: "Lunch",
+        location: "Historic Center"
     },
     {
         id: "osteria-mangia-e-bevi",
@@ -93,7 +97,8 @@ const restaurantsDatabase = [
         referent: "Contact B&B",
         address: "Palermo, Sicily",
         website: "osteriamangiaebevi.it",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "osteria-mercede",
@@ -120,7 +125,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/osteria-mercede.jpg",
         instagram: "@osteria_mercede_palermo",
         address: "Via Sammartino, n 1, Palermo, Sicily",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Center"
     },
     {
         id: "corona-trattoria",
@@ -150,38 +156,8 @@ const restaurantsDatabase = [
         website: "coronatrattoria.com",
         instagram: "@coronatrattoria",
         openHours: "Tue-Sat: 12:30PM-3PM, 8PM-11PM (Closed Sun-Mon)",
-        type: "Dinner"
-    },
-    {
-        id: "sardina-pastabar",
-        translations: {
-            en: {
-                name: "Sardina PastaBar",
-                description: "A charming restaurant specializing in Italian and Mediterranean cuisines with a focus on pasta dishes. Known for their excellent spaghetti carbonara, sardine and prawn dishes. Delicious desserts include gelato, tiramisu, and parfait. The bar offers fine wine, cordial, and white wine selections, along with great coffee. The cozy atmosphere makes visitors feel relaxed, and the staff is known for their accommodating and enjoyable service. With a Google rating of 4.6 stars, this affordable spot is popular among locals and tourists alike. Offers outdoor seating and accepts credit cards."
-            },
-            it: {
-                name: "Sardina PastaBar",
-                description: "Un ristorante affascinante specializzato in cucina italiana e mediterranea con un focus sui piatti di pasta. Conosciuto per i suoi eccellenti spaghetti carbonara, piatti di sardine e gamberi. I dessert deliziosi includono gelato, tiramisù e parfait. Il bar offre vini pregiati, cordial e selezioni di vini bianchi, insieme a ottimo caffè. L'atmosfera accogliente fa sentire i visitatori rilassati, e il personale è noto per il suo servizio accomodante e piacevole. Con una valutazione Google di 4,6 stelle, questo posto economico è popolare tra i locali e i turisti. Offre posti a sedere all'aperto e accetta carte di credito."
-            },
-            fr: {
-                name: "Sardina PastaBar",
-                description: "Un restaurant charmant se spécialisant dans la cuisine italienne et méditerranéenne avec un accent sur les plats de pâtes. Connu pour ses excellents spaghetti carbonara, plats de sardines et de crevettes. Les desserts délicieux incluent gelato, tiramisu et parfait. Le bar offre des vins fins, cordial et sélections de vins blancs, avec un excellent café. L'atmosphère chaleureuse fait sentir les visiteurs détendus, et le personnel est connu pour son service accommodant et agréable. Avec une note Google de 4,6 étoiles, cet endroit abordable est populaire parmi les locaux et les touristes. Propose des sièges extérieurs et accepte les cartes de crédit."
-            },
-            es: {
-                name: "Sardina PastaBar",
-                description: "Un restaurante encantador especializado en cocina italiana y mediterránea con un enfoque en platos de pasta. Conocido por sus excelentes spaghetti carbonara, platos de sardinas y gambas. Los postres deliciosos incluyen gelato, tiramisù y parfait. El bar ofrece vinos finos, cordial y selecciones de vinos blancos, junto con excelente café. El ambiente acogedor hace que los visitantes se sientan relajados, y el personal es conocido por su servicio complaciente y agradable. Con una calificación de Google de 4,6 estrellas, este lugar económico es popular entre locales y turistas. Ofrece asientos al aire libre y acepta tarjetas de crédito."
-            }
-        },
-        priceRange: "€15-30 per person",
-        cuisine: "Italian, Mediterranean, Gluten-free",
-        image: "images/restaurants/sardina-pastabar.jpg",
-        referent: "Rita",
-        address: "Via dei Cassari, 41/43, Palermo, Sicily",
-        phone: "+39 389 189 3380",
-        website: "sardinapastabar.plateform.app",
-        instagram: "@sardinapastabar",
-        openHours: "Tue-Thu: 7PM-11PM, Fri-Sat: 12:30PM-2:30PM & 7PM-11PM, Sun: 1PM-4PM",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Center"
     },
     {
         id: "trattoria-bersagliere",
@@ -208,7 +184,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/trattoria-bersagliere.jpg",
         referent: "Lollo",
         address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
-        type: "Lunch"
+        type: "Lunch",
+        location: "Historic Center"
     },
     {
         id: "dadalia-osteria",
@@ -235,7 +212,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/dadalia-osteria.jpg",
         referent: "Pippo or Giovanni",
         address: "Via Maccherronai, 20, 90133 Palermo PA",
-        type: "Lunch"
+        type: "Lunch",
+        location: "Historic Center"
     },
     {
         id: "lacerba-osteria-dinamica",
@@ -262,7 +240,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/lacerba-osteria-dinamica.jpg",
         referent: "Gabriele",
         address: "Vicolo Maestro Cristofaro, 10, 90134 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "le-angeliche",
@@ -289,7 +268,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/le-angeliche.jpg",
         referent: "Floriana or Chiara",
         address: "Vicolo Abbadia, 10, 90134 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "trattoria-supra-i-mura",
@@ -316,7 +296,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/trattoria-supra-i-mura.jpg",
         referent: "Pietro",
         address: "Piazza Porta Carini, 5, 90134 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "enoteca-buttice",
@@ -343,7 +324,8 @@ const restaurantsDatabase = [
         image: "images/attractions/placeholder.jpg",
         referent: "Giuseppe",
         address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "ferramenta",
@@ -370,7 +352,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/ferramenta.jpg",
         referent: "Luca or Marcello",
         address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "forno-santa-maria",
@@ -397,7 +380,8 @@ const restaurantsDatabase = [
         image: "images/restaurants/forno-santa-maria.jpg",
         referent: "Luca or Marcello",
         address: "Via Giovanni Meli, 35, 90133 Palermo PA",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "quid-gusto-siciliano",
@@ -428,7 +412,8 @@ const restaurantsDatabase = [
         website: "facebook.com",
         instagram: "@quidgustosiciliano",
         openHours: "Daily 12PM-3PM, 7PM-11PM",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "scjabaca",
@@ -459,69 +444,8 @@ const restaurantsDatabase = [
         website: "ristorantescjabaca.it",
         instagram: "@scjabaca",
         openHours: "Mon-Tue, Thu-Fri: 7PM-11PM; Sat-Sun: 12PM-3PM, 7PM-11PM; Wed: Closed",
-        type: "Dinner"
-    },
-    {
-        id: "osteria-dei-vespri",
-        translations: {
-            en: {
-                name: "Osteria dei Vespri",
-                description: "A Michelin-selected restaurant near Fontana del Genio, offering refined Italian cuisine with a focus on seafood. Notable dishes include antipasto, pork belly, and seared tuna, with delicious fruit cakes, cookies, and parfait for dessert. The restaurant serves good chardonnay, cordial, and fino sherry, along with exquisite ristretto and lemonade. Appreciated for its attractive staff, spectacular service, and democratic prices, this restaurant features cute decor and a charming atmosphere. It has received 2 black knife and fork symbols from Michelin, indicating optimal comfort."
-            },
-            it: {
-                name: "Osteria dei Vespri",
-                description: "Un ristorante selezionato da Michelin vicino alla Fontana del Genio, che offre cucina italiana raffinata con un focus sui frutti di mare. I piatti notevoli includono antipasto, pancetta di maiale e tonno scottato, con deliziose torte di frutta, biscotti e parfait per dessert. Il ristorante serve buon chardonnay, cordial e fino sherry, insieme a ristretto squisito e limonata. Apprezzato per il suo staff attraente, servizio spettacolare e prezzi democratici, questo ristorante presenta un arredamento carino e un'atmosfera affascinante. Ha ricevuto 2 simboli di coltello e forchetta neri da Michelin, indicando comfort ottimale."
-            },
-            fr: {
-                name: "Osteria dei Vespri",
-                description: "Un restaurant sélectionné par Michelin près de la Fontana del Genio, offrant une cuisine italienne raffinée avec un accent sur les fruits de mer. Les plats notables incluent antipasto, poitrine de porc et thon saisi, avec de délicieuses tartes aux fruits, biscuits et parfait pour le dessert. Le restaurant sert bon chardonnay, cordial et fino sherry, ainsi que ristretto exquis et limonade. Apprécié pour son personnel attrayant, service spectaculaire et prix démocratiques, ce restaurant présente une décoration mignonne et une atmosphère charmante. Il a reçu 2 symboles de couteau et fourchette noirs de Michelin, indiquant un confort optimal."
-            },
-            es: {
-                name: "Osteria dei Vespri",
-                description: "Un restaurante seleccionado por Michelin cerca de la Fontana del Genio, que ofrece cocina italiana refinada con un enfoque en mariscos. Los platos notables incluyen antipasto, panceta de cerdo y atún sellado, con deliciosas tartas de frutas, galletas y parfait para postre. El restaurante sirve buen chardonnay, cordial y fino sherry, junto con ristretto exquisito y limonada. Apreciado por su personal atractivo, servicio espectacular y precios democráticos, este restaurante presenta una decoración linda y una atmósfera encantadora. Ha recibido 2 símbolos de cuchillo y tenedor negros de Michelin, indicando comodidad óptima."
-            }
-        },
-        priceRange: "€35-150 per person",
-        cuisine: "Italian, Seafood, Wine Bars",
-        image: "images/restaurants/osteria-dei-vespri.jpg",
-        referent: "Andrea",
-        address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
-        phone: "+39 091 617 1631",
-        website: "osteriadeivespri.it",
-        instagram: "@osteria_dei_vespri",
-        openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
-        type: "Dinner"
-    },
-    {
-        id: "le-cattive",
-        translations: {
-            en: {
-                name: "Le Cattive",
-                description: "Located near Porta Felice, this restaurant offers Italian and Mediterranean cuisines. Specialties include monkfish, aglio, and risotto, with tasty biscuits, cannoli, and tiramisu for dessert. The restaurant is known for its good wine, negroni, cordial, and great coffee. With a Google rating of 4.5, visitors praise the great view, accommodating staff, professional service, democratic prices, peaceful atmosphere, and fine decor."
-            },
-            it: {
-                name: "Le Cattive",
-                description: "Situato vicino a Porta Felice, questo ristorante offre cucina italiana e mediterranea. Le specialità includono rana pescatrice, aglio e risotto, con deliziosi biscotti, cannoli e tiramisù per dessert. Il ristorante è noto per il suo buon vino, negroni, cordial e ottimo caffè. Con una valutazione Google di 4,5, i visitatori elogiano la vista splendida, il personale accomodante, il servizio professionale, i prezzi democratici, l'atmosfera tranquilla e l'arredamento raffinato."
-            },
-            fr: {
-                name: "Le Cattive",
-                description: "Situé près de Porta Felice, ce restaurant propose une cuisine italienne et méditerranéenne. Les spécialités incluent lotte, ail et risotto, avec de délicieux biscuits, cannoli et tiramisu pour le dessert. Le restaurant est connu pour son bon vin, negroni, cordial et excellent café. Avec une note Google de 4,5, les visiteurs louent la vue magnifique, le personnel accommodant, le service professionnel, les prix démocratiques, l'atmosphère paisible et la décoration raffinée."
-            },
-            es: {
-                name: "Le Cattive",
-                description: "Ubicado cerca de Porta Felice, este restaurante ofrece cocina italiana y mediterránea. Las especialidades incluyen rape, ajo y risotto, con deliciosas galletas, cannoli y tiramisú para postre. El restaurante es conocido por su buen vino, negroni, cordial y excelente café. Con una calificación de Google de 4,5, los visitantes elogian la vista magnífica, el personal complaciente, el servicio profesional, los precios democráticos, la atmósfera tranquila y la decoración refinada."
-            }
-        },
-        priceRange: "€40-70 per person",
-        cuisine: "Italian, Mediterranean, Seafood",
-        image: "images/restaurants/le-cattive.jpg",
-        referent: "Andrea",
-        address: "Piazza Santo Spirito, 1, Palermo, Sicily",
-        phone: "+39 091 619 5635",
-        website: "lecattivepalazzobutera.it",
-        instagram: "@lecattivepalazzobutera",
-        openHours: "Tue-Sun: 10AM-7PM; Mon: Closed",
-        type: "Lunch"
+        type: "Dinner",
+        location: "Historic Center"
     },
     {
         id: "u-babbio",
@@ -551,7 +475,122 @@ const restaurantsDatabase = [
         phone: "+39 091 910 1627",
         instagram: "@ubabbio",
         openHours: "Sun: 9AM-5PM; Mon, Wed-Fri: 6:30PM-11PM; Sat: 12PM-11PM; Tue: Closed",
-        type: "Dinner"
+        type: "Dinner",
+        location: "Center"
+    },
+    // ============================================
+    // NEW RESTAURANTS - HISTORIC CENTER DINNER
+    // ============================================
+    {
+        id: "doba",
+        translations: {
+            en: {
+                name: "Doba",
+                description: "A contemporary restaurant in the heart of Palermo's historic center offering modern Sicilian cuisine. Known for its creative interpretation of traditional dishes and elegant atmosphere, Doba provides an exceptional dining experience with locally sourced ingredients and innovative culinary techniques."
+            },
+            it: {
+                name: "Doba",
+                description: "Un ristorante contemporaneo nel cuore del centro storico di Palermo che offre cucina siciliana moderna. Conosciuto per la sua interpretazione creativa dei piatti tradizionali e l'atmosfera elegante, Doba offre un'esperienza culinaria eccezionale con ingredienti locali e tecniche culinarie innovative."
+            },
+            fr: {
+                name: "Doba",
+                description: "Un restaurant contemporain au cœur du centre historique de Palerme offrant une cuisine sicilienne moderne. Connu pour son interprétation créative des plats traditionnels et son atmosphère élégante, Doba offre une expérience culinaire exceptionnelle avec des ingrédients locaux et des techniques culinaires innovantes."
+            },
+            es: {
+                name: "Doba",
+                description: "Un restaurante contemporáneo en el corazón del centro histórico de Palermo que ofrece cocina siciliana moderna. Conocido por su interpretación creativa de los platos tradicionales y su atmósfera elegante, Doba ofrece una experiencia culinaria excepcional con ingredientes locales y técnicas culinarias innovadoras."
+            }
+        },
+        priceRange: "€25-45 per person",
+        cuisine: "Modern Sicilian, Creative",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Palermo, Sicily",
+        type: "Dinner",
+        location: "Historic Center"
+    },
+    {
+        id: "nova",
+        translations: {
+            en: {
+                name: "Nova",
+                description: "An innovative restaurant in Palermo's historic center, Nova offers a fresh take on Mediterranean cuisine. With a focus on seasonal ingredients and contemporary presentation, the restaurant delivers an unforgettable gastronomic journey through Sicilian flavors."
+            },
+            it: {
+                name: "Nova",
+                description: "Un ristorante innovativo nel centro storico di Palermo, Nova offre una versione fresca della cucina mediterranea. Con un focus su ingredienti stagionali e presentazione contemporanea, il ristorante offre un viaggio gastronomico indimenticabile attraverso i sapori siciliani."
+            },
+            fr: {
+                name: "Nova",
+                description: "Un restaurant innovant dans le centre historique de Palerme, Nova offre une vision fraîche de la cuisine méditerranéenne. Avec un accent sur les ingrédients de saison et la présentation contemporaine, le restaurant offre un voyage gastronomique inoubliable à travers les saveurs siciliennes."
+            },
+            es: {
+                name: "Nova",
+                description: "Un restaurante innovador en el centro histórico de Palermo, Nova ofrece una nueva visión de la cocina mediterránea. Con un enfoque en ingredientes de temporada y presentación contemporánea, el restaurante ofrece un viaje gastronómico inolvidable a través de los sabores sicilianos."
+            }
+        },
+        priceRange: "€25-45 per person",
+        cuisine: "Mediterranean, Contemporary",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Palermo, Sicily",
+        type: "Dinner",
+        location: "Historic Center"
+    },
+    // ============================================
+    // NEW RESTAURANTS - CENTER DINNER
+    // ============================================
+    {
+        id: "pesceria",
+        translations: {
+            en: {
+                name: "Pesceria",
+                description: "A seafood-focused restaurant in Palermo's center, Pesceria specializes in the freshest catch of the day. The restaurant offers an authentic fish market experience with expertly prepared dishes that highlight the bounty of the Mediterranean Sea."
+            },
+            it: {
+                name: "Pesceria",
+                description: "Un ristorante specializzato in pesce nel centro di Palermo, Pesceria si specializza nel pescato più fresco del giorno. Il ristorante offre un'autentica esperienza di pescheria con piatti preparati magistralmente che esaltano le ricchezze del Mar Mediterraneo."
+            },
+            fr: {
+                name: "Pesceria",
+                description: "Un restaurant axé sur les fruits de mer dans le centre de Palerme, Pesceria se spécialise dans les prises les plus fraîches du jour. Le restaurant offre une expérience authentique de marché aux poissons avec des plats préparés de manière experte qui mettent en valeur les richesses de la mer Méditerranée."
+            },
+            es: {
+                name: "Pesceria",
+                description: "Un restaurante especializado en mariscos en el centro de Palermo, Pesceria se especializa en la captura más fresca del día. El restaurante ofrece una auténtica experiencia de pescadería con platos preparados magistralmente que destacan las riquezas del Mar Mediterráneo."
+            }
+        },
+        priceRange: "€30-50 per person",
+        cuisine: "Seafood, Fish",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Palermo, Sicily",
+        type: "Dinner",
+        location: "Center"
+    },
+    {
+        id: "di-martino",
+        translations: {
+            en: {
+                name: "Di Martino",
+                description: "A classic Italian restaurant in Palermo's center, Di Martino offers traditional Sicilian cuisine with a warm family atmosphere. Known for homemade pasta and generous portions, it's a favorite among locals seeking authentic flavors."
+            },
+            it: {
+                name: "Di Martino",
+                description: "Un classico ristorante italiano nel centro di Palermo, Di Martino offre cucina tradizionale siciliana con un'atmosfera familiare accogliente. Conosciuto per la pasta fatta in casa e le porzioni generose, è un preferito tra i locali che cercano sapori autentici."
+            },
+            fr: {
+                name: "Di Martino",
+                description: "Un restaurant italien classique dans le centre de Palerme, Di Martino offre une cuisine sicilienne traditionnelle avec une atmosphère familiale chaleureuse. Connu pour ses pâtes maison et ses portions généreuses, c'est un favori parmi les locaux à la recherche de saveurs authentiques."
+            },
+            es: {
+                name: "Di Martino",
+                description: "Un clásico restaurante italiano en el centro de Palermo, Di Martino ofrece cocina siciliana tradicional con un ambiente familiar cálido. Conocido por su pasta casera y porciones generosas, es un favorito entre los locales que buscan sabores auténticos."
+            }
+        },
+        priceRange: "€20-35 per person",
+        cuisine: "Traditional Italian, Sicilian",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Palermo, Sicily",
+        type: "Dinner",
+        location: "Center"
     }
 ];
 
@@ -617,6 +656,93 @@ const michelinRestaurantsDatabase = [
         website: "osteriadeivespri.it",
         instagram: "@osteria_dei_vespri",
         openHours: "Mon-Sat: 12:30PM-2:45PM, 7:30PM-10:45PM; Sun: Closed",
+        michelinStars: "Michelin Selected",
+        type: "Michelin"
+    },
+    {
+        id: "gagini",
+        translations: {
+            en: {
+                name: "Gagini",
+                description: "Gagini Restaurant offers a refined dining experience in a historic setting near the famous Gagini fountain. The restaurant is known for its innovative approach to Sicilian cuisine, combining traditional recipes with modern culinary techniques. Chef's tasting menus showcase the best seasonal ingredients from local producers."
+            },
+            it: {
+                name: "Gagini",
+                description: "Il Ristorante Gagini offre un'esperienza culinaria raffinata in un contesto storico vicino alla famosa fontana del Gagini. Il ristorante è noto per il suo approccio innovativo alla cucina siciliana, combinando ricette tradizionali con tecniche culinarie moderne. I menu degustazione dello chef mettono in mostra i migliori ingredienti stagionali dei produttori locali."
+            },
+            fr: {
+                name: "Gagini",
+                description: "Le Restaurant Gagini offre une expérience culinaire raffinée dans un cadre historique près de la célèbre fontaine Gagini. Le restaurant est connu pour son approche innovante de la cuisine sicilienne, combinant recettes traditionnelles et techniques culinaires modernes. Les menus dégustation du chef mettent en valeur les meilleurs ingrédients de saison des producteurs locaux."
+            },
+            es: {
+                name: "Gagini",
+                description: "El Restaurante Gagini ofrece una experiencia gastronómica refinada en un entorno histórico cerca de la famosa fuente Gagini. El restaurante es conocido por su enfoque innovador de la cocina siciliana, combinando recetas tradicionales con técnicas culinarias modernas. Los menús degustación del chef muestran los mejores ingredientes de temporada de los productores locales."
+            }
+        },
+        priceRange: "€€€",
+        cuisine: "Modern Sicilian, Fine Dining",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Via Cassari, 35, Palermo, Sicily",
+        phone: "+39 091 589918",
+        website: "gaginirestaurant.com",
+        michelinStars: "Michelin Selected",
+        type: "Michelin"
+    },
+    {
+        id: "palazzo-branciforte",
+        translations: {
+            en: {
+                name: "Palazzo Branciforte",
+                description: "Located within the stunning 17th-century Palazzo Branciforte, this restaurant offers an elegant dining experience surrounded by art and history. The menu features refined Sicilian cuisine with an emphasis on quality local ingredients and traditional flavors presented with contemporary flair."
+            },
+            it: {
+                name: "Palazzo Branciforte",
+                description: "Situato all'interno dello splendido Palazzo Branciforte del XVII secolo, questo ristorante offre un'elegante esperienza culinaria circondati da arte e storia. Il menu presenta una raffinata cucina siciliana con un'enfasi su ingredienti locali di qualità e sapori tradizionali presentati con un tocco contemporaneo."
+            },
+            fr: {
+                name: "Palazzo Branciforte",
+                description: "Situé dans le magnifique Palazzo Branciforte du XVIIe siècle, ce restaurant offre une expérience culinaire élégante entourée d'art et d'histoire. Le menu présente une cuisine sicilienne raffinée avec un accent sur les ingrédients locaux de qualité et les saveurs traditionnelles présentées avec une touche contemporaine."
+            },
+            es: {
+                name: "Palazzo Branciforte",
+                description: "Ubicado dentro del impresionante Palazzo Branciforte del siglo XVII, este restaurante ofrece una elegante experiencia gastronómica rodeada de arte e historia. El menú presenta una refinada cocina siciliana con énfasis en ingredientes locales de calidad y sabores tradicionales presentados con un toque contemporáneo."
+            }
+        },
+        priceRange: "€€€",
+        cuisine: "Fine Dining, Sicilian",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Via Bara all'Olivella, 2, Palermo, Sicily",
+        phone: "+39 091 8887767",
+        website: "palazzobranciforte.it",
+        michelinStars: "Michelin Recommended",
+        type: "Michelin"
+    },
+    {
+        id: "ottava-nota",
+        translations: {
+            en: {
+                name: "Ottava Nota",
+                description: "Ottava Nota is a gourmet restaurant that takes its name from the musical concept, offering a harmonious blend of flavors in every dish. The chef creates contemporary Sicilian cuisine that celebrates local ingredients while pushing creative boundaries. The intimate atmosphere and attention to detail make every meal a memorable experience."
+            },
+            it: {
+                name: "Ottava Nota",
+                description: "Ottava Nota è un ristorante gourmet che prende il nome dal concetto musicale, offrendo un'armoniosa miscela di sapori in ogni piatto. Lo chef crea una cucina siciliana contemporanea che celebra gli ingredienti locali mentre spinge i confini creativi. L'atmosfera intima e l'attenzione ai dettagli rendono ogni pasto un'esperienza memorabile."
+            },
+            fr: {
+                name: "Ottava Nota",
+                description: "Ottava Nota est un restaurant gastronomique qui tire son nom du concept musical, offrant un mélange harmonieux de saveurs dans chaque plat. Le chef crée une cuisine sicilienne contemporaine qui célèbre les ingrédients locaux tout en repoussant les frontières créatives. L'atmosphère intime et l'attention aux détails font de chaque repas une expérience mémorable."
+            },
+            es: {
+                name: "Ottava Nota",
+                description: "Ottava Nota es un restaurante gourmet que toma su nombre del concepto musical, ofreciendo una mezcla armoniosa de sabores en cada plato. El chef crea cocina siciliana contemporánea que celebra los ingredientes locales mientras empuja los límites creativos. La atmósfera íntima y la atención al detalle hacen de cada comida una experiencia memorable."
+            }
+        },
+        priceRange: "€€€",
+        cuisine: "Creative Sicilian, Gourmet",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Via Butera, 55, Palermo, Sicily",
+        phone: "+39 091 616 8601",
+        website: "ottavanota.it",
         michelinStars: "Michelin Selected",
         type: "Michelin"
     }
