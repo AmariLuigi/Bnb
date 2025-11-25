@@ -710,14 +710,19 @@
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'restaurant-actions';
             
-            // Directions Button (Google Maps Icon)
+            // Directions Button (GPS Icon) - uses specific Google Maps link if available
             const directionsBtn = document.createElement('button');
             directionsBtn.className = 'action-btn';
-            directionsBtn.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+            directionsBtn.innerHTML = `<i class="fas fa-location-arrow"></i>`;
+            directionsBtn.title = 'Get directions';
             directionsBtn.onclick = () => {
-                // Open Google Maps with this restaurant
-                const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
-                window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+                // Use direct mapsUrl if available, otherwise fall back to search
+                if (restaurant.mapsUrl) {
+                    window.open(restaurant.mapsUrl, '_blank');
+                } else {
+                    const address = encodeURIComponent(`${restaurant.name}, Palermo, Sicily, Italy`);
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+                }
             };
             
             actionsDiv.appendChild(directionsBtn);

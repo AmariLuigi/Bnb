@@ -68,6 +68,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/dainottis.jpg",
         referent: "Arianna",
         address: "Via Porta Carini, 51, 90134 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/zU9U4x5BBHvMGYLv9",
         type: "Lunch",
         location: "Historic Center"
     },
@@ -96,6 +97,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/osteria-mangia-e-bevi.jpg",
         referent: "Contact B&B",
         address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/yKr1e3YRX9R94axu7",
         website: "osteriamangiaebevi.it",
         type: "Dinner",
         location: "Historic Center"
@@ -125,6 +127,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/osteria-mercede.jpg",
         instagram: "@osteria_mercede_palermo",
         address: "Via Sammartino, n 1, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/VbKB6qz5Wz9EKV1T8",
         type: "Dinner",
         location: "Center"
     },
@@ -152,6 +155,7 @@ const restaurantsDatabase = [
         cuisine: "Italian, Seafood, Vegetarian Options",
         image: "images/restaurants/corona-trattoria.jpg",
         address: "Via Guglielmo Marconi, 9, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/5BTu3R2vihxNWXfE8",
         phone: "+39 091 335139",
         website: "coronatrattoria.com",
         instagram: "@coronatrattoria",
@@ -184,6 +188,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/trattoria-bersagliere.jpg",
         referent: "Lollo",
         address: "Via S. Nicolò All'Albergheria, 38, 90134 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/wZkp56wBNvALiPXe7",
         type: "Lunch",
         location: "Historic Center"
     },
@@ -212,6 +217,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/dadalia-osteria.jpg",
         referent: "Pippo or Giovanni",
         address: "Via Maccherronai, 20, 90133 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/Wu325ATTm1AZzS3N7",
         type: "Lunch",
         location: "Historic Center"
     },
@@ -240,6 +246,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/lacerba-osteria-dinamica.jpg",
         referent: "Gabriele",
         address: "Vicolo Maestro Cristofaro, 10, 90134 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/nEZrjH57gjbHPVio7",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -268,6 +275,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/le-angeliche.jpg",
         referent: "Floriana or Chiara",
         address: "Vicolo Abbadia, 10, 90134 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/SnBVtKwEJRGxffdu8",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -296,6 +304,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/trattoria-supra-i-mura.jpg",
         referent: "Pietro",
         address: "Piazza Porta Carini, 5, 90134 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/efBWwk87XDMwL7wAA",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -324,6 +333,7 @@ const restaurantsDatabase = [
         image: "images/attractions/placeholder.jpg",
         referent: "Giuseppe",
         address: "Piazza S. Francesco di Paola, 12, 90138 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/SzgtUTf8hid2EkGq5",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -352,6 +362,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/ferramenta.jpg",
         referent: "Luca or Marcello",
         address: "Piazza Giovanni Meli, 8, 90133 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/QvXgJmJ6QaVbgd9Q9",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -380,6 +391,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/forno-santa-maria.jpg",
         referent: "Luca or Marcello",
         address: "Via Giovanni Meli, 35, 90133 Palermo PA",
+        mapsUrl: "https://maps.app.goo.gl/VzB9meU29aQgqNd3A",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -408,6 +420,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/quid-gusto-siciliano.jpg",
         referent: "Serena",
         address: "Piazza Marina, 52, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/kfaPnRCjfAyyDv6C9",
         phone: "+39 091 729 6996",
         website: "facebook.com",
         instagram: "@quidgustosiciliano",
@@ -440,6 +453,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/scjabaca.jpg",
         referent: "Valeria",
         address: "Vicolo S. Carlo, 42, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/7mGJoxXuFp79uXCu9",
         phone: "+39 091 507 6739",
         website: "ristorantescjabaca.it",
         instagram: "@scjabaca",
@@ -472,6 +486,7 @@ const restaurantsDatabase = [
         image: "images/restaurants/u-babbio.jpg",
         referent: "Fiamma",
         address: "Via Principe Scordia, 104, Palermo, Sicily, Italy",
+        mapsUrl: "https://maps.app.goo.gl/1wg86u6jRKwpUiPX6",
         phone: "+39 091 910 1627",
         instagram: "@ubabbio",
         openHours: "Sun: 9AM-5PM; Mon, Wed-Fri: 6:30PM-11PM; Sat: 12PM-11PM; Tue: Closed",
@@ -505,6 +520,7 @@ const restaurantsDatabase = [
         cuisine: "Modern Sicilian, Creative",
         image: "images/restaurants/doba.jpg",
         address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/U94t5i8Z44iNcmac7",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -532,6 +548,35 @@ const restaurantsDatabase = [
         cuisine: "Mediterranean, Contemporary",
         image: "images/restaurants/nova.jpg",
         address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/eUTQGSCTALjbjmyZ6",
+        type: "Dinner",
+        location: "Historic Center"
+    },
+    {
+        id: "la-galleria",
+        translations: {
+            en: {
+                name: "La Galleria",
+                description: "An elegant restaurant in Palermo's historic center offering refined Sicilian cuisine in a sophisticated gallery-like setting. Known for its artistic ambiance and carefully crafted dishes that celebrate traditional flavors with a modern touch."
+            },
+            it: {
+                name: "La Galleria",
+                description: "Un elegante ristorante nel centro storico di Palermo che offre una raffinata cucina siciliana in un ambiente sofisticato simile a una galleria. Conosciuto per la sua atmosfera artistica e i piatti accuratamente elaborati che celebrano i sapori tradizionali con un tocco moderno."
+            },
+            fr: {
+                name: "La Galleria",
+                description: "Un restaurant élégant dans le centre historique de Palerme offrant une cuisine sicilienne raffinée dans un cadre sophistiqué de type galerie. Connu pour son ambiance artistique et ses plats soigneusement élaborés qui célèbrent les saveurs traditionnelles avec une touche moderne."
+            },
+            es: {
+                name: "La Galleria",
+                description: "Un elegante restaurante en el centro histórico de Palermo que ofrece refinada cocina siciliana en un entorno sofisticado tipo galería. Conocido por su ambiente artístico y platos cuidadosamente elaborados que celebran los sabores tradicionales con un toque moderno."
+            }
+        },
+        priceRange: "€30-50 per person",
+        cuisine: "Sicilian, Fine Dining",
+        image: "images/restaurants/placeholder.jpg",
+        address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/mP6XheSh7Mahgny79",
         type: "Dinner",
         location: "Historic Center"
     },
@@ -562,6 +607,7 @@ const restaurantsDatabase = [
         cuisine: "Seafood, Fish",
         image: "images/restaurants/pesceria.jpg",
         address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/Q5QDLGYkEbuSkMSr7",
         type: "Dinner",
         location: "Center"
     },
@@ -589,6 +635,7 @@ const restaurantsDatabase = [
         cuisine: "Traditional Italian, Sicilian",
         image: "images/restaurants/di-martino.jpg",
         address: "Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/XbGcFUwtdUt1aoAz5",
         type: "Dinner",
         location: "Center"
     }
@@ -623,6 +670,7 @@ const michelinRestaurantsDatabase = [
         cuisine: "Modern Italian, Creative",
         image: "images/restaurants/mec-restaurant.jpg",
         address: "Via Vittorio Emanuele 452 - 90134",
+        mapsUrl: "https://maps.app.goo.gl/ipJLPsyNyQymMZVQ9",
         phone: "347 753 2005",
         michelinStars: "★",
         type: "Michelin"
@@ -652,6 +700,7 @@ const michelinRestaurantsDatabase = [
         image: "images/restaurants/osteria-dei-vespri.jpg",
         referent: "Andrea",
         address: "Piazza Croce dei Vespri, 6, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/VjeBxnvLiYDGZGtz6",
         phone: "+39 091 617 1631",
         website: "osteriadeivespri.it",
         instagram: "@osteria_dei_vespri",
@@ -683,6 +732,7 @@ const michelinRestaurantsDatabase = [
         cuisine: "Modern Sicilian, Fine Dining",
         image: "images/restaurants/gagini.png",
         address: "Via Cassari, 35, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/5AuEDfuA8S5SKZLk7",
         phone: "+39 091 589918",
         website: "gaginirestaurant.com",
         michelinStars: "Michelin Selected",
@@ -712,6 +762,7 @@ const michelinRestaurantsDatabase = [
         cuisine: "Fine Dining, Sicilian",
         image: "images/restaurants/palazzo-branciforte.jpg",
         address: "Via Bara all'Olivella, 2, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/kreu5hJbNPCD7Fam9",
         phone: "+39 091 8887767",
         website: "palazzobranciforte.it",
         michelinStars: "Michelin Recommended",
@@ -741,6 +792,7 @@ const michelinRestaurantsDatabase = [
         cuisine: "Creative Sicilian, Gourmet",
         image: "images/restaurants/ottava-nota.png",
         address: "Via Butera, 55, Palermo, Sicily",
+        mapsUrl: "https://maps.app.goo.gl/EdJL3eXiddPB2Mcm8",
         phone: "+39 091 616 8601",
         website: "ottavanota.it",
         michelinStars: "Michelin Selected",
